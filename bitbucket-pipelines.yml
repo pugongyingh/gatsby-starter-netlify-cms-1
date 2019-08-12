@@ -1,14 +1,6 @@
 image: node:10.15.3
 
 pipelines:
-  default:
-    - step:
-        name: 'Build'
-        caches:
-          - node
-        script:
-          - yarn
-          - yarn build
   branches:
     master: 
       - step:
@@ -31,3 +23,11 @@ pipelines:
                 AWS_DEFAULT_REGION: 'us-east-2'
                 S3_BUCKET: 'starkys-test'
                 LOCAL_PATH: 'public'
+  default:
+    - step:
+        name: 'Build'
+        caches:
+          - node
+        script:
+          - yarn
+          - yarn build
