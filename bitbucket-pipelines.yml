@@ -3,13 +3,14 @@ image: node:10.15.3
 pipelines:
   default:
     - step:
+        name: 'Build'
         caches:
           - node
         script:
           - yarn
           - yarn build
   branches:
-    staging: 
+    master: 
       - step:
           name: 'Build'
           caches:
