@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: bitbucket
+  repo: starkysclub/starkys-fe
   branch: master
 
 media_folder: static/img
