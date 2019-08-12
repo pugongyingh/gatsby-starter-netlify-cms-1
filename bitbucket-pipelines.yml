@@ -18,6 +18,8 @@ pipelines:
           script:
             - yarn
             - yarn build
+          artifacts:
+            - public/**
       - step:
           name: 'Deploy'
           deployment: test
