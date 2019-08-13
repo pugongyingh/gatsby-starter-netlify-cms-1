@@ -4,10 +4,10 @@ import { v4 } from 'uuid';
 import { styled } from 'styled-components';
 
 const Testimonials = ({ testimonials }) => (
-  <div>
+  <div className="Testimonials">
     {testimonials.map(testimonial => (
       <article key={v4()} className="message">
-        <div className="message-body">
+        <div className="message-body" testForStyled>
           {testimonial.quote}
           <br />
           <cite> – {testimonial.author}</cite>
@@ -27,10 +27,11 @@ Testimonials.propTypes = {
     })
   ),
 }
-const TestimonialsStyled = styled.Testimonials`
-    .message-body {
-      background-color: red;
-    }
-`;
 
+const TestimonialsStyled = styled.div`
+background-color: red;
+${props => props.testForStyled && css`
+ background-color: blue; 
+ `}
+ `
 export default TestimonialsStyled;
