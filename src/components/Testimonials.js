@@ -27,7 +27,7 @@ Testimonials.propTypes = {
     })
   ),
 }
-const TestimonialsStyled = styled(Testimonials)`
+const TestimonialsStyled = styled.Testimonials`
     .message-body {
       background-color: red;
     }
