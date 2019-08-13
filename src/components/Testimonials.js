@@ -1,6 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { v4 } from 'uuid'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
+import { styled } from 'styled-components';
 
 const Testimonials = ({ testimonials }) => (
   <div>
@@ -16,6 +17,8 @@ const Testimonials = ({ testimonials }) => (
   </div>
 )
 
+
+
 Testimonials.propTypes = {
   testimonials: PropTypes.arrayOf(
     PropTypes.shape({
@@ -24,5 +27,10 @@ Testimonials.propTypes = {
     })
   ),
 }
+const TestimonialsStyled = styled(Testimonials)`
+    .message-body {
+      background-color: red;
+    }
+`;
 
-export default Testimonials
+export default TestimonialsStyled;
