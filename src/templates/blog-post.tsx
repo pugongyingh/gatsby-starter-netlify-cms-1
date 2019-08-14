@@ -11,6 +11,7 @@ interface BlogPostTemplateProps {
   description: any;
   tags: any;
   title: any;
+
   helmet: any;
 }
 
