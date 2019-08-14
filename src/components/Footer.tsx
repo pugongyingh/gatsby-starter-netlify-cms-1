@@ -1,22 +1,12 @@
-import React from 'react'
-import { Link } from 'gatsby'
-
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+import { Link } from "gatsby";
+import React from "react";
 
 const Footer = class extends React.Component {
-  render() {
+  public render() {
     return (
       <footer className="footer has-background-black has-text-white-ter">
         <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
+          <img src="" alt="Kaldi" style={{ width: "14em", height: "10em" }} />
         </div>
         <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
@@ -76,31 +66,31 @@ const Footer = class extends React.Component {
               <div className="column is-4 social">
                 <a title="facebook" href="https://facebook.com">
                   <img
-                    src={facebook}
+                    src=""
                     alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
+                    style={{ width: "1em", height: "1em" }}
                   />
                 </a>
                 <a title="twitter" href="https://twitter.com">
                   <img
                     className="fas fa-lg"
-                    src={twitter}
+                    src=""
                     alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
+                    style={{ width: "1em", height: "1em" }}
                   />
                 </a>
                 <a title="instagram" href="https://instagram.com">
                   <img
-                    src={instagram}
+                    src=""
                     alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
+                    style={{ width: "1em", height: "1em" }}
                   />
                 </a>
                 <a title="vimeo" href="https://vimeo.com">
                   <img
-                    src={vimeo}
+                    src=""
                     alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
+                    style={{ width: "1em", height: "1em" }}
                   />
                 </a>
               </div>
@@ -108,8 +98,8 @@ const Footer = class extends React.Component {
           </div>
         </div>
       </footer>
-    )
+    );
   }
-}
+};
 
-export default Footer
+export default Footer;
