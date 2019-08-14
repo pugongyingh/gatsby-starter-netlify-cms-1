@@ -69,7 +69,6 @@ const BlogPost = ({ data }: any) => {
             <meta
               name="description"
               content={`${post.frontmatter.description}`}
-
             />
           </Helmet>
         }
