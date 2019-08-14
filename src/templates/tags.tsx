@@ -1,10 +1,10 @@
+import { graphql, Link } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
-import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 
 class TagRoute extends React.Component<any> {
-  render() {
+  public render() {
     const posts = this.props.data.allMarkdownRemark.edges;
     const postLinks = posts.map((post: any) => (
       <li key={post.node.fields.slug}>
@@ -18,7 +18,7 @@ class TagRoute extends React.Component<any> {
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? "" : "s"
-    } tagged with “${tag}”`;
+      } tagged with “${tag}”`;
 
     return (
       <Layout>

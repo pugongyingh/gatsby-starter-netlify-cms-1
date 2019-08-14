@@ -1,21 +1,21 @@
+import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
-import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
-class BlogRoll extends React.Component {
-  render() {
+class BlogRoll extends React.Component<any> {
+  public render() {
     const { data }: any = this.props;
     const { edges: posts }: any = data.allMarkdownRemark;
 
     return (
       <div className="columns is-multiline">
         {posts &&
-          posts.map(({ node: post }:any) => (
+          posts.map(({ node: post }: any) => (
             <div className="is-parent column is-6" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box notification ${
                   post.frontmatter.featuredpost ? "is-featured" : ""
-                }`}
+                  }`}
               >
                 <header>
                   {post.frontmatter.featuredimage ? (
@@ -90,6 +90,6 @@ export default () => (
         }
       }
     `}
-    render={(data:any, count:any) => <BlogRoll data={data} count={count} />}
+    render={(data: any) => <BlogRoll data={data} />}
   />
 );
