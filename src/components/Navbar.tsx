@@ -1,36 +1,36 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from "gatsby";
+import React from "react";
 
 class Navbar extends React.Component<any, any> {
-  constructor(props:any) {
-    super(props)
+  constructor(props: any) {
+    super(props);
     this.state = {
       active: false,
-      navBarActiveClass: '',
-    }
+      navBarActiveClass: ""
+    };
   }
 
-  toggleHamburger = () => {
+  public toggleHamburger = () => {
     // toggle the active boolean in the state
     this.setState(
       {
-        active: !this.state.active,
+        active: !this.state.active
       },
       // after state has been updated,
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
+              navBarActiveClass: "is-active"
             })
           : this.setState({
-              navBarActiveClass: '',
-            })
+              navBarActiveClass: ""
+            });
       }
-    )
-  }
+    );
+  };
 
-  render() {
+  public render() {
     return (
       <nav
         className="navbar is-transparent"
@@ -40,7 +40,7 @@ class Navbar extends React.Component<any, any> {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src="" alt="Kaldi" style={{ width: '88px' }} />
+              <img src="" alt="Kaldi" style={{ width: "88px" }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -89,8 +89,8 @@ class Navbar extends React.Component<any, any> {
           </div>
         </div>
       </nav>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;

@@ -1,1 +1,1 @@
-declare module 'netlify-cms-media-library-cloudinary'
+declare module "netlify-cms-media-library-cloudinary";

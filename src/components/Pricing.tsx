@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-const Pricing = ({ data }:any) => (
+const Pricing = ({ data }: any) => (
   <div className="columns">
     {data.map(price => (
       <div key={price.plan} className="column">
@@ -13,7 +13,7 @@ const Pricing = ({ data }:any) => (
           </h2>
           <p className="has-text-weight-semibold">{price.description}</p>
           <ul>
-            {price.items.map((item:any) => (
+            {price.items.map((item: any) => (
               <li key={item} className="is-size-5">
                 {item}
               </li>
@@ -23,6 +23,6 @@ const Pricing = ({ data }:any) => (
       </div>
     ))}
   </div>
-)
+);
 
-export default Pricing
+export default Pricing;

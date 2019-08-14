@@ -1,16 +1,15 @@
+import { graphql, Link } from "gatsby";
 import React from "react";
-import { Link, graphql } from "gatsby";
-
-import Layout from "../components/Layout";
-import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
+import Features from "../components/Features";
+import Layout from "../components/Layout";
 
-type Image = {
+interface Image {
   [key: string]: any;
 }
 
 interface IndexPageTemplateProps {
-  image:string | Image;
+  image: string | Image;
   title: any;
   heading: any;
   subheading: any;
@@ -20,8 +19,8 @@ interface IndexPageTemplateProps {
 }
 
 const isImageType = (obj: string | Image): obj is Image => {
-  return obj.hasOwnProperty("childImageSharp")
-}
+  return obj.hasOwnProperty("childImageSharp");
+};
 
 export const IndexPageTemplate: React.SFC<IndexPageTemplateProps> = ({
   image,

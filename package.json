@@ -10,6 +10,7 @@
     "bulma": "^0.7.0",
     "gatsby": "^2.13.62",
     "gatsby-image": "^2.0.23",
+    "gatsby-link": "^2.2.5",
     "gatsby-plugin-netlify": "^2.1.4",
     "gatsby-plugin-netlify-cms": "^4.1.6",
     "gatsby-plugin-purgecss": "^4.0.0",
@@ -58,10 +59,9 @@
     "build": "run-p build:**",
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "type-check": "tsc --noEmit",
-    "lint": "tslint --project ."
+    "type-check": "tsc",
+    "lint": "tslint --fix src/**/*.{ts,tsx}"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.136",

@@ -1,1 +1,1 @@
-declare module 'netlify-cms-app'
+declare module "netlify-cms-app";

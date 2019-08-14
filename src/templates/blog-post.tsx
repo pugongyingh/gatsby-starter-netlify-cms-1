@@ -1,32 +1,32 @@
-import React from 'react'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import { graphql, Link } from "gatsby";
+import { kebabCase } from "lodash";
+import React from "react";
+import Helmet from "react-helmet";
+import Content, { HTMLContent } from "../components/Content";
+import Layout from "../components/Layout";
 
 interface BlogPostTemplateProps {
-  content:any,
-  contentComponent: any,
-  description: any,
-  tags: any,
-  title: any,
-  helmet: any,
+  content: any;
+  contentComponent: any;
+  description: any;
+  tags: any;
+  title: any;
+  helmet: any;
 }
 
-export const BlogPostTemplate: React.SFC<BlogPostTemplateProps>  = ({
+export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
   content,
   contentComponent,
   description,
   tags,
   title,
-  helmet,
+  helmet
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -39,7 +39,7 @@ export const BlogPostTemplate: React.SFC<BlogPostTemplateProps>  = ({
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
                 <ul className="taglist">
-                  {tags.map((tag:any) => (
+                  {tags.map((tag: any) => (
                     <li key={tag + `tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
@@ -51,11 +51,11 @@ export const BlogPostTemplate: React.SFC<BlogPostTemplateProps>  = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-const BlogPost = ({ data }:any) => {
-  const { markdownRemark: post } = data
+const BlogPost = ({ data }: any) => {
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -76,10 +76,10 @@ const BlogPost = ({ data }:any) => {
         title={post.frontmatter.title}
       />
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
@@ -94,4 +94,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

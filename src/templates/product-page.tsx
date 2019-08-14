@@ -1,21 +1,21 @@
-import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
+import React from "react";
 import Features from "../components/Features";
-import Testimonials from "../components/Testimonials";
-import Pricing from "../components/Pricing";
+import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import Pricing from "../components/Pricing";
+import Testimonials from "../components/Testimonials";
 
 interface ProductPageTemplate {
   image: any;
   title: any;
   heading: any;
   description: any;
-  intro: any,
-  main: any,
-  testimonials: any,
-  fullImage: any,
-  pricing: any
+  intro: any;
+  main: any;
+  testimonials: any;
+  fullImage: any;
+  pricing: any;
 }
 
 export const ProductPageTemplate: React.SFC<ProductPageTemplate> = ({
