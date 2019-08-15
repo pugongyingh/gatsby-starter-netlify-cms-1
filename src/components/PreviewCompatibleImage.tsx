@@ -1,10 +1,14 @@
 import Img from "gatsby-image";
-import PropTypes from "prop-types";
 import React from "react";
+import { MarkdownRemarkFrontmatterMainImage } from "../templates/product-page";
 
-const PreviewCompatibleImage = ({ imageInfo }: any) => {
+interface PreviewCompatibleImageProps {
+  imageInfo: MarkdownRemarkFrontmatterMainImage;
+}
+
+const PreviewCompatibleImage: React.SFC<PreviewCompatibleImageProps> = ({ imageInfo }) => {
   const imageStyle = { borderRadius: "5px" };
-  const { alt = "", childImageSharp, image } = imageInfo;
+  const { alt, image } = imageInfo;
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -12,24 +16,11 @@ const PreviewCompatibleImage = ({ imageInfo }: any) => {
     );
   }
 
-  if (!!childImageSharp) {
-    return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />;
-  }
-
   if (!!image && typeof image === "string") {
     return <img style={imageStyle} src={image} alt={alt} />;
   }
 
   return null;
-};
-
-PreviewCompatibleImage.propTypes = {
-  imageInfo: PropTypes.shape({
-    alt: PropTypes.string,
-    childImageSharp: PropTypes.object,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-    style: PropTypes.object
-  }).isRequired
 };
 
 export default PreviewCompatibleImage;

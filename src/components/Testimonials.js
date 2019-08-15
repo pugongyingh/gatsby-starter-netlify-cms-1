@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
-import styled from 'styled-components';
+import { default as styled, css } from 'styled-components';
 
 const Testimonials = ({ testimonials }) => (
   <div className="Testimonials">
@@ -29,9 +29,10 @@ Testimonials.propTypes = {
 }
 
 const TestimonialsStyled = styled.div`
-background-color: red;
-${props => props.testForStyled && css`
- background-color: blue; 
+  background-color: red;
+  
+  ${props => props.testForStyled && css`
+    background-color: blue; 
  `}
  `
 export default TestimonialsStyled;
