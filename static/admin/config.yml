@@ -11,22 +11,36 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - label: "Menu"
-    name: "menu"
-    create: true
-    folder: "static/admin"
-    files:
-      - file: "static/admin/navigation.yml"
-        label: "Menu Items"
-        name: "menu_items"
-        fields:
-          - label: "Navigation"
-            name: "nav_items"
-            widget: "list"
-            fields:
-              - { label: "Label", name: "label", widget: "string" }
-              - { label: "Path", name: "path", widget: "string" }
-
+  - name: "general"
+    label: "General"
+    folder: "static/data"
+    fields:
+    - label: Název stránky
+      name: title
+      widget: string
+    - label: Navigace
+      name: navigation
+      widget: list
+      fields:
+        - {label: "Label", name: "label", widget: "string"}
+        - {label: "Path", name: "path", widget: "string"}
+    - label: Kontakt
+      name: contact
+      widget: object
+      fields:
+        - {label: "Město", name: "city", widget: "string"}
+        - {label: "Ulice", name: "street", widget: "string"}
+    - label: Patička
+      name: footer
+      widget: object
+      fields:
+        - {label: "Copyright", name: "copy", widget: "string"}
+        - {
+            label: "Socialní sítě", 
+            name: "socials",
+            widget: "list", 
+            field: {label: "Title", name: "title", widget: "string"}
+          }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"

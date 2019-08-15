@@ -1,7 +1,6 @@
 import React from 'react'
-import { ProductPageTemplate } from '../../templates/product-page'
 
-const ProductPagePreview = ({ entry, getAsset }:any) => {
+const ProductPagePreview = ({ entry, getAsset }: any) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
   const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
 
