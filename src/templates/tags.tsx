@@ -1,9 +1,15 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
+import { Query, SitePageContext } from "../@types/graphql";
 import Layout from "../components/Layout";
 
-class TagRoute extends React.Component<any> {
+export interface TagRouteInterface {
+  data: Query,
+  pageContext: SitePageContext
+}
+
+class TagRoute extends React.Component<TagRouteInterface> {
   public render() {
     const posts = this.props.data.allMarkdownRemark.edges;
     const postLinks = posts.map((post: any) => (
@@ -14,11 +20,11 @@ class TagRoute extends React.Component<any> {
       </li>
     ));
     const tag = this.props.pageContext.tag;
-    const title = this.props.data.site.siteMetadata.title;
+    const title = this.title;
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? "" : "s"
-    } tagged with “${tag}”`;
+      } tagged with “${tag}”`;
 
     return (
       <Layout>
@@ -41,6 +47,12 @@ class TagRoute extends React.Component<any> {
         </section>
       </Layout>
     );
+  }
+  private get title() {
+    if (this.props.data.site && this.props.data.site.siteMetadata) {
+      return this.props.data.site.siteMetadata.title;
+    }
+    return '';
   }
 }
 

@@ -69,7 +69,7 @@
     "test": "jest --passWithNoTests",
     "type-check": "tsc",
     "lint": "tslint --fix -p tsconfig.json",
-    "generates-types-from-graphql": "gql-gen --schema http://localhost:8000/___graphql  --template graphql-codegen-typescript-template --out ./src/@types/graphql.d.ts"
+    "generates-types-from-graphql": "graphql-codegen"
   },
   "husky": {
     "hooks": {
@@ -84,6 +84,8 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.5.0",
+    "@graphql-codegen/typescript": "^1.5.0",
     "@types/jest": "^24.0.17",
     "@types/lodash": "^4.14.136",
     "@types/react-helmet": "^5.0.9",

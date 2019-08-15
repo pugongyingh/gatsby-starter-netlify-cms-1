@@ -1,12 +1,15 @@
 {
-    "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
-    "rules": {
-        "prettier": true,
-        "jsx-no-multiline-js": false,
-        "jsx-no-lambda": false,
-        "no-boolean-literal-compare":false,
-        "object-literal-sort-keys": false,
-        "interface-name": false,
-        "no-empty-interface": false
-    }
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "prettier": true,
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "no-boolean-literal-compare": false,
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "no-empty-interface": false
+  },
+  "linterOptions": {
+    "exclude": ["**/*.d.ts"]
+  }
 }
