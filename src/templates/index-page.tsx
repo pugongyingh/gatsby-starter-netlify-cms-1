@@ -115,7 +115,10 @@ export const IndexPageTemplate: React.SFC<IndexPageTemplateProps> = ({
                     Latest stories
                   </h3>
                   <BlogRoll />
-                  <div className="column is-12 has-text-centered">
+                  <div
+                    id="my-cool-header"
+                    className="column is-12 has-text-centered"
+                  >
                     <Link className="btn" to="/blog">
                       Read more
                     </Link>
