@@ -22,13 +22,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/data`,
-        name: "navigation-items"
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/src/pages`,
         name: "pages"
       }

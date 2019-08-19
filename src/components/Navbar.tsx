@@ -31,6 +31,11 @@ class Navbar extends React.Component<any, any> {
   };
 
   public render() {
+    if (typeof window !== "undefined") {
+      // eslint-disable-next-line global-require
+      require("smooth-scroll")('a[href*="#"]');
+    }
+
     return (
       <nav
         className="navbar is-transparent"
@@ -58,6 +63,9 @@ class Navbar extends React.Component<any, any> {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
+              <Link to="/#my-cool-header" className="navbar-item">
+                SmoothScroll
+              </Link>
               <Link className="navbar-item" to="/about">
                 About
               </Link>
