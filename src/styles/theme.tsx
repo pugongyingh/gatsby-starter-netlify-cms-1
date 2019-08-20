@@ -4,7 +4,7 @@
  * @author VĂĄclav Brzezina
  */
 
-// import { rem } from "polished";
+import { rem } from "polished";
 import * as styledComponents from "styled-components";
 
 const {
