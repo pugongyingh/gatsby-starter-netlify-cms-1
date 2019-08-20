@@ -1,24 +1,22 @@
-import { graphql, Link } from "gatsby";
-import { kebabCase } from "lodash";
+import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
+import { Query } from "../@types/graphql";
 import Content, { HTMLContent } from "../components/Content";
 import Layout from "../components/Layout";
 
-interface BlogPostTemplateProps {
+interface BlogPostProps {
   content: any;
   contentComponent: any;
   description: any;
-  tags: any;
   title: any;
   helmet: any;
 }
 
-export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
+export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
   content,
   contentComponent,
   description,
-  tags,
   title,
   helmet
 }) => {
@@ -35,18 +33,6 @@ export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag: any) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>
@@ -54,7 +40,11 @@ export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
   );
 };
 
-const BlogPost = ({ data }: any) => {
+interface BolgPostTemplateProps {
+  data: Query,
+}
+
+const BlogPost = ({ data }: BolgPostTemplateProps) => {
   const { markdownRemark: post } = data;
 
   return (
@@ -72,7 +62,6 @@ const BlogPost = ({ data }: any) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -90,7 +79,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
       }
     }
   }
