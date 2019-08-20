@@ -98,6 +98,7 @@
     "netlify-lambda": "^1.4.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3",
+    "react-styled-flexboxgrid": "^3.1.0",
     "react-test-renderer": "^16.9.0",
     "ts-jest": "^24.0.2"
   }
