@@ -1,5 +1,5 @@
-import React from 'react'
-import { IndexPageTemplate } from '../../templates/index-page'
+import React from "react";
+import { IndexPageTemplate } from "../../templates/index-page-template";
 
 const IndexPagePreview = ({ entry }: any) => {
   const data = entry.getIn(['data']).toJS()
@@ -12,10 +12,10 @@ const IndexPagePreview = ({ entry }: any) => {
         heading={data.heading}
         subheading={data.subheading}
       />
-    )
+    );
   } else {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-}
+};
 
-export default IndexPagePreview
+export default IndexPagePreview;
