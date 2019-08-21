@@ -21,11 +21,11 @@ class Navbar extends React.Component<any, any> {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "is-active"
-            })
+            navBarActiveClass: "is-active"
+          })
           : this.setState({
-              navBarActiveClass: ""
-            });
+            navBarActiveClass: ""
+          });
       }
     );
   };
