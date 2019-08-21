@@ -1,6 +1,10 @@
 site:
   title: Starky's club
-  test: true
+  contact:
+    city: TEST
+    street: TEST
+  footer:
+    copy: TEST
 
 backend:
   name: bitbucket
@@ -12,31 +16,23 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "general"
-    label: "General"
-    folder: "src/config"
-    fields:
-    - label: Title
-      name: title
-      default: General configuration
-      widget: "hidden"
-    - label: Kontakt
-      name: contact
-      widget: object
-      fields:
-        - {label: "Město", name: "city", widget: "string"}
-        - {label: "Ulice", name: "street", widget: "string"}
-    - label: Patička
-      name: footer
-      widget: object
-      fields:
-        - {label: "Copyright", name: "copy", widget: "string"}
-        - {
-            label: "Socialní sítě", 
-            name: "socials",
-            widget: "list", 
-            field: {label: "Title", name: "title", widget: "string"}
-          }
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string, required: true }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -67,20 +63,3 @@ collections:
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
-            }
-          - { label: Title, name: title, widget: string, required: true }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
