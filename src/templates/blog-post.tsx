@@ -67,7 +67,13 @@ const BlogPost = ({ data }: BolgPostTemplateProps) => {
   );
 };
 
-export default BlogPost;
+export const BlogPostPreview = ({ entry, widgetFor }: any) => (
+  <BlogPostTemplate
+    content={widgetFor('body')}
+    description={entry.getIn(['data', 'description'])}
+    title={entry.getIn(['data', 'title'])}
+  />
+)
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
@@ -82,3 +88,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default BlogPost;

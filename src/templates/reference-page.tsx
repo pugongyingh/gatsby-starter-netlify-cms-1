@@ -68,7 +68,13 @@ const Reference = ({ data }: BolgPostTemplateProps) => {
     );
 };
 
-export default Reference;
+export const ReferencePreview = ({ entry, widgetFor }: any) => (
+    <ReferenceTemplate
+        content={widgetFor('body')}
+        description={entry.getIn(['data', 'description'])}
+        title={entry.getIn(['data', 'title'])}
+    />
+)
 
 export const pageQuery = graphql`
   query ReferenceByID($id: String!) {
@@ -83,3 +89,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default Reference;

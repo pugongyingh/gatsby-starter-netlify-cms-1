@@ -49,9 +49,10 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "references"
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+  - name: "reference"
     label: "References"
-    folder: "src/pages/references"
+    folder: "src/pages/reference"
     create: true
     fields:
       - {
