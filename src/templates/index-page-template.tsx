@@ -2,14 +2,9 @@ import { Link } from "gatsby";
 import React from "react";
 import BlogRoll from "../components/BlogRoll";
 import Features from "../components/Features";
-
-interface Image {
-  [key: string]: any;
-}
+import Header from "../components/Header/Header";
 
 interface IndexPageTemplateProps {
-  image: string | Image;
-  title: any;
   heading: any;
   subheading: any;
   mainpitch: any;
@@ -17,68 +12,18 @@ interface IndexPageTemplateProps {
   intro: any;
 }
 
-const isImageType = (obj: string | Image): obj is Image => {
-  return obj.hasOwnProperty("childImageSharp");
-};
-
 export const IndexPageTemplate: React.SFC<IndexPageTemplateProps> = ({
-  image,
-  title,
   heading,
-  subheading,
   mainpitch,
   description,
   intro
 }) => (
   <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          isImageType(image) ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          height: "150px",
-          lineHeight: "1",
-          justifyContent: "space-around",
-          alignItems: "left",
-          flexDirection: "column"
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em"
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em"
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
-    </div>
+    <Header
+      title="test"
+      subheading="testsub"
+      video="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
+    />
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
