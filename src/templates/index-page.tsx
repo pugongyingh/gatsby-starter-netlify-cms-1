@@ -1,7 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
 import { ImageSharp, Query } from "../@types/graphql";
-import BlogRoll from "../components/BlogRoll";
 import Layout from "../components/Layout";
 
 interface IndexPageProps {
