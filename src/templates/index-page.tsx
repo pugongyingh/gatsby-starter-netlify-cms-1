@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import { ImageSharp, Query } from "../@types/graphql";
+import BlogRoll from "../components/BlogRoll";
 import Layout from "../components/Layout";
 
 interface IndexPageProps {
@@ -68,6 +69,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </h3>
         </div>
       </div>
+      <BlogRoll />
     </div>
   );
 
@@ -90,7 +92,22 @@ const IndexPage = ({ data }: IndexPageTemplateProps) => {
   );
 };
 
-export default IndexPage;
+export const IndexPagePreview = ({ entry }: any) => {
+  const data = entry.getIn(['data']).toJS()
+
+  if (data) {
+    return (
+      <IndexPageTemplate
+        image={data.image}
+        title={data.title}
+        heading={data.heading}
+        subheading={data.subheading}
+      />
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
+};
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -129,3 +146,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default IndexPage;
