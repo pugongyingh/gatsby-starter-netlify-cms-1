@@ -4,7 +4,8 @@ module.exports = {
   siteMetadata: {
     title: "Gatsby + Netlify CMS Starter",
     description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution."
+      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+    /** TODO: Add another meta */
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -28,6 +29,13 @@ module.exports = {
     },
     {
       resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/config`,
+        name: 'config',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
         name: "images"
@@ -72,8 +80,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
-        pure: true
-      }
+        "pure": true,
+      },
     },
     {
       resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
