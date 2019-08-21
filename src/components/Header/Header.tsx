@@ -29,7 +29,6 @@ const HeaderWrap = styled.header`
 `;
 
 const Video = styled.video`
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -77,9 +76,8 @@ const Header: React.SFC<HeaderProps> = ({ video, title, subheading }) => {
       <Overlay className="overlay" />
       <Video
         src={video}
-        type="video/mp4"
         playsInline={true}
-        // autoPlay={true}
+        autoPlay={true}
         muted={true}
         loop={true}
       />

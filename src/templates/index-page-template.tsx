@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
+import { Query } from "../@types/graphql";
 import BlogRoll from "../components/BlogRoll";
 import Features from "../components/Features";
 import Header from "../components/Header/Header";
