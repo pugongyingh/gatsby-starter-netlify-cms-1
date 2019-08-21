@@ -1,8 +1,8 @@
 import React from "react";
-import { IndexPageTemplate } from "../../templates/index-page-template";
+import { IndexPageTemplate } from "../../templates/index-page";
 
 const IndexPagePreview = ({ entry }: any) => {
-  const data = entry.getIn(["data"]).toJS();
+  const data = entry.getIn(['data']).toJS()
 
   if (data) {
     return (
@@ -11,9 +11,6 @@ const IndexPagePreview = ({ entry }: any) => {
         title={data.title}
         heading={data.heading}
         subheading={data.subheading}
-        description={data.description}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
       />
     );
   } else {

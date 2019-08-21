@@ -1,32 +1,30 @@
-import { graphql, Link } from "gatsby";
-import { kebabCase } from "lodash";
+import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
-import Content, { HTMLContent } from "../components/Content";
+import { Query } from "../@types/graphql";
+import Content, { ContentFormatter, HTMLContent } from "../components/Content";
 import Layout from "../components/Layout";
 
-interface BlogPostTemplateProps {
-  content: any;
-  contentComponent: any;
-  description: any;
-  tags: any;
-  title: any;
-  helmet: any;
+interface BlogPostProps {
+  content: string;
+  contentComponent?: (props: ContentFormatter) => React.ReactElement;
+  description: string;
+  title: string;
+  helmet?: React.ReactElement
 }
 
-export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
+export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
   content,
   contentComponent,
   description,
-  tags,
   title,
-  helmet
+  helmet,
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ""}
+      {helmet}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -35,18 +33,6 @@ export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag: any) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>
@@ -54,9 +40,12 @@ export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
   );
 };
 
-const BlogPost = ({ data }: any) => {
-  const { markdownRemark: post } = data;
+interface BolgPostTemplateProps {
+  data: Query,
+}
 
+const BlogPost = ({ data }: BolgPostTemplateProps) => {
+  const { markdownRemark: post } = data;
   return (
     <Layout>
       <BlogPostTemplate
@@ -72,7 +61,6 @@ const BlogPost = ({ data }: any) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -90,7 +78,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
       }
     }
   }
