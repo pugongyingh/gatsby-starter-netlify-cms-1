@@ -2,29 +2,25 @@ import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 import { Query } from "../@types/graphql";
-import Content, { HTMLContent } from "../components/Content";
 import Layout from "../components/Layout";
 
 interface ReferenceProps {
-    content: any;
-    contentComponent: any;
-    description: any;
-    title: any;
-    helmet: any;
+    content: string;
+    description: string;
+    title: string;
+    helmet?: React.ReactElement
 }
 
 export const ReferenceTemplate: React.SFC<ReferenceProps> = ({
     content,
-    contentComponent,
     description,
     title,
     helmet
 }) => {
-    const PostContent = contentComponent || Content;
 
     return (
         <section className="section">
-            {helmet || ""}
+            {helmet}
             <div className="container content">
                 <div className="columns">
                     <div className="column is-10 is-offset-1">
@@ -32,7 +28,7 @@ export const ReferenceTemplate: React.SFC<ReferenceProps> = ({
                             {title}
                         </h1>
                         <p>{description}</p>
-                        <PostContent content={content} />
+                        <div>{content}</div>
                     </div>
                 </div>
             </div>
@@ -51,10 +47,9 @@ const Reference = ({ data }: BolgPostTemplateProps) => {
         <Layout>
             <ReferenceTemplate
                 content={post.html}
-                contentComponent={HTMLContent}
                 description={post.frontmatter.description}
                 helmet={
-                    <Helmet titleTemplate="%s | Blog">
+                    <Helmet titleTemplate="%s">
                         <title>{`${post.frontmatter.title}`}</title>
                         <meta
                             name="description"

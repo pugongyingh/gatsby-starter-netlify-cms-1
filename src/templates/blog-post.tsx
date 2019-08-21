@@ -2,15 +2,15 @@ import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 import { Query } from "../@types/graphql";
-import Content, { HTMLContent } from "../components/Content";
+import Content, { ContentFormatter, HTMLContent } from "../components/Content";
 import Layout from "../components/Layout";
 
 interface BlogPostProps {
-  content: any;
-  contentComponent: any;
-  description: any;
-  title: any;
-  helmet: any;
+  content: string;
+  contentComponent?: (props: ContentFormatter) => React.ReactElement;
+  description: string;
+  title: string;
+  helmet?: React.ReactElement
 }
 
 export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
@@ -18,13 +18,13 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
   contentComponent,
   description,
   title,
-  helmet
+  helmet,
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ""}
+      {helmet}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -46,7 +46,6 @@ interface BolgPostTemplateProps {
 
 const BlogPost = ({ data }: BolgPostTemplateProps) => {
   const { markdownRemark: post } = data;
-
   return (
     <Layout>
       <BlogPostTemplate

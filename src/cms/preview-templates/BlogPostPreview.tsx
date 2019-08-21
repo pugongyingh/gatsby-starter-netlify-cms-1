@@ -6,8 +6,6 @@ const BlogPostPreview = ({ entry, widgetFor }: any) => (
     content={widgetFor('body')}
     description={entry.getIn(['data', 'description'])}
     title={entry.getIn(['data', 'title'])}
-    helmet=""
-    contentComponent=""
   />
 )
 

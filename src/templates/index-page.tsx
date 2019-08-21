@@ -5,7 +5,7 @@ import BlogRoll from "../components/BlogRoll";
 import Layout from "../components/Layout";
 
 interface IndexPageProps {
-  image: ImageSharp,
+  image: string | ImageSharp,
   title: string,
   heading: string,
   subheading: string,
@@ -69,7 +69,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </h3>
         </div>
       </div>
-      <BlogRoll />
     </div>
   );
 
