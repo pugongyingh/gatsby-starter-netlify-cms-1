@@ -1,14 +1,15 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import { ImageSharp, Query } from "../@types/graphql";
 import BlogRoll from "../components/BlogRoll";
+import Header from "../components/Header/Header";
 import Layout from "../components/Layout";
 
 interface IndexPageProps {
-  image: string | ImageSharp,
-  title: string,
-  heading: string,
-  subheading: string,
+  image: string | ImageSharp;
+  title: string;
+  heading: string;
+  subheading: string;
 }
 
 const isImageType = (obj: string | ImageSharp): obj is ImageSharp => {
@@ -18,63 +19,37 @@ const isImageType = (obj: string | ImageSharp): obj is ImageSharp => {
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   image,
   title,
-  subheading,
+  subheading
 }) => (
-    <div>
-      <div
-        className="full-width-image margin-top-0"
-        style={{
-          backgroundImage: `url(${
-            isImageType(image) ? image.fluid.src : image
-            })`,
-          backgroundPosition: `top left`,
-          backgroundAttachment: `fixed`
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            height: "150px",
-            lineHeight: "1",
-            justifyContent: "space-around",
-            alignItems: "left",
-            flexDirection: "column"
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-            style={{
-              boxShadow:
-                "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-              backgroundColor: "rgb(255, 68, 0)",
-              color: "white",
-              lineHeight: "1",
-              padding: "0.25em"
-            }}
-          >
-            {title}
-          </h1>
-          <h3
-            className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-            style={{
-              boxShadow:
-                "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-              backgroundColor: "rgb(255, 68, 0)",
-              color: "white",
-              lineHeight: "1",
-              padding: "0.25em"
-            }}
-          >
-            {subheading}
-          </h3>
+  <div>
+    <Header
+      title={title}
+      subheading={subheading}
+      video="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
+    />
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="section">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
+                <div className="column is-12">
+                  <h3 className="has-text-weight-semibold is-size-2">
+                    Latest stories
+                  </h3>
+                  <BlogRoll />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <BlogRoll />
-    </div>
-  );
+    </section>
+  </div>
+);
 
 interface IndexPageTemplateProps {
-  data: Query,
+  data: Query;
 }
 
 const IndexPage = ({ data }: IndexPageTemplateProps) => {
@@ -93,7 +68,7 @@ const IndexPage = ({ data }: IndexPageTemplateProps) => {
 };
 
 export const IndexPagePreview = ({ entry }: any) => {
-  const data = entry.getIn(['data']).toJS()
+  const data = entry.getIn(["data"]).toJS();
 
   if (data) {
     return (
