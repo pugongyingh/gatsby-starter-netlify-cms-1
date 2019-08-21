@@ -80,13 +80,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
-<<<<<<< HEAD
         "pure": true,
       },
-=======
-        pure: true
-      }
->>>>>>> fbd11fdb7f04fb7cacf4b02984ef8f822466ec1a
     },
     {
       resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
