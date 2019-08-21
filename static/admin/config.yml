@@ -16,6 +16,10 @@ collections:
     label: "General"
     folder: "src/config"
     fields:
+    - label: Title
+      name: title
+      default: General configuration
+      widget: "hidden"
     - label: Kontakt
       name: contact
       widget: object
