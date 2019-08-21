@@ -30,7 +30,7 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string, required: true }
-          - { label: Image, name: image, widget: image }
+          - { label: Hero, name: hero, widget: file, required: true }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
   - name: "blog"

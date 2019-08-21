@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { File } from "../../@types/graphql";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
 // import background from "src/img/home-bg.png";
 
@@ -67,20 +69,28 @@ interface HeaderProps {
   title: string;
   subheading: string;
   // image: any | Image;
-  video: string;
+  hero: File;
 }
 
-const Header: React.SFC<HeaderProps> = ({ video, title, subheading }) => {
+const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
   return (
     <HeaderWrap>
+      {hero.ext.match(/.(jpg|jpeg|png|gif)$/i) ?
+        <PreviewCompatibleImage
+          imageInfo={{
+            image: hero,
+            alt: `Starky's club`
+          }}
+        /> : hero.ext.match(/.(mp4)$/i) ?
+          <Video
+            src={hero.publicURL}
+            playsInline={true}
+            autoPlay={true}
+            muted={true}
+            loop={true}
+          /> : null
+      }
       <Overlay className="overlay" />
-      <Video
-        src={video}
-        playsInline={true}
-        autoPlay={true}
-        muted={true}
-        loop={true}
-      />
       <Container>
         <div className="d-flex h-100 text-center align-items-center">
           <div className="w-100 text-white">
