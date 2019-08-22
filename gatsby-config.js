@@ -15,7 +15,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Muli"]
+          families: ["Muli", "Open Sans"]
         }
       }
     },
