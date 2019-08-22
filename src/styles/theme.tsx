@@ -20,27 +20,8 @@ const {
 
 export interface IThemeInterface {
   colors: {
-    primary: string;
-    secondary: string;
-    success: string;
-    danger: string;
-    warning: string;
-    info: string;
-    text: string;
-    green: string;
-    red: string;
-    blue: string;
-    semiGreen: string;
-    semiRed: string;
-    lightGreen: string;
-    lightRed: string;
-    yellow: string;
-    orange: string;
-    gray: string;
-    lightGray: string;
-    darkGray: string;
-    light: string;
     white: string;
+    black: string;
   };
   fonts: {
     default: string;
@@ -77,27 +58,8 @@ export interface IThemeInterface {
 
 export const theme: IThemeInterface = {
   colors: {
-    primary: "#2F80ED",
-    secondary: "#C7C7C7",
-    success: "#32D172",
-    danger: "#FF7474",
-    warning: "#F2994A",
-    info: "#5BA1FF",
-    text: "#2E2E2E",
-    green: "#32D172",
-    red: "#FF7474",
-    blue: "#5BA1FF",
-    semiGreen: "#32d17266",
-    semiRed: "#F37272",
-    lightGreen: "#D8FFE8",
-    lightRed: "#FFE8E8",
-    yellow: "#F5DC6D",
-    orange: "#F2994A",
-    gray: "#E8E8E8",
-    lightGray: "#F4F4F4",
-    darkGray: "#111",
-    light: "#F8FAFD",
-    white: "#fff"
+    white: "#fff",
+    black: "black"
   },
   fonts: {
     default: "Open Sans"
