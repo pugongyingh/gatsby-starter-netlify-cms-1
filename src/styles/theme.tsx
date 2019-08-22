@@ -59,7 +59,7 @@ export interface IThemeInterface {
 export const theme: IThemeInterface = {
   colors: {
     white: "#fff",
-    black: "black"
+    black: "#000000"
   },
   fonts: {
     default: "Open Sans"

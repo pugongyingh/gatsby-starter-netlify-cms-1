@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
 import { File } from "../../@types/graphql";
-import PreviewCompatibleImage from "../PreviewCompatibleImage";
+// import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
 import { default as styled } from "../../styles/theme";
 
@@ -65,10 +65,14 @@ const HeaderWrap = styled.header`
   h1 {
     font-style: normal;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 20px;
     line-height: 128%;
     letter-spacing: 0.03em;
     margin: 40px 0;
+
+    @media (min-width: 768px) {
+      font-size: 60px;
+    }
   }
 
   button {
@@ -92,21 +96,6 @@ const HeaderWrap = styled.header`
     align-items: center;
   }
 `;
-
-// const Video = styled.video`
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   min-width: 100%;
-//   min-height: 100%;
-//   width: auto;
-//   height: auto;
-//   z-index: 0;
-//   -ms-transform: translateX(-50%) translateY(-50%);
-//   -moz-transform: translateX(-50%) translateY(-50%);
-//   -webkit-transform: translateX(-50%) translateY(-50%);
-//   transform: translateX(-50%) translateY(-50%);
-// `;
 
 interface HeaderProps {
   title: string;
@@ -134,11 +123,12 @@ const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
         />
       ) : null} */}
 
-      <PreviewCompatibleImage
-        imageInfo={{
-          image: hero,
-          alt: `Starky's club`
-        }}
+      <video
+        src={hero.publicURL}
+        playsInline={true}
+        autoPlay={true}
+        muted={true}
+        loop={true}
       />
       <div className="overlay" />
       <div className="text-wrap">
