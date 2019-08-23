@@ -17,6 +17,10 @@ const HeaderWrap = styled.header`
   background: url("src/img/home-bg.png") no-repeat center center scroll;
   background-size: cover;
 
+  @media ${device.laptopL} {
+    min-height: 1020px;
+  }
+
   video {
     position: absolute;
     top: 50%;
@@ -71,7 +75,7 @@ const HeaderWrap = styled.header`
     letter-spacing: 0.03em;
     margin: 40px 0;
 
-    @media (min-width: 768px) {
+    @media ${device.tablet} {
       font-size: 60px;
     }
   }
