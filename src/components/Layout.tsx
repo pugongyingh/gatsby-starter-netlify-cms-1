@@ -1,17 +1,23 @@
 import { withPrefix } from "gatsby";
 import React from "react";
+import { Col, Grid, Row } from "react-flexbox-grid";
 import { Helmet } from "react-helmet";
+import styled from "styled-components";
+import GlobalStyle from "../styles/GlobalStyle";
 import { theme, ThemeProvider } from "../styles/theme";
-import "./all.sass";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import useSiteMetadata from "./SiteMetadata";
+
+const MainGrid = styled(Grid)`
+  padding: 0;
+`;
 
 const TemplateWrapper = ({ children }: any) => {
   const { title, description } = useSiteMetadata();
   return (
     <ThemeProvider theme={theme}>
-      <div className="main-wrapper">
+      <MainGrid fluid={true}>
         <Helmet>
           <html lang="en" />
           <title>{title}</title>
@@ -50,10 +56,15 @@ const TemplateWrapper = ({ children }: any) => {
             content={`${withPrefix("/")}img/og-image.jpg`}
           />
         </Helmet>
-        <Navbar />
-        <div>{children}</div>
-        <Footer />
-      </div>
+        <Row>
+          <Col>
+            <Navbar />
+            <div>{children}</div>
+            <Footer />
+          </Col>
+        </Row>
+        <GlobalStyle />
+      </MainGrid>
     </ThemeProvider>
   );
 };
