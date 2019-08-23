@@ -3,6 +3,7 @@ import { Col, Grid, Row } from "react-flexbox-grid";
 import { File } from "../../@types/graphql";
 // import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
+import { device } from "../../styles/Device";
 import { default as styled } from "../../styles/theme";
 
 import logo from "../../img/logo.svg";
@@ -82,6 +83,19 @@ const HeaderWrap = styled.header`
     border-radius: 1px;
     color: ${props => props.theme.colors.white};
     font-size: 18px;
+  }
+
+  @media ${device.laptop} {
+    p {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 28px;
+      line-height: 38px;
+      position: relative;
+      top: 50px;
+      left: 50px;
+    }
   }
 
   .col-1 {
