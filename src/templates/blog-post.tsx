@@ -1,9 +1,11 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
-import { Query } from "../@types/graphql";
 import Content, { ContentFormatter, HTMLContent } from "../components/Content";
 import Layout from "../components/Layout";
+import { Query } from "../graphql/types";
+import GlobalStyle from "../styles/GlobalStyle";
+import { theme, ThemeProvider } from "../styles/theme";
 
 interface BlogPostProps {
   content: string;
@@ -47,32 +49,40 @@ interface BolgPostTemplateProps {
 const BlogPost = ({ data }: BolgPostTemplateProps) => {
   const { markdownRemark: post } = data;
   return (
-    <Layout>
-      <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
-        title={post.frontmatter.title}
-      />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <BlogPostTemplate
+          content={post.html}
+          contentComponent={HTMLContent}
+          description={post.frontmatter.description}
+          helmet={
+            <Helmet titleTemplate="%s | Blog">
+              <title>{`${post.frontmatter.title}`}</title>
+              <meta
+                name="description"
+                content={`${post.frontmatter.description}`}
+              />
+            </Helmet>
+          }
+          title={post.frontmatter.title}
+        />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
 export const BlogPostPreview = ({ entry, widgetFor }: any) => (
-  <BlogPostTemplate
-    content={widgetFor('body')}
-    description={entry.getIn(['data', 'description'])}
-    title={entry.getIn(['data', 'title'])}
-  />
+  <ThemeProvider theme={theme}>
+    <>
+      <GlobalStyle />
+      <BlogPostTemplate
+        content={widgetFor('body')}
+        description={entry.getIn(['data', 'description'])}
+        title={entry.getIn(['data', 'title'])}
+      />
+    </>
+  </ThemeProvider>
 )
 
 export const pageQuery = graphql`

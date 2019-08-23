@@ -1,12 +1,13 @@
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import { File } from "../../@types/graphql";
+import { isString } from "util";
+import { File } from "../../graphql/types";
+import logo from "../../img/logo.svg";
 // import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
 import { device } from "../../styles/Device";
 import { default as styled } from "../../styles/theme";
-
-import logo from "../../img/logo.svg";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
 const HeaderWrap = styled.header`
   position: relative;
@@ -118,36 +119,31 @@ const HeaderWrap = styled.header`
 interface HeaderProps {
   title: string;
   subheading: string;
-  hero: File;
+  hero: string | File;
 }
 
 const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
+  const file = isString(hero) ? hero : hero.base
+
   return (
     <HeaderWrap>
-      {/* {hero.ext.match(/.(jpg|jpeg|png|gif)$/i) ? (
+      {file.match(/.(jpg|jpeg|png|gif)$/i) ? (
         <PreviewCompatibleImage
           imageInfo={{
             image: hero,
-            alt: `Starky's club`
+            alt: title
           }}
         />
-      ) : hero.ext.match(/.(mp4)$/i) ? (
+      ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (
         <video
-          src={hero.publicURL}
+          src={isString(hero) ? hero : hero.publicURL}
           playsInline={true}
           autoPlay={true}
           muted={true}
           loop={true}
         />
-      ) : null} */}
+      ) : null}
 
-      <video
-        src={hero.publicURL}
-        playsInline={true}
-        autoPlay={true}
-        muted={true}
-        loop={true}
-      />
       <div className="overlay" />
       <div className="text-wrap">
         <Grid className="grid" fluid={true}>
