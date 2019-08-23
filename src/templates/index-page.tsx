@@ -1,9 +1,10 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { File, Query } from "../@types/graphql";
 import BlogRoll from "../components/BlogRoll";
 import Header from "../components/Header/Header";
 import Layout from "../components/Layout";
+import { File, Query } from "../graphql/types";
+import { theme, ThemeProvider } from "../styles/theme";
 
 interface IndexPageProps {
   hero: File;
@@ -51,14 +52,16 @@ interface IndexPageTemplateProps {
 const IndexPage = ({ data }: IndexPageTemplateProps) => {
   const { frontmatter } = data.markdownRemark;
   return (
-    <Layout>
-      <IndexPageTemplate
-        hero={frontmatter.hero}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-      />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <IndexPageTemplate
+          hero={frontmatter.hero}
+          title={frontmatter.title}
+          heading={frontmatter.heading}
+          subheading={frontmatter.subheading}
+        />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
@@ -67,12 +70,14 @@ export const IndexPagePreview = ({ entry }: any) => {
 
   if (data) {
     return (
-      <IndexPageTemplate
-        hero={data.hero}
-        title={data.title}
-        heading={data.heading}
-        subheading={data.subheading}
-      />
+      <ThemeProvider theme={theme}>
+        <IndexPageTemplate
+          hero={data.hero}
+          title={data.title}
+          heading={data.heading}
+          subheading={data.subheading}
+        />
+      </ThemeProvider>
     );
   } else {
     return <div>Loading...</div>;
@@ -85,13 +90,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         hero {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-          publicURL,
-          ext
+          ...FileInfo
         }
         heading
         subheading

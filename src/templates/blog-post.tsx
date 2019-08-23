@@ -1,9 +1,10 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
-import { Query } from "../@types/graphql";
 import Content, { ContentFormatter, HTMLContent } from "../components/Content";
 import Layout from "../components/Layout";
+import { Query } from "../graphql/types";
+import { theme, ThemeProvider } from "../styles/theme";
 
 interface BlogPostProps {
   content: string;
@@ -47,23 +48,25 @@ interface BolgPostTemplateProps {
 const BlogPost = ({ data }: BolgPostTemplateProps) => {
   const { markdownRemark: post } = data;
   return (
-    <Layout>
-      <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
-        title={post.frontmatter.title}
-      />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <BlogPostTemplate
+          content={post.html}
+          contentComponent={HTMLContent}
+          description={post.frontmatter.description}
+          helmet={
+            <Helmet titleTemplate="%s | Blog">
+              <title>{`${post.frontmatter.title}`}</title>
+              <meta
+                name="description"
+                content={`${post.frontmatter.description}`}
+              />
+            </Helmet>
+          }
+          title={post.frontmatter.title}
+        />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
