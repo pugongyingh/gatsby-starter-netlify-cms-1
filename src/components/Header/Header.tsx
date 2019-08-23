@@ -80,7 +80,7 @@ const HeaderWrap = styled.header`
     width: 197px;
     height: 57px;
     background: linear-gradient(256.03deg, #ffc700 -2.02%, #fed500 103.08%);
-    border-radius: 1px;
+    border: none;
     color: ${props => props.theme.colors.white};
     font-size: 18px;
   }
