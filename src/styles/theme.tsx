@@ -1,7 +1,7 @@
 /**
  * Created on Wed Apr 10 2019
  * Copyright (c) 2019 Starky's club
- * @author VĂĄclav Brzezina
+ * @author Václav Brzezina
  */
 
 import { rem } from "polished";
@@ -17,6 +17,16 @@ const {
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<
   IThemeInterface
 >;
+
+export interface Media {
+  mobileS: string;
+  mobileM: string;
+  mobileL: string;
+  tablet: string;
+  laptop: string;
+  laptopL: string;
+  desktop: string;
+}
 
 export interface IThemeInterface {
   colors: {
@@ -54,6 +64,8 @@ export interface IThemeInterface {
     h5: number;
   };
   borderRadius: string;
+  media: Media,
+  screen: Media
 }
 
 export const theme: IThemeInterface = {
@@ -91,7 +103,25 @@ export const theme: IThemeInterface = {
     h4: 1.2,
     h5: 1.2
   },
-  borderRadius: rem("5px")
+  borderRadius: rem("5px"),
+  media: {
+    mobileS: "320px",
+    mobileM: "375px",
+    mobileL: "425px",
+    tablet: "768px",
+    laptop: "1024px",
+    laptopL: "1440px",
+    desktop: "2560px"
+  },
+  screen: {
+    mobileS: "(min-width: 320px",
+    mobileM: "(min-width: 375px",
+    mobileL: "(min-width: 425px",
+    tablet: "(min-width: 768px",
+    laptop: "(min-width: 1024px",
+    laptopL: "(min-width: 1440px",
+    desktop: "(min-width: 2560px"
+  }
 };
 
 export default styled;

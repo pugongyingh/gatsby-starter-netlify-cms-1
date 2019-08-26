@@ -1,10 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
-import { Col, Grid, Row } from "react-flexbox-grid";
 import styled from "styled-components";
-import { device } from "../styles/Device";
-
-import menuIcon from "../../src/img/hamburger-menu-icon.svg";
+// import menuIcon from "../../hamburger-menu-icon.svg";
 
 // console.log(menuIcon);
 
@@ -32,12 +29,11 @@ const NavWrap = styled.nav`
       position: relative;
       width: 3.25rem;
       margin-left: auto;
-      background: url("${menuIcon}");
       color: black;
     }
 
     /* hiding from tablet and larger devices */
-    @media ${device.tablet} {
+    @media ${(props) => props.theme.screen.tablet} {
       display: none;
     }
   }
@@ -79,7 +75,7 @@ const NavWrap = styled.nav`
     }
   }
 
-  @media ${device.laptop} {
+  @media ${(props) => props.theme.screen.laptop} {
     width: 30%;
     position: fixed;
     .navbar,
@@ -153,11 +149,11 @@ class Navbar extends React.Component<any, any> {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "is-active"
-            })
+            navBarActiveClass: "is-active"
+          })
           : this.setState({
-              navBarActiveClass: ""
-            });
+            navBarActiveClass: ""
+          });
       }
     );
   };

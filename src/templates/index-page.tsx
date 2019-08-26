@@ -1,17 +1,15 @@
 import { graphql } from "gatsby";
 import React from "react";
 import BlogRoll from "../components/BlogRoll";
-import Header from "../components/Header/Header";
-import Layout from "../components/Layout";
-import { File, Query } from "../graphql/types";
-import GlobalStyle from "../styles/GlobalStyle";
-import { theme, ThemeProvider } from "../styles/theme";
+import { Preview } from "../components/CMS/Preview";
+import Header from "../components/Layout/Header";
+import Page from "../components/Layout/Page";
+import { File, Maybe, Query } from "../graphql/types";
 
 interface IndexPageProps {
-  hero: File;
+  hero: string | File;
   title: string;
-  heading: string;
-  subheading: string;
+  subheading: Maybe<string>;
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
@@ -51,19 +49,20 @@ interface IndexPageTemplateProps {
 }
 
 const IndexPage = ({ data }: IndexPageTemplateProps) => {
-  const { frontmatter } = data.markdownRemark;
+  const { markdownRemark: page } = data;
+
+  if (!page || !page.frontmatter) {
+    throw new Error("Data loading error");
+  }
+
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <GlobalStyle />
-        <IndexPageTemplate
-          hero={frontmatter.hero}
-          title={frontmatter.title}
-          heading={frontmatter.heading}
-          subheading={frontmatter.subheading}
-        />
-      </Layout>
-    </ThemeProvider>
+    <Page>
+      <IndexPageTemplate
+        hero={page.frontmatter.hero!}
+        title={page.frontmatter.title!}
+        subheading={page.frontmatter.subheading}
+      />
+    </Page>
   );
 };
 
@@ -72,17 +71,13 @@ export const IndexPagePreview = ({ entry }: any) => {
 
   if (data) {
     return (
-      <ThemeProvider theme={theme}>
-        <>
-          <GlobalStyle />
-          <IndexPageTemplate
-            hero={data.hero}
-            title={data.title}
-            heading={data.heading}
-            subheading={data.subheading}
-          />
-        </>
-      </ThemeProvider>
+      <Preview>
+        <IndexPageTemplate
+          hero={data.hero}
+          title={data.title}
+          subheading={data.subheading}
+        />
+      </Preview>
     );
   } else {
     return <div>Loading...</div>;
@@ -94,11 +89,10 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        subheading
         hero {
           ...FileInfo
         }
-        heading
-        subheading
       }
     }
   }

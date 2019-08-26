@@ -1,11 +1,10 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
-import Content, { ContentFormatter, HTMLContent } from "../components/Content";
-import Layout from "../components/Layout";
+import Content, { ContentFormatter, HTMLContent } from "../components/CMS/Content";
+import { Preview } from "../components/CMS/Preview";
+import Page from "../components/Layout/Page";
 import { Query } from "../graphql/types";
-import GlobalStyle from "../styles/GlobalStyle";
-import { theme, ThemeProvider } from "../styles/theme";
 
 interface BlogPostProps {
   content: string;
@@ -42,47 +41,46 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
   );
 };
 
-interface BolgPostTemplateProps {
+interface BlogPostTemplateProps {
   data: Query,
 }
 
-const BlogPost = ({ data }: BolgPostTemplateProps) => {
+const BlogPost = ({ data }: BlogPostTemplateProps) => {
   const { markdownRemark: post } = data;
+
+  if (!post || !post.frontmatter) {
+    throw new Error("Data loading error");
+  }
+
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <GlobalStyle />
-        <BlogPostTemplate
-          content={post.html}
-          contentComponent={HTMLContent}
-          description={post.frontmatter.description}
-          helmet={
-            <Helmet titleTemplate="%s | Blog">
-              <title>{`${post.frontmatter.title}`}</title>
-              <meta
-                name="description"
-                content={`${post.frontmatter.description}`}
-              />
-            </Helmet>
-          }
-          title={post.frontmatter.title}
-        />
-      </Layout>
-    </ThemeProvider>
+    <Page>
+      <BlogPostTemplate
+        content={post.html || ""}
+        contentComponent={HTMLContent}
+        description={post.frontmatter.description || ""}
+        helmet={
+          <Helmet titleTemplate="%s | Blog">
+            <title>{`${post.frontmatter.title}`}</title>
+            <meta
+              name="description"
+              content={`${post.frontmatter.description}`}
+            />
+          </Helmet>
+        }
+        title={post.frontmatter.title!}
+      />
+    </Page>
   );
 };
 
 export const BlogPostPreview = ({ entry, widgetFor }: any) => (
-  <ThemeProvider theme={theme}>
-    <>
-      <GlobalStyle />
-      <BlogPostTemplate
-        content={widgetFor('body')}
-        description={entry.getIn(['data', 'description'])}
-        title={entry.getIn(['data', 'title'])}
-      />
-    </>
-  </ThemeProvider>
+  <Preview>
+    <BlogPostTemplate
+      content={widgetFor('body')}
+      description={entry.getIn(['data', 'description'])}
+      title={entry.getIn(['data', 'title'])}
+    />
+  </Preview>
 )
 
 export const pageQuery = graphql`

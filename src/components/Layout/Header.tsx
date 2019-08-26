@@ -1,13 +1,10 @@
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
 import { isString } from "util";
-import { File } from "../../graphql/types";
+import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/logo.svg";
-// import PreviewCompatibleImage from "../PreviewCompatibleImage";
-
-import { device } from "../../styles/Device";
 import { default as styled } from "../../styles/theme";
-import PreviewCompatibleImage from "../PreviewCompatibleImage";
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
 const HeaderWrap = styled.header`
   position: relative;
@@ -18,7 +15,7 @@ const HeaderWrap = styled.header`
   background: url("src/img/home-bg.png") no-repeat center center scroll;
   background-size: cover;
 
-  @media ${device.laptopL} {
+  @media ${(props) => props.theme.screen.laptopL} {
     min-height: 1020px;
   }
 
@@ -76,7 +73,7 @@ const HeaderWrap = styled.header`
     letter-spacing: 0.03em;
     margin: 40px 0;
 
-    @media ${device.tablet} {
+    @media ${(props) => props.theme.screen.tablet} {
       font-size: 60px;
     }
   }
@@ -90,7 +87,7 @@ const HeaderWrap = styled.header`
     font-size: 18px;
   }
 
-  @media ${device.laptop} {
+  @media ${(props) => props.theme.screen.laptop} {
     p {
       font-family: "Open Sans";
       font-style: normal;
@@ -117,13 +114,13 @@ const HeaderWrap = styled.header`
 `;
 
 interface HeaderProps {
-  title: string;
-  subheading: string;
+  title: Maybe<string>;
+  subheading: Maybe<string>;
   hero: string | File;
 }
 
 const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
-  const file = isString(hero) ? hero : hero.base
+  const file = isString(hero) ? hero : hero.base!
 
   return (
     <HeaderWrap>
@@ -131,7 +128,7 @@ const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
         <PreviewCompatibleImage
           imageInfo={{
             image: hero,
-            alt: title
+            alt: title || ""
           }}
         />
       ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (
