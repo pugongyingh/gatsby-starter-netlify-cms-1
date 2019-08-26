@@ -1,11 +1,10 @@
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
 import { isString } from "util";
-import { File } from "../../graphql/types";
+import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/logo.svg";
-// import PreviewCompatibleImage from "../PreviewCompatibleImage";
 import { default as styled } from "../../styles/theme";
-import PreviewCompatibleImage from "../PreviewCompatibleImage";
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
 const HeaderWrap = styled.header`
   position: relative;
@@ -15,6 +14,10 @@ const HeaderWrap = styled.header`
   overflow: hidden;
   background: url("src/img/home-bg.png") no-repeat center center scroll;
   background-size: cover;
+
+  @media ${(props) => props.theme.screen.laptopL} {
+    min-height: 1020px;
+  }
 
   video {
     position: absolute;
@@ -70,7 +73,7 @@ const HeaderWrap = styled.header`
     letter-spacing: 0.03em;
     margin: 40px 0;
 
-    @media (min-width: 768px) {
+    @media ${(props) => props.theme.screen.tablet} {
       font-size: 60px;
     }
   }
@@ -79,9 +82,22 @@ const HeaderWrap = styled.header`
     width: 197px;
     height: 57px;
     background: linear-gradient(256.03deg, #ffc700 -2.02%, #fed500 103.08%);
-    border-radius: 1px;
+    border: none;
     color: ${props => props.theme.colors.white};
     font-size: 18px;
+  }
+
+  @media ${(props) => props.theme.screen.laptop} {
+    p {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 28px;
+      line-height: 38px;
+      position: relative;
+      top: 50px;
+      left: 50px;
+    }
   }
 
   .col-1 {
@@ -98,13 +114,13 @@ const HeaderWrap = styled.header`
 `;
 
 interface HeaderProps {
-  title: string;
-  subheading: string;
+  title: Maybe<string>;
+  subheading: Maybe<string>;
   hero: string | File;
 }
 
 const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
-  const file = isString(hero) ? hero : hero.base
+  const file = isString(hero) ? hero : hero.base!
 
   return (
     <HeaderWrap>
@@ -112,7 +128,7 @@ const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
         <PreviewCompatibleImage
           imageInfo={{
             image: hero,
-            alt: title
+            alt: title || ""
           }}
         />
       ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (

@@ -5,4 +5,4 @@ generates:
       - typescript
     config:
       avoidOptionals: true
-      maybeValue: T
+      maybeValue: T | undefined

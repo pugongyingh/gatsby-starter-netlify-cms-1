@@ -1,10 +1,10 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
-import Content, { ContentFormatter, HTMLContent } from "../components/Content";
-import Layout from "../components/Layout";
+import Content, { ContentFormatter, HTMLContent } from "../components/CMS/Content";
+import { Preview } from "../components/CMS/Preview";
+import Page from "../components/Layout/Page";
 import { Query } from "../graphql/types";
-import { theme, ThemeProvider } from "../styles/theme";
 
 interface ReferenceProps {
     content: string;
@@ -46,39 +46,43 @@ interface BolgPostTemplateProps {
 }
 
 const Reference = ({ data }: BolgPostTemplateProps) => {
-    const { markdownRemark: post } = data;
+    const { markdownRemark: page } = data;
+
+    if (!page || !page.frontmatter) {
+        throw new Error("Data loading error");
+    }
 
     return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <ReferenceTemplate
-                    content={post.html}
-                    contentComponent={HTMLContent}
-                    description={post.frontmatter.description}
-                    helmet={
-                        <Helmet titleTemplate="%s">
-                            <title>{`${post.frontmatter.title}`}</title>
+        <Page>
+            <ReferenceTemplate
+                content={page.html || ""}
+                contentComponent={HTMLContent}
+                description={page.frontmatter.description || ""}
+                helmet={
+                    <Helmet titleTemplate="%s">
+                        <title>{`${page.frontmatter.title}`}</title>
+                        {page.frontmatter.description &&
                             <meta
                                 name="description"
-                                content={`${post.frontmatter.description}`}
+                                content={`${page.frontmatter.description}`}
                             />
-                        </Helmet>
-                    }
-                    title={post.frontmatter.title}
-                />
-            </Layout>
-        </ThemeProvider>
+                        }
+                    </Helmet>
+                }
+                title={page.frontmatter.title!}
+            />
+        </Page>
     );
 };
 
 export const ReferencePreview = ({ entry, widgetFor }: any) => (
-    <ThemeProvider theme={theme}>
+    <Preview>
         <ReferenceTemplate
             content={widgetFor('body')}
             description={entry.getIn(['data', 'description'])}
             title={entry.getIn(['data', 'title'])}
         />
-    </ThemeProvider>
+    </Preview>
 )
 
 export const pageQuery = graphql`
