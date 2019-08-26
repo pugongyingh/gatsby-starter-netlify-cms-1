@@ -32,7 +32,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
                       Latest stories
-                  </h3>
+                    </h3>
                     <BlogRoll />
                   </div>
                 </div>
