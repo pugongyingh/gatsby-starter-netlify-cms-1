@@ -1,10 +1,10 @@
-import { withPrefix } from "gatsby";
+import { graphql, StaticQuery, withPrefix } from "gatsby";
 import * as React from "react";
 import Helmet from "react-helmet";
-import useSiteMetadata from "../../graphql/queries/useSiteMetadata";
+import { Query } from "../../graphql/types";
 
-const SiteMeta = () => {
-  const { title, description } = useSiteMetadata();
+const SiteMetaTemplate = (data: Query) => {
+  const { title, description } = data.site!.siteMetadata!;
 
   return (
     <Helmet>
@@ -46,6 +46,22 @@ const SiteMeta = () => {
       />
     </Helmet>
   );
+}
+
+const SiteMeta = () => {
+  return <StaticQuery
+    query={graphql`
+      query SITE_METADATA_QUERY {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+      }
+    `}
+    render={SiteMetaTemplate}
+  />;
 }
 
 export default SiteMeta;

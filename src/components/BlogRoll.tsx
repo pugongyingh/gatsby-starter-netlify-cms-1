@@ -1,10 +1,10 @@
-import { Link } from "gatsby";
+import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
-import useBlogPosts from "../graphql/queries/useBlogPosts";
+import { Query } from "../graphql/types";
 import PreviewCompatibleImage from "./CMS/PreviewCompatibleImage";
 
-const BlogRoll = () => {
-  const posts = useBlogPosts();
+const BlogRollTemplate = (data: Query) => {
+  const posts = data.allMarkdownRemark.edges
 
   return (
     <div className="columns is-multiline">
@@ -44,13 +44,48 @@ const BlogRoll = () => {
                 <br />
                 <Link className="button" to={post.fields.slug}>
                   Keep Reading →
-                  </Link>
+                    </Link>
               </p>
             </article>
           </div>
         ))}
     </div>
   );
+}
+
+const BlogRoll = () => {
+  return <StaticQuery
+    query={graphql`
+      query BlogRollQuery {
+          allMarkdownRemark(
+              sort: { order: DESC, fields: [frontmatter___date] }
+              filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          ) {
+          edges {
+              node {
+              excerpt(pruneLength: 400)
+              id
+              fields {
+                  slug
+              }
+              frontmatter {
+                  title
+                  templateKey
+                  date(formatString: "MMMM DD, YYYY")
+                  image {
+                  childImageSharp {
+                      fluid(maxWidth: 120, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                      }
+                  }
+                  }
+              }
+              }
+          }
+          }
+      }
+    `}
+    render={BlogRollTemplate} />
 }
 
 export default BlogRoll;
