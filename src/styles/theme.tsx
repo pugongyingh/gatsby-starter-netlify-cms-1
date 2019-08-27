@@ -19,6 +19,10 @@ const {
   IThemeInterface
 >;
 
+export interface SCP {
+  className?: string;
+}
+
 export interface Media {
   mobileS: string;
   mobileM: string;
