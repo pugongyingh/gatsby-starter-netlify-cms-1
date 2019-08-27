@@ -36,7 +36,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <h1>Driving brands forward online.</h1>
         <Row className="row">
           <Col xs={12} sm={6} lg={3}>
-            <Icon source={devIcon} />
+            <Icon source={devIcon} altText="WWD Icons" />
             <h2>Heading</h2>
             <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
@@ -46,7 +46,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </p>
           </Col>
           <Col xs={12} sm={6} lg={3}>
-            <Icon source={designIcon} />
+            <Icon source={designIcon} altText="WWD Icons" />
             <h2>Heading</h2>
             <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
@@ -56,7 +56,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </p>
           </Col>
           <Col xs={12} sm={6} lg={3}>
-            <Icon source={analysisIcon} />
+            <Icon source={analysisIcon} altText="WWD Icons" />
             <h2>Heading</h2>
             <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
@@ -66,7 +66,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </p>
           </Col>
           <Col xs={12} sm={6} lg={3}>
-            <Icon source={workshopIcon} />
+            <Icon source={workshopIcon} altText="WWD Icons" />
             <h2>Heading</h2>
             <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
@@ -79,6 +79,19 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       </Grid>
     </section>
     {/* References */}
+    <section className="references">
+      <Grid className="container">
+        <h1>References</h1>
+        <Row>
+          <Col xs={12} sm={6}>
+            <img src="" alt="" />
+          </Col>
+          <Col xs={12} sm={6}>
+            text here
+          </Col>
+        </Row>
+      </Grid>
+    </section>
 
     {/* Blog */}
     <section className="section section--gradient">
