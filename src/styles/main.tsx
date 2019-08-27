@@ -7,10 +7,6 @@ export const main = css`
     padding: 0;
     @import url("https://fonts.googleapis.com/css?family=Muli:400,700|Open+Sans:400,700,800&display=swap");
     font-family: "Muli", sans-serif;
-
-    @media ${props => props.theme.screen.laptop} {
-      color: red;
-    }
   }
 
   h1 {
@@ -26,7 +22,7 @@ export const main = css`
   }
 
   .row {
-    margin: 0 !important;
+    margin: 0;
   }
 
   .col-xs-12 {
