@@ -40,3 +40,5 @@ const Video: React.SFC<VideoProps> = ({ hero, title, subheading }) => {
     </div>
   );
 };
+
+export default Video;
