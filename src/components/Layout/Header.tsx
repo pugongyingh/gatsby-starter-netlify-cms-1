@@ -5,6 +5,7 @@ import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/logo.svg";
 import { default as styled } from "../../styles/theme";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
+import Video from "../Video";
 
 const HeaderWrap = styled.header`
   position: relative;
@@ -15,7 +16,7 @@ const HeaderWrap = styled.header`
   background: url("src/img/home-bg.png") no-repeat center center scroll;
   background-size: cover;
 
-  @media ${(props) => props.theme.screen.laptopL} {
+  @media ${props => props.theme.screen.laptopL} {
     min-height: 1020px;
   }
 
@@ -73,7 +74,7 @@ const HeaderWrap = styled.header`
     letter-spacing: 0.03em;
     margin: 40px 0;
 
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       font-size: 60px;
     }
   }
@@ -87,7 +88,7 @@ const HeaderWrap = styled.header`
     font-size: 18px;
   }
 
-  @media ${(props) => props.theme.screen.laptop} {
+  @media ${props => props.theme.screen.laptop} {
     p {
       font-family: "Open Sans";
       font-style: normal;
@@ -120,7 +121,7 @@ interface HeaderProps {
 }
 
 const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
-  const file = isString(hero) ? hero : hero.base!
+  const file = isString(hero) ? hero : hero.base!;
 
   return (
     <HeaderWrap>
@@ -132,16 +133,18 @@ const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
           }}
         />
       ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (
-        <video
-          src={isString(hero) ? hero : hero.publicURL}
-          playsInline={true}
-          autoPlay={true}
-          muted={true}
-          loop={true}
-        />
+        // <video
+        //   src={isString(hero) ? hero : hero.publicURL}
+        //   playsInline={true}
+        //   autoPlay={true}
+        //   muted={true}
+        //   loop={true}
+        // />
+
+        <Video />
       ) : null}
 
-      <div className="overlay" />
+      {/* <div className="overlay" />
       <div className="text-wrap">
         <Grid className="grid" fluid={true}>
           <Row>
@@ -155,7 +158,7 @@ const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
             </Col>
           </Row>
         </Grid>
-      </div>
+      </div> */}
     </HeaderWrap>
   );
 };
