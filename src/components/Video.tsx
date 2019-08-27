@@ -11,7 +11,7 @@ interface VideoProps {
   hero: string | File;
 }
 
-const Video: React.SFC<VideoProps> = ({ hero, title, subheading }) => {
+const Video: React.FC<VideoProps> = ({ hero, title, subheading }) => {
   const file = isString(hero) ? hero : hero.base!;
   return (
     <div>
@@ -40,3 +40,5 @@ const Video: React.SFC<VideoProps> = ({ hero, title, subheading }) => {
     </div>
   );
 };
+
+export default Video;

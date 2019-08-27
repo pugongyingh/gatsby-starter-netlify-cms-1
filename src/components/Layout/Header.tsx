@@ -141,7 +141,7 @@ const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
         //   loop={true}
         // />
 
-        <Video />
+        <Video logo="" title="" subheading="" hero="" />
       ) : null}
 
       {/* <div className="overlay" />
