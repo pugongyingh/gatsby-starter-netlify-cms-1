@@ -4,6 +4,7 @@ import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import BlogRoll from "../components/BlogRoll";
 import { Preview } from "../components/CMS/Preview";
 import Icon from "../components/Icon";
+import Image from "../components/Image";
 import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
 
@@ -13,6 +14,10 @@ import analysisIcon from "../img/analysis-icon.svg";
 import designIcon from "../img/design-icon.svg";
 import devIcon from "../img/sw-dev-icon.svg";
 import workshopIcon from "../img/workshop-icon.svg";
+
+import swRef from "../img/ref-1.png";
+import designRef from "../img/ref-2.png";
+import ref3 from "../img/ref-3.png";
 
 interface IndexPageProps {
   hero: string | File;
@@ -82,12 +87,52 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     <section className="references">
       <Grid className="container">
         <h1>References</h1>
-        <Row>
-          <Col xs={12} sm={6}>
-            <img src="" alt="" />
+        <Row className="row">
+          <Col xs={12} sm={5}>
+            <Image source={swRef} altText="Software development reference" />
           </Col>
-          <Col xs={12} sm={6}>
-            text here
+          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+            <h2>SOFTWARE DEVELOPMENT</h2>
+            <h3>Name of the Project</h3>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+        </Row>
+        <Row className="row reverse">
+          <Col xs={12} sm={5}>
+            <Image
+              source={designRef}
+              altText="Software development reference"
+            />
+          </Col>
+          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+            <h2>SOFTWARE DEVELOPMENT</h2>
+            <h3>Name of the Project</h3>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+        </Row>
+        <Row className="row">
+          <Col xs={12} sm={5}>
+            <Image source={ref3} altText="Software development reference" />
+          </Col>
+          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+            <h2>SOFTWARE DEVELOPMENT</h2>
+            <h3>Name of the Project</h3>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
           </Col>
         </Row>
       </Grid>
