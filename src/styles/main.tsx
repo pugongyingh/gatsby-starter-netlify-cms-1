@@ -7,6 +7,10 @@ export const main = css`
     padding: 0;
     @import url("https://fonts.googleapis.com/css?family=Muli:400,700|Open+Sans:400,700,800&display=swap");
     font-family: "Muli", sans-serif;
+
+    @media ${props => props.theme.screen.laptop} {
+      color: red;
+    }
   }
 
   h1 {
@@ -21,11 +25,32 @@ export const main = css`
     padding: 0 !important;
   }
 
+  .row {
+    margin: 0 !important;
+  }
+
+  .col-xs-12 {
+    padding: 0 !important;
+  }
+
+  section {
+    padding: 2rem 0;
+
+    @media ${props => props.theme.screen.laptop} {
+      padding: 7.5rem 0;
+    }
+
+    .row {
+      @media ${props => props.theme.screen.laptop} {
+        margin-top: 95px;
+      }
+    }
+  }
+
   /*All Main Sections*/
   .what-we-do {
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.darkGreen};
-    padding: 2rem 0;
 
     h1 {
       &:nth-child(2) {
@@ -43,15 +68,49 @@ export const main = css`
       line-height: 27px;
       letter-spacing: 0.03em;
     }
+  }
 
-    .row {
+  .references {
+    img {
       @media ${props => props.theme.screen.laptop} {
-        margin-top: 70px;
+        width: 450px;
+        height: 580px;
       }
     }
 
-    @media ${props => props.theme.screen.laptop} {
-      padding: 7rem 0;
+    p {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 170%;
+      letter-spacing: 0.03em;
+      color: ${props => props.theme.colors.paragraphGrey};
+      max-width: 480px;
+    }
+
+    .ref-content {
+      @media ${props => props.theme.screen.laptop} {
+        padding: 2rem 0;
+
+        h2 {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 150.5%;
+          letter-spacing: 0.03em;
+        }
+
+        h3 {
+          font-family: Muli;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 36px;
+          line-height: 143%;
+          letter-spacing: 0.03em;
+        }
+      }
     }
   }
 `;
