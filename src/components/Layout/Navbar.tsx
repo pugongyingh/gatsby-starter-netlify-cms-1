@@ -1,11 +1,49 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { SCP } from "../../styles/theme";
 // import menuIcon from "../../hamburger-menu-icon.svg";
 
 // console.log(menuIcon);
 
-const StyledNavbar = styled.nav`
+interface P extends SCP { }
+
+const NavbarTemplate: React.SFC<P> = ({ className }) => {
+  const [active, setActive] = useState();
+  const toggleActive = () => setActive(!active);
+
+  return (
+    <nav className={className} role="navigation" aria-label="main-navigation">
+      <div className="navbar-brand">
+        {/* Hamburger menu */}
+        <div
+          className={`navbar-burger burger ${active && "is-active"}`}
+          data-target="navMenu"
+          onClick={toggleActive}
+        />
+      </div>
+      <div
+        id="navMenu"
+        className={`navbar-menu ${active && "is-active"}`}
+      >
+        <Link to="/#my-cool-header" className="navbar-item">
+          What We Do
+      </Link>
+        <Link className="navbar-item" to="/about">
+          References
+      </Link>
+        <Link className="navbar-item" to="/blog">
+          Blog
+      </Link>
+        <Link className="navbar-item" to="/contact">
+          Contact
+      </Link>
+      </div>
+    </nav>
+  )
+}
+
+const Navbar = styled(NavbarTemplate)`
   min-height: 3.25rem;
   z-index: 30;
   display: flex;
@@ -128,40 +166,5 @@ const StyledNavbar = styled.nav`
     }
   }
 `;
-
-const Navbar = () => {
-  const [active, setActive] = useState();
-  const toggleActive = () => setActive(!active);
-
-  return (
-    <StyledNavbar role="navigation" aria-label="main-navigation">
-      <div className="navbar-brand">
-        {/* Hamburger menu */}
-        <div
-          className={`navbar-burger burger ${active && "is-active"}`}
-          data-target="navMenu"
-          onClick={toggleActive}
-        />
-      </div>
-      <div
-        id="navMenu"
-        className={`navbar-menu ${active && "is-active"}`}
-      >
-        <Link to="/#my-cool-header" className="navbar-item">
-          What We Do
-      </Link>
-        <Link className="navbar-item" to="/about">
-          References
-      </Link>
-        <Link className="navbar-item" to="/blog">
-          Blog
-      </Link>
-        <Link className="navbar-item" to="/contact">
-          Contact
-      </Link>
-      </div>
-    </StyledNavbar>
-  )
-}
 
 export default Navbar;
