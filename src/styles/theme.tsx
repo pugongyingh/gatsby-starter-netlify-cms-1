@@ -5,6 +5,7 @@
  */
 
 import { rem } from "polished";
+import { string } from "prop-types";
 import * as styledComponents from "styled-components";
 
 const {
@@ -36,6 +37,7 @@ export interface IThemeInterface {
   colors: {
     white: string;
     black: string;
+    darkGreen: string;
   };
   fonts: {
     default: string;
@@ -68,14 +70,15 @@ export interface IThemeInterface {
     h5: number;
   };
   borderRadius: string;
-  media: Media,
-  screen: Media
+  media: Media;
+  screen: Media;
 }
 
 export const theme: IThemeInterface = {
   colors: {
     white: "#fff",
-    black: "#000000"
+    black: "#000000",
+    darkGreen: "#202d3c"
   },
   fonts: {
     default: "Open Sans"

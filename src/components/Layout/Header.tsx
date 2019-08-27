@@ -18,37 +18,38 @@ const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) =>
 
   return (
     <header className={className}>
-      {file.match(/.(jpg|jpeg|png|gif)$/i) ? (
-        <PreviewCompatibleImage
-          imageInfo={{
-            image: hero,
-            alt: title || ""
-          }}
-        />
-      ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (
-        <video
-          src={isString(hero) ? hero : hero.publicURL}
-          playsInline={true}
-          autoPlay={true}
-          muted={true}
-          loop={true}
-        />
-      ) : null}
-
-      <div className="overlay" />
-      <div className="text-wrap">
-        <Grid className="grid" fluid={true}>
-          <Row>
-            <Col className="col-1" xs={12} md={6}>
-              <img src={logo} />
-              <h1>{title}</h1>
-              <button>Work with us</button>
-            </Col>
-            <Col className="col-2" xs={12} md={6}>
-              <p>{subheading}</p>
-            </Col>
-          </Row>
-        </Grid>
+      <div>
+        {file.match(/.(jpg|jpeg|png|gif)$/i) ? (
+          <PreviewCompatibleImage
+            imageInfo={{
+              image: hero,
+              alt: title || ""
+            }}
+          />
+        ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (
+          <video
+            src={isString(hero) ? hero : hero.publicURL}
+            playsInline={true}
+            autoPlay={true}
+            muted={true}
+            loop={true}
+          />
+        ) : null}
+        <div className="overlay" />
+        <div className="text-wrap">
+          <Grid className="grid" fluid={true}>
+            <Row>
+              <Col className="col-1" xs={12} md={6}>
+                <img src={logo} />
+                <h1>{title}</h1>
+                <button>Work with us</button>
+              </Col>
+              <Col className="col-2" xs={12} md={6}>
+                <p>{subheading}</p>
+              </Col>
+            </Row>
+          </Grid>
+        </div>
       </div>
     </header>
   );
@@ -63,7 +64,7 @@ const Header = styled(HeaderTemplate)`
   background: url("src/img/home-bg.png") no-repeat center center scroll;
   background-size: cover;
 
-  @media ${(props) => props.theme.screen.laptopL} {
+  @media ${props => props.theme.screen.laptopL} {
     min-height: 1020px;
   }
 
@@ -121,7 +122,7 @@ const Header = styled(HeaderTemplate)`
     letter-spacing: 0.03em;
     margin: 40px 0;
 
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       font-size: 60px;
     }
   }
@@ -135,7 +136,7 @@ const Header = styled(HeaderTemplate)`
     font-size: 18px;
   }
 
-  @media ${(props) => props.theme.screen.laptop} {
+  @media ${props => props.theme.screen.laptop} {
     p {
       font-family: "Open Sans";
       font-style: normal;

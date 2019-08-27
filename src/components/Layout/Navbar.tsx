@@ -1,10 +1,8 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
 import styled from "styled-components";
+import menuIcon from "../../img/hamburger-menu-icon.svg";
 import { SCP } from "../../styles/theme";
-// import menuIcon from "../../hamburger-menu-icon.svg";
-
-// console.log(menuIcon);
 
 interface P extends SCP { }
 
@@ -67,11 +65,13 @@ const Navbar = styled(NavbarTemplate)`
       position: relative;
       width: 3.25rem;
       margin-left: auto;
-      color: black;
+      background: url("${menuIcon}") no-repeat;
+      background-size: 45px;
+      background-position: center;
     }
 
     /* hiding from tablet and larger devices */
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       display: none;
     }
   }
@@ -113,7 +113,7 @@ const Navbar = styled(NavbarTemplate)`
     }
   }
 
-  @media ${(props) => props.theme.screen.laptop} {
+  @media ${props => props.theme.screen.laptop} {
     width: 30%;
     position: fixed;
     .navbar,

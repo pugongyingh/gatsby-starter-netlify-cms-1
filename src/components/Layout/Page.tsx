@@ -17,6 +17,6 @@ const Page: React.SFC = ({ children }) => {
       </React.Fragment>
     </ThemeProvider>
   );
-}
+};
 
 export default Page;
