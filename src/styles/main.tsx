@@ -9,6 +9,14 @@ export const main = css`
     font-family: "Muli", sans-serif;
   }
 
+  h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 128%;
+    letter-spacing: 0.03em;
+  }
+
   .container-fluid {
     padding: 0 !important;
   }
