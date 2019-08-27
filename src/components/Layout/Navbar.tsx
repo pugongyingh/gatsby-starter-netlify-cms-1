@@ -1,9 +1,7 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
 import styled from "styled-components";
-// import menuIcon from "../../hamburger-menu-icon.svg";
-
-// console.log(menuIcon);
+import menuIcon from "../../img/hamburger-menu-icon.svg";
 
 const StyledNavbar = styled.nav`
   min-height: 3.25rem;
@@ -29,11 +27,13 @@ const StyledNavbar = styled.nav`
       position: relative;
       width: 3.25rem;
       margin-left: auto;
-      color: black;
+      background: url("${menuIcon}") no-repeat;
+      background-size: 45px;
+      background-position: center;
     }
 
     /* hiding from tablet and larger devices */
-    @media ${(props) => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       display: none;
     }
   }
@@ -75,7 +75,7 @@ const StyledNavbar = styled.nav`
     }
   }
 
-  @media ${(props) => props.theme.screen.laptop} {
+  @media ${props => props.theme.screen.laptop} {
     width: 30%;
     position: fixed;
     .navbar,
@@ -143,25 +143,22 @@ const Navbar = () => {
           onClick={toggleActive}
         />
       </div>
-      <div
-        id="navMenu"
-        className={`navbar-menu ${active && "is-active"}`}
-      >
+      <div id="navMenu" className={`navbar-menu ${active && "is-active"}`}>
         <Link to="/#my-cool-header" className="navbar-item">
           What We Do
-      </Link>
+        </Link>
         <Link className="navbar-item" to="/about">
           References
-      </Link>
+        </Link>
         <Link className="navbar-item" to="/blog">
           Blog
-      </Link>
+        </Link>
         <Link className="navbar-item" to="/contact">
           Contact
-      </Link>
+        </Link>
       </div>
     </StyledNavbar>
-  )
-}
+  );
+};
 
 export default Navbar;
