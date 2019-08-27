@@ -1,13 +1,18 @@
 import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
 import { Query } from "../graphql/types";
+import styled, { SCP } from "../styles/theme";
 import PreviewCompatibleImage from "./CMS/PreviewCompatibleImage";
 
-const BlogRollTemplate = (data: Query) => {
+interface P extends SCP {
+  data: Query
+}
+
+const BlogRollTemplate: React.SFC<P> = ({ data, className }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <div className="columns is-multiline">
+    <div className={className}>
       {posts &&
         posts.map(({ node: post }: any) => (
           <div className="is-parent column is-6" key={post.id}>
@@ -53,7 +58,7 @@ const BlogRollTemplate = (data: Query) => {
   );
 }
 
-const BlogRoll = () => {
+const BlogRollQuery: React.SFC<Omit<P, "data">> = (props) => {
   return <StaticQuery
     query={graphql`
       query BlogRollQuery {
@@ -85,7 +90,11 @@ const BlogRoll = () => {
           }
       }
     `}
-    render={BlogRollTemplate} />
+    render={(data) => <BlogRollTemplate data={data} {...props} />} />
 }
+
+const BlogRoll = styled(BlogRollQuery)`
+
+`;
 
 export default BlogRoll;

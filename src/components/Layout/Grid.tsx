@@ -2,18 +2,18 @@ import * as React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import styled from "../../styles/theme";
 
-class VeryImportantStyleguideComponent extends React.Component<{}> {
+class VeryImportantStyleGuideComponent extends React.Component<{}> {
   public render() {
-    return this.props.children;
+    return null;
   }
 }
 
-export const VeryImportantStyledStyleguideComponent = styled(
-  VeryImportantStyleguideComponent
+export const VeryImportantStyledStyleGuideComponent = styled(
+  VeryImportantStyleGuideComponent
 )``;
-VeryImportantStyledStyleguideComponent.displayName = "Grid";
+VeryImportantStyledStyleGuideComponent.displayName = "Grid";
 
-export default VeryImportantStyledStyleguideComponent;
+export default VeryImportantStyledStyleGuideComponent;
 
 global.Grid = Grid;
 global.Col = Col;

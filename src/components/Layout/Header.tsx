@@ -3,11 +3,59 @@ import { Col, Grid, Row } from "react-flexbox-grid";
 import { isString } from "util";
 import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/logo.svg";
-import { default as styled } from "../../styles/theme";
+import { default as styled, SCP } from "../../styles/theme";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
-import Video from "../Video";
 
-const HeaderWrap = styled.header`
+
+interface P extends SCP {
+  title: Maybe<string>;
+  subheading: Maybe<string>;
+  hero: string | File;
+}
+
+const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) => {
+  const file = isString(hero) ? hero : hero.base!
+
+  return (
+    <header className={className}>
+      <div>
+        {file.match(/.(jpg|jpeg|png|gif)$/i) ? (
+          <PreviewCompatibleImage
+            imageInfo={{
+              image: hero,
+              alt: title || ""
+            }}
+          />
+        ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (
+          <video
+            src={isString(hero) ? hero : hero.publicURL}
+            playsInline={true}
+            autoPlay={true}
+            muted={true}
+            loop={true}
+          />
+        ) : null}
+        <div className="overlay" />
+        <div className="text-wrap">
+          <Grid className="grid" fluid={true}>
+            <Row>
+              <Col className="col-1" xs={12} md={6}>
+                <img src={logo} />
+                <h1>{title}</h1>
+                <button>Work with us</button>
+              </Col>
+              <Col className="col-2" xs={12} md={6}>
+                <p>{subheading}</p>
+              </Col>
+            </Row>
+          </Grid>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+const Header = styled(HeaderTemplate)`
   position: relative;
   height: 75vh;
   min-height: 14rem;
@@ -113,54 +161,5 @@ const HeaderWrap = styled.header`
     align-items: center;
   }
 `;
-
-interface HeaderProps {
-  title: Maybe<string>;
-  subheading: Maybe<string>;
-  hero: string | File;
-}
-
-const Header: React.SFC<HeaderProps> = ({ hero, title, subheading }) => {
-  const file = isString(hero) ? hero : hero.base!;
-
-  return (
-    <HeaderWrap>
-      {file.match(/.(jpg|jpeg|png|gif)$/i) ? (
-        <PreviewCompatibleImage
-          imageInfo={{
-            image: hero,
-            alt: title || ""
-          }}
-        />
-      ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (
-        // <video
-        //   src={isString(hero) ? hero : hero.publicURL}
-        //   playsInline={true}
-        //   autoPlay={true}
-        //   muted={true}
-        //   loop={true}
-        // />
-
-        <Video logo="" title="" subheading="" hero="" />
-      ) : null}
-
-      {/* <div className="overlay" />
-      <div className="text-wrap">
-        <Grid className="grid" fluid={true}>
-          <Row>
-            <Col className="col-1" xs={12} md={6}>
-              <img src={logo} />
-              <h1>{title}</h1>
-              <button>Work with us</button>
-            </Col>
-            <Col className="col-2" xs={12} md={6}>
-              <p>{subheading}</p>
-            </Col>
-          </Row>
-        </Grid>
-      </div> */}
-    </HeaderWrap>
-  );
-};
 
 export default Header;
