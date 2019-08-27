@@ -7,29 +7,30 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import SiteMeta from "./SiteMeta";
 
-const StyledPage = styled.div`
-  margin-left: -15px;
-  margin-right: -15px;
+const StyledGrid = styled(Grid)`
+  padding: 0 !important;
+`;
+
+const StyledContentWrap = styled.div`
+  color: blue;
 `;
 
 const Page: React.SFC = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <Grid fluid={true}>
+      <StyledGrid fluid={true}>
         <GlobalStyle />
         <SiteMeta />
         <Row>
-          <Col>
+          <Col xs={12}>
             <Navbar />
-            <StyledPage>
-              {children}
-            </StyledPage>
+            <StyledContentWrap>{children}</StyledContentWrap>
             <Footer />
           </Col>
         </Row>
-      </Grid>
+      </StyledGrid>
     </ThemeProvider>
   );
-}
+};
 
 export default Page;
