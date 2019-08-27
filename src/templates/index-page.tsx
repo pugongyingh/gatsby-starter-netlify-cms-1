@@ -17,32 +17,39 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   title,
   subheading
 }) => (
-    <div>
-      <Header
-        title={title}
-        subheading={subheading}
-        hero={hero}
-      />
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                  </div>
+  <div>
+    <Header title={title} subheading={subheading} hero={hero} />
+    {/* Our clients */}
+
+    {/* What we do */}
+
+    {/* References */}
+
+    {/* Blog */}
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="section">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
+                <div className="column is-12">
+                  <h3 className="has-text-weight-semibold is-size-2">
+                    Latest stories
+                  </h3>
+                  <BlogRoll />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </div >
-  );
+      </div>
+    </section>
+
+    {/* Contact us */}
+
+    {/* Instagram */}
+  </div>
+);
 
 interface IndexPageTemplateProps {
   data: Query;
