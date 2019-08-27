@@ -80,6 +80,47 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     </section>
     {/* References */}
 
+    {/* Technologies */}
+    <section className="technologies">
+      <Grid className="container">
+        <h1>Technologies</h1>
+        <Row>
+          <Col xs={12} sm={6}>
+            <p>
+              Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep
+              beanie babies david duchovny lisa frank. Nerf guns hoop earrings.
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin.
+            </p>
+          </Col>
+          <Col xs={12} sm={6}>
+            <Row>
+              <Col xs={12} sm={4}>
+                Logo1
+              </Col>
+              <Col xs={12} sm={4}>
+                Logo2
+              </Col>
+              <Col xs={6} sm={4}>
+                Logo3
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} sm={4}>
+                Logo4
+              </Col>
+              <Col xs={12} sm={4}>
+                Logo5
+              </Col>
+              <Col xs={12} sm={4}>
+                Logo6
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Grid>
+    </section>
     {/* Blog */}
     <section className="section section--gradient">
       <div className="container">
