@@ -109,4 +109,8 @@ export const main = css`
       }
     }
   }
+
+  .technologies {
+    border: 1px solid red;
+  }
 `;

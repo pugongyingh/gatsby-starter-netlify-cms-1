@@ -114,7 +114,6 @@ const Navbar = styled(NavbarTemplate)`
   }
 
   @media ${props => props.theme.screen.laptop} {
-    width: 30%;
     position: fixed;
     .navbar,
     .navbar-menu,
