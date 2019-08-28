@@ -27,6 +27,8 @@ import polymerLogo from "../img/polymer-logo.svg";
 import reactLogo from "../img/react-logo.svg";
 import swiftLogo from "../img/swift-logo.svg";
 
+import blogImgOne from "../img/blog-1.png";
+
 interface IndexPageProps {
   hero: string | File;
   title: string;
@@ -190,7 +192,47 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       </Grid>
     </section>
     {/* Blog */}
-    <section className="blog"/>
+    <section className="blog">
+      <Grid className="container">
+        <h1>Blog</h1>
+        <Row className="blog-wrap">
+          <Col className="blog-item" xs={12} sm={4}>
+            <Image source={blogImgOne} altText="A Blog Placeholder" />
+            <h2>Skysail gun swing the lead pink Cat o'nine</h2>
+            <p>
+              Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
+              Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
+              matey Letter of Marque brig aft bring a spring upon her cable grog
+              blossom hang the jib Barbary Coast yard. Barkadeer doubloon
+              measured fer yer chains splice.
+            </p>
+          </Col>
+          <Col className="blog-item" xs={12} sm={4}>
+            <Image source={blogImgOne} altText="A Blog Placeholder" />
+            <h2>Skysail gun swing the lead pink Cat o'nine</h2>
+            <p>
+              Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
+              Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
+              matey Letter of Marque brig aft bring a spring upon her cable grog
+              blossom hang the jib Barbary Coast yard. Barkadeer doubloon
+              measured fer yer chains splice.
+            </p>
+          </Col>
+          <Col className="blog-item" xs={12} sm={4}>
+            <Image source={blogImgOne} altText="A Blog Placeholder" />
+            <h2>Skysail gun swing the lead pink Cat o'nine</h2>
+            <p>
+              Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
+              Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
+              matey Letter of Marque brig aft bring a spring upon her cable grog
+              blossom hang the jib Barbary Coast yard. Barkadeer doubloon
+              measured fer yer chains splice.
+            </p>
+          </Col>
+        </Row>
+      </Grid>
+      {/* <BlogRoll /> */}
+    </section>
 
     {/* Contact us */}
 

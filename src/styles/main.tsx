@@ -137,4 +137,27 @@ export const main = css`
       }
     }
   }
+
+  .blog {
+    background-color: ${props => props.theme.colors.blogSectionBg};
+    color: ${props => props.theme.colors.white};
+
+    .blog-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @media ${props => props.theme.screen.laptop} {
+        margin-top: 100px;
+
+        .blog-item {
+          max-width: 420px;
+
+          h2 {
+            margin-top: 70px;
+          }
+        }
+      }
+    }
+  }
 `;
