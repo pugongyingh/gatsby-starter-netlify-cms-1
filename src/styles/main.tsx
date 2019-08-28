@@ -17,6 +17,12 @@ export const main = css`
     letter-spacing: 0.03em;
   }
 
+  .container {
+    @media ${props => props.theme.screen.laptop} {
+      width: 1410px !important;
+    }
+  }
+
   .container-fluid {
     padding: 0 !important;
   }
@@ -67,6 +73,10 @@ export const main = css`
   }
 
   .references {
+    .container {
+      max-width: 1050px;
+    }
+
     img {
       @media ${props => props.theme.screen.laptop} {
         width: 450px;
