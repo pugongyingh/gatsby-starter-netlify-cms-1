@@ -46,4 +46,8 @@ export const main = css`
       padding: 7rem 0;
     }
   }
+
+  .technologies {
+    border: 1px solid red;
+  }
 `;
