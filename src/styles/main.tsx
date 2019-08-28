@@ -85,7 +85,7 @@ export const main = css`
     }
 
     p {
-      font-family: Open Sans;
+      font-family: "Open Sans", sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 16px;
@@ -100,7 +100,7 @@ export const main = css`
         padding: 2rem 0;
 
         h2 {
-          font-family: Open Sans;
+          font-family: "Open Sans", sans-serif;
           font-style: normal;
           font-weight: normal;
           font-size: 16px;
@@ -121,6 +121,25 @@ export const main = css`
   }
 
   .technologies {
-    border: 1px solid red;
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 176.18%;
+      color: ${props => props.theme.colors.paragraphGrey};
+    }
+
+    .logoRow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media ${props => props.theme.screen.laptop} {
+        &:nth-child(1) {
+          margin-bottom: 70px;
+        }
+      }
+    }
   }
 `;
