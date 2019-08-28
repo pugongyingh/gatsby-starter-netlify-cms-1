@@ -1,11 +1,6 @@
 ---
 site:
   title: Starky's club
-  contact:
-    city: test
-    street: test
-  footer:
-    copy: test
 backend:
   name: bitbucket
   repo: starkysclub/starkys-fe
@@ -14,6 +9,71 @@ backend:
 media_folder: static/img
 public_folder: "/img"
 collections:
+  - name: config
+    label: General
+    folder: src/config
+    fields:
+      - label: Title
+        name: title
+      - label: Contact
+        name: contact
+        widget: object
+        fields:
+          - label: Contact person
+            name: contactPerson
+            widget: list
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: Role
+                name: role
+                widget: string
+              - label: Email
+                name: email
+                widget: string
+              - label: Phone
+                name: phone
+                widget: string
+              - label: LinkedIn
+                name: linkedIn
+                widget: string
+              - label: Image
+                name: image
+                widget: image
+          - label: Address
+            name: address
+            widget: object
+            fields:
+              - label: GPS
+                name: gps
+                widget: string
+              - label: Street
+                name: street
+                widget: string
+              - label: City
+                name: city
+                widget: string
+              - label: ZIP
+                name: zip
+                widget: string
+      - label: Footer
+        name: footer
+        widget: object
+        fields:
+          - label: Copy
+            name: copy
+            widget: string
+          - label: Social
+            name: social
+            widget: list
+            fields:
+              - label: Link
+                name: link
+                widget: string
+              - label: Image
+                name: image
+                widget: image
   - name: pages
     label: Pages
     files:
@@ -49,7 +109,7 @@ collections:
                 widget: image
               - label: Description
                 name: description
-                widget: markdown
+                widget: text
               - label: Link
                 name: link
                 widget: string
@@ -75,7 +135,7 @@ collections:
                     widget: image
                   - label: Description
                     name: description
-                    widget: markdown
+                    widget: text
           - label: Technologies
             name: technologies
             widget: object
@@ -85,7 +145,7 @@ collections:
                 widget: string
               - label: Description
                 name: description
-                widget: markdown
+                widget: text
               - label: Logos
                 name: logos
                 widget: list
@@ -116,7 +176,7 @@ collections:
       - label: Body
         name: body
         widget: markdown
-      - label: Featured Image
+      - label: Image
         name: image
         widget: image
   - name: reference
@@ -127,14 +187,23 @@ collections:
       - label: Template Key
         name: templateKey
         widget: hidden
-        default: blog-post
+        default: reference-page
       - label: Title
         name: title
         widget: string
         required: true
+      - label: Type
+        name: type
+        widget: string
       - label: Description
         name: description
         widget: text
       - label: Body
         name: body
         widget: markdown
+      - label: External link
+        name: link
+        widget: string
+      - label: Image
+        name: image
+        widget: image
