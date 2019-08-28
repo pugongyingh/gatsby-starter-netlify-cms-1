@@ -17,6 +17,12 @@ export const main = css`
     letter-spacing: 0.03em;
   }
 
+  .container {
+    @media ${props => props.theme.screen.laptop} {
+      width: 1410px !important;
+    }
+  }
+
   .container-fluid {
     padding: 0 !important;
   }
@@ -67,15 +73,22 @@ export const main = css`
   }
 
   .references {
-    img {
+
+    @media ${props => props.theme.screen.laptopL} {
+        .container {
+        max-width: 1050px;
+        }
+    }
+
+    /* img {
       @media ${props => props.theme.screen.laptop} {
         width: 450px;
         height: 580px;
       }
-    }
+    } */
 
     p {
-      font-family: Open Sans;
+      font-family: "Open Sans", sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 16px;
@@ -90,7 +103,7 @@ export const main = css`
         padding: 2rem 0;
 
         h2 {
-          font-family: Open Sans;
+          font-family: "Open Sans", sans-serif;
           font-style: normal;
           font-weight: normal;
           font-size: 16px;
@@ -111,6 +124,25 @@ export const main = css`
   }
 
   .technologies {
-    border: 1px solid red;
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 176.18%;
+      color: ${props => props.theme.colors.paragraphGrey};
+    }
+
+    .logoRow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media ${props => props.theme.screen.laptop} {
+        &:nth-child(1) {
+          margin-bottom: 70px;
+        }
+      }
+    }
   }
 `;

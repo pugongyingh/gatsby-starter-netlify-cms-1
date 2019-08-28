@@ -7,6 +7,7 @@ import Icon from "../components/Icon";
 import Image from "../components/Image";
 import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
+import Logo from "../components/Logo";
 
 import { File, Maybe, Query } from "../graphql/types";
 
@@ -18,6 +19,13 @@ import workshopIcon from "../img/workshop-icon.svg";
 import swRef from "../img/ref-1.png";
 import designRef from "../img/ref-2.png";
 import ref3 from "../img/ref-3.png";
+
+import awsLogo from "../img/aws-logo.svg";
+import dockerLogo from "../img/docker-logo.svg";
+import javaLogo from "../img/java-logo.svg";
+import polymerLogo from "../img/polymer-logo.svg";
+import reactLogo from "../img/react-logo.svg";
+import swiftLogo from "../img/swift-logo.svg";
 
 interface IndexPageProps {
   hero: string | File;
@@ -88,10 +96,10 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <Grid className="container">
         <h1>References</h1>
         <Row className="row">
-          <Col xs={12} sm={5}>
+          <Col xs={12} sm={6} lg={5}>
             <Image source={swRef} altText="Software development reference" />
           </Col>
-          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
             <h2>SOFTWARE DEVELOPMENT</h2>
             <h3>Name of the Project</h3>
             <p>
@@ -103,13 +111,13 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Col>
         </Row>
         <Row className="row reverse">
-          <Col xs={12} sm={5}>
+          <Col xs={12} sm={6} lg={5}>
             <Image
               source={designRef}
               altText="Software development reference"
             />
           </Col>
-          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
             <h2>SOFTWARE DEVELOPMENT</h2>
             <h3>Name of the Project</h3>
             <p>
@@ -121,10 +129,10 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Col>
         </Row>
         <Row className="row">
-          <Col xs={12} sm={5}>
+          <Col xs={12} sm={6} lg={5}>
             <Image source={ref3} altText="Software development reference" />
           </Col>
-          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
             <h2>SOFTWARE DEVELOPMENT</h2>
             <h3>Name of the Project</h3>
             <p>
@@ -147,32 +155,34 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             <p>
               Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep
               beanie babies david duchovny lisa frank. Nerf guns hoop earrings.
+            </p>
+            <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
               mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
               nest nipperkin.
             </p>
           </Col>
-          <Col xs={12} sm={6}>
-            <Row>
-              <Col xs={12} sm={4}>
-                Logo1
+          <Col xs={12} smOffset={1} sm={4}>
+            <Row className="logoRow">
+              <Col xs={4}>
+                <Logo source={javaLogo} altText="A Java Logo" />
               </Col>
-              <Col xs={12} sm={4}>
-                Logo2
+              <Col xs={4}>
+                <Logo source={reactLogo} altText="A React Logo" />
               </Col>
-              <Col xs={6} sm={4}>
-                Logo3
+              <Col xs={4}>
+                <Logo source={awsLogo} altText="An Aws Logo" />
               </Col>
             </Row>
-            <Row>
-              <Col xs={12} sm={4}>
-                Logo4
+            <Row className="logoRow">
+              <Col xs={4}>
+                <Logo source={polymerLogo} altText="A Polymer Logo" />
               </Col>
-              <Col xs={12} sm={4}>
-                Logo5
+              <Col xs={4}>
+                <Logo source={swiftLogo} altText="A Swift Logo" />
               </Col>
-              <Col xs={12} sm={4}>
-                Logo6
+              <Col xs={4}>
+                <Logo source={dockerLogo} altText="A Docker Logo" />
               </Col>
             </Row>
           </Col>
