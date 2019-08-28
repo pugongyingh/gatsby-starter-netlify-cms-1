@@ -96,10 +96,10 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <Grid className="container">
         <h1>References</h1>
         <Row className="row">
-          <Col xs={12} sm={5}>
+          <Col xs={12} sm={6} lg={5}>
             <Image source={swRef} altText="Software development reference" />
           </Col>
-          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
             <h2>SOFTWARE DEVELOPMENT</h2>
             <h3>Name of the Project</h3>
             <p>
@@ -111,13 +111,13 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Col>
         </Row>
         <Row className="row reverse">
-          <Col xs={12} sm={5}>
+          <Col xs={12} sm={6} lg={5}>
             <Image
               source={designRef}
               altText="Software development reference"
             />
           </Col>
-          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
             <h2>SOFTWARE DEVELOPMENT</h2>
             <h3>Name of the Project</h3>
             <p>
@@ -129,10 +129,10 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Col>
         </Row>
         <Row className="row">
-          <Col xs={12} sm={5}>
+          <Col xs={12} sm={6} lg={5}>
             <Image source={ref3} altText="Software development reference" />
           </Col>
-          <Col className="ref-content" xs={12} smOffset={1} sm={6}>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
             <h2>SOFTWARE DEVELOPMENT</h2>
             <h3>Name of the Project</h3>
             <p>

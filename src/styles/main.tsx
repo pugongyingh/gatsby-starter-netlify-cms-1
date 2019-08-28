@@ -73,16 +73,19 @@ export const main = css`
   }
 
   .references {
-    .container {
-      max-width: 1050px;
+
+    @media ${props => props.theme.screen.laptopL} {
+        .container {
+        max-width: 1050px;
+        }
     }
 
-    img {
+    /* img {
       @media ${props => props.theme.screen.laptop} {
         width: 450px;
         height: 580px;
       }
-    }
+    } */
 
     p {
       font-family: "Open Sans", sans-serif;
