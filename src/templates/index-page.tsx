@@ -190,24 +190,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       </Grid>
     </section>
     {/* Blog */}
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section className="blog"/>
 
     {/* Contact us */}
 
