@@ -5,7 +5,6 @@
  */
 
 import { rem } from "polished";
-import { string } from "prop-types";
 import * as styledComponents from "styled-components";
 
 const {

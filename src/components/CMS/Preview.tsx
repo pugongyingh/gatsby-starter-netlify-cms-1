@@ -2,7 +2,7 @@ import * as React from 'react';
 import { main } from "../../styles/main";
 import { createGlobalStyle, theme, ThemeProvider } from "../../styles/theme";
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
     ${main}
 `;
 
