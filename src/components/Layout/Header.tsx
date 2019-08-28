@@ -3,8 +3,7 @@ import { Col, Grid, Row } from "react-flexbox-grid";
 import { isString } from "util";
 import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/logo.svg";
-import { default as styled, SCP } from "../../styles/theme";
-import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
+import { css, default as styled, SCP } from "../../styles/theme";
 
 
 interface P extends SCP {
@@ -19,14 +18,7 @@ const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) =>
   return (
     <header className={className}>
       <div>
-        {file.match(/.(jpg|jpeg|png|gif)$/i) ? (
-          <PreviewCompatibleImage
-            imageInfo={{
-              image: hero,
-              alt: title || ""
-            }}
-          />
-        ) : file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) ? (
+        {file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) && (
           <video
             src={isString(hero) ? hero : hero.publicURL}
             playsInline={true}
@@ -34,7 +26,7 @@ const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) =>
             muted={true}
             loop={true}
           />
-        ) : null}
+        )}
         <div className="overlay" />
         <div className="text-wrap">
           <Grid className="grid" fluid={true}>
@@ -57,16 +49,19 @@ const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) =>
 
 const Header = styled(HeaderTemplate)`
   position: relative;
-  height: 75vh;
-  min-height: 14rem;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
-  background: url("src/img/home-bg.png") no-repeat center center scroll;
-  background-size: cover;
 
-  @media ${props => props.theme.screen.laptopL} {
-    min-height: 1020px;
-  }
+  ${({ hero }) => {
+    const file = isString(hero) ? hero : hero.publicURL!;
+    if (file.match(/.(jpg|jpeg|png|gif)$/i)) {
+      return css`
+        background: url(${file}) no-repeat center center scroll;
+        background-size: cover;
+      `;
+    }
+  }}
 
   video {
     position: absolute;
@@ -95,7 +90,7 @@ const Header = styled(HeaderTemplate)`
   }
 
   .text-wrap {
-    position: relative;
+    position: absolute;
     z-index: 2;
     height: 100%;
     justify-content: center;
