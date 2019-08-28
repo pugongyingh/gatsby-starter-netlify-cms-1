@@ -1,45 +1,45 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
+import { Grid } from "react-flexbox-grid";
 import styled from "styled-components";
 import menuIcon from "../../img/hamburger-menu-icon.svg";
 import { SCP } from "../../styles/theme";
 
-interface P extends SCP { }
+interface P extends SCP {}
 
 const NavbarTemplate: React.SFC<P> = ({ className }) => {
   const [active, setActive] = useState();
   const toggleActive = () => setActive(!active);
 
   return (
-    <nav className={className} role="navigation" aria-label="main-navigation">
-      <div className="navbar-brand">
-        {/* Hamburger menu */}
-        <div
-          className={`navbar-burger burger ${active && "is-active"}`}
-          data-target="navMenu"
-          onClick={toggleActive}
-        />
-      </div>
-      <div
-        id="navMenu"
-        className={`navbar-menu ${active && "is-active"}`}
-      >
-        <Link to="/#my-cool-header" className="navbar-item">
-          What We Do
-      </Link>
-        <Link className="navbar-item" to="/about">
-          References
-      </Link>
-        <Link className="navbar-item" to="/blog">
-          Blog
-      </Link>
-        <Link className="navbar-item" to="/contact">
-          Contact
-      </Link>
-      </div>
-    </nav>
-  )
-}
+    <Grid>
+      <nav className={className} role="navigation" aria-label="main-navigation">
+        <div className="navbar-brand">
+          {/* Hamburger menu */}
+          <div
+            className={`navbar-burger burger ${active && "is-active"}`}
+            data-target="navMenu"
+            onClick={toggleActive}
+          />
+        </div>
+        <div id="navMenu" className={`navbar-menu ${active && "is-active"}`}>
+          <Link to="/#my-cool-header" className="navbar-item">
+            What We Do
+          </Link>
+          <Link className="navbar-item" to="/about">
+            References
+          </Link>
+          <Link className="navbar-item" to="/blog">
+            Blog
+          </Link>
+          <Link className="navbar-item" to="/contact">
+            Contact
+          </Link>
+        </div>
+      </nav>
+    </Grid>
+  );
+};
 
 const Navbar = styled(NavbarTemplate)`
   min-height: 3.25rem;
@@ -71,7 +71,7 @@ const Navbar = styled(NavbarTemplate)`
     }
 
     /* hiding from tablet and larger devices */
-    @media ${props => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.laptop} {
       display: none;
     }
   }
@@ -79,7 +79,11 @@ const Navbar = styled(NavbarTemplate)`
   .navbar-menu {
     display: none;
     text-align: center;
-    width: 100%;
+
+    @media ${props => props.theme.screen.laptop} {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   .navbar-item {
