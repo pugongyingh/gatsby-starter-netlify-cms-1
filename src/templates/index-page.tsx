@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
+import ArrowButton from "../components/ArrowButton";
 import BlogRoll from "../components/BlogRoll";
 import { Preview } from "../components/CMS/Preview";
 import Icon from "../components/Icon";
@@ -28,6 +29,7 @@ import reactLogo from "../img/react-logo.svg";
 import swiftLogo from "../img/swift-logo.svg";
 
 import blogImgOne from "../img/blog-1.png";
+import arrowIcon from "../img/right-arrow-icon.svg";
 
 interface IndexPageProps {
   hero: string | File;
@@ -229,6 +231,18 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               measured fer yer chains splice.
             </p>
           </Col>
+        </Row>
+        <Row className="arrow-icons-wrap">
+          <ArrowButton
+            leftArrow={true}
+            source={arrowIcon}
+            altText="An arrow icon"
+          />
+          <ArrowButton
+            leftArrow={false}
+            source={arrowIcon}
+            altText="An arrow icon"
+          />
         </Row>
       </Grid>
       {/* <BlogRoll /> */}

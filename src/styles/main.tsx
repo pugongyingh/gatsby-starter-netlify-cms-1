@@ -159,5 +159,10 @@ export const main = css`
         }
       }
     }
+
+    .arrow-icons-wrap {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 `;
