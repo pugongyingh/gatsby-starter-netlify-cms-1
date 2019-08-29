@@ -73,19 +73,11 @@ export const main = css`
   }
 
   .references {
-
     @media ${props => props.theme.screen.laptopL} {
-        .container {
+      .container {
         max-width: 1050px;
-        }
-    }
-
-    /* img {
-      @media ${props => props.theme.screen.laptop} {
-        width: 450px;
-        height: 580px;
       }
-    } */
+    }
 
     p {
       font-family: "Open Sans", sans-serif;
@@ -143,6 +135,34 @@ export const main = css`
           margin-bottom: 70px;
         }
       }
+    }
+  }
+
+  .blog {
+    background-color: ${props => props.theme.colors.blogSectionBg};
+    color: ${props => props.theme.colors.white};
+
+    .blog-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @media ${props => props.theme.screen.laptop} {
+        margin-top: 100px;
+
+        .blog-item {
+          max-width: 420px;
+
+          h2 {
+            margin-top: 70px;
+          }
+        }
+      }
+    }
+
+    .arrow-icons-wrap {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 `;
