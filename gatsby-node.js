@@ -33,12 +33,16 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
-      let path = edge.node.fields.slug;
+      let slug = "";
       if (edge.node.frontmatter.locale && edge.node.frontmatter.locale !== 'cs') {
-        path = "/" + edge.node.frontmatter.locale + path;
+        slug = "/" + edge.node.frontmatter.locale;
       }
+      if (!edge.node.fields.slug.match(/^\/index/)) {
+        slug += edge.node.fields.slug;
+      }
+
       createPage({
-        path: path,
+        path: slug,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),

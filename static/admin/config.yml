@@ -13,39 +13,14 @@ collections:
     label: Locale
     widget: list
     folder: src/locale
-    create: true
     fields:
       - name: title
         label: Name
       - name: code
         label: Code
-  - name: text
-    label: Text
-    folder: src/locale/texts
-    create: true
-    fields:
-      - label: Locale
-        name: locale
-        widget: relation
-        collection: locale
-        searchFields:
-          - title
-          - code
-        displayFields:
-          - title
-        valueField: code
-      - label: Key
-        name: string
-        widget: string
-        required: true
-      - label: Title
-        name: title
-        widget: string
-        required: true
   - name: config
     label: General
     folder: src/config
-    create: true
     fields:
       - label: Locale
         name: locale
@@ -122,7 +97,7 @@ collections:
     label: Pages
     files:
       - file: src/pages/index.md
-        label: Landing Page
+        label: Landing Page CS
         name: index
         fields:
           - label: Template Key
@@ -131,14 +106,88 @@ collections:
             default: index-page
           - label: Locale
             name: locale
-            widget: relation
-            collection: locale
-            searchFields:
-              - title
-              - code
-            displayFields:
-              - title
-            valueField: code
+            widget: hidden
+            default: cs
+          - label: Title
+            name: title
+            widget: string
+            required: true
+          - label: Subheading
+            name: subheading
+            widget: string
+            required: true
+          - label: Hero
+            name: hero
+            widget: file
+            required: true
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Logo
+                name: logo
+                widget: image
+              - label: Description
+                name: description
+                widget: text
+              - label: Link
+                name: link
+                widget: string
+          - label: What we do
+            name: work
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+              - label: Services
+                name: services
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Logo
+                    name: logo
+                    widget: image
+                  - label: Description
+                    name: description
+                    widget: text
+          - label: Technologies
+            name: technologies
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Logos
+                name: logos
+                widget: list
+                fields:
+                  - label: Logo
+                    name: logo
+                    widget: image
+      - file: src/pages/index.md
+        label: Landing Page EN
+        name: index-en
+        fields:
+          - label: Template Key
+            name: templateKey
+            widget: hidden
+            default: index-page
+          - label: Locale
+            name: locale
+            widget: hidden
+            default: en
           - label: Title
             name: title
             widget: string
