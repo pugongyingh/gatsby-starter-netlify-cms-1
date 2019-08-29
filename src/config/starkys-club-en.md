@@ -1,5 +1,5 @@
 ---
-title: Starky's club CS
+title: Starky's club EN
 contact:
   address:
     city: Praha

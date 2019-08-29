@@ -9,10 +9,31 @@ backend:
 media_folder: static/img
 public_folder: "/img"
 collections:
+  - name: locale
+    label: Locale
+    widget: list
+    folder: src/locale
+    create: true
+    fields:
+      - name: title
+        label: Name
+      - name: code
+        label: Code
   - name: config
     label: General
     folder: src/config
+    create: true
     fields:
+      - label: Locale
+        name: locale
+        widget: relation
+        collection: locale
+        searchFields:
+          - title
+          - code
+        displayFields:
+          - title
+        valueField: code
       - label: Title
         name: title
       - label: Contact
@@ -85,6 +106,16 @@ collections:
             name: templateKey
             widget: hidden
             default: index-page
+          - label: Locale
+            name: locale
+            widget: relation
+            collection: locale
+            searchFields:
+              - title
+              - code
+            displayFields:
+              - title
+            valueField: code
           - label: Title
             name: title
             widget: string
@@ -163,6 +194,16 @@ collections:
         name: templateKey
         widget: hidden
         default: blog-post
+      - label: Locale
+        name: locale
+        widget: relation
+        collection: locale
+        searchFields:
+          - title
+          - code
+        displayFields:
+          - title
+        valueField: code
       - label: Title
         name: title
         widget: string
@@ -188,6 +229,16 @@ collections:
         name: templateKey
         widget: hidden
         default: reference-page
+      - label: Locale
+        name: locale
+        widget: relation
+        collection: locale
+        searchFields:
+          - title
+          - code
+        displayFields:
+          - title
+        valueField: code
       - label: Title
         name: title
         widget: string
