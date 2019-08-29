@@ -10,10 +10,10 @@ import * as styledComponents from "styled-components";
 const {
   default: styled,
   css,
-  createGlobalStyle,
   keyframes,
   ThemeProvider,
-  withTheme
+  withTheme,
+  injectGlobal
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<
   IThemeInterface
 >;
@@ -133,4 +133,4 @@ export const theme: IThemeInterface = {
 };
 
 export default styled;
-export { css, createGlobalStyle, keyframes, ThemeProvider, withTheme };
+export { css, injectGlobal, keyframes, ThemeProvider, withTheme };
