@@ -13,11 +13,7 @@ const Image = styled.img`
 
 const Icon: React.FC<IconProps> = props => {
   const { source, altText } = props;
-  return (
-    <div>
-      <Image src={source} alt={altText} />
-    </div>
-  );
+  return <Image src={source} alt={altText} />;
 };
 
 export default Icon;
