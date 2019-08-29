@@ -1,6 +1,6 @@
 ---
 locale: cs
 string: test
-title: Test
+title: Češtinaaa
 ---
 
