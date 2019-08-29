@@ -159,6 +159,22 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+          - label: References
+            name: references
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Image
+                name: image
+                widget: image
+              - label: Body
+                name: body
+                widget: markdown
           - label: Technologies
             name: technologies
             widget: object
@@ -289,44 +305,6 @@ collections:
       - label: Body
         name: body
         widget: markdown
-      - label: Image
-        name: image
-        widget: image
-  - name: reference
-    label: References
-    folder: src/pages/reference
-    create: true
-    fields:
-      - label: Template Key
-        name: templateKey
-        widget: hidden
-        default: reference-page
-      - label: Locale
-        name: locale
-        widget: relation
-        collection: locale
-        searchFields:
-          - title
-          - code
-        displayFields:
-          - title
-        valueField: code
-      - label: Title
-        name: title
-        widget: string
-        required: true
-      - label: Type
-        name: type
-        widget: string
-      - label: Description
-        name: description
-        widget: text
-      - label: Body
-        name: body
-        widget: markdown
-      - label: External link
-        name: link
-        widget: string
       - label: Image
         name: image
         widget: image
