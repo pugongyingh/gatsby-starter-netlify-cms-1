@@ -176,7 +176,7 @@ collections:
                   - label: Logo
                     name: logo
                     widget: image
-      - file: src/pages/index.md
+      - file: src/pages/index-en.md
         label: Landing Page EN
         name: index-en
         fields:
