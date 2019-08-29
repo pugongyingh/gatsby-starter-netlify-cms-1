@@ -19,6 +19,29 @@ collections:
         label: Name
       - name: code
         label: Code
+  - name: text
+    label: Text
+    folder: src/locale/texts
+    create: true
+    fields:
+      - label: Locale
+        name: locale
+        widget: relation
+        collection: locale
+        searchFields:
+          - title
+          - code
+        displayFields:
+          - title
+        valueField: code
+      - label: Key
+        name: string
+        widget: string
+        required: true
+      - label: Title
+        name: title
+        widget: string
+        required: true
   - name: config
     label: General
     folder: src/config

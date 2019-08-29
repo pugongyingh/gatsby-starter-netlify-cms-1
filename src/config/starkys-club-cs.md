@@ -1,4 +1,5 @@
 ---
+locale: cs
 title: Starky's club CS
 contact:
   address:
