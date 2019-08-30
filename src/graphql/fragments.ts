@@ -28,11 +28,9 @@ export const query = graphql`
     ctimeMs
     ctime
     changeTime
-    blocks
     children {
       id
     }
-    blksize
     birthtimeMs
     birthtime
     birthTime
