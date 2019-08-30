@@ -15,36 +15,4 @@ export const main = css`
     line-height: 128%;
     letter-spacing: 0.03em;
   }
-
-  .container {
-    @media ${props => props.theme.screen.laptop} {
-      width: 1410px !important;
-    }
-  }
-
-  .container-fluid {
-    padding: 0 !important;
-  }
-
-  .row {
-    margin: 0;
-  }
-
-  .col-xs-12 {
-    padding: 0 !important;
-  }
-
-  section {
-    padding: 2rem 0;
-
-    @media ${props => props.theme.screen.laptop} {
-      padding: 7.5rem 0;
-    }
-
-    .row {
-      @media ${props => props.theme.screen.laptop} {
-        margin-top: 95px;
-      }
-    }
-  }
 `;
