@@ -4,7 +4,7 @@ import uploadcare from "netlify-cms-media-library-uploadcare";
 import * as React from 'react';
 import { StyleSheetManager } from 'styled-components';
 import { main } from "./styles/main";
-import { css } from "./styles/theme";
+import { css, injectGlobal } from "./styles/theme";
 import { BlogPostPreview } from "./templates/blog-post";
 import { IndexPagePreview } from "./templates/index-page";
 
@@ -25,11 +25,16 @@ class CSSInjector extends React.Component<any, any> {
     }
 
     public render() {
+        // tslint:disable-next-line
+        injectGlobal`${main}`;
         return (
             <div>
                 {this.state.iframeRef && (
                     <StyleSheetManager target={this.state.iframeRef}>
-                        {this.props.children}
+                        <>
+                            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,700|Open+Sans:400,700,800&display=swap" />
+                            {this.props.children}
+                        </>
                     </StyleSheetManager>
                 )}
             </div>
