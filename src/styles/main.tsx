@@ -165,4 +165,8 @@ export const main = css`
       justify-content: flex-end;
     }
   }
+
+  .contact {
+    color: red;
+  }
 `;
