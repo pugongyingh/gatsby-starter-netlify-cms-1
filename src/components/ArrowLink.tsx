@@ -1,7 +1,16 @@
 import React from "react";
 import arrow from "../img/right-arrow.svg";
 import { default as styled } from "../styles/theme";
-import Icon from "./Icon";
+
+const StyledLink = styled.div`
+  a {
+    display: flex;
+    align-content: center;
+  }
+  img {
+    padding-left: 0.25em;
+  }
+`;
 
 interface ArrowLinkProps {
   link: string;
@@ -10,22 +19,12 @@ interface ArrowLinkProps {
 
 const ArrowLink: React.FC<ArrowLinkProps> = ({ link, text }) => {
   return (
-    <div className="link">
+    <StyledLink>
       <a href={link}>
         {text} <img src={arrow} />
       </a>
-    </div>
+    </StyledLink>
   );
 };
 
-const ArrowLinkStyled = styled(ArrowLink)`
-  .link {
-    img {
-      margin: auto;
-      height: 1.5em;
-      width: 5em;
-    }
-  }
-`;
-
-export default ArrowLinkStyled;
+export default ArrowLink;
