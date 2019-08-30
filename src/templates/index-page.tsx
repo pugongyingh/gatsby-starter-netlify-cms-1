@@ -2,6 +2,7 @@ import { graphql } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import ArrowButton from "../components/ArrowButton";
+import CaseStudies from "../components/CaseStudies";
 import Clients from "../components/Clients";
 import { Preview } from "../components/CMS/Preview";
 import Icon from "../components/Icon";
@@ -44,7 +45,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     <Header title={title} subheading={subheading} hero={hero} />
     {/* Our clients */}
     <Clients />
-
+    <CaseStudies />
     {/* What we do */}
     <section className="what-we-do">
       <Grid className="container">
@@ -254,28 +255,27 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
 );
 
 const StyledIndexPageTemplate = styled(IndexPageTemplate)`
-
- .container {
+  .container {
     @media ${props => props.theme.screen.laptop} {
       width: 1410px !important;
     }
-  } 
+  }
 
   /*All Main Sections*/
   .what-we-do {
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.darkGreen};
-      padding: 2rem 0;
+    padding: 2rem 0;
 
+    @media ${props => props.theme.screen.laptop} {
+      padding: 7.5rem 0;
+    }
+
+    .row {
       @media ${props => props.theme.screen.laptop} {
-        padding: 7.5rem 0;
+        margin-top: 95px;
       }
-
-      .row {
-        @media ${props => props.theme.screen.laptop} {
-          margin-top: 95px;
-        }
-      }
+    }
 
     h1 {
       &:nth-child(2) {
@@ -293,22 +293,20 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       line-height: 27px;
       letter-spacing: 0.03em;
     }
-
   }
 
   .references {
+    padding: 2rem 0;
 
-      padding: 2rem 0;
+    @media ${props => props.theme.screen.laptop} {
+      padding: 7.5rem 0;
+    }
 
+    .row {
       @media ${props => props.theme.screen.laptop} {
-        padding: 7.5rem 0;
+        margin-top: 95px;
       }
-
-      .row {
-        @media ${props => props.theme.screen.laptop} {
-          margin-top: 95px;
-        }
-      }
+    }
 
     @media ${props => props.theme.screen.laptopL} {
       .container {
@@ -353,19 +351,17 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   .technologies {
+    padding: 2rem 0;
 
-      padding: 2rem 0;
+    @media ${props => props.theme.screen.laptop} {
+      padding: 7.5rem 0;
+    }
 
+    .row {
       @media ${props => props.theme.screen.laptop} {
-        padding: 7.5rem 0;
+        margin-top: 95px;
       }
-
-      .row {
-        @media ${props => props.theme.screen.laptop} {
-          margin-top: 95px;
-        }
-      }
-    
+    }
 
     p {
       font-family: "Open Sans", sans-serif;
