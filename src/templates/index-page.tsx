@@ -5,6 +5,7 @@ import ArrowButton from "../components/ArrowButton";
 import CaseStudies from "../components/CaseStudies";
 import Clients from "../components/Clients";
 import { Preview } from "../components/CMS/Preview";
+import Footer from "../components/Footer";
 import Icon from "../components/Icon";
 import Image from "../components/Image";
 import Header from "../components/Layout/Header";
@@ -251,6 +252,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {/* Contact us */}
 
     {/* Instagram */}
+    <Footer />
   </div>
 );
 
