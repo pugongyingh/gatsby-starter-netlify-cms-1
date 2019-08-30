@@ -50,6 +50,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   <div className={className}>
     <Header title={title} subheading={subheading} hero={hero} />
     {/* Our clients */}
+    <Clients />
     <CaseStudies />
     {/* What we do */}
     <section className="what-we-do">
