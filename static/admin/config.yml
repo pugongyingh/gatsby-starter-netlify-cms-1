@@ -9,10 +9,29 @@ backend:
 media_folder: static/img
 public_folder: "/img"
 collections:
+  - name: locale
+    label: Locale
+    widget: list
+    folder: src/locale
+    fields:
+      - name: title
+        label: Name
+      - name: code
+        label: Code
   - name: config
     label: General
     folder: src/config
     fields:
+      - label: Locale
+        name: locale
+        widget: relation
+        collection: locale
+        searchFields:
+          - title
+          - code
+        displayFields:
+          - title
+        valueField: code
       - label: Title
         name: title
       - label: Contact
@@ -78,13 +97,113 @@ collections:
     label: Pages
     files:
       - file: src/pages/index.md
-        label: Landing Page
+        label: Landing Page CS
         name: index
         fields:
           - label: Template Key
             name: templateKey
             widget: hidden
             default: index-page
+          - label: Locale
+            name: locale
+            widget: hidden
+            default: cs
+          - label: Title
+            name: title
+            widget: string
+            required: true
+          - label: Subheading
+            name: subheading
+            widget: string
+            required: true
+          - label: Hero
+            name: hero
+            widget: file
+            required: true
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Logo
+                name: logo
+                widget: image
+              - label: Description
+                name: description
+                widget: text
+              - label: Link
+                name: link
+                widget: string
+          - label: What we do
+            name: work
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+              - label: Services
+                name: services
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Logo
+                    name: logo
+                    widget: image
+                  - label: Description
+                    name: description
+                    widget: text
+          - label: References
+            name: references
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Image
+                name: image
+                widget: image
+              - label: Body
+                name: body
+                widget: markdown
+          - label: Technologies
+            name: technologies
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Logos
+                name: logos
+                widget: list
+                fields:
+                  - label: Logo
+                    name: logo
+                    widget: image
+      - file: src/pages/index-en.md
+        label: Landing Page EN
+        name: index-en
+        fields:
+          - label: Template Key
+            name: templateKey
+            widget: hidden
+            default: index-page
+          - label: Locale
+            name: locale
+            widget: hidden
+            default: en
           - label: Title
             name: title
             widget: string
@@ -163,6 +282,16 @@ collections:
         name: templateKey
         widget: hidden
         default: blog-post
+      - label: Locale
+        name: locale
+        widget: relation
+        collection: locale
+        searchFields:
+          - title
+          - code
+        displayFields:
+          - title
+        valueField: code
       - label: Title
         name: title
         widget: string
@@ -176,34 +305,6 @@ collections:
       - label: Body
         name: body
         widget: markdown
-      - label: Image
-        name: image
-        widget: image
-  - name: reference
-    label: References
-    folder: src/pages/reference
-    create: true
-    fields:
-      - label: Template Key
-        name: templateKey
-        widget: hidden
-        default: reference-page
-      - label: Title
-        name: title
-        widget: string
-        required: true
-      - label: Type
-        name: type
-        widget: string
-      - label: Description
-        name: description
-        widget: text
-      - label: Body
-        name: body
-        widget: markdown
-      - label: External link
-        name: link
-        widget: string
       - label: Image
         name: image
         widget: image

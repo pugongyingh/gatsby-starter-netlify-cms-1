@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-locale: cs
+locale: en
 title: Great coffee with a conscience
 subheading: >-
   Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
@@ -13,4 +13,3 @@ technologies:
   description: T
   title: T
 ---
-

@@ -5,7 +5,6 @@ export const main = css`
   body {
     margin: 0;
     padding: 0;
-    @import url("https://fonts.googleapis.com/css?family=Muli:400,700|Open+Sans:400,700,800&display=swap");
     font-family: "Muli", sans-serif;
   }
 
