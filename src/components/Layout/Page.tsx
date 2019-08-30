@@ -6,7 +6,9 @@ import Navbar from "./Navbar";
 import SiteMeta from "./SiteMeta";
 
 // tslint:disable-next-line
-injectGlobal`${main}`;
+injectGlobal`
+  ${main}
+`;
 
 const Page: React.SFC = ({ children }) => {
   return (
