@@ -13,12 +13,46 @@ import ubisoftLogo from "../img/ubisoft_logo.svg";
 import ubisoftSmallLogo from "../img/ubisoft_small_logo.svg";
 import xboxLogo from "../img/xbox_logo.svg";
 
+const ClientsSection = styled.section`
+  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.black};
+  height: 40vh;
+
+  .container {
+    padding-top: 6vh;
+    .row {
+      padding-top: 4vh;
+    }
+    .col {
+      display: flex;
+      justify-content: center;
+      margin: -1px;
+    }
+  }
+  .vertical {
+    border-right: 1px solid #6c6c6c;
+  }
+`;
+
+const CaseStudiesSection = styled.section`
+  color: ${props => props.theme.colors.black};
+  background-color: ${props => props.theme.colors.white};
+  height: 70vh;
+
+  .container {
+    padding-top: 10vh;
+  }
+  .col {
+    padding: 0 2em;
+  }
+`;
+
 interface ClientsProps {}
 
 const Clients: React.FC<ClientsProps> = () => {
   return (
     <div>
-      <section className="clients">
+      <ClientsSection>
         <Grid className="container">
           <h1>Our Clients</h1>
           <Row />
@@ -40,11 +74,11 @@ const Clients: React.FC<ClientsProps> = () => {
             </Col>
           </Row>
         </Grid>
-      </section>
-      <section className="caseStudies">
+      </ClientsSection>
+      <CaseStudiesSection>
         <Grid className="container">
           <Row>
-            <Col lg={4}>
+            <Col lg={4} className="col">
               <Icon source={fischerLogo} altText="" />
               <h2>Skysail gun swing the lead pink Cat o'nine</h2>
               <p>
@@ -55,9 +89,8 @@ const Clients: React.FC<ClientsProps> = () => {
                 measured fer yer chains splice the main brace matey no prey, no
                 pay dead men tell no tales scuttle clap of thunder crimp.
               </p>
-              <ArrowLinkStyled link={""} text="See article" />
             </Col>
-            <Col lg={4}>
+            <Col lg={4} className="col">
               <Icon source={adidasLogo} altText="" />
               <h2>American Main interloper parrel snow quarterdeck</h2>
               <p>
@@ -67,9 +100,8 @@ const Clients: React.FC<ClientsProps> = () => {
                 jack tack aft aye pirate topmast. Barkadeer doubloon measured
                 fer yer chains splice the main brace matey no prey.
               </p>
-              <ArrowLinkStyled link={""} text="See article" />
             </Col>
-            <Col lg={4}>
+            <Col lg={4} className="col">
               <Icon source={ubisoftSmallLogo} altText="" />
               <h2>Square-rigged lateen sail flogging </h2>
               <p>
@@ -80,44 +112,29 @@ const Clients: React.FC<ClientsProps> = () => {
                 come about handsomely bounty fluke. Blimey strike colors spanker
                 parrel league lad coxswain scallywag topmast draught.
               </p>
-              <ArrowLinkStyled link={""} text="See article" />
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4} className="col">
+              <div className="link">
+                <ArrowLinkStyled link={""} text="See article" />
+              </div>
+            </Col>
+            <Col lg={4} className="col">
+              <div className="link">
+                <ArrowLinkStyled link={""} text="See article" />
+              </div>
+            </Col>
+            <Col lg={4} className="col">
+              <div className="link">
+                <ArrowLinkStyled link={""} text="See article" />
+              </div>
             </Col>
           </Row>
         </Grid>
-      </section>
+      </CaseStudiesSection>
     </div>
   );
 };
 
-const StyledClients = styled(Clients)`
-  .clients {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.black};
-    height: 40vh;
-
-    .container {
-      padding-top: 6vh;
-      .row {
-        padding-top: 4vh;
-      }
-      .col {
-        display: flex;
-        justify-content: center;
-        margin: -1px;
-      }
-    }
-    .vertical {
-      border-right: 1px solid #6c6c6c;
-    }
-  }
-  .caseStudies {
-    color: ${props => props.theme.colors.black};
-    background-color: ${props => props.theme.colors.white};
-    height: 70vh;
-
-    .container {
-      padding-top: 10vh;
-    }
-  }
-`;
-export default StyledClients;
+export default Clients;
