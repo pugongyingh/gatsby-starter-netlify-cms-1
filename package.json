@@ -87,6 +87,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@graphql-codegen/cli": "^1.5.0",
     "@graphql-codegen/typescript": "^1.5.0",
     "@graphql-codegen/typescript-operations": "^1.6.1",
