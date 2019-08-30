@@ -4,6 +4,7 @@ import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import ArrowButton from "../components/ArrowButton";
 import BlogRoll from "../components/BlogRoll";
 import { Preview } from "../components/CMS/Preview";
+import Form from "../components/Form";
 import Icon from "../components/Icon";
 import Image from "../components/Image";
 import Header from "../components/Layout/Header";
@@ -249,7 +250,22 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     </section>
 
     {/* Contact us */}
-
+    <section className="contact">
+      <Grid className="container">
+        <Row>
+          <Col xs={12} sm={6}>
+            <Form />
+          </Col>
+          <Col xs={12} sm={6}>
+            <Row>
+              <Col xs={12}>Picture 1</Col>
+              <Col xs={12}>Picture 2</Col>
+              <Col xs={12}>Picture 3</Col>
+            </Row>
+          </Col>
+        </Row>
+      </Grid>
+    </section>
     {/* Instagram */}
   </>
 );
