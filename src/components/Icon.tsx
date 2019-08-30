@@ -1,19 +1,24 @@
 import React from "react";
-import styled from "../styles/theme";
 
 interface IconProps {
   source: string;
   altText: string;
+  height: string;
+  width: string;
 }
 
-const Image = styled.img`
-  width: 90px;
-  height: 90px;
-`;
-
 const Icon: React.FC<IconProps> = props => {
-  const { source, altText } = props;
-  return <Image src={source} alt={altText} />;
+  const { source, altText, height, width } = props;
+  return (
+    <img
+      src={source}
+      alt={altText}
+      style={{
+        width,
+        height
+      }}
+    />
+  );
 };
 
 export default Icon;
