@@ -2,7 +2,6 @@ import { graphql } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import ArrowButton from "../components/ArrowButton";
-import CaseStudies from "../components/CaseStudies";
 import Clients from "../components/Clients";
 import { Preview } from "../components/CMS/Preview";
 import Icon from "../components/Icon";
@@ -10,7 +9,11 @@ import Image from "../components/Image";
 import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
 import Logo from "../components/Logo";
+import CaseStudies from "../components/Sections/CaseStudies";
+
 import { File, Maybe, Query } from "../graphql/types";
+
+// icons and logos
 import analysisIcon from "../img/analysis-icon.svg";
 import awsLogo from "../img/aws-logo.svg";
 import blogImgOne from "../img/blog-1.png";
@@ -26,6 +29,9 @@ import arrowIcon from "../img/right-arrow-icon.svg";
 import devIcon from "../img/sw-dev-icon.svg";
 import swiftLogo from "../img/swift-logo.svg";
 import workshopIcon from "../img/workshop-icon.svg";
+
+// sections
+import Contact from "../components/Sections/Contact";
 import styled from "../styles/theme";
 
 interface IndexPageProps {
@@ -44,16 +50,20 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   <div className={className}>
     <Header title={title} subheading={subheading} hero={hero} />
     {/* Our clients */}
-    <Clients />
     <CaseStudies />
     {/* What we do */}
     <section className="what-we-do">
       <Grid className="container">
         <h1>What we do</h1>
         <h1>Driving brands forward online.</h1>
-        <Row className="row">
+        <Row className="section-row">
           <Col xs={12} sm={6} lg={3}>
-            <Icon source={devIcon} altText="WWD Icons" />
+            <Icon
+              source={devIcon}
+              altText="WWD Icons"
+              height="90px"
+              width="90px"
+            />
             <h2>Heading</h2>
             <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
@@ -63,7 +73,12 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </p>
           </Col>
           <Col xs={12} sm={6} lg={3}>
-            <Icon source={designIcon} altText="WWD Icons" />
+            <Icon
+              source={designIcon}
+              altText="WWD Icons"
+              height="90px"
+              width="90px"
+            />
             <h2>Heading</h2>
             <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
@@ -73,7 +88,12 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </p>
           </Col>
           <Col xs={12} sm={6} lg={3}>
-            <Icon source={analysisIcon} altText="WWD Icons" />
+            <Icon
+              source={analysisIcon}
+              altText="WWD Icons"
+              height="90px"
+              width="90px"
+            />
             <h2>Heading</h2>
             <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
@@ -83,7 +103,12 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </p>
           </Col>
           <Col xs={12} sm={6} lg={3}>
-            <Icon source={workshopIcon} altText="WWD Icons" />
+            <Icon
+              source={workshopIcon}
+              altText="WWD Icons"
+              height="90px"
+              width="90px"
+            />
             <h2>Heading</h2>
             <p>
               Prow scuttle parrel provost Sail ho shrouds spirits boom
@@ -99,7 +124,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     <section className="references">
       <Grid className="container">
         <h1>References</h1>
-        <Row className="row">
+        <Row className="section-row">
           <Col xs={12} sm={6} lg={5}>
             <Image source={swRef} altText="Software development reference" />
           </Col>
@@ -114,7 +139,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </p>
           </Col>
         </Row>
-        <Row className="row reverse">
+        <Row className="section-row flex-row-reverse">
           <Col xs={12} sm={6} lg={5}>
             <Image
               source={designRef}
@@ -132,7 +157,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </p>
           </Col>
         </Row>
-        <Row className="row">
+        <Row className="section-row">
           <Col xs={12} sm={6} lg={5}>
             <Image source={ref3} altText="Software development reference" />
           </Col>
@@ -247,10 +272,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       </Grid>
       {/* <BlogRoll /> */}
     </section>
-
-    {/* Contact us */}
-
-    {/* Instagram */}
+    {/* Contact Us */}
+    <Contact />
   </div>
 );
 
@@ -301,12 +324,11 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
     }
-
-    .row {
+    /* .row {
       @media ${props => props.theme.screen.laptop} {
         margin-top: 95px;
       }
-    }
+    } */
 
     @media ${props => props.theme.screen.laptopL} {
       .container {

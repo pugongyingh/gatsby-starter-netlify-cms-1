@@ -1,13 +1,13 @@
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
-import styled from "../styles/theme";
-import Icon from "./Icon";
+import styled from "../../styles/theme";
+import Icon from "../Icon";
 
-import ArrowLinkStyled from "./ArrowLink";
+import ArrowLinkStyled from "../ArrowLink";
 
-import adidasLogo from "../img/adidas_logo.svg";
-import fischerLogo from "../img/fischer_logo.svg";
-import ubisoftSmallLogo from "../img/ubisoft_small_logo.svg";
+import adidasLogo from "../../img/adidas_logo.svg";
+import fischerLogo from "../../img/fischer_logo.svg";
+import ubisoftSmallLogo from "../../img/ubisoft_small_logo.svg";
 
 const CaseStudiesSection = styled.section`
   color: ${props => props.theme.colors.black};
@@ -17,8 +17,6 @@ const CaseStudiesSection = styled.section`
     padding: 7.5rem 0;
   }
 
-  .container {
-  }
   .col {
     padding: 0 2em;
     display: flex;
@@ -37,7 +35,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
       <Grid className="container">
         <Row>
           <Col lg={4} xs={12} className="col">
-            <Icon source={fischerLogo} altText="" />
+            <Icon source={fischerLogo} altText="" width="151px" height="21px" />
             <h2>Skysail gun swing the lead pink Cat o'nine</h2>
             <p>
               Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
@@ -51,7 +49,12 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
             <ArrowLinkStyled link={""} text="See article" />
           </Col>
           <Col lg={4} xs={12} className="col">
-            <Icon source={adidasLogo} altText="" />
+            <Icon
+              source={adidasLogo}
+              altText="Adidas logo"
+              width="77px"
+              height="52px"
+            />
             <h2>American Main interloper parrel snow quarterdeck</h2>
             <p>
               Shiver me timbers wherry long clothes cog. Interloper blow the man
@@ -64,7 +67,12 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
             <ArrowLinkStyled link={""} text="See article" />
           </Col>
           <Col lg={4} xs={12} className="col">
-            <Icon source={ubisoftSmallLogo} altText="" />
+            <Icon
+              source={ubisoftSmallLogo}
+              altText="Ubisoft logo"
+              width="57px"
+              height="52px"
+            />
             <h2>Square-rigged lateen sail flogging </h2>
             <p>
               Deadlights salmagundi Barbary Coast hornswaggle gaff log line yawl

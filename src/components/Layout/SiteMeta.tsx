@@ -41,6 +41,11 @@ const SiteMetaTemplate = (data: Query) => {
         href="https://fonts.googleapis.com/css?family=Muli:400,700|Open+Sans:400,700,800&display=swap"
       />
 
+      <link
+        href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+        rel="stylesheet"
+      />
+
       <meta name="theme-color" content="#fff" />
 
       <meta property="og:type" content="business.business" />
@@ -52,22 +57,24 @@ const SiteMetaTemplate = (data: Query) => {
       />
     </Helmet>
   );
-}
+};
 
 const SiteMeta = () => {
-  return <StaticQuery
-    query={graphql`
-      query SITE_METADATA_QUERY {
-        site {
-          siteMetadata {
-            title
-            description
+  return (
+    <StaticQuery
+      query={graphql`
+        query SITE_METADATA_QUERY {
+          site {
+            siteMetadata {
+              title
+              description
+            }
           }
         }
-      }
-    `}
-    render={SiteMetaTemplate}
-  />;
-}
+      `}
+      render={SiteMetaTemplate}
+    />
+  );
+};
 
 export default SiteMeta;
