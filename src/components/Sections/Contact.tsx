@@ -15,39 +15,41 @@ const ContactUs = styled.section``;
 const Contact: React.FC<ContactProps> = () => {
   return (
     <ContactUs>
-      <Grid className="container">
+      <Grid>
         <h1>Contact us</h1>
         <Row>
           <Col xs={12} sm={6}>
             <Form />
           </Col>
           <Col xs={12} sm={6}>
-            <Row>
-              <Col xs={12}>
-                <ContactCard
-                  ImgSource={ContactImg1}
-                  altText="A contact photo"
-                  name="Michal Kouřík"
-                  email="michal.kourik@starkysclub.com"
-                />
-              </Col>
-              <Col xs={12}>
-                <ContactCard
-                  ImgSource={ContactImg1}
-                  altText="A contact photo"
-                  name="Michal Kouřík"
-                  email="michal.kourik@starkysclub.com"
-                />
-              </Col>
-              <Col xs={12}>
-                <ContactCard
-                  ImgSource={ContactImg1}
-                  altText="A contact photo"
-                  name="Michal Kouřík"
-                  email="michal.kourik@starkysclub.com"
-                />
-              </Col>
-            </Row>
+            <Grid>
+              <Row>
+                <Col xs={12}>
+                  <ContactCard
+                    ImgSource={ContactImg1}
+                    altText="A contact photo"
+                    name="Michal Kouřík"
+                    email="michal.kourik@starkysclub.com"
+                  />
+                </Col>
+                <Col xs={12}>
+                  <ContactCard
+                    ImgSource={ContactImg1}
+                    altText="A contact photo"
+                    name="Michal Kouřík"
+                    email="michal.kourik@starkysclub.com"
+                  />
+                </Col>
+                <Col xs={12}>
+                  <ContactCard
+                    ImgSource={ContactImg1}
+                    altText="A contact photo"
+                    name="Michal Kouřík"
+                    email="michal.kourik@starkysclub.com"
+                  />
+                </Col>
+              </Row>
+            </Grid>
           </Col>
         </Row>
       </Grid>

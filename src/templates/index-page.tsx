@@ -2,12 +2,14 @@ import { graphql } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import ArrowButton from "../components/ArrowButton";
+import Clients from "../components/Clients";
 import { Preview } from "../components/CMS/Preview";
 import Icon from "../components/Icon";
 import Image from "../components/Image";
 import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
 import Logo from "../components/Logo";
+import CaseStudies from "../components/Sections/CaseStudies";
 
 import { File, Maybe, Query } from "../graphql/types";
 
@@ -48,7 +50,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   <div className={className}>
     <Header title={title} subheading={subheading} hero={hero} />
     {/* Our clients */}
-
+    <CaseStudies />
     {/* What we do */}
     <section className="what-we-do">
       <Grid className="container">
@@ -322,7 +324,6 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
     }
-
     /* .row {
       @media ${props => props.theme.screen.laptop} {
         margin-top: 95px;
