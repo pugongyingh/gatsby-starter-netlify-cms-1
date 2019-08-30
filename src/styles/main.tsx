@@ -34,6 +34,10 @@ export const main = css`
     padding: 0 !important;
   }
 
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
   section {
     padding: 2rem 0;
 
@@ -41,7 +45,7 @@ export const main = css`
       padding: 7.5rem 0;
     }
 
-    .row {
+    .section-row {
       @media ${props => props.theme.screen.laptop} {
         margin-top: 95px;
       }
@@ -163,9 +167,5 @@ export const main = css`
       display: flex;
       justify-content: flex-end;
     }
-  }
-
-  .contact {
-    color: red;
   }
 `;
