@@ -6,6 +6,13 @@ const StyledLink = styled.div`
   a {
     display: flex;
     align-content: center;
+    text-decoration: none;
+    color: ${props => props.theme.colors.paragraphGrey};
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 128%;
+    letter-spacing: 0.03em;
   }
   img {
     padding-left: 0.25em;
@@ -15,11 +22,16 @@ const StyledLink = styled.div`
 interface ArrowLinkProps {
   link: string;
   text: string;
+  instaFollowLink: boolean;
 }
 
-const ArrowLink: React.FC<ArrowLinkProps> = ({ link, text }) => {
+const ArrowLink: React.FC<ArrowLinkProps> = ({
+  link,
+  text,
+  instaFollowLink
+}) => {
   return (
-    <StyledLink>
+    <StyledLink className={instaFollowLink ? "followLink" : ""}>
       <a href={link}>
         {text} <img src={arrow} />
       </a>

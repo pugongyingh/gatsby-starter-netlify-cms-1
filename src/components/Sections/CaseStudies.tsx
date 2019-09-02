@@ -46,7 +46,11 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
               pay dead men tell no tales scuttle clap of thunder crimp.
             </p>
 
-            <ArrowLinkStyled link={""} text="See article" />
+            <ArrowLinkStyled
+              instaFollowLink={false}
+              link={""}
+              text="See article"
+            />
           </Col>
           <Col lg={4} xs={12} className="col">
             <Icon
@@ -64,7 +68,11 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
               splice the main brace matey no prey.
             </p>
 
-            <ArrowLinkStyled link={""} text="See article" />
+            <ArrowLinkStyled
+              instaFollowLink={false}
+              link={""}
+              text="See article"
+            />
           </Col>
           <Col lg={4} xs={12} className="col">
             <Icon
@@ -83,7 +91,11 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
               league lad coxswain scallywag topmast draught.
             </p>
 
-            <ArrowLinkStyled link={""} text="See article" />
+            <ArrowLinkStyled
+              instaFollowLink={false}
+              link={""}
+              text="See article"
+            />
           </Col>
         </Row>
       </Grid>

@@ -141,19 +141,18 @@ export const main = css`
     }
   }
 
-  .blog {
-    background-color: ${props => props.theme.colors.blogSectionBg};
-    color: ${props => props.theme.colors.white};
+  .instagram {
 
-    .blog-wrap {
+    .instagram-wrap {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      align-items: center;
+    }
 
-      @media ${props => props.theme.screen.laptop} {
-        margin-top: 100px;
+    @media ${props => props.theme.screen.laptop} {
 
-        .blog-item {
+        .instagram-item {
           max-width: 420px;
 
           h2 {
@@ -161,11 +160,14 @@ export const main = css`
           }
         }
       }
-    }
 
-    .arrow-icons-wrap {
+      .followLink {
+        margin-right: auto;
+      }
+  }
+
+  .arrow-icons-wrap {
       display: flex;
       justify-content: flex-end;
     }
-  }
 `;
