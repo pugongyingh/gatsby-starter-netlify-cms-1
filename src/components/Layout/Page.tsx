@@ -5,10 +5,10 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import SiteMeta from "./SiteMeta";
 
-// tslint:disable-next-line
-injectGlobal`
-  ${main}
-`;
+// FIXME: Issue with global styles
+// injectGlobal`
+//   ${main}
+// `;
 
 const Page: React.SFC = ({ children }) => {
   return (
