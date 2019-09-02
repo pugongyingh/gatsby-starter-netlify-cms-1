@@ -218,11 +218,6 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
     }
-    /* .row {
-      @media ${props => props.theme.screen.laptop} {
-        margin-top: 95px;
-      }
-    } */
 
     @media ${props => props.theme.screen.laptopL} {
       .container {
