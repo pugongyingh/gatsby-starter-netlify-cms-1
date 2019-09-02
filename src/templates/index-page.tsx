@@ -2,7 +2,6 @@ import { graphql } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import ArrowButton from "../components/ArrowButton";
-import Clients from "../components/Clients";
 import { Preview } from "../components/CMS/Preview";
 import Icon from "../components/Icon";
 import Image from "../components/Image";
@@ -10,6 +9,7 @@ import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
 import Logo from "../components/Logo";
 import CaseStudies from "../components/Sections/CaseStudies";
+import Clients from "../components/Sections/Clients";
 
 import { File, Maybe, Query } from "../graphql/types";
 

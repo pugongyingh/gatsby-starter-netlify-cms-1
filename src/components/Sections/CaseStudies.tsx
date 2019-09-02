@@ -35,7 +35,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
       <Grid className="container">
         <Row>
           <Col lg={4} xs={12} className="col">
-            <Icon source={fischerLogo} altText="" width="151px" height="21px" />
+            <Icon source={fischerLogo} altText="" width="151px" height="52px" />
             <h2>Skysail gun swing the lead pink Cat o'nine</h2>
             <p>
               Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
@@ -70,7 +70,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = () => {
             <Icon
               source={ubisoftSmallLogo}
               altText="Ubisoft logo"
-              width="57px"
+              width="77px"
               height="52px"
             />
             <h2>Square-rigged lateen sail flogging </h2>

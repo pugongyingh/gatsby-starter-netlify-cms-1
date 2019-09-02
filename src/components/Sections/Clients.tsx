@@ -1,12 +1,12 @@
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
-import styled from "../styles/theme";
-import Icon from "./Icon";
+import styled from "../../styles/theme";
+import Icon from "../Icon";
 
-import lenovoLogo from "../img/lenovo_logo.svg";
-import logitechLogo from "../img/logitech_logo.svg";
-import ubisoftLogo from "../img/ubisoft_logo.svg";
-import xboxLogo from "../img/xbox_logo.svg";
+import lenovoLogo from "../../img/lenovo_logo.svg";
+import logitechLogo from "../../img/logitech_logo.svg";
+import ubisoftLogo from "../../img/ubisoft_logo.svg";
+import xboxLogo from "../../img/xbox_logo.svg";
 
 const ClientsSection = styled.section`
   color: ${props => props.theme.colors.white};
@@ -17,7 +17,6 @@ const ClientsSection = styled.section`
   }
 
   .container {
-    /*padding-top: 6vh;*/
     .row {
       padding-top: 4vh;
     }
@@ -41,19 +40,29 @@ const Clients: React.FC<ClientsProps> = () => {
         <Row />
         <Row className="row">
           <Col lg={3} xs={12} className="col">
-            <Icon source={xboxLogo} altText="" />
+            <Icon source={xboxLogo} altText="" width="198px" height="198px" />
           </Col>
           <span className="vertical" />
           <Col lg={3} xs={12} className="col">
-            <Icon source={logitechLogo} altText="" />
+            <Icon
+              source={logitechLogo}
+              altText=""
+              width="198px"
+              height="198px"
+            />
           </Col>
           <span className="vertical" />
           <Col lg={3} xs={12} className="col">
-            <Icon source={lenovoLogo} altText="" />
+            <Icon source={lenovoLogo} altText="" width="198px" height="198px" />
           </Col>
           <span className="vertical" />
           <Col lg={3} xs={12} className="col">
-            <Icon source={ubisoftLogo} altText="" />
+            <Icon
+              source={ubisoftLogo}
+              altText=""
+              width="198px"
+              height="198px"
+            />
           </Col>
         </Row>
       </Grid>
