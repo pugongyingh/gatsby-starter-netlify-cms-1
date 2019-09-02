@@ -3,21 +3,20 @@ import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import ArrowButton from "../components/ArrowButton";
 import { Preview } from "../components/CMS/Preview";
-import Icon from "../components/Icon";
 import Image from "../components/Image";
 import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
 import Logo from "../components/Logo";
 import CaseStudies from "../components/Sections/CaseStudies";
 import Clients from "../components/Sections/Clients";
+import WhatWeDo from "../components/Sections/WhatWeDo";
 
 import { File, Maybe, Query } from "../graphql/types";
 
 // icons and logos
-import analysisIcon from "../img/analysis-icon.svg";
+
 import awsLogo from "../img/aws-logo.svg";
 import blogImgOne from "../img/blog-1.png";
-import designIcon from "../img/design-icon.svg";
 import dockerLogo from "../img/docker-logo.svg";
 import javaLogo from "../img/java-logo.svg";
 import polymerLogo from "../img/polymer-logo.svg";
@@ -25,9 +24,8 @@ import reactLogo from "../img/react-logo.svg";
 import swRef from "../img/ref-1.png";
 import designRef from "../img/ref-2.png";
 import ref3 from "../img/ref-3.png";
-import devIcon from "../img/sw-dev-icon.svg";
+
 import swiftLogo from "../img/swift-logo.svg";
-import workshopIcon from "../img/workshop-icon.svg";
 
 // sections
 import Contact from "../components/Sections/Contact";
@@ -54,74 +52,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     <Clients />
     <CaseStudies />
     {/* What we do */}
-    <section id="what-we-do" className="what-we-do">
-      <Grid className="container">
-        <h1>What we do</h1>
-        <h1>Driving brands forward online.</h1>
-        <Row className="section-row">
-          <Col xs={12} sm={6} lg={3}>
-            <Icon
-              source={devIcon}
-              altText="WWD Icons"
-              height="90px"
-              width="90px"
-            />
-            <h2>Heading</h2>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
-            </p>
-          </Col>
-          <Col xs={12} sm={6} lg={3}>
-            <Icon
-              source={designIcon}
-              altText="WWD Icons"
-              height="90px"
-              width="90px"
-            />
-            <h2>Heading</h2>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
-            </p>
-          </Col>
-          <Col xs={12} sm={6} lg={3}>
-            <Icon
-              source={analysisIcon}
-              altText="WWD Icons"
-              height="90px"
-              width="90px"
-            />
-            <h2>Heading</h2>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
-            </p>
-          </Col>
-          <Col xs={12} sm={6} lg={3}>
-            <Icon
-              source={workshopIcon}
-              altText="WWD Icons"
-              height="90px"
-              width="90px"
-            />
-            <h2>Heading</h2>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
-            </p>
-          </Col>
-        </Row>
-      </Grid>
-    </section>
+    <WhatWeDo />
     {/* References */}
     <section id="references" className="references">
       <Grid className="container">
@@ -281,39 +212,6 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   /*All Main Sections*/
-  .what-we-do {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.darkGreen};
-    padding: 2rem 0;
-
-    @media ${props => props.theme.screen.laptop} {
-      padding: 7.5rem 0;
-    }
-
-    .row {
-      @media ${props => props.theme.screen.laptop} {
-        margin-top: 95px;
-      }
-    }
-
-    h1 {
-      &:nth-child(2) {
-        font-size: 3.5rem;
-        font-weight: bold;
-        max-width: 50%;
-      }
-    }
-
-    p {
-      font-family: "Open Sans", sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 27px;
-      letter-spacing: 0.03em;
-    }
-  }
-
   .references {
     padding: 2rem 0;
 
