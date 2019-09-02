@@ -54,7 +54,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     <Clients />
     <CaseStudies />
     {/* What we do */}
-    <section className="what-we-do">
+    <section id="what-we-do" className="what-we-do">
       <Grid className="container">
         <h1>What we do</h1>
         <h1>Driving brands forward online.</h1>
@@ -123,7 +123,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       </Grid>
     </section>
     {/* References */}
-    <section className="references">
+    <section id="references" className="references">
       <Grid className="container">
         <h1>References</h1>
         <Row className="section-row">
@@ -221,7 +221,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       </Grid>
     </section>
     {/* Blog */}
-    <section className="blog">
+    <section id="blog" className="blog">
       <Grid className="container">
         <h1>Blog</h1>
         <Row className="blog-wrap">
