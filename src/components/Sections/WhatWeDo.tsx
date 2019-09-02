@@ -12,11 +12,6 @@ interface Props {}
 const WhatWeDoWrap = styled.section`
   color: ${props => props.theme.colors.white};
   background-color: ${props => props.theme.colors.darkGreen};
-  padding: 2rem 0;
-
-  @media ${props => props.theme.screen.laptop} {
-    padding: 7.5rem 0;
-  }
 
   .row {
     @media ${props => props.theme.screen.laptop} {

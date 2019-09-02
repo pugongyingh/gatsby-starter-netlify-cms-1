@@ -9,12 +9,6 @@ import Image from "../Image";
 interface Props {}
 
 const ReferencesWrap = styled.section`
-  padding: 2rem 0;
-
-  @media ${props => props.theme.screen.laptop} {
-    padding: 7.5rem 0;
-  }
-
   @media ${props => props.theme.screen.laptopL} {
     .container {
       max-width: 1050px;

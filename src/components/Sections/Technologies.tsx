@@ -12,18 +12,6 @@ import Logo from "../Logo";
 interface Props {}
 
 const TechnologiesWrap = styled.section`
-  padding: 2rem 0;
-
-  @media ${props => props.theme.screen.laptop} {
-    padding: 7.5rem 0;
-  }
-
-  .row {
-    @media ${props => props.theme.screen.laptop} {
-      margin-top: 95px;
-    }
-  }
-
   p {
     font-family: "Open Sans", sans-serif;
     font-style: normal;

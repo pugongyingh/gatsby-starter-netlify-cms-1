@@ -16,12 +16,6 @@ export const main = css`
     letter-spacing: 0.03em;
   }
 
-  /* .container {
-    @media ${props => props.theme.screen.laptop} {
-      width: 1410px !important;
-    }
-  } */
-
   .container-fluid {
     padding: 0 !important;
   }
@@ -52,122 +46,8 @@ export const main = css`
     }
   }
 
-  /*All Main Sections*/
-  .what-we-do {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.darkGreen};
-
-    h1 {
-      &:nth-child(2) {
-        font-size: 3.5rem;
-        font-weight: bold;
-        max-width: 50%;
-      }
-    }
-
-    p {
-      font-family: "Open Sans", sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 27px;
-      letter-spacing: 0.03em;
-    }
-  }
-
-  .references {
-    @media ${props => props.theme.screen.laptopL} {
-      .container {
-        max-width: 1050px;
-      }
-    }
-
-    p {
-      font-family: "Open Sans", sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 170%;
-      letter-spacing: 0.03em;
-      color: ${props => props.theme.colors.paragraphGrey};
-      max-width: 480px;
-    }
-
-    .ref-content {
-      @media ${props => props.theme.screen.laptop} {
-        padding: 2rem 0;
-
-        h2 {
-          font-family: "Open Sans", sans-serif;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 150.5%;
-          letter-spacing: 0.03em;
-        }
-
-        h3 {
-          font-family: Muli;
-          font-style: normal;
-          font-weight: 800;
-          font-size: 36px;
-          line-height: 143%;
-          letter-spacing: 0.03em;
-        }
-      }
-    }
-  }
-
-  .technologies {
-    p {
-      font-family: "Open Sans", sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 22px;
-      line-height: 176.18%;
-      color: ${props => props.theme.colors.paragraphGrey};
-    }
-
-    .logoRow {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      @media ${props => props.theme.screen.laptop} {
-        &:nth-child(1) {
-          margin-bottom: 70px;
-        }
-      }
-    }
-  }
-
-  .instagram {
-
-    .instagram-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    @media ${props => props.theme.screen.laptop} {
-
-        .instagram-item {
-          max-width: 420px;
-
-          h2 {
-            margin-top: 70px;
-          }
-        }
-      }
-
-      .followLink {
-        margin-right: auto;
-      }
-  }
-
   .arrow-icons-wrap {
-      display: flex;
-      justify-content: flex-end;
-    }
+    display: flex;
+    justify-content: flex-end;
+  }
 `;

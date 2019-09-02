@@ -152,7 +152,6 @@ const Navbar = styled(NavbarTemplate)`
     .navbar-menu {
       flex-grow: 1;
       flex-shrink: 0;
-      /* justify-content: flex-end; */
       margin-right: 14%;
     }
     .navbar-start {

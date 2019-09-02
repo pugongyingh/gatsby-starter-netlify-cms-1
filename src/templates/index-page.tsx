@@ -57,11 +57,6 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       width: 1410px !important;
     }
   }
-    .arrow-icons-wrap {
-      display: flex;
-      justify-content: flex-end;
-    }
-  }
 `;
 
 interface IndexPageTemplateProps {
