@@ -14,7 +14,7 @@ const InstagramItem: React.FC<InstagramItemProps> = ({
   instaText
 }) => {
   return (
-    <Col className="blog-item" xs={12} sm={4}>
+    <Col className="instagram-item" xs={12} sm={4}>
       <Image source={src} altText={alt} />
       <p>{instaText}</p>
     </Col>

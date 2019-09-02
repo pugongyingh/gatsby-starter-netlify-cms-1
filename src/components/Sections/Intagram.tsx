@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Row } from "react-flexbox-grid";
 import InstaImg01 from "../../img/instagram-1.png";
 import ArrowButton from "../ArrowButton";
+import ArrowLink from "../ArrowLink";
 import InstagramItem from "../InstagramItem";
 
 interface Props {}
@@ -11,7 +12,7 @@ const Intagram: React.FC<Props> = () => {
     <section className="instagram">
       <Grid className="container">
         <h1>Instagram</h1>
-        <Row className="blog-wrap">
+        <Row className="instagram-wrap">
           <InstagramItem
             src={InstaImg01}
             alt="Instagram item 1"
@@ -32,8 +33,9 @@ const Intagram: React.FC<Props> = () => {
           />
         </Row>
         <Row className="arrow-icons-wrap">
-          <ArrowButton leftArrow={true} altText="An arrow icon" />
-          <ArrowButton leftArrow={false} altText="An arrow icon" />
+          <ArrowLink text="Follow us on Instagram" link="#" instaFollowLink={true} />
+          <ArrowButton dark={true} leftArrow={true} altText="An arrow icon" />
+          <ArrowButton dark={true} leftArrow={false} altText="An arrow icon" />
         </Row>
       </Grid>
     </section>

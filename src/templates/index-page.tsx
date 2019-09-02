@@ -25,13 +25,14 @@ import reactLogo from "../img/react-logo.svg";
 import swRef from "../img/ref-1.png";
 import designRef from "../img/ref-2.png";
 import ref3 from "../img/ref-3.png";
-import arrowIcon from "../img/right-arrow-icon.svg";
 import devIcon from "../img/sw-dev-icon.svg";
 import swiftLogo from "../img/swift-logo.svg";
 import workshopIcon from "../img/workshop-icon.svg";
 
 // sections
 import Contact from "../components/Sections/Contact";
+import Instagram from "../components/Sections/Intagram";
+
 import styled from "../styles/theme";
 
 interface IndexPageProps {
@@ -259,22 +260,16 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Col>
         </Row>
         <Row className="arrow-icons-wrap">
-          <ArrowButton
-            leftArrow={true}
-            source={arrowIcon}
-            altText="An arrow icon"
-          />
-          <ArrowButton
-            leftArrow={false}
-            source={arrowIcon}
-            altText="An arrow icon"
-          />
+          <ArrowButton dark={false} leftArrow={true} altText="An arrow icon" />
+          <ArrowButton dark={false} leftArrow={false} altText="An arrow icon" />
         </Row>
       </Grid>
       {/* <BlogRoll /> */}
     </section>
     {/* Contact Us */}
     <Contact />
+    {/* Instagram */}
+    <Instagram />
   </div>
 );
 
