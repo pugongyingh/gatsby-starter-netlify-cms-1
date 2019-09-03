@@ -1,4 +1,3 @@
-import classnames from "classnames";
 import React from "react";
 import styled from "styled-components";
 import arrowIconDark from "../img/arrow-icon-dark.svg";
@@ -8,6 +7,7 @@ interface ArrowBtnProps {
   altText: string;
   leftArrow: boolean;
   dark: boolean;
+  onClick?: any;
 }
 
 const StyledBtn = styled.div`
@@ -32,7 +32,12 @@ const StyledBtn = styled.div`
   }
 `;
 
-const ArrowButton: React.FC<ArrowBtnProps> = ({ altText, leftArrow, dark }) => {
+const ArrowButton: React.FC<ArrowBtnProps> = ({
+  altText,
+  leftArrow,
+  dark,
+  onClick
+}) => {
   const classes = [];
 
   if (leftArrow) {
@@ -44,7 +49,7 @@ const ArrowButton: React.FC<ArrowBtnProps> = ({ altText, leftArrow, dark }) => {
   }
 
   return (
-    <StyledBtn className={classes.join(" ")}>
+    <StyledBtn className={classes.join(" ")} onClick={onClick}>
       <img src={dark ? arrowIconDark : arrowIcon} alt={altText} />
     </StyledBtn>
   );

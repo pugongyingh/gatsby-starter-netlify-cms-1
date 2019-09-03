@@ -1,5 +1,4 @@
 import React from "react";
-import { Col } from "react-flexbox-grid";
 import Image from "./Image";
 
 interface InstagramItemProps {
@@ -14,10 +13,10 @@ const InstagramItem: React.FC<InstagramItemProps> = ({
   instaText
 }) => {
   return (
-    <Col className="instagram-item" xs={12} sm={4}>
+    <div>
       <Image source={src} altText={alt} />
       <p>{instaText}</p>
-    </Col>
+    </div>
   );
 };
 
