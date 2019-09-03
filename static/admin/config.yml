@@ -124,6 +124,9 @@ collections:
             name: clients
             widget: list
             fields:
+              - label: Alt title
+                name: title
+                widget: string
               - label: Logo
                 name: logo
                 widget: image
