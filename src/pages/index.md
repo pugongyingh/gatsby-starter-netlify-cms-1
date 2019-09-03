@@ -7,10 +7,10 @@ subheading: >-
   babies david duchovny lisa frank. Nerf guns hoop earrings whitney
 hero: /img/home-bg.png
 clients:
-  - logo: /img/lenovo_logo.svg
-  - logo: /img/logitech_logo.svg
-  - logo: /img/ubisoft_logo.svg
   - logo: /img/xbox_logo.svg
+  - logo: /img/logitech_logo.svg
+  - logo: /img/lenovo_logo.svg
+  - logo: /img/ubisoft_logo.svg
 testimonials: []
 work:
   subtitle: T
