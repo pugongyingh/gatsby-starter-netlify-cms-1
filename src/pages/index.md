@@ -8,9 +8,13 @@ subheading: >-
 hero: /img/home-bg.png
 clients:
   - logo: /img/xbox_logo.svg
+    title: Xbox
   - logo: /img/logitech_logo.svg
+    title: Logitech
   - logo: /img/lenovo_logo.svg
+    title: Lenovo
   - logo: /img/ubisoft_logo.svg
+    title: Ubisoft
 testimonials: []
 work:
   services:
