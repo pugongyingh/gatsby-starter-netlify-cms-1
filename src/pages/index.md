@@ -13,6 +13,10 @@ clients:
   - logo: /img/ubisoft_logo.svg
 testimonials: []
 work:
+  services:
+    - description: TESET
+      logo: /img/lenovo_logo.svg
+      title: WWD New
   subtitle: T
   title: T
 references: []
