@@ -5,20 +5,18 @@ import styled, { SCP } from "../styles/theme";
 import PreviewCompatibleImage from "./CMS/PreviewCompatibleImage";
 
 interface P extends SCP {
-  data: Query
+  data: Query;
 }
 
 const BlogRollTemplate: React.SFC<P> = ({ data, className }) => {
-  const posts = data.allMarkdownRemark.edges
+  const posts = data.allMarkdownRemark.edges;
 
   return (
     <div className={className}>
       {posts &&
         posts.map(({ node: post }: any) => (
           <div className="is-parent column is-6" key={post.id}>
-            <article
-              className="blog-list-item tile is-child box notification"
-            >
+            <article className="blog-list-item tile is-child box notification">
               <header>
                 {post.frontmatter.image ? (
                   <div className="featured-thumbnail">
@@ -49,52 +47,53 @@ const BlogRollTemplate: React.SFC<P> = ({ data, className }) => {
                 <br />
                 <Link className="button" to={post.fields.slug}>
                   Keep Reading →
-                    </Link>
+                </Link>
               </p>
             </article>
           </div>
         ))}
     </div>
   );
-}
+};
 
-const BlogRollQuery: React.SFC<Omit<P, "data">> = (props) => {
-  return <StaticQuery
-    query={graphql`
-      query BlogRollQuery {
+const BlogRollQuery: React.SFC<Omit<P, "data">> = props => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query BlogRollQuery {
           allMarkdownRemark(
-              sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
           ) {
-          edges {
+            edges {
               node {
-              excerpt(pruneLength: 400)
-              id
-              fields {
+                excerpt(pruneLength: 400)
+                id
+                fields {
                   slug
-              }
-              frontmatter {
+                }
+                frontmatter {
                   title
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                   image {
-                  childImageSharp {
+                    childImageSharp {
                       fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid
                       }
+                    }
                   }
-                  }
+                }
               }
-              }
+            }
           }
-          }
-      }
-    `}
-    render={(data) => <BlogRollTemplate data={data} {...props} />} />
-}
+        }
+      `}
+      render={data => <BlogRollTemplate data={data} {...props} />}
+    />
+  );
+};
 
-const BlogRoll = styled(BlogRollQuery)`
-
-`;
+const BlogRoll = styled(BlogRollQuery)``;
 
 export default BlogRoll;
