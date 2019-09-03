@@ -10,6 +10,7 @@ clients:
   - logo: /img/lenovo_logo.svg
   - logo: /img/logitech_logo.svg
   - logo: /img/ubisoft_logo.svg
+  - logo: /img/xbox_logo.svg
 testimonials: []
 work:
   subtitle: T
