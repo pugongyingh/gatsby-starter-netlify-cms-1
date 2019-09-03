@@ -18,8 +18,8 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
   }
 
   return (
-    <Grid>
-      <nav className={className} role="navigation" aria-label="main-navigation">
+    <nav className={className} role="navigation" aria-label="main-navigation">
+      <Grid>
         <div className="navbar-brand">
           {/* Hamburger menu */}
           <div
@@ -42,8 +42,8 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
             Contact
           </Link>
         </div>
-      </nav>
-    </Grid>
+      </Grid>
+    </nav>
   );
 };
 
@@ -83,7 +83,7 @@ const Navbar = styled(NavbarTemplate)`
   }
 
   .navbar-menu {
-    display: none;
+    /* display: none; */
     text-align: center;
 
     @media ${props => props.theme.screen.laptop} {
@@ -152,7 +152,6 @@ const Navbar = styled(NavbarTemplate)`
     .navbar-menu {
       flex-grow: 1;
       flex-shrink: 0;
-      margin-right: 14%;
     }
     .navbar-start {
       justify-content: flex-start;
