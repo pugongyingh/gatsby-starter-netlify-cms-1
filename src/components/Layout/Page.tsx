@@ -5,8 +5,6 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import SiteMeta from "./SiteMeta";
 
-// FIXME: Issue with global styles
-
 // tslint:disable-next-line
 injectGlobal`
   ${main}
