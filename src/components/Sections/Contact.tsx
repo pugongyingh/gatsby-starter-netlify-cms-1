@@ -14,7 +14,7 @@ const ContactUs = styled.section``;
 
 const Contact: React.FC<ContactProps> = () => {
   return (
-    <ContactUs>
+    <ContactUs id="contact">
       <Grid>
         <h1>Contact us</h1>
         <Row>
