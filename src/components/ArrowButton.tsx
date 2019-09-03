@@ -1,10 +1,13 @@
+import classnames from "classnames";
 import React from "react";
 import styled from "styled-components";
+import arrowIconDark from "../img/arrow-icon-dark.svg";
+import arrowIcon from "../img/right-arrow-icon.svg";
 
 interface ArrowBtnProps {
-  source: string;
   altText: string;
   leftArrow: boolean;
+  dark: boolean;
 }
 
 const StyledBtn = styled.div`
@@ -23,16 +26,26 @@ const StyledBtn = styled.div`
       transform: rotate(-180deg);
     }
   }
+
+  &.dark {
+    border: 1px solid ${props => props.theme.colors.black};
+  }
 `;
 
-const ArrowButton: React.FC<ArrowBtnProps> = ({
-  source,
-  altText,
-  leftArrow
-}) => {
+const ArrowButton: React.FC<ArrowBtnProps> = ({ altText, leftArrow, dark }) => {
+  const classes = [];
+
+  if (leftArrow) {
+    classes.push("left-arrow");
+  }
+
+  if (dark) {
+    classes.push("dark");
+  }
+
   return (
-    <StyledBtn className={leftArrow ? "left-arrow" : null}>
-      <img src={source} alt={altText} />
+    <StyledBtn className={classes.join(" ")}>
+      <img src={dark ? arrowIconDark : arrowIcon} alt={altText} />
     </StyledBtn>
   );
 };

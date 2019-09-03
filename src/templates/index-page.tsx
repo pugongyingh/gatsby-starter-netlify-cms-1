@@ -8,7 +8,12 @@ import Image from "../components/Image";
 import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
 import Logo from "../components/Logo";
+import CaseStudies from "../components/Sections/CaseStudies";
+import Clients from "../components/Sections/Clients";
+
 import { File, Maybe, Query } from "../graphql/types";
+
+// icons and logos
 import analysisIcon from "../img/analysis-icon.svg";
 import awsLogo from "../img/aws-logo.svg";
 import blogImgOne from "../img/blog-1.png";
@@ -20,16 +25,15 @@ import reactLogo from "../img/react-logo.svg";
 import swRef from "../img/ref-1.png";
 import designRef from "../img/ref-2.png";
 import ref3 from "../img/ref-3.png";
-import arrowIcon from "../img/right-arrow-icon.svg";
 import devIcon from "../img/sw-dev-icon.svg";
 import swiftLogo from "../img/swift-logo.svg";
 import workshopIcon from "../img/workshop-icon.svg";
+
+// sections
+import Contact from "../components/Sections/Contact";
+import Instagram from "../components/Sections/Intagram";
+
 import styled from "../styles/theme";
-
-
-
-
-
 
 interface IndexPageProps {
   hero: string | File;
@@ -44,241 +48,253 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   subheading,
   className
 }) => (
-    <div className={className}>
-      <Header title={title} subheading={subheading} hero={hero} />
-      {/* Our clients */}
-
-      {/* What we do */}
-      <section className="what-we-do">
-        <Grid className="container">
-          <h1>What we do</h1>
-          <h1>Driving brands forward online.</h1>
-          <Row className="row">
-            <Col xs={12} sm={6} lg={3}>
-              <Icon source={devIcon} altText="WWD Icons" />
-              <h2>Heading</h2>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-            <Col xs={12} sm={6} lg={3}>
-              <Icon source={designIcon} altText="WWD Icons" />
-              <h2>Heading</h2>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-            <Col xs={12} sm={6} lg={3}>
-              <Icon source={analysisIcon} altText="WWD Icons" />
-              <h2>Heading</h2>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-            <Col xs={12} sm={6} lg={3}>
-              <Icon source={workshopIcon} altText="WWD Icons" />
-              <h2>Heading</h2>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-          </Row>
-        </Grid>
-      </section>
-      {/* References */}
-      <section className="references">
-        <Grid className="container">
-          <h1>References</h1>
-          <Row className="row">
-            <Col xs={12} sm={6} lg={5}>
-              <Image source={swRef} altText="Software development reference" />
-            </Col>
-            <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
-              <h2>SOFTWARE DEVELOPMENT</h2>
-              <h3>Name of the Project</h3>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-          </Row>
-          <Row className="row reverse">
-            <Col xs={12} sm={6} lg={5}>
-              <Image
-                source={designRef}
-                altText="Software development reference"
-              />
-            </Col>
-            <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
-              <h2>SOFTWARE DEVELOPMENT</h2>
-              <h3>Name of the Project</h3>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-          </Row>
-          <Row className="row">
-            <Col xs={12} sm={6} lg={5}>
-              <Image source={ref3} altText="Software development reference" />
-            </Col>
-            <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
-              <h2>SOFTWARE DEVELOPMENT</h2>
-              <h3>Name of the Project</h3>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-          </Row>
-        </Grid>
-      </section>
-
-      {/* Technologies */}
-      <section className="technologies">
-        <Grid className="container">
-          <h1>Technologies</h1>
-          <Row>
-            <Col xs={12} sm={6}>
-              <p>
-                Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep
-                beanie babies david duchovny lisa frank. Nerf guns hoop earrings.
-            </p>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin.
-            </p>
-            </Col>
-            <Col xs={12} smOffset={1} sm={4}>
-              <Row className="logoRow">
-                <Col xs={4}>
-                  <Logo source={javaLogo} altText="A Java Logo" />
-                </Col>
-                <Col xs={4}>
-                  <Logo source={reactLogo} altText="A React Logo" />
-                </Col>
-                <Col xs={4}>
-                  <Logo source={awsLogo} altText="An Aws Logo" />
-                </Col>
-              </Row>
-              <Row className="logoRow">
-                <Col xs={4}>
-                  <Logo source={polymerLogo} altText="A Polymer Logo" />
-                </Col>
-                <Col xs={4}>
-                  <Logo source={swiftLogo} altText="A Swift Logo" />
-                </Col>
-                <Col xs={4}>
-                  <Logo source={dockerLogo} altText="A Docker Logo" />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Grid>
-      </section>
-      {/* Blog */}
-      <section className="blog">
-        <Grid className="container">
-          <h1>Blog</h1>
-          <Row className="blog-wrap">
-            <Col className="blog-item" xs={12} sm={4}>
-              <Image source={blogImgOne} altText="A Blog Placeholder" />
-              <h2>Skysail gun swing the lead pink Cat o'nine</h2>
-              <p>
-                Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
-                Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
-                matey Letter of Marque brig aft bring a spring upon her cable grog
-                blossom hang the jib Barbary Coast yard. Barkadeer doubloon
-                measured fer yer chains splice.
-            </p>
-            </Col>
-            <Col className="blog-item" xs={12} sm={4}>
-              <Image source={blogImgOne} altText="A Blog Placeholder" />
-              <h2>Skysail gun swing the lead pink Cat o'nine</h2>
-              <p>
-                Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
-                Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
-                matey Letter of Marque brig aft bring a spring upon her cable grog
-                blossom hang the jib Barbary Coast yard. Barkadeer doubloon
-                measured fer yer chains splice.
-            </p>
-            </Col>
-            <Col className="blog-item" xs={12} sm={4}>
-              <Image source={blogImgOne} altText="A Blog Placeholder" />
-              <h2>Skysail gun swing the lead pink Cat o'nine</h2>
-              <p>
-                Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
-                Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
-                matey Letter of Marque brig aft bring a spring upon her cable grog
-                blossom hang the jib Barbary Coast yard. Barkadeer doubloon
-                measured fer yer chains splice.
-            </p>
-            </Col>
-          </Row>
-          <Row className="arrow-icons-wrap">
-            <ArrowButton
-              leftArrow={true}
-              source={arrowIcon}
-              altText="An arrow icon"
+  <div className={className}>
+    <Header title={title} subheading={subheading} hero={hero} />
+    {/* Our clients */}
+    <Clients />
+    <CaseStudies />
+    {/* What we do */}
+    <section className="what-we-do">
+      <Grid className="container">
+        <h1>What we do</h1>
+        <h1>Driving brands forward online.</h1>
+        <Row className="section-row">
+          <Col xs={12} sm={6} lg={3}>
+            <Icon
+              source={devIcon}
+              altText="WWD Icons"
+              height="90px"
+              width="90px"
             />
-            <ArrowButton
-              leftArrow={false}
-              source={arrowIcon}
-              altText="An arrow icon"
+            <h2>Heading</h2>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+          <Col xs={12} sm={6} lg={3}>
+            <Icon
+              source={designIcon}
+              altText="WWD Icons"
+              height="90px"
+              width="90px"
             />
-          </Row>
-        </Grid>
-        {/* <BlogRoll /> */}
-      </section>
+            <h2>Heading</h2>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+          <Col xs={12} sm={6} lg={3}>
+            <Icon
+              source={analysisIcon}
+              altText="WWD Icons"
+              height="90px"
+              width="90px"
+            />
+            <h2>Heading</h2>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+          <Col xs={12} sm={6} lg={3}>
+            <Icon
+              source={workshopIcon}
+              altText="WWD Icons"
+              height="90px"
+              width="90px"
+            />
+            <h2>Heading</h2>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+        </Row>
+      </Grid>
+    </section>
+    {/* References */}
+    <section className="references">
+      <Grid className="container">
+        <h1>References</h1>
+        <Row className="section-row">
+          <Col xs={12} sm={6} lg={5}>
+            <Image source={swRef} altText="Software development reference" />
+          </Col>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
+            <h2>SOFTWARE DEVELOPMENT</h2>
+            <h3>Name of the Project</h3>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+        </Row>
+        <Row className="section-row flex-row-reverse">
+          <Col xs={12} sm={6} lg={5}>
+            <Image
+              source={designRef}
+              altText="Software development reference"
+            />
+          </Col>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
+            <h2>SOFTWARE DEVELOPMENT</h2>
+            <h3>Name of the Project</h3>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+        </Row>
+        <Row className="section-row">
+          <Col xs={12} sm={6} lg={5}>
+            <Image source={ref3} altText="Software development reference" />
+          </Col>
+          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
+            <h2>SOFTWARE DEVELOPMENT</h2>
+            <h3>Name of the Project</h3>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper
+            </p>
+          </Col>
+        </Row>
+      </Grid>
+    </section>
 
-      {/* Contact us */}
-
-      {/* Instagram */}
-    </div>
-  );
+    {/* Technologies */}
+    <section className="technologies">
+      <Grid className="container">
+        <h1>Technologies</h1>
+        <Row>
+          <Col xs={12} sm={6}>
+            <p>
+              Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep
+              beanie babies david duchovny lisa frank. Nerf guns hoop earrings.
+            </p>
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin.
+            </p>
+          </Col>
+          <Col xs={12} smOffset={1} sm={4}>
+            <Row className="logoRow">
+              <Col xs={4}>
+                <Logo source={javaLogo} altText="A Java Logo" />
+              </Col>
+              <Col xs={4}>
+                <Logo source={reactLogo} altText="A React Logo" />
+              </Col>
+              <Col xs={4}>
+                <Logo source={awsLogo} altText="An Aws Logo" />
+              </Col>
+            </Row>
+            <Row className="logoRow">
+              <Col xs={4}>
+                <Logo source={polymerLogo} altText="A Polymer Logo" />
+              </Col>
+              <Col xs={4}>
+                <Logo source={swiftLogo} altText="A Swift Logo" />
+              </Col>
+              <Col xs={4}>
+                <Logo source={dockerLogo} altText="A Docker Logo" />
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Grid>
+    </section>
+    {/* Blog */}
+    <section className="blog">
+      <Grid className="container">
+        <h1>Blog</h1>
+        <Row className="blog-wrap">
+          <Col className="blog-item" xs={12} sm={4}>
+            <Image source={blogImgOne} altText="A Blog Placeholder" />
+            <h2>Skysail gun swing the lead pink Cat o'nine</h2>
+            <p>
+              Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
+              Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
+              matey Letter of Marque brig aft bring a spring upon her cable grog
+              blossom hang the jib Barbary Coast yard. Barkadeer doubloon
+              measured fer yer chains splice.
+            </p>
+          </Col>
+          <Col className="blog-item" xs={12} sm={4}>
+            <Image source={blogImgOne} altText="A Blog Placeholder" />
+            <h2>Skysail gun swing the lead pink Cat o'nine</h2>
+            <p>
+              Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
+              Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
+              matey Letter of Marque brig aft bring a spring upon her cable grog
+              blossom hang the jib Barbary Coast yard. Barkadeer doubloon
+              measured fer yer chains splice.
+            </p>
+          </Col>
+          <Col className="blog-item" xs={12} sm={4}>
+            <Image source={blogImgOne} altText="A Blog Placeholder" />
+            <h2>Skysail gun swing the lead pink Cat o'nine</h2>
+            <p>
+              Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
+              Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
+              matey Letter of Marque brig aft bring a spring upon her cable grog
+              blossom hang the jib Barbary Coast yard. Barkadeer doubloon
+              measured fer yer chains splice.
+            </p>
+          </Col>
+        </Row>
+        <Row className="arrow-icons-wrap">
+          <ArrowButton dark={false} leftArrow={true} altText="An arrow icon" />
+          <ArrowButton dark={false} leftArrow={false} altText="An arrow icon" />
+        </Row>
+      </Grid>
+      {/* <BlogRoll /> */}
+    </section>
+    {/* Contact Us */}
+    <Contact />
+    {/* Instagram */}
+    <Instagram />
+  </div>
+);
 
 const StyledIndexPageTemplate = styled(IndexPageTemplate)`
-
- .container {
+  .container {
     @media ${props => props.theme.screen.laptop} {
       width: 1410px !important;
     }
-  } 
+  }
 
   /*All Main Sections*/
   .what-we-do {
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.darkGreen};
-      padding: 2rem 0;
+    padding: 2rem 0;
 
+    @media ${props => props.theme.screen.laptop} {
+      padding: 7.5rem 0;
+    }
+
+    .row {
       @media ${props => props.theme.screen.laptop} {
-        padding: 7.5rem 0;
+        margin-top: 95px;
       }
-
-      .row {
-        @media ${props => props.theme.screen.laptop} {
-          margin-top: 95px;
-        }
-      }
+    }
 
     h1 {
       &:nth-child(2) {
@@ -296,22 +312,19 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       line-height: 27px;
       letter-spacing: 0.03em;
     }
-
   }
 
   .references {
+    padding: 2rem 0;
 
-      padding: 2rem 0;
-
+    @media ${props => props.theme.screen.laptop} {
+      padding: 7.5rem 0;
+    }
+    /* .row {
       @media ${props => props.theme.screen.laptop} {
-        padding: 7.5rem 0;
+        margin-top: 95px;
       }
-
-      .row {
-        @media ${props => props.theme.screen.laptop} {
-          margin-top: 95px;
-        }
-      }
+    } */
 
     @media ${props => props.theme.screen.laptopL} {
       .container {
@@ -356,19 +369,17 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   .technologies {
+    padding: 2rem 0;
 
-      padding: 2rem 0;
+    @media ${props => props.theme.screen.laptop} {
+      padding: 7.5rem 0;
+    }
 
+    .row {
       @media ${props => props.theme.screen.laptop} {
-        padding: 7.5rem 0;
+        margin-top: 95px;
       }
-
-      .row {
-        @media ${props => props.theme.screen.laptop} {
-          margin-top: 95px;
-        }
-      }
-    
+    }
 
     p {
       font-family: "Open Sans", sans-serif;

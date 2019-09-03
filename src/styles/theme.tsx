@@ -39,6 +39,7 @@ export interface IThemeInterface {
     darkGreen: string;
     paragraphGrey: string;
     blogSectionBg: string;
+    inputBorder: string;
   };
   fonts: {
     default: string;
@@ -81,7 +82,8 @@ export const theme: IThemeInterface = {
     black: "#000000",
     darkGreen: "#202d3c",
     paragraphGrey: "#1c2b3b",
-    blogSectionBg: "#161617"
+    blogSectionBg: "#161617",
+    inputBorder: "#E8E8E8"
   },
   fonts: {
     default: "Open Sans"
