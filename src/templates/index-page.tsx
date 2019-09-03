@@ -122,6 +122,13 @@ export const pageQuery = graphql`
         hero {
           ...FileInfo
         }
+        clients {
+          logo {
+            fluid(maxWidth: 120, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
