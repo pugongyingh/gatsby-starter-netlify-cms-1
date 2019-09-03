@@ -120,6 +120,13 @@ collections:
             name: hero
             widget: file
             required: true
+          - label: Clients
+            name: clients
+            widget: list
+            fields:
+              - label: Logo
+                name: logo
+                widget: image
           - label: Testimonials
             name: testimonials
             widget: list
