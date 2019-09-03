@@ -19,8 +19,9 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
 
   return (
     <nav className={className} role="navigation" aria-label="main-navigation">
-      <Grid>
-        <div className="navbar-brand">
+      <Grid className="grid-wrap">
+        <div className="mobile-nav-wrap">
+          <div className="navbar-brand" />
           {/* Hamburger menu */}
           <div
             className={`navbar-burger burger ${active && "is-active"}`}
@@ -58,13 +59,29 @@ const Navbar = styled(NavbarTemplate)`
   align-items: flex-end;
   flex-direction: column;
 
+  .grid-wrap {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    .mobile-nav-wrap {
+      display: flex;
+    }
+  }
+
   .navbar-brand {
     align-items: stretch;
     display: flex;
     flex-shrink: 0;
     min-height: 3.25rem;
 
-    .navbar-burger {
+    /* hiding from tablet and larger devices */
+    @media ${props => props.theme.screen.laptop} {
+      display: none;
+    }
+  }
+
+  .navbar-burger {
       cursor: pointer;
       display: block;
       height: 3.25rem;
@@ -76,14 +93,9 @@ const Navbar = styled(NavbarTemplate)`
       background-position: center;
     }
 
-    /* hiding from tablet and larger devices */
-    @media ${props => props.theme.screen.laptop} {
-      display: none;
-    }
-  }
-
   .navbar-menu {
-    /* display: none; */
+    /* display none by default --> onClick show MENU */
+    display: none;
     text-align: center;
 
     @media ${props => props.theme.screen.laptop} {

@@ -21,6 +21,11 @@ const StyledFooter = styled.section`
   .copyright {
     display: flex;
     align-items: center;
+    width: 270px;
+
+    @media ${props => props.theme.screen.laptop} {
+      width: 100%;
+    }
   }
   .social {
     display: flex;
