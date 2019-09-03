@@ -6,9 +6,11 @@ import Navbar from "./Navbar";
 import SiteMeta from "./SiteMeta";
 
 // FIXME: Issue with global styles
-// injectGlobal`
-//   ${main}
-// `;
+
+// tslint:disable-next-line
+injectGlobal`
+  ${main}
+`;
 
 const Page: React.SFC = ({ children }) => {
   return (

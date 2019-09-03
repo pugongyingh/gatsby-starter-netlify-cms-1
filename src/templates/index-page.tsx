@@ -57,6 +57,20 @@ const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       width: 1410px !important;
     }
   }
+
+  section {
+    padding: 2rem 0;
+
+    @media ${props => props.theme.screen.laptop} {
+      padding: 7.5rem 0;
+    }
+
+    .section-row {
+      @media ${props => props.theme.screen.laptop} {
+        margin-top: 95px;
+      }
+    }
+  }
 `;
 
 interface IndexPageTemplateProps {
