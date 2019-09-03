@@ -39,6 +39,10 @@ const BlogWrap = styled.section`
       }
     }
   }
+
+  .arrow-icons-wrap {
+    justify-content: flex-end;
+  }
 `;
 
 const Blog: React.FC<Props> = () => {
