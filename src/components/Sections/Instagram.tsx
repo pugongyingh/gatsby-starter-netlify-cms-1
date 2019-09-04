@@ -5,40 +5,15 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import InstaImg01 from "../../img/instagram-1.png";
 import styled from "../../styles/theme";
-import ArrowButton from "../ArrowButton";
+import StyledArrowButton from "../ArrowButton";
 import ArrowLink from "../ArrowLink";
 import InstagramItem from "../InstagramItem";
 
-interface InstagramProps {}
+interface InstagramProps {
+  className?: string;
+}
 
-const InstagramWrap = styled.section`
-  .items-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .instagram-item {
-    width: 100%;
-  }
-
-  @media ${props => props.theme.screen.laptop} {
-    h2 {
-      margin-top: 70px;
-    }
-  }
-  .arrow-icons-wrap {
-    height: 8vh;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .followLink {
-    margin-right: auto;
-  }
-`;
-
-class Intagram extends React.Component<InstagramProps> {
+class Instagram extends React.Component<InstagramProps> {
   private reference: React.RefObject<Slider> = React.createRef();
   public next = () => {
     this.reference.current!.slickNext();
@@ -55,12 +30,12 @@ class Intagram extends React.Component<InstagramProps> {
       slidesToScroll: 1
     };
     return (
-      <InstagramWrap className="instagram">
+      <section className={this.props.className}>
         <Grid className="container">
           <h1>Instagram</h1>
           <Row className="items-wrap">
             <Col className="instagram-item">
-              <Slider ref={this.reference} {...settings}>
+              <Slider ref={this.reference} {...settings} className="slider">
                 <InstagramItem
                   src={InstaImg01}
                   alt="Instagram item 1"
@@ -115,23 +90,53 @@ class Intagram extends React.Component<InstagramProps> {
               link="#"
               instaFollowLink={true}
             />
-            <ArrowButton
+            <StyledArrowButton
               dark={true}
               leftArrow={true}
               altText="An arrow icon"
-              onClick={this.next}
+              onClick={this.previous}
             />
-            <ArrowButton
+            <StyledArrowButton
               dark={true}
               leftArrow={false}
               altText="An arrow icon"
-              onClick={this.previous}
+              onClick={this.next}
             />
           </Row>
         </Grid>
-      </InstagramWrap>
+      </section>
     );
   }
 }
 
-export default Intagram;
+const StyledInstagram = styled(Instagram)`
+  .items-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .instagram-item {
+    width: 100%;
+  }
+
+  @media ${props => props.theme.screen.laptop} {
+    .slider {
+      margin-right: 2px;
+    }
+    h2 {
+      margin-top: 70px;
+    }
+  }
+  .arrow-icons-wrap {
+    height: 8vh;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .followLink {
+    margin-right: auto;
+  }
+`;
+
+export default StyledInstagram;
