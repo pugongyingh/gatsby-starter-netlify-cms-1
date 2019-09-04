@@ -10,7 +10,7 @@ import References from "../components/Sections/References";
 import Technologies from "../components/Sections/Technologies";
 import WhatWeDo from "../components/Sections/WhatWeDo";
 
-import { File, Maybe, Query } from "../graphql/types";
+import { File, MarkdownRemarkFrontmatterClients, Query } from "../graphql/types";
 
 // sections
 import Contact from "../components/Sections/Contact";
@@ -21,20 +21,22 @@ import styled from "../styles/theme";
 interface IndexPageProps {
   hero: string | File;
   title: string;
-  subheading: Maybe<string>;
+  subheading: string;
   className?: string;
+  clients: MarkdownRemarkFrontmatterClients[];
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   hero,
   title,
   subheading,
-  className
+  className,
+  clients
 }) => (
   <div className={className}>
     <Header title={title} subheading={subheading} hero={hero} />
     {/* Our clients */}
-    <Clients />
+    <Clients clients={clients} />
     <CaseStudies />
     {/* What we do */}
     <WhatWeDo />
@@ -87,9 +89,10 @@ const IndexPage = ({ data }: IndexPageTemplateProps) => {
   return (
     <Page>
       <StyledIndexPageTemplate
-        hero={page.frontmatter.hero!}
-        title={page.frontmatter.title!}
+        hero={page.frontmatter.hero}
+        title={page.frontmatter.title}
         subheading={page.frontmatter.subheading}
+        clients={page.frontmatter.clients}
       />
     </Page>
   );
@@ -105,6 +108,7 @@ export const IndexPagePreview = ({ entry }: any) => {
           hero={data.hero}
           title={data.title}
           subheading={data.subheading}
+          clients={data.clients}
         />
       </Preview>
     );
@@ -121,6 +125,9 @@ export const pageQuery = graphql`
         subheading
         hero {
           ...FileInfo
+        }
+        clients {
+          ...ClientInfo
         }
       }
     }
