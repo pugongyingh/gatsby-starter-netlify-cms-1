@@ -50,4 +50,10 @@ export const query = graphql`
       }
     }
   }
+  fragment ClientInfo on MarkdownRemarkFrontmatterClients {
+    logo {
+      ...FileInfo
+    }
+    title
+  }
 `
