@@ -22,6 +22,12 @@ const ClientsSection = styled.section`
       display: flex;
       justify-content: center;
       margin: -1px;
+
+      @media ${props => props.theme.screen.laptop} {
+        :not(:last-child) {
+          border-right: 1px solid ${props => props.theme.colors.clientBorder};
+        }
+      }
     }
   }
   .vertical {
