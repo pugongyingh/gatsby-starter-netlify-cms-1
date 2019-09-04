@@ -11,10 +11,17 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
   const [active, setActive] = useState();
   const toggleActive = () => setActive(!active);
 
+  // Smooth Scroll
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]');
+  }
+
   return (
-    <Grid>
-      <nav className={className} role="navigation" aria-label="main-navigation">
-        <div className="navbar-brand">
+    <nav className={className} role="navigation" aria-label="main-navigation">
+      <Grid className="grid-wrap">
+        <div className="mobile-nav-wrap">
+          <div className="navbar-brand" />
           {/* Hamburger menu */}
           <div
             className={`navbar-burger burger ${active && "is-active"}`}
@@ -23,21 +30,21 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
           />
         </div>
         <div id="navMenu" className={`navbar-menu ${active && "is-active"}`}>
-          <Link to="/#my-cool-header" className="navbar-item">
+          <Link to="/#what-we-do" className="navbar-item">
             What We Do
           </Link>
-          <Link className="navbar-item" to="/about">
+          <Link to="/#references" className="navbar-item">
             References
           </Link>
-          <Link className="navbar-item" to="/blog">
+          <Link to="/#blog" className="navbar-item">
             Blog
           </Link>
-          <Link className="navbar-item" to="/contact">
+          <Link to="/#contact" className="navbar-item">
             Contact
           </Link>
         </div>
-      </nav>
-    </Grid>
+      </Grid>
+    </nav>
   );
 };
 
@@ -52,13 +59,29 @@ const Navbar = styled(NavbarTemplate)`
   align-items: flex-end;
   flex-direction: column;
 
+  .grid-wrap {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    .mobile-nav-wrap {
+      display: flex;
+    }
+  }
+
   .navbar-brand {
     align-items: stretch;
     display: flex;
     flex-shrink: 0;
     min-height: 3.25rem;
 
-    .navbar-burger {
+    /* hiding from tablet and larger devices */
+    @media ${props => props.theme.screen.laptop} {
+      display: none;
+    }
+  }
+
+  .navbar-burger {
       cursor: pointer;
       display: block;
       height: 3.25rem;
@@ -70,13 +93,8 @@ const Navbar = styled(NavbarTemplate)`
       background-position: center;
     }
 
-    /* hiding from tablet and larger devices */
-    @media ${props => props.theme.screen.laptop} {
-      display: none;
-    }
-  }
-
   .navbar-menu {
+    /* display none by default --> onClick show MENU */
     display: none;
     text-align: center;
 
@@ -146,8 +164,6 @@ const Navbar = styled(NavbarTemplate)`
     .navbar-menu {
       flex-grow: 1;
       flex-shrink: 0;
-      /* justify-content: flex-end; */
-      margin-right: 14%;
     }
     .navbar-start {
       justify-content: flex-start;

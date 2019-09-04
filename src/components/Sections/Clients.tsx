@@ -1,12 +1,10 @@
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import styled from "../../styles/theme";
-import Icon from "../Icon";
+// import Icon from "../Icon";
 
-import lenovoLogo from "../../img/lenovo_logo.svg";
-import logitechLogo from "../../img/logitech_logo.svg";
-import ubisoftLogo from "../../img/ubisoft_logo.svg";
-import xboxLogo from "../../img/xbox_logo.svg";
+import { MarkdownRemarkFrontmatterClients } from "../../graphql/types";
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
 const ClientsSection = styled.section`
   color: ${props => props.theme.colors.white};
@@ -24,46 +22,39 @@ const ClientsSection = styled.section`
       display: flex;
       justify-content: center;
       margin: -1px;
+
+      @media ${props => props.theme.screen.laptop} {
+        :not(:last-child) {
+          border-right: 1px solid ${props => props.theme.colors.clientBorder};
+        }
+      }
     }
   }
   .vertical {
     border-right: 1px solid #6c6c6c;
   }
 `;
-interface ClientsProps {}
+interface ClientsProps {
+  clients: MarkdownRemarkFrontmatterClients[];
+}
 
-const Clients: React.FC<ClientsProps> = () => {
+const Clients: React.FC<ClientsProps> = ({ clients }) => {
   return (
     <ClientsSection>
       <Grid className="container">
         <h1>Our Clients</h1>
         <Row />
         <Row className="row">
-          <Col lg={3} xs={12} className="col">
-            <Icon source={xboxLogo} altText="" width="198px" height="198px" />
-          </Col>
-          <span className="vertical" />
-          <Col lg={3} xs={12} className="col">
-            <Icon
-              source={logitechLogo}
-              altText=""
-              width="198px"
-              height="198px"
-            />
-          </Col>
-          <span className="vertical" />
-          <Col lg={3} xs={12} className="col">
-            <Icon source={lenovoLogo} altText="" width="198px" height="198px" />
-          </Col>
-          <span className="vertical" />
-          <Col lg={3} xs={12} className="col">
-            <Icon
-              source={ubisoftLogo}
-              altText=""
-              width="198px"
-              height="198px"
-            />
-          </Col>
+          {clients.map(client => (
+            <Col key={client.title} lg={3} xs={12} className="col">
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: client.logo,
+                  alt: `${client.title} logo`
+                }}
+              />
+            </Col>
+          ))}
         </Row>
       </Grid>
     </ClientsSection>

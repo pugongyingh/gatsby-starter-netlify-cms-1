@@ -1,16 +1,41 @@
-import classnames from "classnames";
 import React from "react";
-import styled from "styled-components";
 import arrowIconDark from "../img/arrow-icon-dark.svg";
 import arrowIcon from "../img/right-arrow-icon.svg";
+import styled from "../styles/theme";
 
 interface ArrowBtnProps {
   altText: string;
   leftArrow: boolean;
   dark: boolean;
+  onClick?: any;
+  className?: string;
 }
 
-const StyledBtn = styled.div`
+const ArrowButton: React.FC<ArrowBtnProps> = ({
+  altText,
+  leftArrow,
+  dark,
+  onClick,
+  className
+}) => {
+  const classes = [className];
+
+  if (leftArrow) {
+    classes.push("left-arrow");
+  }
+
+  if (dark) {
+    classes.push("dark");
+  }
+
+  return (
+    <div className={classes.join(" ")} onClick={onClick}>
+      <img src={dark ? arrowIconDark : arrowIcon} alt={altText} />
+    </div>
+  );
+};
+
+const StyledArrowButton = styled(ArrowButton)`
   width: 52px;
   height: 52px;
   border: 1px solid ${props => props.theme.colors.white};
@@ -32,22 +57,4 @@ const StyledBtn = styled.div`
   }
 `;
 
-const ArrowButton: React.FC<ArrowBtnProps> = ({ altText, leftArrow, dark }) => {
-  const classes = [];
-
-  if (leftArrow) {
-    classes.push("left-arrow");
-  }
-
-  if (dark) {
-    classes.push("dark");
-  }
-
-  return (
-    <StyledBtn className={classes.join(" ")}>
-      <img src={dark ? arrowIconDark : arrowIcon} alt={altText} />
-    </StyledBtn>
-  );
-};
-
-export default ArrowButton;
+export default StyledArrowButton;

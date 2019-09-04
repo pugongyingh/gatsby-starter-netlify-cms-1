@@ -21,6 +21,7 @@ const IndexPage = ({ data }: IndexPageTemplateProps) => {
                 hero={page.frontmatter.hero!}
                 title={page.frontmatter.title!}
                 subheading={page.frontmatter.subheading}
+                clients={page.frontmatter.clients}
             />
         </Page>
     );
@@ -36,6 +37,7 @@ export const IndexPagePreview = ({ entry }: any) => {
                     hero={data.hero}
                     title={data.title}
                     subheading={data.subheading}
+                    clients={data.clients}
                 />
             </Preview>
         );
@@ -45,17 +47,20 @@ export const IndexPagePreview = ({ entry }: any) => {
 };
 
 export const pageQuery = graphql`
-    query IndexPageTemplate {
-      markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-        frontmatter {
-          title
-          subheading
-          hero {
-            ...FileInfo
-          }
+  query IndexPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      frontmatter {
+        title
+        subheading
+        hero {
+          ...FileInfo
+        }
+        clients {
+          ...ClientInfo
         }
       }
     }
-  `;
+  }
+`;
 
 export default IndexPage;

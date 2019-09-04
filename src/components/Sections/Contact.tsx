@@ -10,14 +10,20 @@ import ContactImg1 from "../../img/michal-kourik-photo.png";
 
 interface ContactProps {}
 
-const ContactUs = styled.section``;
+const ContactUs = styled.section`
+  .contact-wrap {
+    @media ${props => props.theme.screen.laptop} {
+      margin-top: 6rem;
+    }
+  }
+`;
 
 const Contact: React.FC<ContactProps> = () => {
   return (
-    <ContactUs>
+    <ContactUs id="contact">
       <Grid>
         <h1>Contact us</h1>
-        <Row>
+        <Row className="contact-wrap">
           <Col xs={12} sm={6}>
             <Form />
           </Col>
@@ -29,6 +35,7 @@ const Contact: React.FC<ContactProps> = () => {
                     ImgSource={ContactImg1}
                     altText="A contact photo"
                     name="Michal Kouřík"
+                    position="Technological teamleader"
                     email="michal.kourik@starkysclub.com"
                   />
                 </Col>
@@ -37,6 +44,7 @@ const Contact: React.FC<ContactProps> = () => {
                     ImgSource={ContactImg1}
                     altText="A contact photo"
                     name="Michal Kouřík"
+                    position="Technological teamleader"
                     email="michal.kourik@starkysclub.com"
                   />
                 </Col>
@@ -45,6 +53,7 @@ const Contact: React.FC<ContactProps> = () => {
                     ImgSource={ContactImg1}
                     altText="A contact photo"
                     name="Michal Kouřík"
+                    position="Technological teamleader"
                     email="michal.kourik@starkysclub.com"
                   />
                 </Col>

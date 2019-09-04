@@ -3,7 +3,7 @@ site:
   title: Starky's club
 backend:
   name: bitbucket
-  repo: starkysclub/starkys-fe
+  repo: starkysclub/starkys-fes
   branch: master
   base_url: http://starkysnetlify-env-1.q4aqw953v3.us-east-2.elasticbeanstalk.com/
 media_folder: static/img
@@ -122,6 +122,18 @@ collections:
             required: true
           - label: News
             name: news
+          - label: Clients
+            name: clients
+            widget: list
+            fields:
+              - label: Alt title
+                name: title
+                widget: string
+              - label: Logo
+                name: logo
+                widget: image
+          - label: Testimonials
+            name: testimonials
             widget: list
             fields:
               - label: Title
