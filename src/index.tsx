@@ -3,7 +3,7 @@ import cloudinary from "netlify-cms-media-library-cloudinary";
 import uploadcare from "netlify-cms-media-library-uploadcare";
 import * as React from 'react';
 import { StyleSheetManager } from 'styled-components';
-import { IndexPagePreview } from "./pages/IndexPage";
+import { IndexPagePreview } from "./pages/index-page";
 
 const CSSInjector = (props: any) => {
     const iframe = document.getElementsByTagName('iframe')[0];

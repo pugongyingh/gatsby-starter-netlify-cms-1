@@ -8,7 +8,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/src\/pages\//"}}, limit: 10) {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/static\/pages\//"}}, limit: 10) {
         edges {
           node {
             id
@@ -44,7 +44,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: slug,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
+          `src/pages/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
         // additional data can be passed via context
         context: {

@@ -1,3 +1,4 @@
+import * as React from "react";
 import Header from "../components/Layout/Header";
 import StyledBlog from "../components/Sections/Blog";
 import CaseStudies from "../components/Sections/CaseStudies";

@@ -1,5 +1,5 @@
 ---
-templateKey: index-page
+templateKey: IndexPage
 locale: en
 title: Great coffee with a conscience
 subheading: >-
