@@ -13,8 +13,12 @@ const ResponsiveImg = styled.img`
 `;
 
 const Image: React.FC<ImageProps> = props => {
-  const { source, altText, className } = props;
-  return <ResponsiveImg className={className} src={source} alt={altText} />;
+  const { className, source, altText } = props;
+  return (
+    <div>
+      <ResponsiveImg className={className} src={source} alt={altText} />;
+    </div>
+  );
 };
 
 export default Image;
