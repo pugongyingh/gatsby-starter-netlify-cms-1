@@ -5,6 +5,7 @@ interface ImageProps {
   className: string;
   source: string;
   altText: string;
+  className?: string;
 }
 
 const ResponsiveImg = styled.img`

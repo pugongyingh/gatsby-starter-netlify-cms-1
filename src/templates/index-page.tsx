@@ -3,7 +3,7 @@ import React from "react";
 import { Preview } from "../components/CMS/Preview";
 import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
-import Blog from "../components/Sections/Blog";
+import StyledBlog from "../components/Sections/Blog";
 import CaseStudies from "../components/Sections/CaseStudies";
 import Clients from "../components/Sections/Clients";
 import References from "../components/Sections/References";
@@ -14,7 +14,7 @@ import { File, Maybe, Query } from "../graphql/types";
 
 // sections
 import Contact from "../components/Sections/Contact";
-import Instagram from "../components/Sections/Intagram";
+import StyledInstagram from "../components/Sections/Instagram";
 
 import styled from "../styles/theme";
 
@@ -43,11 +43,11 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {/* Technologies */}
     <Technologies />
     {/* Blog */}
-    <Blog />
+    <StyledBlog />
     {/* Contact Us */}
     <Contact />
     {/* Instagram */}
-    <Instagram />
+    <StyledInstagram />
   </div>
 );
 
