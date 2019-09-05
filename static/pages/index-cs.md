@@ -12,7 +12,6 @@ clients:
     title: Xbox1
   - logo: /img/ubisoft_logo.svg
     title: Ubisoft
-testimonials: []
 work:
   services:
     - description: TESET
@@ -20,9 +19,15 @@ work:
       title: WWD New
   subtitle: T
   title: T
-references: []
+references:
+  - body: T
+    description: T
+    image: /img/ubisoft_logo.svg
+    title: T
 technologies:
   description: T
+  logos:
+    - logo: /img/ubisoft_logo.svg
   title: T
 ---
 
