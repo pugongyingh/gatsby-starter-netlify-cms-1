@@ -48,7 +48,7 @@ export const IndexPagePreview = ({ entry }: any) => {
 };
 
 export const pageQuery = graphql`
-  query IndexPageTemplate ($locale: String!) {
+  query IndexPageTemplate ($locale: String) {
     markdownRemark(frontmatter: {locale: {eq: $locale}, templateKey: {eq: "IndexPage"}}) {
       frontmatter {
         title
