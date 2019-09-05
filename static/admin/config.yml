@@ -96,7 +96,7 @@ collections:
   - name: pages
     label: Pages
     files:
-      - file: static/pages/index.md
+      - file: static/pages/index-cs.md
         label: Landing Page CS
         name: index
         fields:
@@ -132,18 +132,6 @@ collections:
               - label: Logo
                 name: logo
                 widget: image
-          - label: Testimonials
-            name: testimonials
-            widget: list
-            fields:
-              - label: Title
-                name: title
-                widget: string
-                required: true
-              - label: Body
-                name: body
-                widget: text
-                required: true
           - label: What we do
             name: work
             widget: object
