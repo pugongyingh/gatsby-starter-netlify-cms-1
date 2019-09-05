@@ -9,11 +9,7 @@ hero: /img/home-bg.png
 news: TEST
 clients:
   - logo: /img/xbox_logo.svg
-    title: XboxNew
-  - logo: /img/logitech_logo.svg
-    title: Logitech
-  - logo: /img/lenovo_logo.svg
-    title: Lenovo
+    title: Xbox1
   - logo: /img/ubisoft_logo.svg
     title: Ubisoft
 testimonials: []
