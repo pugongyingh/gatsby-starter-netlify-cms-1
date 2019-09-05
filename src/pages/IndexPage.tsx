@@ -23,6 +23,9 @@ const IndexPage = ({ data }: IndexPageTemplateProps) => {
         title={page.frontmatter.title!}
         subheading={page.frontmatter.subheading}
         clients={page.frontmatter.clients}
+        work={page.frontmatter.work}
+        technologies={page.frontmatter.technologies}
+        references={page.frontmatter.references}
       />
     </Page>
   );
@@ -39,6 +42,9 @@ export const IndexPagePreview = ({ entry }: any) => {
           title={data.title}
           subheading={data.subheading}
           clients={data.clients}
+          work={data.work}
+          technologies={data.technologies}
+          references={data.references}
         />
       </Preview>
     );
@@ -57,7 +63,16 @@ export const pageQuery = graphql`
           ...FileInfo
         }
         clients {
-          ...ClientInfo
+          ...ClientsInfo
+        }
+        work {
+          ...WorkInfo
+        }
+        references {
+          ...ReferencesInfo
+        }
+        technologies {
+          ...TechnologiesInfo
         }
       }
     }

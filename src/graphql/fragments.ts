@@ -50,10 +50,41 @@ export const query = graphql`
       }
     }
   }
-  fragment ClientInfo on MarkdownRemarkFrontmatterClients {
+  fragment ClientsInfo on MarkdownRemarkFrontmatterClients {
     logo {
       ...FileInfo
     }
     title
+  }
+  fragment WorkInfo on MarkdownRemarkFrontmatterWork {
+    title
+    subtitle
+    services {
+      title
+      logo {
+        ...FileInfo
+      }
+      description
+    }
+  }
+  fragment ReferencesInfo on MarkdownRemarkFrontmatterReferences {
+    title
+    subtitle
+    services {
+      title
+      logo {
+        ...FileInfo
+      }
+      description
+    }
+  }
+  fragment TechnologiesInfo on MarkdownRemarkFrontmatterTechnologies {
+    title
+    description
+    logos {
+      logo {
+        ...FileInfo
+      }
+    }
   }
 `
