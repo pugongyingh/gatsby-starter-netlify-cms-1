@@ -8,15 +8,15 @@ import StyledInstagram from "../components/Sections/Instagram";
 import References from "../components/Sections/References";
 import Technologies from "../components/Sections/Technologies";
 import WhatWeDo from "../components/Sections/WhatWeDo";
-import { File, MarkdownRemarkFrontmatterClients } from "../graphql/types";
+import { File, MarkdownRemarkFrontmatterClients, Maybe } from "../graphql/types";
 import styled from "../styles/theme";
 
 interface IndexPageProps {
   hero: string | File;
   title: string;
-  subheading: string;
+  subheading: Maybe<string>;
   className?: string;
-  clients: MarkdownRemarkFrontmatterClients[];
+  clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({

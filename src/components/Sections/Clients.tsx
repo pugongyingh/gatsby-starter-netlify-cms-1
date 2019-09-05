@@ -3,7 +3,7 @@ import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import styled from "../../styles/theme";
 // import Icon from "../Icon";
 
-import { MarkdownRemarkFrontmatterClients } from "../../graphql/types";
+import { MarkdownRemarkFrontmatterClients, Maybe } from "../../graphql/types";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
 const ClientsSection = styled.section`
@@ -35,7 +35,7 @@ const ClientsSection = styled.section`
   }
 `;
 interface ClientsProps {
-  clients: MarkdownRemarkFrontmatterClients[];
+  clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
 }
 
 const Clients: React.FC<ClientsProps> = ({ clients }) => {
@@ -45,16 +45,23 @@ const Clients: React.FC<ClientsProps> = ({ clients }) => {
         <h1>Our Clients</h1>
         <Row />
         <Row className="row">
-          {clients.map(client => (
-            <Col key={client.title} lg={3} xs={12} className="col">
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: client.logo,
-                  alt: `${client.title} logo`
-                }}
-              />
-            </Col>
-          ))}
+          {clients && clients.map(client => {
+            if (!client) {
+              return null;
+            }
+            return (
+              <Col key={client.title} lg={3} xs={12} className="col">
+                {client.logo &&
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: client.logo,
+                      alt: `${client.title} logo`
+                    }}
+                  />
+                }
+              </Col>
+            )
+          })}
         </Row>
       </Grid>
     </ClientsSection>

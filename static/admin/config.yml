@@ -3,7 +3,7 @@ site:
   title: Starky's club
 backend:
   name: bitbucket
-  repo: starkysclub/starkys-fes
+  repo: starkysclub/starkys-fe
   branch: master
   base_url: http://starkysnetlify-env-1.q4aqw953v3.us-east-2.elasticbeanstalk.com/
 media_folder: static/img
