@@ -9,8 +9,8 @@ import Image from "../components/Image";
 import Header from "../components/Layout/Header";
 import Logo from "../components/Logo";
 
-import ContactImg1 from "../../img/michal-kourik-photo.png";
 import Map from "../img/address-map.png";
+import ContactImg1 from "../img/michal-kourik-photo.png";
 
 // Sections
 import StyledBlog from "../components/Sections/Blog";
