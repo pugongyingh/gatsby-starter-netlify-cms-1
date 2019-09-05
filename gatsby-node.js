@@ -33,12 +33,16 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
+      const locale = edge.node.frontmatter.locale
       let slug = "";
-      if (edge.node.frontmatter.locale && edge.node.frontmatter.locale !== 'cs') {
-        slug = "/" + edge.node.frontmatter.locale;
+      if (locale && locale !== 'cs') {
+        slug = "/" + locale;
       }
       if (!edge.node.fields.slug.match(/^\/index/)) {
         slug += edge.node.fields.slug;
+      }
+      if (slug === "") {
+        slug = "/";
       }
 
       createPage({
@@ -49,6 +53,7 @@ exports.createPages = ({ actions, graphql }) => {
         // additional data can be passed via context
         context: {
           id,
+          locale
         },
       })
     })

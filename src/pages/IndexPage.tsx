@@ -1,11 +1,11 @@
-import { graphql } from "gatsby";
+import { graphql, PageRendererProps } from "gatsby";
 import * as React from "react";
 import { Preview } from "../components/CMS/Preview";
 import Page from "../components/Layout/Page";
 import { Query } from "../graphql/types";
 import { StyledIndexPageTemplate } from "../templates/IndexPageTemplate";
 
-interface IndexPageTemplateProps {
+interface IndexPageTemplateProps extends PageRendererProps {
   data: Query;
 }
 
@@ -48,8 +48,8 @@ export const IndexPagePreview = ({ entry }: any) => {
 };
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "IndexPage" } }) {
+  query IndexPageTemplate ($locale: String!) {
+    markdownRemark(frontmatter: {locale: {eq: $locale}, templateKey: {eq: "IndexPage"}}) {
       frontmatter {
         title
         subheading
