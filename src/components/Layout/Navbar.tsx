@@ -101,6 +101,8 @@ const Navbar = styled(NavbarTemplate)`
     @media ${props => props.theme.screen.laptop} {
       display: flex;
       justify-content: flex-end;
+      position: relative;
+      top: 40px;
     }
   }
 
