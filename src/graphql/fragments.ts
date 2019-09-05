@@ -69,7 +69,7 @@ export const query = graphql`
   }
   fragment ReferencesInfo on MarkdownRemarkFrontmatterReferences {
     title
-    subtitle
+    description
     services {
       title
       logo {
