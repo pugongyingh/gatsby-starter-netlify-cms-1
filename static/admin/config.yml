@@ -162,15 +162,15 @@ collections:
               - label: Title
                 name: title
                 widget: string
+              - label: Subtitle (type)
+                name: subtitle
+                widget: string
               - label: Description
                 name: description
                 widget: text
               - label: Image
                 name: image
                 widget: image
-              - label: Body
-                name: body
-                widget: markdown
           - label: Technologies
             name: technologies
             widget: object

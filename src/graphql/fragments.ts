@@ -69,14 +69,9 @@ export const query = graphql`
   }
   fragment ReferencesInfo on MarkdownRemarkFrontmatterReferences {
     title
+    subtitle
     description
-    services {
-      title
-      logo {
-        ...FileInfo
-      }
-      description
-    }
+    image
   }
   fragment TechnologiesInfo on MarkdownRemarkFrontmatterTechnologies {
     title
