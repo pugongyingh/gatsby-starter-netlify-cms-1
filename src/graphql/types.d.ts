@@ -721,8 +721,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterWorkSubtitle = "childMarkdownRemark___frontmatter___work___subtitle",
   ChildMarkdownRemarkFrontmatterWorkTitle = "childMarkdownRemark___frontmatter___work___title",
   ChildMarkdownRemarkFrontmatterReferences = "childMarkdownRemark___frontmatter___references",
-  ChildMarkdownRemarkFrontmatterReferencesBody = "childMarkdownRemark___frontmatter___references___body",
   ChildMarkdownRemarkFrontmatterReferencesDescription = "childMarkdownRemark___frontmatter___references___description",
+  ChildMarkdownRemarkFrontmatterReferencesSubtitle = "childMarkdownRemark___frontmatter___references___subtitle",
   ChildMarkdownRemarkFrontmatterReferencesTitle = "childMarkdownRemark___frontmatter___references___title",
   ChildMarkdownRemarkFrontmatterTechnologiesDescription = "childMarkdownRemark___frontmatter___technologies___description",
   ChildMarkdownRemarkFrontmatterTechnologiesLogos = "childMarkdownRemark___frontmatter___technologies___logos",
@@ -1594,7 +1594,6 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterWorkSubtitle = "frontmatter___work___subtitle",
   FrontmatterWorkTitle = "frontmatter___work___title",
   FrontmatterReferences = "frontmatter___references",
-  FrontmatterReferencesBody = "frontmatter___references___body",
   FrontmatterReferencesDescription = "frontmatter___references___description",
   FrontmatterReferencesImageBirthtime = "frontmatter___references___image___birthtime",
   FrontmatterReferencesImageBirthtimeMs = "frontmatter___references___image___birthtimeMs",
@@ -1632,6 +1631,7 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterReferencesImagePublicUrl = "frontmatter___references___image___publicURL",
   FrontmatterReferencesImageId = "frontmatter___references___image___id",
   FrontmatterReferencesImageChildren = "frontmatter___references___image___children",
+  FrontmatterReferencesSubtitle = "frontmatter___references___subtitle",
   FrontmatterReferencesTitle = "frontmatter___references___title",
   FrontmatterTechnologiesDescription = "frontmatter___technologies___description",
   FrontmatterTechnologiesLogos = "frontmatter___technologies___logos",
@@ -1847,16 +1847,16 @@ export type MarkdownRemarkFrontmatterFooterFilterInput = {
 
 export type MarkdownRemarkFrontmatterReferences = {
   __typename?: "MarkdownRemarkFrontmatterReferences";
-  body: Maybe<Scalars["String"]>;
   description: Maybe<Scalars["String"]>;
   image: Maybe<File>;
+  subtitle: Maybe<Scalars["String"]>;
   title: Maybe<Scalars["String"]>;
 };
 
 export type MarkdownRemarkFrontmatterReferencesFilterInput = {
-  body: Maybe<StringQueryOperatorInput>;
   description: Maybe<StringQueryOperatorInput>;
   image: Maybe<FileFilterInput>;
+  subtitle: Maybe<StringQueryOperatorInput>;
   title: Maybe<StringQueryOperatorInput>;
 };
 

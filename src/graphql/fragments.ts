@@ -71,7 +71,9 @@ export const query = graphql`
     title
     subtitle
     description
-    image
+    image {
+        ...FileInfo
+    }
   }
   fragment TechnologiesInfo on MarkdownRemarkFrontmatterTechnologies {
     title
