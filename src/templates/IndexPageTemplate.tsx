@@ -14,6 +14,7 @@ import ContactImg1 from "../img/michal-kourik-photo.png";
 
 // Sections
 import StyledBlog from "../components/Sections/Blog";
+import Contact from "../components/Sections/Contact"
 import StyledInstagram from "../components/Sections/Instagram";
 
 import {
@@ -336,7 +337,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {/* Blog */}
     <StyledBlog />
     {/* Contact Us */}
-    <section id="contact">
+    {/* <section id="contact">
       <Grid>
         <h1>Contact us</h1>
         <Row className="contact-wrap">
@@ -383,7 +384,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           <Image altText="Address map" source={Map} />
         </a>
       </Grid>
-    </section>
+    </section> */}
+    <Contact />
     {/* Instagram */}
     <StyledInstagram />
   </div>
