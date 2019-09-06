@@ -17,21 +17,39 @@ const StyledLink = styled.div`
   img {
     padding-left: 0.25em;
   }
+  &.white {
+    a {
+    color: white;
+    }
+  }
 `;
 
 interface ArrowLinkProps {
   link: string;
   text: string;
   instaFollowLink: boolean;
+  white?: boolean;
+  className?: string;
 }
 
 const ArrowLink: React.FC<ArrowLinkProps> = ({
   link,
   text,
-  instaFollowLink
+  instaFollowLink,
+  white,
+  className
 }) => {
+  const classes = [className];
+
+  if (instaFollowLink) {
+    classes.push("followLink")
+  }
+
+  if (white) {
+    classes.push("white");
+  }
   return (
-    <StyledLink className={instaFollowLink ? "followLink" : ""}>
+    <StyledLink className={classes.join(" ")}>
       <a href={link}>
         {text} <img src={arrow} />
       </a>
