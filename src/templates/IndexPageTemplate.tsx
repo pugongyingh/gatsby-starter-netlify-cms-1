@@ -65,17 +65,11 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   <div className={className}>
     <Header title={title} subheading={subheading} hero={hero} />
     {/* Case studies */}
-    <section>
+    <section className="news">
       <Grid className="container">
+        <h1>News</h1>
         <Row>
           <Col lg={4} xs={12} className="col">
-            <Icon
-              className=""
-              source={fischerLogo}
-              altText=""
-              width="151px"
-              height="52px"
-            />
             <h2>Skysail gun swing the lead pink Cat o'nine</h2>
             <p>
               Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
@@ -85,21 +79,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               measured fer yer chains splice the main brace matey no prey, no
               pay dead men tell no tales scuttle clap of thunder crimp.
             </p>
-
-            <ArrowLinkStyled
-              instaFollowLink={false}
-              link={""}
-              text="See article"
-            />
           </Col>
           <Col lg={4} xs={12} className="col">
-            <Icon
-              className=""
-              source={adidasLogo}
-              altText="Adidas logo"
-              width="77px"
-              height="52px"
-            />
             <h2>American Main interloper parrel snow quarterdeck</h2>
             <p>
               Shiver me timbers wherry long clothes cog. Interloper blow the man
@@ -108,21 +89,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               aft aye pirate topmast. Barkadeer doubloon measured fer yer chains
               splice the main brace matey no prey.
             </p>
-
-            <ArrowLinkStyled
-              instaFollowLink={false}
-              link={""}
-              text="See article"
-            />
           </Col>
           <Col lg={4} xs={12} className="col">
-            <Icon
-              className=""
-              source={ubisoftSmallLogo}
-              altText="Ubisoft logo"
-              width="77px"
-              height="52px"
-            />
             <h2>Square-rigged lateen sail flogging </h2>
             <p>
               Deadlights salmagundi Barbary Coast hornswaggle gaff log line yawl
@@ -132,12 +100,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               about handsomely bounty fluke. Blimey strike colors spanker parrel
               league lad coxswain scallywag topmast draught.
             </p>
-
-            <ArrowLinkStyled
-              instaFollowLink={false}
-              link={""}
-              text="See article"
-            />
           </Col>
         </Row>
       </Grid>
@@ -416,6 +378,13 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+
+  /* Main Sections */
+  .news {
+    color:  ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.black};
+  }
+
   #what-we-do {
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.darkGreen};
@@ -445,8 +414,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   .clients {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.black};
+    background-color: ${props => props.theme.colors.white};
     /*height: 40vh;*/
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
@@ -463,7 +432,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
         @media ${props => props.theme.screen.laptop} {
           :not(:last-child) {
-            border-right: 1px solid ${props => props.theme.colors.clientBorder};
+            border-right: 1px solid ${props => props.theme.colors.black};
           }
         }
       }
