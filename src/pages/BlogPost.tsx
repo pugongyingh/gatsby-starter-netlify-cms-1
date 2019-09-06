@@ -48,9 +48,9 @@ export const BlogPostPreview = ({ entry, widgetFor }: any) => (
         />
     </Preview>
 )
-
+// FIXME: id is required
 export const pageQuery = graphql`
-  query BlogPostByID($id: String) { // FIXME: required
+  query BlogPostByID($id: String) {
     markdownRemark(id: { eq: $id }) {
       id
       html
