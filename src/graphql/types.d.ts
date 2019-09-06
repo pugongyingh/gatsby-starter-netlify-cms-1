@@ -714,19 +714,19 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterHeroPublicUrl = "childMarkdownRemark___frontmatter___hero___publicURL",
   ChildMarkdownRemarkFrontmatterHeroId = "childMarkdownRemark___frontmatter___hero___id",
   ChildMarkdownRemarkFrontmatterHeroChildren = "childMarkdownRemark___frontmatter___hero___children",
+  ChildMarkdownRemarkFrontmatterWorkSubtitle = "childMarkdownRemark___frontmatter___work___subtitle",
+  ChildMarkdownRemarkFrontmatterWorkTitle = "childMarkdownRemark___frontmatter___work___title",
+  ChildMarkdownRemarkFrontmatterWorkServices = "childMarkdownRemark___frontmatter___work___services",
+  ChildMarkdownRemarkFrontmatterTechnologiesDescription = "childMarkdownRemark___frontmatter___technologies___description",
+  ChildMarkdownRemarkFrontmatterTechnologiesTitle = "childMarkdownRemark___frontmatter___technologies___title",
+  ChildMarkdownRemarkFrontmatterTechnologiesLogos = "childMarkdownRemark___frontmatter___technologies___logos",
   ChildMarkdownRemarkFrontmatterNews = "childMarkdownRemark___frontmatter___news",
   ChildMarkdownRemarkFrontmatterClients = "childMarkdownRemark___frontmatter___clients",
   ChildMarkdownRemarkFrontmatterClientsTitle = "childMarkdownRemark___frontmatter___clients___title",
-  ChildMarkdownRemarkFrontmatterWorkServices = "childMarkdownRemark___frontmatter___work___services",
-  ChildMarkdownRemarkFrontmatterWorkSubtitle = "childMarkdownRemark___frontmatter___work___subtitle",
-  ChildMarkdownRemarkFrontmatterWorkTitle = "childMarkdownRemark___frontmatter___work___title",
   ChildMarkdownRemarkFrontmatterReferences = "childMarkdownRemark___frontmatter___references",
   ChildMarkdownRemarkFrontmatterReferencesDescription = "childMarkdownRemark___frontmatter___references___description",
   ChildMarkdownRemarkFrontmatterReferencesSubtitle = "childMarkdownRemark___frontmatter___references___subtitle",
   ChildMarkdownRemarkFrontmatterReferencesTitle = "childMarkdownRemark___frontmatter___references___title",
-  ChildMarkdownRemarkFrontmatterTechnologiesDescription = "childMarkdownRemark___frontmatter___technologies___description",
-  ChildMarkdownRemarkFrontmatterTechnologiesLogos = "childMarkdownRemark___frontmatter___technologies___logos",
-  ChildMarkdownRemarkFrontmatterTechnologiesTitle = "childMarkdownRemark___frontmatter___technologies___title",
   ChildMarkdownRemarkFrontmatterFooterCopy = "childMarkdownRemark___frontmatter___footer___copy",
   ChildMarkdownRemarkExcerpt = "childMarkdownRemark___excerpt",
   ChildMarkdownRemarkRawMarkdownBody = "childMarkdownRemark___rawMarkdownBody",
@@ -1549,6 +1549,14 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterHeroChildMarkdownRemarkTimeToRead = "frontmatter___hero___childMarkdownRemark___timeToRead",
   FrontmatterHeroChildMarkdownRemarkTableOfContents = "frontmatter___hero___childMarkdownRemark___tableOfContents",
   FrontmatterHeroChildMarkdownRemarkChildren = "frontmatter___hero___childMarkdownRemark___children",
+  FrontmatterWorkSubtitle = "frontmatter___work___subtitle",
+  FrontmatterWorkTitle = "frontmatter___work___title",
+  FrontmatterWorkServices = "frontmatter___work___services",
+  FrontmatterWorkServicesDescription = "frontmatter___work___services___description",
+  FrontmatterWorkServicesTitle = "frontmatter___work___services___title",
+  FrontmatterTechnologiesDescription = "frontmatter___technologies___description",
+  FrontmatterTechnologiesTitle = "frontmatter___technologies___title",
+  FrontmatterTechnologiesLogos = "frontmatter___technologies___logos",
   FrontmatterNews = "frontmatter___news",
   FrontmatterClients = "frontmatter___clients",
   FrontmatterClientsLogoBirthtime = "frontmatter___clients___logo___birthtime",
@@ -1588,11 +1596,6 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterClientsLogoId = "frontmatter___clients___logo___id",
   FrontmatterClientsLogoChildren = "frontmatter___clients___logo___children",
   FrontmatterClientsTitle = "frontmatter___clients___title",
-  FrontmatterWorkServices = "frontmatter___work___services",
-  FrontmatterWorkServicesDescription = "frontmatter___work___services___description",
-  FrontmatterWorkServicesTitle = "frontmatter___work___services___title",
-  FrontmatterWorkSubtitle = "frontmatter___work___subtitle",
-  FrontmatterWorkTitle = "frontmatter___work___title",
   FrontmatterReferences = "frontmatter___references",
   FrontmatterReferencesDescription = "frontmatter___references___description",
   FrontmatterReferencesImageBirthtime = "frontmatter___references___image___birthtime",
@@ -1633,9 +1636,6 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterReferencesImageChildren = "frontmatter___references___image___children",
   FrontmatterReferencesSubtitle = "frontmatter___references___subtitle",
   FrontmatterReferencesTitle = "frontmatter___references___title",
-  FrontmatterTechnologiesDescription = "frontmatter___technologies___description",
-  FrontmatterTechnologiesLogos = "frontmatter___technologies___logos",
-  FrontmatterTechnologiesTitle = "frontmatter___technologies___title",
   FrontmatterContactAddressCity = "frontmatter___contact___address___city",
   FrontmatterContactAddressGps = "frontmatter___contact___address___gps",
   FrontmatterContactAddressStreet = "frontmatter___contact___address___street",
@@ -1773,11 +1773,11 @@ export type MarkdownRemarkFrontmatter = {
   locale: Maybe<Scalars["String"]>;
   subheading: Maybe<Scalars["String"]>;
   hero: Maybe<File>;
+  work: Maybe<MarkdownRemarkFrontmatterWork>;
+  technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   news: Maybe<Scalars["String"]>;
   clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
-  work: Maybe<MarkdownRemarkFrontmatterWork>;
   references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
-  technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   contact: Maybe<MarkdownRemarkFrontmatterContact>;
   footer: Maybe<MarkdownRemarkFrontmatterFooter>;
 };
@@ -1827,11 +1827,11 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   locale: Maybe<StringQueryOperatorInput>;
   subheading: Maybe<StringQueryOperatorInput>;
   hero: Maybe<FileFilterInput>;
+  work: Maybe<MarkdownRemarkFrontmatterWorkFilterInput>;
+  technologies: Maybe<MarkdownRemarkFrontmatterTechnologiesFilterInput>;
   news: Maybe<StringQueryOperatorInput>;
   clients: Maybe<MarkdownRemarkFrontmatterClientsFilterListInput>;
-  work: Maybe<MarkdownRemarkFrontmatterWorkFilterInput>;
   references: Maybe<MarkdownRemarkFrontmatterReferencesFilterListInput>;
-  technologies: Maybe<MarkdownRemarkFrontmatterTechnologiesFilterInput>;
   contact: Maybe<MarkdownRemarkFrontmatterContactFilterInput>;
   footer: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
 };
@@ -1867,14 +1867,14 @@ export type MarkdownRemarkFrontmatterReferencesFilterListInput = {
 export type MarkdownRemarkFrontmatterTechnologies = {
   __typename?: "MarkdownRemarkFrontmatterTechnologies";
   description: Maybe<Scalars["String"]>;
-  logos: Maybe<Array<Maybe<MarkdownRemarkFrontmatterTechnologiesLogos>>>;
   title: Maybe<Scalars["String"]>;
+  logos: Maybe<Array<Maybe<MarkdownRemarkFrontmatterTechnologiesLogos>>>;
 };
 
 export type MarkdownRemarkFrontmatterTechnologiesFilterInput = {
   description: Maybe<StringQueryOperatorInput>;
-  logos: Maybe<MarkdownRemarkFrontmatterTechnologiesLogosFilterListInput>;
   title: Maybe<StringQueryOperatorInput>;
+  logos: Maybe<MarkdownRemarkFrontmatterTechnologiesLogosFilterListInput>;
 };
 
 export type MarkdownRemarkFrontmatterTechnologiesLogos = {
@@ -1892,15 +1892,15 @@ export type MarkdownRemarkFrontmatterTechnologiesLogosFilterListInput = {
 
 export type MarkdownRemarkFrontmatterWork = {
   __typename?: "MarkdownRemarkFrontmatterWork";
-  services: Maybe<Array<Maybe<MarkdownRemarkFrontmatterWorkServices>>>;
   subtitle: Maybe<Scalars["String"]>;
   title: Maybe<Scalars["String"]>;
+  services: Maybe<Array<Maybe<MarkdownRemarkFrontmatterWorkServices>>>;
 };
 
 export type MarkdownRemarkFrontmatterWorkFilterInput = {
-  services: Maybe<MarkdownRemarkFrontmatterWorkServicesFilterListInput>;
   subtitle: Maybe<StringQueryOperatorInput>;
   title: Maybe<StringQueryOperatorInput>;
+  services: Maybe<MarkdownRemarkFrontmatterWorkServicesFilterListInput>;
 };
 
 export type MarkdownRemarkFrontmatterWorkServices = {

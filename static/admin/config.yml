@@ -269,3 +269,39 @@ collections:
                   - label: Logo
                     name: logo
                     widget: image
+  - name: blog
+    label: Blog
+    folder: static/blog
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: Template Key
+        name: templateKey
+        widget: hidden
+        default: BlogPost
+      - label: Locale
+        name: locale
+        widget: relation
+        collection: locale
+        searchFields:
+          - title
+          - code
+        displayFields:
+          - title
+        valueField: code
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Description
+        name: description
+        widget: text
+      - label: Body
+        name: body
+        widget: markdown
+      - label: Image
+        name: image
+        widget: image
