@@ -146,7 +146,7 @@ const Navbar = styled(NavbarTemplate)`
   }
 
   @media ${props => props.theme.screen.laptop} {
-    position: fixed;
+    position: absolute;
     .navbar,
     .navbar-menu,
     .navbar-start {
