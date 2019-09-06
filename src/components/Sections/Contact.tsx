@@ -6,7 +6,9 @@ import Form from "../Form";
 import Image from "../Image";
 
 import Map from "../../img/address-map.png";
+import ContactImg2 from "../../img/martin-svach-photo.png";
 import ContactImg1 from "../../img/michal-kourik-photo.png";
+import ContactImg3 from "../../img/vaclav.jpg";
 
 interface ContactProps {}
 
@@ -41,20 +43,20 @@ const Contact: React.FC<ContactProps> = () => {
                 </Col>
                 <Col xs={12}>
                   <ContactCard
-                    ImgSource={ContactImg1}
+                    ImgSource={ContactImg2}
                     altText="A contact photo"
-                    name="Michal Kouřík"
-                    position="Technological teamleader"
-                    email="michal.kourik@starkysclub.com"
+                    name="Martin Švach"
+                    position="Business development"
+                    email="martin.svach@starkysclub.com"
                   />
                 </Col>
                 <Col xs={12}>
                   <ContactCard
-                    ImgSource={ContactImg1}
+                    ImgSource={ContactImg3}
                     altText="A contact photo"
-                    name="Michal Kouřík"
-                    position="Technological teamleader"
-                    email="michal.kourik@starkysclub.com"
+                    name="Václav Brzezina"
+                    position="Frontend teamleader"
+                    email="vaclav.brzezina@starkysclub.com"
                   />
                 </Col>
               </Row>

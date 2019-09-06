@@ -42,6 +42,9 @@ const ContactCardWrap = styled(Grid)`
 
   .contact-img {
     margin-left: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px
   }
 
   .linkedin-icon {

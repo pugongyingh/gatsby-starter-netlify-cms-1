@@ -414,8 +414,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   .clients {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.black};
+    background-color: ${props => props.theme.colors.white};
     /*height: 40vh;*/
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
@@ -432,7 +432,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
         @media ${props => props.theme.screen.laptop} {
           :not(:last-child) {
-            border-right: 1px solid ${props => props.theme.colors.clientBorder};
+            border-right: 1px solid ${props => props.theme.colors.black};
           }
         }
       }
