@@ -16,12 +16,10 @@ import ContactImg1 from "../img/michal-kourik-photo.png";
 import StyledBlog from "../components/Sections/Blog";
 import Contact from "../components/Sections/Contact"
 import StyledInstagram from "../components/Sections/Instagram";
-
-import {
-  File,
-  MarkdownRemarkFrontmatterClients,
-  Maybe
-} from "../graphql/types";
+import References from "../components/Sections/References";
+import Technologies from "../components/Sections/Technologies";
+import WhatWeDo from "../components/Sections/WhatWeDo";
+import { File, MarkdownRemarkFrontmatterClients, MarkdownRemarkFrontmatterReferences, MarkdownRemarkFrontmatterTechnologies, MarkdownRemarkFrontmatterWork, Maybe } from "../graphql/types";
 import styled from "../styles/theme";
 
 // Icons
@@ -49,6 +47,9 @@ interface IndexPageProps {
   subheading: Maybe<string>;
   className?: string;
   clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
+  work: Maybe<MarkdownRemarkFrontmatterWork>;
+  technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
+  references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
@@ -56,7 +57,10 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   title,
   subheading,
   className,
-  clients
+  clients,
+  work, // TODO: Use
+  technologies, // TODO: Use
+  references // TODO: Use
 }) => (
   <div className={className}>
     <Header title={title} subheading={subheading} hero={hero} />

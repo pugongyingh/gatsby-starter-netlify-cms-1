@@ -714,13 +714,19 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterHeroPublicUrl = "childMarkdownRemark___frontmatter___hero___publicURL",
   ChildMarkdownRemarkFrontmatterHeroId = "childMarkdownRemark___frontmatter___hero___id",
   ChildMarkdownRemarkFrontmatterHeroChildren = "childMarkdownRemark___frontmatter___hero___children",
-  ChildMarkdownRemarkFrontmatterWorkSubtitle = "childMarkdownRemark___frontmatter___work___subtitle",
-  ChildMarkdownRemarkFrontmatterWorkTitle = "childMarkdownRemark___frontmatter___work___title",
-  ChildMarkdownRemarkFrontmatterWorkServices = "childMarkdownRemark___frontmatter___work___services",
-  ChildMarkdownRemarkFrontmatterTechnologiesDescription = "childMarkdownRemark___frontmatter___technologies___description",
-  ChildMarkdownRemarkFrontmatterTechnologiesTitle = "childMarkdownRemark___frontmatter___technologies___title",
+  ChildMarkdownRemarkFrontmatterNews = "childMarkdownRemark___frontmatter___news",
   ChildMarkdownRemarkFrontmatterClients = "childMarkdownRemark___frontmatter___clients",
   ChildMarkdownRemarkFrontmatterClientsTitle = "childMarkdownRemark___frontmatter___clients___title",
+  ChildMarkdownRemarkFrontmatterWorkServices = "childMarkdownRemark___frontmatter___work___services",
+  ChildMarkdownRemarkFrontmatterWorkSubtitle = "childMarkdownRemark___frontmatter___work___subtitle",
+  ChildMarkdownRemarkFrontmatterWorkTitle = "childMarkdownRemark___frontmatter___work___title",
+  ChildMarkdownRemarkFrontmatterReferences = "childMarkdownRemark___frontmatter___references",
+  ChildMarkdownRemarkFrontmatterReferencesBody = "childMarkdownRemark___frontmatter___references___body",
+  ChildMarkdownRemarkFrontmatterReferencesDescription = "childMarkdownRemark___frontmatter___references___description",
+  ChildMarkdownRemarkFrontmatterReferencesTitle = "childMarkdownRemark___frontmatter___references___title",
+  ChildMarkdownRemarkFrontmatterTechnologiesDescription = "childMarkdownRemark___frontmatter___technologies___description",
+  ChildMarkdownRemarkFrontmatterTechnologiesLogos = "childMarkdownRemark___frontmatter___technologies___logos",
+  ChildMarkdownRemarkFrontmatterTechnologiesTitle = "childMarkdownRemark___frontmatter___technologies___title",
   ChildMarkdownRemarkFrontmatterFooterCopy = "childMarkdownRemark___frontmatter___footer___copy",
   ChildMarkdownRemarkExcerpt = "childMarkdownRemark___excerpt",
   ChildMarkdownRemarkRawMarkdownBody = "childMarkdownRemark___rawMarkdownBody",
@@ -1543,13 +1549,7 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterHeroChildMarkdownRemarkTimeToRead = "frontmatter___hero___childMarkdownRemark___timeToRead",
   FrontmatterHeroChildMarkdownRemarkTableOfContents = "frontmatter___hero___childMarkdownRemark___tableOfContents",
   FrontmatterHeroChildMarkdownRemarkChildren = "frontmatter___hero___childMarkdownRemark___children",
-  FrontmatterWorkSubtitle = "frontmatter___work___subtitle",
-  FrontmatterWorkTitle = "frontmatter___work___title",
-  FrontmatterWorkServices = "frontmatter___work___services",
-  FrontmatterWorkServicesDescription = "frontmatter___work___services___description",
-  FrontmatterWorkServicesTitle = "frontmatter___work___services___title",
-  FrontmatterTechnologiesDescription = "frontmatter___technologies___description",
-  FrontmatterTechnologiesTitle = "frontmatter___technologies___title",
+  FrontmatterNews = "frontmatter___news",
   FrontmatterClients = "frontmatter___clients",
   FrontmatterClientsLogoBirthtime = "frontmatter___clients___logo___birthtime",
   FrontmatterClientsLogoBirthtimeMs = "frontmatter___clients___logo___birthtimeMs",
@@ -1588,6 +1588,54 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterClientsLogoId = "frontmatter___clients___logo___id",
   FrontmatterClientsLogoChildren = "frontmatter___clients___logo___children",
   FrontmatterClientsTitle = "frontmatter___clients___title",
+  FrontmatterWorkServices = "frontmatter___work___services",
+  FrontmatterWorkServicesDescription = "frontmatter___work___services___description",
+  FrontmatterWorkServicesTitle = "frontmatter___work___services___title",
+  FrontmatterWorkSubtitle = "frontmatter___work___subtitle",
+  FrontmatterWorkTitle = "frontmatter___work___title",
+  FrontmatterReferences = "frontmatter___references",
+  FrontmatterReferencesBody = "frontmatter___references___body",
+  FrontmatterReferencesDescription = "frontmatter___references___description",
+  FrontmatterReferencesImageBirthtime = "frontmatter___references___image___birthtime",
+  FrontmatterReferencesImageBirthtimeMs = "frontmatter___references___image___birthtimeMs",
+  FrontmatterReferencesImageSourceInstanceName = "frontmatter___references___image___sourceInstanceName",
+  FrontmatterReferencesImageAbsolutePath = "frontmatter___references___image___absolutePath",
+  FrontmatterReferencesImageRelativePath = "frontmatter___references___image___relativePath",
+  FrontmatterReferencesImageExtension = "frontmatter___references___image___extension",
+  FrontmatterReferencesImageSize = "frontmatter___references___image___size",
+  FrontmatterReferencesImagePrettySize = "frontmatter___references___image___prettySize",
+  FrontmatterReferencesImageModifiedTime = "frontmatter___references___image___modifiedTime",
+  FrontmatterReferencesImageAccessTime = "frontmatter___references___image___accessTime",
+  FrontmatterReferencesImageChangeTime = "frontmatter___references___image___changeTime",
+  FrontmatterReferencesImageBirthTime = "frontmatter___references___image___birthTime",
+  FrontmatterReferencesImageRoot = "frontmatter___references___image___root",
+  FrontmatterReferencesImageDir = "frontmatter___references___image___dir",
+  FrontmatterReferencesImageBase = "frontmatter___references___image___base",
+  FrontmatterReferencesImageExt = "frontmatter___references___image___ext",
+  FrontmatterReferencesImageName = "frontmatter___references___image___name",
+  FrontmatterReferencesImageRelativeDirectory = "frontmatter___references___image___relativeDirectory",
+  FrontmatterReferencesImageDev = "frontmatter___references___image___dev",
+  FrontmatterReferencesImageMode = "frontmatter___references___image___mode",
+  FrontmatterReferencesImageNlink = "frontmatter___references___image___nlink",
+  FrontmatterReferencesImageUid = "frontmatter___references___image___uid",
+  FrontmatterReferencesImageGid = "frontmatter___references___image___gid",
+  FrontmatterReferencesImageRdev = "frontmatter___references___image___rdev",
+  FrontmatterReferencesImageBlksize = "frontmatter___references___image___blksize",
+  FrontmatterReferencesImageIno = "frontmatter___references___image___ino",
+  FrontmatterReferencesImageBlocks = "frontmatter___references___image___blocks",
+  FrontmatterReferencesImageAtimeMs = "frontmatter___references___image___atimeMs",
+  FrontmatterReferencesImageMtimeMs = "frontmatter___references___image___mtimeMs",
+  FrontmatterReferencesImageCtimeMs = "frontmatter___references___image___ctimeMs",
+  FrontmatterReferencesImageAtime = "frontmatter___references___image___atime",
+  FrontmatterReferencesImageMtime = "frontmatter___references___image___mtime",
+  FrontmatterReferencesImageCtime = "frontmatter___references___image___ctime",
+  FrontmatterReferencesImagePublicUrl = "frontmatter___references___image___publicURL",
+  FrontmatterReferencesImageId = "frontmatter___references___image___id",
+  FrontmatterReferencesImageChildren = "frontmatter___references___image___children",
+  FrontmatterReferencesTitle = "frontmatter___references___title",
+  FrontmatterTechnologiesDescription = "frontmatter___technologies___description",
+  FrontmatterTechnologiesLogos = "frontmatter___technologies___logos",
+  FrontmatterTechnologiesTitle = "frontmatter___technologies___title",
   FrontmatterContactAddressCity = "frontmatter___contact___address___city",
   FrontmatterContactAddressGps = "frontmatter___contact___address___gps",
   FrontmatterContactAddressStreet = "frontmatter___contact___address___street",
@@ -1725,9 +1773,11 @@ export type MarkdownRemarkFrontmatter = {
   locale: Maybe<Scalars["String"]>;
   subheading: Maybe<Scalars["String"]>;
   hero: Maybe<File>;
-  work: Maybe<MarkdownRemarkFrontmatterWork>;
-  technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
+  news: Maybe<Scalars["String"]>;
   clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
+  work: Maybe<MarkdownRemarkFrontmatterWork>;
+  references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
+  technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   contact: Maybe<MarkdownRemarkFrontmatterContact>;
   footer: Maybe<MarkdownRemarkFrontmatterFooter>;
 };
@@ -1777,9 +1827,11 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   locale: Maybe<StringQueryOperatorInput>;
   subheading: Maybe<StringQueryOperatorInput>;
   hero: Maybe<FileFilterInput>;
-  work: Maybe<MarkdownRemarkFrontmatterWorkFilterInput>;
-  technologies: Maybe<MarkdownRemarkFrontmatterTechnologiesFilterInput>;
+  news: Maybe<StringQueryOperatorInput>;
   clients: Maybe<MarkdownRemarkFrontmatterClientsFilterListInput>;
+  work: Maybe<MarkdownRemarkFrontmatterWorkFilterInput>;
+  references: Maybe<MarkdownRemarkFrontmatterReferencesFilterListInput>;
+  technologies: Maybe<MarkdownRemarkFrontmatterTechnologiesFilterInput>;
   contact: Maybe<MarkdownRemarkFrontmatterContactFilterInput>;
   footer: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
 };
@@ -1793,28 +1845,62 @@ export type MarkdownRemarkFrontmatterFooterFilterInput = {
   copy: Maybe<StringQueryOperatorInput>;
 };
 
+export type MarkdownRemarkFrontmatterReferences = {
+  __typename?: "MarkdownRemarkFrontmatterReferences";
+  body: Maybe<Scalars["String"]>;
+  description: Maybe<Scalars["String"]>;
+  image: Maybe<File>;
+  title: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkFrontmatterReferencesFilterInput = {
+  body: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  image: Maybe<FileFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterReferencesFilterListInput = {
+  elemMatch: Maybe<MarkdownRemarkFrontmatterReferencesFilterInput>;
+};
+
 export type MarkdownRemarkFrontmatterTechnologies = {
   __typename?: "MarkdownRemarkFrontmatterTechnologies";
   description: Maybe<Scalars["String"]>;
+  logos: Maybe<Array<Maybe<MarkdownRemarkFrontmatterTechnologiesLogos>>>;
   title: Maybe<Scalars["String"]>;
 };
 
 export type MarkdownRemarkFrontmatterTechnologiesFilterInput = {
   description: Maybe<StringQueryOperatorInput>;
+  logos: Maybe<MarkdownRemarkFrontmatterTechnologiesLogosFilterListInput>;
   title: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterTechnologiesLogos = {
+  __typename?: "MarkdownRemarkFrontmatterTechnologiesLogos";
+  logo: Maybe<File>;
+};
+
+export type MarkdownRemarkFrontmatterTechnologiesLogosFilterInput = {
+  logo: Maybe<FileFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterTechnologiesLogosFilterListInput = {
+  elemMatch: Maybe<MarkdownRemarkFrontmatterTechnologiesLogosFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterWork = {
   __typename?: "MarkdownRemarkFrontmatterWork";
+  services: Maybe<Array<Maybe<MarkdownRemarkFrontmatterWorkServices>>>;
   subtitle: Maybe<Scalars["String"]>;
   title: Maybe<Scalars["String"]>;
-  services: Maybe<Array<Maybe<MarkdownRemarkFrontmatterWorkServices>>>;
 };
 
 export type MarkdownRemarkFrontmatterWorkFilterInput = {
+  services: Maybe<MarkdownRemarkFrontmatterWorkServicesFilterListInput>;
   subtitle: Maybe<StringQueryOperatorInput>;
   title: Maybe<StringQueryOperatorInput>;
-  services: Maybe<MarkdownRemarkFrontmatterWorkServicesFilterListInput>;
 };
 
 export type MarkdownRemarkFrontmatterWorkServices = {
@@ -2346,10 +2432,12 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
   __typename?: "SitePageContext";
   id: Maybe<Scalars["String"]>;
+  locale: Maybe<Scalars["String"]>;
 };
 
 export type SitePageContextFilterInput = {
   id: Maybe<StringQueryOperatorInput>;
+  locale: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2452,6 +2540,7 @@ export enum SitePageFieldsEnum {
   ComponentChunkName = "componentChunkName",
   IsCreatedByStatefulCreatePages = "isCreatedByStatefulCreatePages",
   ContextId = "context___id",
+  ContextLocale = "context___locale",
   PluginCreatorId = "pluginCreator___id",
   PluginCreatorParentId = "pluginCreator___parent___id",
   PluginCreatorParentParentId = "pluginCreator___parent___parent___id",
