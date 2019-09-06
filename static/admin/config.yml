@@ -14,6 +14,8 @@ collections:
     label: Locale
     widget: list
     folder: static/locale
+    editor:
+      preview: false
     fields:
       - name: title
         label: Name
@@ -22,6 +24,8 @@ collections:
   - name: config
     label: General
     folder: static/config
+    editor:
+      preview: false
     fields:
       - label: Locale
         name: locale
