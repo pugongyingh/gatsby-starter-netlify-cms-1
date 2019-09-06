@@ -20,9 +20,9 @@ work:
   subtitle: T
   title: T
 references:
-  - body: T
-    description: T
+  - description: T
     image: /img/ubisoft_logo.svg
+    subtitle: t
     title: T
 technologies:
   description: T
