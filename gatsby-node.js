@@ -8,7 +8,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/static\/pages\//"}}, limit: 10) {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/static\/pages|blog\//"}}, limit: 10) {
         edges {
           node {
             id
