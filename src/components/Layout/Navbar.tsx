@@ -64,6 +64,10 @@ const Navbar = styled(NavbarTemplate)`
       width: 100%;
     }
 
+    @media ${props => props.theme.screen.laptopL} {
+      width: 1410px;
+    }
+
     .mobile-nav-wrap {
       display: flex;
     }
@@ -101,6 +105,8 @@ const Navbar = styled(NavbarTemplate)`
     @media ${props => props.theme.screen.laptop} {
       display: flex;
       justify-content: flex-end;
+      position: relative;
+      top: 40px;
     }
   }
 
@@ -115,6 +121,10 @@ const Navbar = styled(NavbarTemplate)`
     text-decoration: none;
     color: ${props => props.theme.colors.black};
     cursor: pointer;
+
+    :not(:last-child) {
+      margin-right: 17px;
+    }
   }
 
   @media screen and (max-width: 1023px) {

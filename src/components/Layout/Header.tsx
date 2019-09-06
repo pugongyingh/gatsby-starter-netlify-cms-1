@@ -100,7 +100,7 @@ const Header = styled(HeaderTemplate)`
   }
 
   .grid {
-    flex-basis: 70%;
+    flex-basis: 85%;
     color: white;
   }
 
