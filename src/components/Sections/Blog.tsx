@@ -54,7 +54,7 @@ class Blog extends React.Component<BlogProps> {
       // ]
     };
     return (
-      <section className={this.props.className}>
+      <section id="blog" className={this.props.className}>
         <Grid className="container">
           <h1>Blog</h1>
           <Row className="blog-wrap">
