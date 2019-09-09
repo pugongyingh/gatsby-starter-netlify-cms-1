@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "../styles/theme";
+import ArrowLinkStyled from "./ArrowLink";
 import Image from "./Image";
 
 interface BlogItemProps {
@@ -22,6 +23,12 @@ const BlogItem: React.FC<BlogItemProps> = ({
       <Image source={src} altText={alt} />
       <h2>{sub}</h2>
       <p>{blogText}</p>
+      <ArrowLinkStyled
+              text="See article"
+              link="#"
+              instaFollowLink={false}
+              white={true}
+            />
     </div>
   );
 };

@@ -1,65 +1,23 @@
 import React from "react";
-import Slider from "react-slick";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import blogImgOne from "../../img/blog-1.png";
 import styled from "../../styles/theme";
-import ArrowButton from "../ArrowButton";
 import StyledBlogItem from "../BlogItem";
+import Carousel from "../Carousel";
 
 interface BlogProps {
   className?: string;
 }
 
 class Blog extends React.Component<BlogProps> {
-  private reference: React.RefObject<Slider> = React.createRef();
-  public next = () => {
-    this.reference.current!.slickNext();
-  };
-  public previous = () => {
-    this.reference.current!.slickPrev();
-  };
   public render() {
-    const settings = {
-      dots: false,
-      arrows: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      // responsive: [
-      //   {
-      //     breakpoint: 1024,
-      //     settings: {
-      //       slidesToShow: 3,
-      //       slidesToScroll: 3,
-      //       infinite: true,
-      //       dots: true
-      //     }
-      //   },
-      //   {
-      //     breakpoint: 600,
-      //     settings: {
-      //       slidesToShow: 2,
-      //       slidesToScroll: 2,
-      //       initialSlide: 2
-      //     }
-      //   },
-      //   {
-      //     breakpoint: 480,
-      //     settings: {
-      //       slidesToShow: 1,
-      //       slidesToScroll: 1
-      //     }
-      //   }
-      // ]
-    };
     return (
       <section id="blog" className={this.props.className}>
         <Grid className="container">
           <h1>Blog</h1>
           <Row className="blog-wrap">
             <Col className="blog-item">
-              <Slider ref={this.reference} {...settings}>
+              <Carousel>
                 <StyledBlogItem
                   src={blogImgOne}
                   alt="A Blog Placeholder"
@@ -115,23 +73,12 @@ class Blog extends React.Component<BlogProps> {
                     Coast yard. Barkadeer doubloon measured fer yer chains
                     splice."
                 />
-              </Slider>
+              </Carousel>
             </Col>
           </Row>
-          <Row className="arrow-icons-wrap">
-            <ArrowButton
-              dark={false}
-              leftArrow={true}
-              altText="An arrow icon"
-              onClick={this.previous}
-            />
-            <ArrowButton
-              dark={false}
-              leftArrow={false}
-              altText="An arrow icon"
-              onClick={this.next}
-            />
-          </Row>
+          {/*<Row className="arrow-icons-wrap">
+
+          </Row>*/}
         </Grid>
         {/* <BlogRoll /> */}
       </section>
