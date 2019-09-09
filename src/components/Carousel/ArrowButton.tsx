@@ -1,7 +1,7 @@
 import React from "react";
-import arrowIconDark from "../img/arrow-icon-dark.svg";
-import arrowIcon from "../img/right-arrow-icon.svg";
-import styled from "../styles/theme";
+import arrowIconDark from "../../img/arrow-icon-dark.svg";
+import arrowIcon from "../../img/right-arrow-icon.svg";
+import styled from "../../styles/theme";
 
 interface ArrowBtnProps {
   altText: string;

@@ -14,7 +14,7 @@ interface ContactCardProps {
   email: string;
 }
 
-const ContactCardWrap = styled(Grid)`
+const ContactCardWrap = styled.div`
   margin-bottom: 40px;
   @media ${props => props.theme.screen.laptop} {
     margin-bottom: 100px;
