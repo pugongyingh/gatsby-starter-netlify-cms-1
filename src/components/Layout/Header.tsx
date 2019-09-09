@@ -78,16 +78,24 @@ const Header = styled(HeaderTemplate)`
     transform: translateX(-50%) translateY(-50%);
   }
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: ${props => props.theme.colors.black};
-    opacity: 0.5;
-    z-index: 1;
-  }
+  ${({ hero }) => {
+    const file = isString(hero) ? hero : hero.publicURL!;
+    if (!file.match(/.(jpg|jpeg|png|gif)$/i)) {
+      return css`
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: ${props => props.theme.colors.black};
+          opacity: 0.5;
+          z-index: 1;
+        }
+      `;
+    }
+  }}
+
 
   .text-wrap {
     position: absolute;
@@ -100,7 +108,7 @@ const Header = styled(HeaderTemplate)`
   }
 
   .grid {
-    flex-basis: 70%;
+    flex-basis: 85%;
     color: white;
   }
 

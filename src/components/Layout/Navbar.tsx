@@ -18,9 +18,10 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
   }
 
   return (
-    <Grid>
-      <nav className={className} role="navigation" aria-label="main-navigation">
-        <div className="navbar-brand">
+    <nav className={className} role="navigation" aria-label="main-navigation">
+      <Grid className="grid-wrap">
+        <div className="mobile-nav-wrap">
+          <div className="navbar-brand" />
           {/* Hamburger menu */}
           <div
             className={`navbar-burger burger ${active && "is-active"}`}
@@ -42,8 +43,8 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
             Contact
           </Link>
         </div>
-      </nav>
-    </Grid>
+      </Grid>
+    </nav>
   );
 };
 
@@ -58,13 +59,33 @@ const Navbar = styled(NavbarTemplate)`
   align-items: flex-end;
   flex-direction: column;
 
+  .grid-wrap {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    @media ${props => props.theme.screen.laptopL} {
+      width: 1410px;
+    }
+
+    .mobile-nav-wrap {
+      display: flex;
+    }
+  }
+
   .navbar-brand {
     align-items: stretch;
     display: flex;
     flex-shrink: 0;
     min-height: 3.25rem;
 
-    .navbar-burger {
+    /* hiding from tablet and larger devices */
+    @media ${props => props.theme.screen.laptop} {
+      display: none;
+    }
+  }
+
+  .navbar-burger {
       cursor: pointer;
       display: block;
       height: 3.25rem;
@@ -76,19 +97,16 @@ const Navbar = styled(NavbarTemplate)`
       background-position: center;
     }
 
-    /* hiding from tablet and larger devices */
-    @media ${props => props.theme.screen.laptop} {
-      display: none;
-    }
-  }
-
   .navbar-menu {
+    /* display none by default --> onClick show MENU */
     display: none;
     text-align: center;
 
     @media ${props => props.theme.screen.laptop} {
       display: flex;
       justify-content: flex-end;
+      position: relative;
+      top: 40px;
     }
   }
 
@@ -103,6 +121,10 @@ const Navbar = styled(NavbarTemplate)`
     text-decoration: none;
     color: ${props => props.theme.colors.black};
     cursor: pointer;
+
+    :not(:last-child) {
+      margin-right: 17px;
+    }
   }
 
   @media screen and (max-width: 1023px) {
@@ -124,7 +146,7 @@ const Navbar = styled(NavbarTemplate)`
   }
 
   @media ${props => props.theme.screen.laptop} {
-    position: fixed;
+    position: absolute;
     .navbar,
     .navbar-menu,
     .navbar-start {
@@ -152,7 +174,6 @@ const Navbar = styled(NavbarTemplate)`
     .navbar-menu {
       flex-grow: 1;
       flex-shrink: 0;
-      margin-right: 14%;
     }
     .navbar-start {
       justify-content: flex-start;

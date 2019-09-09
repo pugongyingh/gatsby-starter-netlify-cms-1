@@ -8,7 +8,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/src\/pages\//"}}, limit: 10) {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/static\/pages\//"}}, limit: 10) {
         edges {
           node {
             id
@@ -33,22 +33,27 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
+      const locale = edge.node.frontmatter.locale
       let slug = "";
-      if (edge.node.frontmatter.locale && edge.node.frontmatter.locale !== 'cs') {
-        slug = "/" + edge.node.frontmatter.locale;
+      if (locale && locale !== 'cs') {
+        slug = "/" + locale;
       }
       if (!edge.node.fields.slug.match(/^\/index/)) {
         slug += edge.node.fields.slug;
+      }
+      if (slug === "") {
+        slug = "/";
       }
 
       createPage({
         path: slug,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
+          `src/pages/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
         // additional data can be passed via context
         context: {
           id,
+          locale
         },
       })
     })

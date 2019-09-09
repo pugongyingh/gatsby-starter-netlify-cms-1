@@ -2,6 +2,7 @@ import React from "react";
 import styled from "../styles/theme";
 
 interface ImageProps {
+  className: string;
   source: string;
   altText: string;
   className?: string;

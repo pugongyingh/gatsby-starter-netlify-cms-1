@@ -3,8 +3,8 @@ import cloudinary from "netlify-cms-media-library-cloudinary";
 import uploadcare from "netlify-cms-media-library-uploadcare";
 import * as React from 'react';
 import { StyleSheetManager } from 'styled-components';
-import { BlogPostPreview } from "./templates/blog-post";
-import { IndexPagePreview } from "./templates/index-page";
+import { BlogPostPreview } from "./pages/BlogPost";
+import { IndexPagePreview } from "./pages/IndexPage";
 
 const CSSInjector = (props: any) => {
     const iframe = document.getElementsByTagName('iframe')[0];
@@ -19,6 +19,12 @@ const CSSInjector = (props: any) => {
 }
 
 CMS.registerPreviewTemplate('index', (props: any) => (
+    <CSSInjector>
+        <IndexPagePreview {...props} />
+    </CSSInjector>
+))
+
+CMS.registerPreviewTemplate('index-en', (props: any) => (
     <CSSInjector>
         <IndexPagePreview {...props} />
     </CSSInjector>

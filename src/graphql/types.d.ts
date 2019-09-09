@@ -1,4 +1,4 @@
-export type Maybe<T> = T | undefined;
+export type Maybe<T> = T | null;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -676,6 +676,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkId = "childMarkdownRemark___id",
   ChildMarkdownRemarkFrontmatterTitle = "childMarkdownRemark___frontmatter___title",
   ChildMarkdownRemarkFrontmatterTemplateKey = "childMarkdownRemark___frontmatter___templateKey",
+  ChildMarkdownRemarkFrontmatterLocale = "childMarkdownRemark___frontmatter___locale",
+  ChildMarkdownRemarkFrontmatterSubheading = "childMarkdownRemark___frontmatter___subheading",
   ChildMarkdownRemarkFrontmatterHeroBirthtime = "childMarkdownRemark___frontmatter___hero___birthtime",
   ChildMarkdownRemarkFrontmatterHeroBirthtimeMs = "childMarkdownRemark___frontmatter___hero___birthtimeMs",
   ChildMarkdownRemarkFrontmatterHeroSourceInstanceName = "childMarkdownRemark___frontmatter___hero___sourceInstanceName",
@@ -712,10 +714,21 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterHeroPublicUrl = "childMarkdownRemark___frontmatter___hero___publicURL",
   ChildMarkdownRemarkFrontmatterHeroId = "childMarkdownRemark___frontmatter___hero___id",
   ChildMarkdownRemarkFrontmatterHeroChildren = "childMarkdownRemark___frontmatter___hero___children",
-  ChildMarkdownRemarkFrontmatterHeading = "childMarkdownRemark___frontmatter___heading",
-  ChildMarkdownRemarkFrontmatterSubheading = "childMarkdownRemark___frontmatter___subheading",
+  ChildMarkdownRemarkFrontmatterNews = "childMarkdownRemark___frontmatter___news",
+  ChildMarkdownRemarkFrontmatterClients = "childMarkdownRemark___frontmatter___clients",
+  ChildMarkdownRemarkFrontmatterClientsTitle = "childMarkdownRemark___frontmatter___clients___title",
+  ChildMarkdownRemarkFrontmatterWorkServices = "childMarkdownRemark___frontmatter___work___services",
+  ChildMarkdownRemarkFrontmatterWorkSubtitle = "childMarkdownRemark___frontmatter___work___subtitle",
+  ChildMarkdownRemarkFrontmatterWorkTitle = "childMarkdownRemark___frontmatter___work___title",
+  ChildMarkdownRemarkFrontmatterReferences = "childMarkdownRemark___frontmatter___references",
+  ChildMarkdownRemarkFrontmatterReferencesDescription = "childMarkdownRemark___frontmatter___references___description",
+  ChildMarkdownRemarkFrontmatterReferencesSubtitle = "childMarkdownRemark___frontmatter___references___subtitle",
+  ChildMarkdownRemarkFrontmatterReferencesTitle = "childMarkdownRemark___frontmatter___references___title",
+  ChildMarkdownRemarkFrontmatterTechnologiesDescription = "childMarkdownRemark___frontmatter___technologies___description",
+  ChildMarkdownRemarkFrontmatterTechnologiesLogos = "childMarkdownRemark___frontmatter___technologies___logos",
+  ChildMarkdownRemarkFrontmatterTechnologiesTitle = "childMarkdownRemark___frontmatter___technologies___title",
   ChildMarkdownRemarkFrontmatterDate = "childMarkdownRemark___frontmatter___date",
-  ChildMarkdownRemarkFrontmatterFeaturedpost = "childMarkdownRemark___frontmatter___featuredpost",
+  ChildMarkdownRemarkFrontmatterDescription = "childMarkdownRemark___frontmatter___description",
   ChildMarkdownRemarkFrontmatterImageBirthtime = "childMarkdownRemark___frontmatter___image___birthtime",
   ChildMarkdownRemarkFrontmatterImageBirthtimeMs = "childMarkdownRemark___frontmatter___image___birthtimeMs",
   ChildMarkdownRemarkFrontmatterImageSourceInstanceName = "childMarkdownRemark___frontmatter___image___sourceInstanceName",
@@ -752,7 +765,7 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterImagePublicUrl = "childMarkdownRemark___frontmatter___image___publicURL",
   ChildMarkdownRemarkFrontmatterImageId = "childMarkdownRemark___frontmatter___image___id",
   ChildMarkdownRemarkFrontmatterImageChildren = "childMarkdownRemark___frontmatter___image___children",
-  ChildMarkdownRemarkFrontmatterDescription = "childMarkdownRemark___frontmatter___description",
+  ChildMarkdownRemarkFrontmatterFooterCopy = "childMarkdownRemark___frontmatter___footer___copy",
   ChildMarkdownRemarkExcerpt = "childMarkdownRemark___excerpt",
   ChildMarkdownRemarkRawMarkdownBody = "childMarkdownRemark___rawMarkdownBody",
   ChildMarkdownRemarkFileAbsolutePath = "childMarkdownRemark___fileAbsolutePath",
@@ -1511,6 +1524,8 @@ export enum MarkdownRemarkFieldsEnum {
   Id = "id",
   FrontmatterTitle = "frontmatter___title",
   FrontmatterTemplateKey = "frontmatter___templateKey",
+  FrontmatterLocale = "frontmatter___locale",
+  FrontmatterSubheading = "frontmatter___subheading",
   FrontmatterHeroBirthtime = "frontmatter___hero___birthtime",
   FrontmatterHeroBirthtimeMs = "frontmatter___hero___birthtimeMs",
   FrontmatterHeroSourceInstanceName = "frontmatter___hero___sourceInstanceName",
@@ -1572,10 +1587,95 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterHeroChildMarkdownRemarkTimeToRead = "frontmatter___hero___childMarkdownRemark___timeToRead",
   FrontmatterHeroChildMarkdownRemarkTableOfContents = "frontmatter___hero___childMarkdownRemark___tableOfContents",
   FrontmatterHeroChildMarkdownRemarkChildren = "frontmatter___hero___childMarkdownRemark___children",
-  FrontmatterHeading = "frontmatter___heading",
-  FrontmatterSubheading = "frontmatter___subheading",
+  FrontmatterNews = "frontmatter___news",
+  FrontmatterClients = "frontmatter___clients",
+  FrontmatterClientsLogoBirthtime = "frontmatter___clients___logo___birthtime",
+  FrontmatterClientsLogoBirthtimeMs = "frontmatter___clients___logo___birthtimeMs",
+  FrontmatterClientsLogoSourceInstanceName = "frontmatter___clients___logo___sourceInstanceName",
+  FrontmatterClientsLogoAbsolutePath = "frontmatter___clients___logo___absolutePath",
+  FrontmatterClientsLogoRelativePath = "frontmatter___clients___logo___relativePath",
+  FrontmatterClientsLogoExtension = "frontmatter___clients___logo___extension",
+  FrontmatterClientsLogoSize = "frontmatter___clients___logo___size",
+  FrontmatterClientsLogoPrettySize = "frontmatter___clients___logo___prettySize",
+  FrontmatterClientsLogoModifiedTime = "frontmatter___clients___logo___modifiedTime",
+  FrontmatterClientsLogoAccessTime = "frontmatter___clients___logo___accessTime",
+  FrontmatterClientsLogoChangeTime = "frontmatter___clients___logo___changeTime",
+  FrontmatterClientsLogoBirthTime = "frontmatter___clients___logo___birthTime",
+  FrontmatterClientsLogoRoot = "frontmatter___clients___logo___root",
+  FrontmatterClientsLogoDir = "frontmatter___clients___logo___dir",
+  FrontmatterClientsLogoBase = "frontmatter___clients___logo___base",
+  FrontmatterClientsLogoExt = "frontmatter___clients___logo___ext",
+  FrontmatterClientsLogoName = "frontmatter___clients___logo___name",
+  FrontmatterClientsLogoRelativeDirectory = "frontmatter___clients___logo___relativeDirectory",
+  FrontmatterClientsLogoDev = "frontmatter___clients___logo___dev",
+  FrontmatterClientsLogoMode = "frontmatter___clients___logo___mode",
+  FrontmatterClientsLogoNlink = "frontmatter___clients___logo___nlink",
+  FrontmatterClientsLogoUid = "frontmatter___clients___logo___uid",
+  FrontmatterClientsLogoGid = "frontmatter___clients___logo___gid",
+  FrontmatterClientsLogoRdev = "frontmatter___clients___logo___rdev",
+  FrontmatterClientsLogoBlksize = "frontmatter___clients___logo___blksize",
+  FrontmatterClientsLogoIno = "frontmatter___clients___logo___ino",
+  FrontmatterClientsLogoBlocks = "frontmatter___clients___logo___blocks",
+  FrontmatterClientsLogoAtimeMs = "frontmatter___clients___logo___atimeMs",
+  FrontmatterClientsLogoMtimeMs = "frontmatter___clients___logo___mtimeMs",
+  FrontmatterClientsLogoCtimeMs = "frontmatter___clients___logo___ctimeMs",
+  FrontmatterClientsLogoAtime = "frontmatter___clients___logo___atime",
+  FrontmatterClientsLogoMtime = "frontmatter___clients___logo___mtime",
+  FrontmatterClientsLogoCtime = "frontmatter___clients___logo___ctime",
+  FrontmatterClientsLogoPublicUrl = "frontmatter___clients___logo___publicURL",
+  FrontmatterClientsLogoId = "frontmatter___clients___logo___id",
+  FrontmatterClientsLogoChildren = "frontmatter___clients___logo___children",
+  FrontmatterClientsTitle = "frontmatter___clients___title",
+  FrontmatterWorkServices = "frontmatter___work___services",
+  FrontmatterWorkServicesDescription = "frontmatter___work___services___description",
+  FrontmatterWorkServicesTitle = "frontmatter___work___services___title",
+  FrontmatterWorkSubtitle = "frontmatter___work___subtitle",
+  FrontmatterWorkTitle = "frontmatter___work___title",
+  FrontmatterReferences = "frontmatter___references",
+  FrontmatterReferencesDescription = "frontmatter___references___description",
+  FrontmatterReferencesImageBirthtime = "frontmatter___references___image___birthtime",
+  FrontmatterReferencesImageBirthtimeMs = "frontmatter___references___image___birthtimeMs",
+  FrontmatterReferencesImageSourceInstanceName = "frontmatter___references___image___sourceInstanceName",
+  FrontmatterReferencesImageAbsolutePath = "frontmatter___references___image___absolutePath",
+  FrontmatterReferencesImageRelativePath = "frontmatter___references___image___relativePath",
+  FrontmatterReferencesImageExtension = "frontmatter___references___image___extension",
+  FrontmatterReferencesImageSize = "frontmatter___references___image___size",
+  FrontmatterReferencesImagePrettySize = "frontmatter___references___image___prettySize",
+  FrontmatterReferencesImageModifiedTime = "frontmatter___references___image___modifiedTime",
+  FrontmatterReferencesImageAccessTime = "frontmatter___references___image___accessTime",
+  FrontmatterReferencesImageChangeTime = "frontmatter___references___image___changeTime",
+  FrontmatterReferencesImageBirthTime = "frontmatter___references___image___birthTime",
+  FrontmatterReferencesImageRoot = "frontmatter___references___image___root",
+  FrontmatterReferencesImageDir = "frontmatter___references___image___dir",
+  FrontmatterReferencesImageBase = "frontmatter___references___image___base",
+  FrontmatterReferencesImageExt = "frontmatter___references___image___ext",
+  FrontmatterReferencesImageName = "frontmatter___references___image___name",
+  FrontmatterReferencesImageRelativeDirectory = "frontmatter___references___image___relativeDirectory",
+  FrontmatterReferencesImageDev = "frontmatter___references___image___dev",
+  FrontmatterReferencesImageMode = "frontmatter___references___image___mode",
+  FrontmatterReferencesImageNlink = "frontmatter___references___image___nlink",
+  FrontmatterReferencesImageUid = "frontmatter___references___image___uid",
+  FrontmatterReferencesImageGid = "frontmatter___references___image___gid",
+  FrontmatterReferencesImageRdev = "frontmatter___references___image___rdev",
+  FrontmatterReferencesImageBlksize = "frontmatter___references___image___blksize",
+  FrontmatterReferencesImageIno = "frontmatter___references___image___ino",
+  FrontmatterReferencesImageBlocks = "frontmatter___references___image___blocks",
+  FrontmatterReferencesImageAtimeMs = "frontmatter___references___image___atimeMs",
+  FrontmatterReferencesImageMtimeMs = "frontmatter___references___image___mtimeMs",
+  FrontmatterReferencesImageCtimeMs = "frontmatter___references___image___ctimeMs",
+  FrontmatterReferencesImageAtime = "frontmatter___references___image___atime",
+  FrontmatterReferencesImageMtime = "frontmatter___references___image___mtime",
+  FrontmatterReferencesImageCtime = "frontmatter___references___image___ctime",
+  FrontmatterReferencesImagePublicUrl = "frontmatter___references___image___publicURL",
+  FrontmatterReferencesImageId = "frontmatter___references___image___id",
+  FrontmatterReferencesImageChildren = "frontmatter___references___image___children",
+  FrontmatterReferencesSubtitle = "frontmatter___references___subtitle",
+  FrontmatterReferencesTitle = "frontmatter___references___title",
+  FrontmatterTechnologiesDescription = "frontmatter___technologies___description",
+  FrontmatterTechnologiesLogos = "frontmatter___technologies___logos",
+  FrontmatterTechnologiesTitle = "frontmatter___technologies___title",
   FrontmatterDate = "frontmatter___date",
-  FrontmatterFeaturedpost = "frontmatter___featuredpost",
+  FrontmatterDescription = "frontmatter___description",
   FrontmatterImageBirthtime = "frontmatter___image___birthtime",
   FrontmatterImageBirthtimeMs = "frontmatter___image___birthtimeMs",
   FrontmatterImageSourceInstanceName = "frontmatter___image___sourceInstanceName",
@@ -1637,7 +1737,11 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterImageChildMarkdownRemarkTimeToRead = "frontmatter___image___childMarkdownRemark___timeToRead",
   FrontmatterImageChildMarkdownRemarkTableOfContents = "frontmatter___image___childMarkdownRemark___tableOfContents",
   FrontmatterImageChildMarkdownRemarkChildren = "frontmatter___image___childMarkdownRemark___children",
-  FrontmatterDescription = "frontmatter___description",
+  FrontmatterContactAddressCity = "frontmatter___contact___address___city",
+  FrontmatterContactAddressGps = "frontmatter___contact___address___gps",
+  FrontmatterContactAddressStreet = "frontmatter___contact___address___street",
+  FrontmatterContactAddressZip = "frontmatter___contact___address___zip",
+  FrontmatterFooterCopy = "frontmatter___footer___copy",
   Excerpt = "excerpt",
   RawMarkdownBody = "rawMarkdownBody",
   FileAbsolutePath = "fileAbsolutePath",
@@ -1767,13 +1871,19 @@ export type MarkdownRemarkFrontmatter = {
   __typename?: "MarkdownRemarkFrontmatter";
   title: Maybe<Scalars["String"]>;
   templateKey: Maybe<Scalars["String"]>;
-  hero: Maybe<File>;
-  heading: Maybe<Scalars["String"]>;
+  locale: Maybe<Scalars["String"]>;
   subheading: Maybe<Scalars["String"]>;
+  hero: Maybe<File>;
+  news: Maybe<Scalars["String"]>;
+  clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
+  work: Maybe<MarkdownRemarkFrontmatterWork>;
+  references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
+  technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   date: Maybe<Scalars["Date"]>;
-  featuredpost: Maybe<Scalars["Boolean"]>;
-  image: Maybe<File>;
   description: Maybe<Scalars["String"]>;
+  image: Maybe<File>;
+  contact: Maybe<MarkdownRemarkFrontmatterContact>;
+  footer: Maybe<MarkdownRemarkFrontmatterFooter>;
 };
 
 export type MarkdownRemarkFrontmatterDateArgs = {
@@ -1783,16 +1893,145 @@ export type MarkdownRemarkFrontmatterDateArgs = {
   locale: Maybe<Scalars["String"]>;
 };
 
+export type MarkdownRemarkFrontmatterClients = {
+  __typename?: "MarkdownRemarkFrontmatterClients";
+  logo: Maybe<File>;
+  title: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkFrontmatterClientsFilterInput = {
+  logo: Maybe<FileFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterClientsFilterListInput = {
+  elemMatch: Maybe<MarkdownRemarkFrontmatterClientsFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact = {
+  __typename?: "MarkdownRemarkFrontmatterContact";
+  address: Maybe<MarkdownRemarkFrontmatterContactAddress>;
+};
+
+export type MarkdownRemarkFrontmatterContactAddress = {
+  __typename?: "MarkdownRemarkFrontmatterContactAddress";
+  city: Maybe<Scalars["String"]>;
+  gps: Maybe<Scalars["String"]>;
+  street: Maybe<Scalars["String"]>;
+  zip: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkFrontmatterContactAddressFilterInput = {
+  city: Maybe<StringQueryOperatorInput>;
+  gps: Maybe<StringQueryOperatorInput>;
+  street: Maybe<StringQueryOperatorInput>;
+  zip: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterContactFilterInput = {
+  address: Maybe<MarkdownRemarkFrontmatterContactAddressFilterInput>;
+};
+
 export type MarkdownRemarkFrontmatterFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
   templateKey: Maybe<StringQueryOperatorInput>;
-  hero: Maybe<FileFilterInput>;
-  heading: Maybe<StringQueryOperatorInput>;
+  locale: Maybe<StringQueryOperatorInput>;
   subheading: Maybe<StringQueryOperatorInput>;
+  hero: Maybe<FileFilterInput>;
+  news: Maybe<StringQueryOperatorInput>;
+  clients: Maybe<MarkdownRemarkFrontmatterClientsFilterListInput>;
+  work: Maybe<MarkdownRemarkFrontmatterWorkFilterInput>;
+  references: Maybe<MarkdownRemarkFrontmatterReferencesFilterListInput>;
+  technologies: Maybe<MarkdownRemarkFrontmatterTechnologiesFilterInput>;
   date: Maybe<DateQueryOperatorInput>;
-  featuredpost: Maybe<BooleanQueryOperatorInput>;
-  image: Maybe<FileFilterInput>;
   description: Maybe<StringQueryOperatorInput>;
+  image: Maybe<FileFilterInput>;
+  contact: Maybe<MarkdownRemarkFrontmatterContactFilterInput>;
+  footer: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterFooter = {
+  __typename?: "MarkdownRemarkFrontmatterFooter";
+  copy: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkFrontmatterFooterFilterInput = {
+  copy: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterReferences = {
+  __typename?: "MarkdownRemarkFrontmatterReferences";
+  description: Maybe<Scalars["String"]>;
+  image: Maybe<File>;
+  subtitle: Maybe<Scalars["String"]>;
+  title: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkFrontmatterReferencesFilterInput = {
+  description: Maybe<StringQueryOperatorInput>;
+  image: Maybe<FileFilterInput>;
+  subtitle: Maybe<StringQueryOperatorInput>;
+  title: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterReferencesFilterListInput = {
+  elemMatch: Maybe<MarkdownRemarkFrontmatterReferencesFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterTechnologies = {
+  __typename?: "MarkdownRemarkFrontmatterTechnologies";
+  description: Maybe<Scalars["String"]>;
+  logos: Maybe<Array<Maybe<MarkdownRemarkFrontmatterTechnologiesLogos>>>;
+  title: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkFrontmatterTechnologiesFilterInput = {
+  description: Maybe<StringQueryOperatorInput>;
+  logos: Maybe<MarkdownRemarkFrontmatterTechnologiesLogosFilterListInput>;
+  title: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterTechnologiesLogos = {
+  __typename?: "MarkdownRemarkFrontmatterTechnologiesLogos";
+  logo: Maybe<File>;
+};
+
+export type MarkdownRemarkFrontmatterTechnologiesLogosFilterInput = {
+  logo: Maybe<FileFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterTechnologiesLogosFilterListInput = {
+  elemMatch: Maybe<MarkdownRemarkFrontmatterTechnologiesLogosFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterWork = {
+  __typename?: "MarkdownRemarkFrontmatterWork";
+  services: Maybe<Array<Maybe<MarkdownRemarkFrontmatterWorkServices>>>;
+  subtitle: Maybe<Scalars["String"]>;
+  title: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkFrontmatterWorkFilterInput = {
+  services: Maybe<MarkdownRemarkFrontmatterWorkServicesFilterListInput>;
+  subtitle: Maybe<StringQueryOperatorInput>;
+  title: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterWorkServices = {
+  __typename?: "MarkdownRemarkFrontmatterWorkServices";
+  description: Maybe<Scalars["String"]>;
+  logo: Maybe<File>;
+  title: Maybe<Scalars["String"]>;
+};
+
+export type MarkdownRemarkFrontmatterWorkServicesFilterInput = {
+  description: Maybe<StringQueryOperatorInput>;
+  logo: Maybe<FileFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterWorkServicesFilterListInput = {
+  elemMatch: Maybe<MarkdownRemarkFrontmatterWorkServicesFilterInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2307,10 +2546,12 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
   __typename?: "SitePageContext";
   id: Maybe<Scalars["String"]>;
+  locale: Maybe<Scalars["String"]>;
 };
 
 export type SitePageContextFilterInput = {
   id: Maybe<StringQueryOperatorInput>;
+  locale: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2413,6 +2654,7 @@ export enum SitePageFieldsEnum {
   ComponentChunkName = "componentChunkName",
   IsCreatedByStatefulCreatePages = "isCreatedByStatefulCreatePages",
   ContextId = "context___id",
+  ContextLocale = "context___locale",
   PluginCreatorId = "pluginCreator___id",
   PluginCreatorParentId = "pluginCreator___parent___id",
   PluginCreatorParentParentId = "pluginCreator___parent___parent___id",
@@ -2468,9 +2710,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsMaxWidth = "pluginCreator___pluginOptions___maxWidth",
   PluginCreatorPluginOptionsDestinationDir = "pluginCreator___pluginOptions___destinationDir",
   PluginCreatorPluginOptionsModulePath = "pluginCreator___pluginOptions___modulePath",
-  PluginCreatorPluginOptionsPure = "pluginCreator___pluginOptions___pure",
-  PluginCreatorPluginOptionsDevelop = "pluginCreator___pluginOptions___develop",
-  PluginCreatorPluginOptionsPurgeOnly = "pluginCreator___pluginOptions___purgeOnly",
   PluginCreatorPluginOptionsPathCheck = "pluginCreator___pluginOptions___pathCheck",
   PluginCreatorNodeApIs = "pluginCreator___nodeAPIs",
   PluginCreatorBrowserApIs = "pluginCreator___browserAPIs",
@@ -2678,9 +2917,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsMaxWidth = "pluginOptions___maxWidth",
   PluginOptionsDestinationDir = "pluginOptions___destinationDir",
   PluginOptionsModulePath = "pluginOptions___modulePath",
-  PluginOptionsPure = "pluginOptions___pure",
-  PluginOptionsDevelop = "pluginOptions___develop",
-  PluginOptionsPurgeOnly = "pluginOptions___purgeOnly",
   PluginOptionsPathCheck = "pluginOptions___pathCheck",
   NodeApIs = "nodeAPIs",
   BrowserApIs = "browserAPIs",
@@ -2811,9 +3047,6 @@ export type SitePluginPluginOptions = {
   maxWidth: Maybe<Scalars["Int"]>;
   destinationDir: Maybe<Scalars["String"]>;
   modulePath: Maybe<Scalars["String"]>;
-  pure: Maybe<Scalars["Boolean"]>;
-  develop: Maybe<Scalars["Boolean"]>;
-  purgeOnly: Maybe<Array<Maybe<Scalars["String"]>>>;
   pathCheck: Maybe<Scalars["Boolean"]>;
 };
 
@@ -2825,9 +3058,6 @@ export type SitePluginPluginOptionsFilterInput = {
   maxWidth: Maybe<IntQueryOperatorInput>;
   destinationDir: Maybe<StringQueryOperatorInput>;
   modulePath: Maybe<StringQueryOperatorInput>;
-  pure: Maybe<BooleanQueryOperatorInput>;
-  develop: Maybe<BooleanQueryOperatorInput>;
-  purgeOnly: Maybe<StringQueryOperatorInput>;
   pathCheck: Maybe<BooleanQueryOperatorInput>;
 };
 

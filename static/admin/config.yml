@@ -2,17 +2,20 @@
 site:
   title: Starky's club
 backend:
-  name: bitbucket
-  repo: starkysclub/starkys-fe
-  branch: master
-  base_url: http://starkysnetlify-env-1.q4aqw953v3.us-east-2.elasticbeanstalk.com/
+  name: git-gateway
+  accept_roles: #optional - accepts all users if left out
+    - admin
+    - editor
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: "/img"
 collections:
   - name: locale
     label: Locale
     widget: list
-    folder: src/locale
+    folder: static/locale
+    editor:
+      preview: false
     fields:
       - name: title
         label: Name
@@ -20,7 +23,9 @@ collections:
         label: Code
   - name: config
     label: General
-    folder: src/config
+    folder: static/config
+    editor:
+      preview: false
     fields:
       - label: Locale
         name: locale
@@ -96,14 +101,14 @@ collections:
   - name: pages
     label: Pages
     files:
-      - file: src/pages/index.md
+      - file: static/pages/index-cs.md
         label: Landing Page CS
         name: index
         fields:
           - label: Template Key
             name: templateKey
             widget: hidden
-            default: index-page
+            default: IndexPage
           - label: Locale
             name: locale
             widget: hidden
@@ -120,22 +125,18 @@ collections:
             name: hero
             widget: file
             required: true
-          - label: Testimonials
-            name: testimonials
+          - label: News
+            name: news
+          - label: Clients
+            name: clients
             widget: list
             fields:
-              - label: Title
+              - label: Alt title
                 name: title
                 widget: string
               - label: Logo
                 name: logo
                 widget: image
-              - label: Description
-                name: description
-                widget: text
-              - label: Link
-                name: link
-                widget: string
           - label: What we do
             name: work
             widget: object
@@ -166,15 +167,15 @@ collections:
               - label: Title
                 name: title
                 widget: string
+              - label: Subtitle (type)
+                name: subtitle
+                widget: string
               - label: Description
                 name: description
                 widget: text
               - label: Image
                 name: image
                 widget: image
-              - label: Body
-                name: body
-                widget: markdown
           - label: Technologies
             name: technologies
             widget: object
@@ -192,14 +193,14 @@ collections:
                   - label: Logo
                     name: logo
                     widget: image
-      - file: src/pages/index-en.md
+      - file: static/pages/index-en.md
         label: Landing Page EN
         name: index-en
         fields:
           - label: Template Key
             name: templateKey
             widget: hidden
-            default: index-page
+            default: IndexPage
           - label: Locale
             name: locale
             widget: hidden
@@ -274,14 +275,14 @@ collections:
                     widget: image
   - name: blog
     label: Blog
-    folder: src/pages/blog
+    folder: static/blog
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - label: Template Key
         name: templateKey
         widget: hidden
-        default: blog-post
+        default: BlogPost
       - label: Locale
         name: locale
         widget: relation

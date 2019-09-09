@@ -12,7 +12,7 @@ interface BlogProps {
 class Blog extends React.Component<BlogProps> {
   public render() {
     return (
-      <section className={this.props.className}>
+      <section id="blog" className={this.props.className}>
         <Grid className="container">
           <h1>Blog</h1>
           <Row className="blog-wrap">
@@ -116,6 +116,16 @@ const StyledBlog = styled(Blog)`
       h2 {
         margin-top: 70px;
       }
+    }
+  }
+
+  .arrow-icons-wrap {
+    justify-content: flex-end;
+  }
+
+  .slick-slide {
+    :nth-of-type(3n + 3) {
+      margin-right: 0 !important;
     }
   }
 `;
