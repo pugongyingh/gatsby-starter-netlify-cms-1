@@ -4,7 +4,6 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import InstaImg01 from "../../img/instagram-1.png";
 import styled from "../../styles/theme";
-import StyledArrowButton from "../ArrowButton";
 import ArrowLink from "../ArrowLink";
 import Carousel from "../Carousel";
 import InstagramItem from "../InstagramItem";
