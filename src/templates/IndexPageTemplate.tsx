@@ -62,6 +62,32 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
 }) => (
   <div className={className}>
     <Header title={title} subheading={subheading} hero={hero} />
+    {/* Our clients */}
+    <section className="clients">
+      <Grid className="container">
+        <h1>Our Clients</h1>
+        <Row className="row">
+          {clients &&
+            clients.map(client => {
+              if (!client) {
+                return null;
+              }
+              return (
+                <Col key={client.title} lg={3} xs={12} className="col">
+                  {client.logo && (
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: client.logo,
+                        alt: `${client.title} logo`
+                      }}
+                    />
+                  )}
+                </Col>
+              );
+            })}
+        </Row>
+      </Grid>
+    </section>
     {/* News */}
     <section className="news">
       <Grid className="container">
@@ -172,32 +198,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               interloper
             </p>
           </Col>
-        </Row>
-      </Grid>
-    </section>
-    {/* Our clients */}
-    <section className="clients">
-      <Grid className="container">
-        <h1>Our Clients</h1>
-        <Row className="row">
-          {clients &&
-            clients.map(client => {
-              if (!client) {
-                return null;
-              }
-              return (
-                <Col key={client.title} lg={3} xs={12} className="col">
-                  {client.logo && (
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: client.logo,
-                        alt: `${client.title} logo`
-                      }}
-                    />
-                  )}
-                </Col>
-              );
-            })}
         </Row>
       </Grid>
     </section>
@@ -436,8 +436,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
   /* Main Sections */
   .news {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.black};
+    background-color: ${props => props.theme.colors.white};
   }
 
   #what-we-do {
@@ -473,8 +473,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   .clients {
-    color: ${props => props.theme.colors.black};
-    background-color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.black};
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
     }
@@ -490,7 +490,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
         @media ${props => props.theme.screen.laptop} {
           :not(:last-child) {
-            border-right: 1px solid ${props => props.theme.colors.black};
+            border-right: 1px solid ${props => props.theme.colors.clientBorder};
           }
         }
       }
