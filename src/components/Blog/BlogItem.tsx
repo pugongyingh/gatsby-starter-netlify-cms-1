@@ -31,9 +31,9 @@ const BlogItem: React.FC<BlogItemProps> = ({
 
 const StyledBlogItem = styled(BlogItem)`
   width: 100%;
-  max-width: 400px;
+  max-width: 440px;
   .img {
-    height: 460px;
+    height: 400px;
     background: url(${props => props.src}) no-repeat center center scroll;
     background-size: cover;
   }

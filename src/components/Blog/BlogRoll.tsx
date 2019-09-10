@@ -98,9 +98,13 @@ const StyledBlog = styled(Blog)`
       margin-top: 95px;
     }
   }
-
+  .slick-slider {
+    margin-right: -6rem;
+  }
   .blog-item {
     width: 100%;
+    overflow: hidden;
+    z-index: 10;
   }
 
   .blog-wrap {
