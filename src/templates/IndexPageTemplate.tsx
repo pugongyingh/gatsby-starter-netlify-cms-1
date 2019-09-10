@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
+import BlogRollQuery from "../components/Blog/BlogRoll";
 import ArrowLink from "../components/Carousel/ArrowLink";
 import StyledCarousel from "../components/Carousel/Carousel";
 import PreviewCompatibleImage from "../components/CMS/PreviewCompatibleImage";
@@ -297,6 +298,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         </Row>
       </Grid>
     </section>
+    <BlogRollQuery />
     {/* Contact Us */}
     <section id="contact">
       <Grid>
@@ -443,7 +445,6 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     background-color: ${props => props.theme.colors.darkGreen};
 
     .what-we-do {
-
       &-content-wrap {
         justify-content: space-between;
       }
