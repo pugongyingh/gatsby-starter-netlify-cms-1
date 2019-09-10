@@ -130,23 +130,7 @@ const BlogRollQuery: React.SFC<Omit<P, "blogPosts">> = props => {
           ) {
             edges {
               node {
-                excerpt(pruneLength: 400)
-                id
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                  templateKey
-                  date(formatString: "MMMM DD, YYYY")
-                  image {
-                    childImageSharp {
-                      fluid(maxWidth: 120, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                      }
-                    }
-                  }
-                }
+                  ...BlogInfo
               }
             }
           }

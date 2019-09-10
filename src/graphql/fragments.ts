@@ -84,6 +84,21 @@ export const query = graphql`
       }
     }
   }
+  fragment BlogInfo on MarkdownRemark {
+    excerpt(pruneLength: 400)
+    id
+    fields {
+      slug
+    }
+    frontmatter {
+      title
+      templateKey
+      date(formatString: "MMMM DD, YYYY")
+      image {
+        ...FileInfo
+      }
+    }
+  }
   fragment InstaNodeInfo on InstaNode {
     id
     caption
