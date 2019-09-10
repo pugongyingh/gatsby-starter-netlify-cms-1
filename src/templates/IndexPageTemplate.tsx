@@ -1,14 +1,15 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import BlogRollQuery from "../components/Blog/BlogRoll";
-import ArrowLink from "../components/Carousel/ArrowLink";
-import StyledCarousel from "../components/Carousel/Carousel";
 import PreviewCompatibleImage from "../components/CMS/PreviewCompatibleImage";
-import ContactCard from "../components/ContactCard";
-import StyledContactForm from "../components/Form";
+
+import ContactCard from "../components/Contact/ContactCard";
+import StyledContactForm from "../components/Contact/Form";
+
 import Image from "../components/Image";
-import InstagramItem from "../components/InstagramItem";
+import InstagramRoll from "../components/Instagram/InstagramRoll";
 import Header from "../components/Layout/Header";
+
 import NewsItem from "../components/NewsItem";
 import ReferenceItem from "../components/ReferenceItem";
 import TechnologyItem from "../components/TechnologyItem";
@@ -22,7 +23,7 @@ import {
   Maybe
 } from "../graphql/types";
 import map from "../img/address-map.png";
-import InstaImg01 from "../img/instagram-1.png";
+
 import ContactImg2 from "../img/martin-svach-photo.png";
 import ContactImg1 from "../img/michal-kourik-photo.png";
 import ContactImg3 from "../img/vaclav.jpg";
@@ -93,27 +94,28 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               blossom hang the jib Barbary Coast yard. Barkadeer doubloon
               measured fer yer chains splice the main brace matey no prey, no
               pay dead men tell no tales scuttle clap of thunder crimp.
+
             </p>
-          </Col>
-          <Col lg={4} xs={12} className="col">
-            <h2>American Main interloper parrel snow quarterdeck</h2>
-            <p>
-              Shiver me timbers wherry long clothes cog. Interloper blow the man
-              down Pirate Round pillage furl grapple wherry long boat American
-              Main Davy Jones' Locker. Doubloon lugger brig transom jack tack
-              aft aye pirate topmast. Barkadeer doubloon measured fer yer chains
-              splice the main brace matey no prey.
+            </Col>
+            <Col lg={4} xs={12} className="col">
+              <h2>American Main interloper parrel snow quarterdeck</h2>
+              <p>
+                Shiver me timbers wherry long clothes cog. Interloper blow the man
+                down Pirate Round pillage furl grapple wherry long boat American
+                Main Davy Jones' Locker. Doubloon lugger brig transom jack tack
+                aft aye pirate topmast. Barkadeer doubloon measured fer yer chains
+                splice the main brace matey no prey.
             </p>
-          </Col>
-          <Col lg={4} xs={12} className="col">
-            <h2>Square-rigged lateen sail flogging </h2>
-            <p>
-              Deadlights salmagundi Barbary Coast hornswaggle gaff log line yawl
-              American Main aft. Weigh anchor cutlass Sea Legs ahoy haul wind
-              dance the hempen jig execution dock loaded to the gunwalls stern
-              grog. Poop deck pinnace Buccaneer gangplank Sail ho boom come
-              about handsomely bounty fluke. Blimey strike colors spanker parrel
-              league lad coxswain scallywag topmast draught.
+            </Col>
+            <Col lg={4} xs={12} className="col">
+              <h2>Square-rigged lateen sail flogging </h2>
+              <p>
+                Deadlights salmagundi Barbary Coast hornswaggle gaff log line yawl
+                American Main aft. Weigh anchor cutlass Sea Legs ahoy haul wind
+                dance the hempen jig execution dock loaded to the gunwalls stern
+                grog. Poop deck pinnace Buccaneer gangplank Sail ho boom come
+                about handsomely bounty fluke. Blimey strike colors spanker parrel
+                league lad coxswain scallywag topmast draught.
             </p>
           </Col>
         </Row>
@@ -139,54 +141,55 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
               nest nipperkin grog yardarm hempen halter furl. Swab barque
               interloper
+
             </p>
-          </Col>
-          <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
-            <Icon
-              className=""
-              source={designIcon}
-              altText="WWD Icons"
-              height="90px"
-              width="90px"
-            />
-            <h2>Heading</h2>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
+            </Col>
+            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
+              <Icon
+                className=""
+                source={designIcon}
+                altText="WWD Icons"
+                height="90px"
+                width="90px"
+              />
+              <h2>Heading</h2>
+              <p>
+                Prow scuttle parrel provost Sail ho shrouds spirits boom
+                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+                nest nipperkin grog yardarm hempen halter furl. Swab barque
+                interloper
             </p>
-          </Col>
-          <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
-            <Icon
-              className=""
-              source={analysisIcon}
-              altText="WWD Icons"
-              height="90px"
-              width="90px"
-            />
-            <h2>Heading</h2>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
+            </Col>
+            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
+              <Icon
+                className=""
+                source={analysisIcon}
+                altText="WWD Icons"
+                height="90px"
+                width="90px"
+              />
+              <h2>Heading</h2>
+              <p>
+                Prow scuttle parrel provost Sail ho shrouds spirits boom
+                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+                nest nipperkin grog yardarm hempen halter furl. Swab barque
+                interloper
             </p>
-          </Col>
-          <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
-            <Icon
-              className=""
-              source={workshopIcon}
-              altText="WWD Icons"
-              height="90px"
-              width="90px"
-            />
-            <h2>Heading</h2>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
+            </Col>
+            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
+              <Icon
+                className=""
+                source={workshopIcon}
+                altText="WWD Icons"
+                height="90px"
+                width="90px"
+              />
+              <h2>Heading</h2>
+              <p>
+                Prow scuttle parrel provost Sail ho shrouds spirits boom
+                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+                nest nipperkin grog yardarm hempen halter furl. Swab barque
+                interloper
             </p>
           </Col> */}
 
@@ -225,38 +228,38 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               nest nipperkin grog yardarm hempen halter furl. Swab barque
               interloper
             </p>
-          </Col>
-        </Row>
-        <Row className="section-row flex-row-reverse">
-          <Col xs={12} sm={6} lg={5} lgOffset={1}>
-            <Image
-              source={designRef}
-              altText="Software development reference"
-            />
-          </Col>
-          <Col className="ref-content text-align-right" xs={12} sm={6} lg={6}>
-            <h2>SOFTWARE DEVELOPMENT</h2>
-            <h3>Name of the Project</h3>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
+            </Col>
+          </Row>
+          <Row className="section-row flex-row-reverse">
+            <Col xs={12} sm={6} lg={5} lgOffset={1}>
+              <Image
+                source={designRef}
+                altText="Software development reference"
+              />
+            </Col>
+            <Col className="ref-content text-align-right" xs={12} sm={6} lg={6}>
+              <h2>SOFTWARE DEVELOPMENT</h2>
+              <h3>Name of the Project</h3>
+              <p>
+                Prow scuttle parrel provost Sail ho shrouds spirits boom
+                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+                nest nipperkin grog yardarm hempen halter furl. Swab barque
+                interloper
             </p>
-          </Col>
-        </Row>
-        <Row className="section-row">
-          <Col xs={12} sm={6} lg={5}>
-            <Image source={ref3} altText="Software development reference" />
-          </Col>
-          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
-            <h2>SOFTWARE DEVELOPMENT</h2>
-            <h3>Name of the Project</h3>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
+            </Col>
+          </Row>
+          <Row className="section-row">
+            <Col xs={12} sm={6} lg={5}>
+              <Image source={ref3} altText="Software development reference" />
+            </Col>
+            <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
+              <h2>SOFTWARE DEVELOPMENT</h2>
+              <h3>Name of the Project</h3>
+              <p>
+                Prow scuttle parrel provost Sail ho shrouds spirits boom
+                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+                nest nipperkin grog yardarm hempen halter furl. Swab barque
+                interloper
             </p>
           </Col>
         </Row> */}
@@ -365,70 +368,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <Image altText="Address map" source={map} />
       </a>
     </section>
-    {/* Instagram */}
-    <section className="instagram">
-      <Grid className="container">
-        <h1>Instagram</h1>
-        <Row className="instagram-items-wrap">
-          <Col className="instagram-item">
-            <StyledCarousel dark={true}>
-              <InstagramItem
-                src={InstaImg01}
-                alt="Instagram item 1"
-                instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-              />
-
-              <InstagramItem
-                src={InstaImg01}
-                alt="Instagram item 1"
-                instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-              />
-              <InstagramItem
-                src={InstaImg01}
-                alt="Instagram item 1"
-                instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-              />
-              <InstagramItem
-                src={InstaImg01}
-                alt="Instagram item 1"
-                instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-              />
-              <InstagramItem
-                src={InstaImg01}
-                alt="Instagram item 1"
-                instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-              />
-              <InstagramItem
-                src={InstaImg01}
-                alt="Instagram item 1"
-                instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-              />
-
-              <InstagramItem
-                src={InstaImg01}
-                alt="Instagram item 1"
-                instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-              />
-            </StyledCarousel>
-          </Col>
-        </Row>
-        <Row />
-        <Row className="arrow-icons-wrap">
-          <ArrowLink
-            text="Follow us on Instagram"
-            link="#"
-            instaFollowLink={true}
-          />
-        </Row>
-      </Grid>
-    </section>
+     {/* Instagram */}
+     <InstagramRoll />
   </div>
 );
 
@@ -560,34 +501,18 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
-  .instagram {
-    .instagram-items-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+  .map {
+    position: relative;
+    height: 530px;
+    width: 100%;
 
-      .instagram-item {
-        width: 100%;
-      }
-
-      @media ${props => props.theme.screen.laptop} {
-        .slider {
-          margin-right: 2px;
-        }
-        h2 {
-          margin-top: 70px;
-        }
-      }
-      .arrow-icons-wrap {
-        height: 8vh;
-        display: flex;
-        align-items: flex-end;
-      }
-
-      .followLink {
-        margin-right: auto;
-      }
+    &__image {
+      background-image: url(${map});
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100%;
     }
   }
+
 `;
