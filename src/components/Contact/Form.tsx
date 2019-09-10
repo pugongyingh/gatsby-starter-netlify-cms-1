@@ -6,7 +6,7 @@ import {
   TextArea,
   TextInput
 } from "react-form-elements";
-import styled, { SCP } from "../styles/theme";
+import styled, { SCP } from "../../styles/theme";
 
 interface FormProps extends SCP { }
 

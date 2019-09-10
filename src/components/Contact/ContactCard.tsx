@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import Icon from "../components/Icon";
-import Image from "../components/Image";
-import styled from "../styles/theme";
+import Icon from "../Icon";
+import Image from "../Image";
+import styled from "../../styles/theme";
 
 import LinkedInIcon from "../img/linkedin-icon.svg";
 
