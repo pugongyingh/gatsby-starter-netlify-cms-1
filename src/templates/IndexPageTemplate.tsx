@@ -474,7 +474,6 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   .clients {
     color: ${props => props.theme.colors.black};
     background-color: ${props => props.theme.colors.white};
-    /*height: 40vh;*/
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
     }
