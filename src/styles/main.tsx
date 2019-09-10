@@ -19,4 +19,8 @@ export const main = css`
   .flex-row-reverse {
     flex-direction: row-reverse;
   }
+
+  .text-align-right {
+    text-align: right;
+  }
 `;

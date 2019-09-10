@@ -214,13 +214,13 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </Col>
           </Row>
           <Row className="section-row flex-row-reverse">
-            <Col xs={12} sm={6} lg={5}>
+            <Col xs={12} sm={6} lg={5} lgOffset={1}>
               <Image
                 source={designRef}
                 altText="Software development reference"
               />
             </Col>
-            <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
+            <Col className="ref-content text-align-right" xs={12} sm={6} lg={6}>
               <h2>SOFTWARE DEVELOPMENT</h2>
               <h3>Name of the Project</h3>
               <p>
@@ -509,6 +509,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     .ref-content {
       @media ${props => props.theme.screen.laptop} {
         padding: 2rem 0;
+        max-width: 480px;
 
         h2 {
           font-family: "Open Sans", sans-serif;
