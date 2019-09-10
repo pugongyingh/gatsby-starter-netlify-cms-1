@@ -55,7 +55,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
 }) => (
     <div className={className}>
       <Header title={title} subheading={subheading} hero={hero} />
-      {/* Case studies */}
+      {/* News */}
       <section className="news">
         <Grid className="container">
           <h1>News</h1>
