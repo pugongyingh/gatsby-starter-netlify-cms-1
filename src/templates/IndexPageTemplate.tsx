@@ -6,7 +6,6 @@ import StyledCarousel from "../components/Carousel/Carousel";
 import PreviewCompatibleImage from "../components/CMS/PreviewCompatibleImage";
 import ContactCard from "../components/ContactCard";
 import StyledContactForm from "../components/Form";
-import Icon from "../components/Icon";
 import Image from "../components/Image";
 import InstagramItem from "../components/InstagramItem";
 import Header from "../components/Layout/Header";
@@ -21,9 +20,7 @@ import {
   Maybe
 } from "../graphql/types";
 import map from "../img/address-map.png";
-import analysisIcon from "../img/analysis-icon.svg";
 import awsLogo from "../img/aws-logo.svg";
-import designIcon from "../img/design-icon.svg";
 import dockerLogo from "../img/docker-logo.svg";
 import InstaImg01 from "../img/instagram-1.png";
 import javaLogo from "../img/java-logo.svg";
@@ -34,10 +31,8 @@ import reactLogo from "../img/react-logo.svg";
 import swRef from "../img/ref-1.png";
 import designRef from "../img/ref-2.png";
 import ref3 from "../img/ref-3.png";
-import devIcon from "../img/sw-dev-icon.svg";
 import swiftLogo from "../img/swift-logo.svg";
 import ContactImg3 from "../img/vaclav.jpg";
-import workshopIcon from "../img/workshop-icon.svg";
 import styled from "../styles/theme";
 
 interface IndexPageProps {
