@@ -11,6 +11,7 @@ import Image from "../components/Image";
 import InstagramItem from "../components/InstagramItem";
 import Header from "../components/Layout/Header";
 import Logo from "../components/Logo";
+import NewsItem from "../components/NewsItem";
 import {
   File,
   MarkdownRemarkFrontmatterClients,
@@ -134,7 +135,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <h1>What we do</h1>
         <h1>Driving brands forward online.</h1>
         <Row className="section-row what-we-do-content-wrap">
-          <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
+          {/* <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
             <Icon
               className=""
               source={devIcon}
@@ -197,7 +198,23 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               nest nipperkin grog yardarm hempen halter furl. Swab barque
               interloper
             </p>
-          </Col>
+          </Col> */}
+
+          {work &&
+            work.services.map(workitem => {
+              if (!workitem) {
+                return null;
+              }
+              return (
+                <NewsItem
+                  key={workitem.title}
+                  wwdIcon={workitem.logo}
+                  heading={workitem.title}
+                  perex={workitem.description}
+                  alt={`${workitem.title} logo`}
+                />
+              );
+            })}
         </Row>
       </Grid>
     </section>
