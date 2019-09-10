@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "../styles/theme";
-import ArrowLinkStyled from "./Carousel/ArrowLink";
-import Image from "./Image";
+import styled from "../../styles/theme";
+import ArrowLinkStyled from "../Carousel/ArrowLink";
+import Image from "../Image";
 
 interface BlogItemProps {
   src: string;
@@ -34,6 +34,7 @@ const BlogItem: React.FC<BlogItemProps> = ({
 };
 
 const StyledBlogItem = styled(BlogItem)`
+  width: 100%;
   max-width: 400px;
 `;
 
