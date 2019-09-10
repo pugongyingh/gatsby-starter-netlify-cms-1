@@ -268,7 +268,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             }
             return (
               <ReferenceItem
-                key={ReferenceItem.title}
+                key={referenceItem.title}
                 src={referenceItem.image}
                 alt={`${referenceItem.title} image`}
                 heading={referenceItem.title}
