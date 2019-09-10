@@ -10,12 +10,12 @@ import InstagramRoll from "../components/Instagram/InstagramRoll";
 import Header from "../components/Layout/Header";
 import Logo from "../components/Logo";
 import { File, MarkdownRemarkFrontmatterClients, MarkdownRemarkFrontmatterReferences, MarkdownRemarkFrontmatterTechnologies, MarkdownRemarkFrontmatterWork, Maybe } from "../graphql/types";
-import map from "../img/address-map.png";
 import analysisIcon from "../img/analysis-icon.svg";
 import awsLogo from "../img/aws-logo.svg";
 import designIcon from "../img/design-icon.svg";
 import dockerLogo from "../img/docker-logo.svg";
 import javaLogo from "../img/java-logo.svg";
+import map from "../img/map.png";
 import ContactImg2 from "../img/martin-svach-photo.png";
 import ContactImg1 from "../img/michal-kourik-photo.png";
 import polymerLogo from "../img/polymer-logo.svg";
@@ -332,11 +332,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Row>
         </Grid>
       </section>
-      <section>
-
-        <a href="https://goo.gl/maps/1rP52P6eimCVF58y9" target="_blank">
-          <Image altText="Address map" source={map} />
-        </a>
+      <section className="map">
+        <div className="map__image" />
       </section>
       {/* Instagram */}
       <InstagramRoll />
@@ -465,6 +462,20 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
           letter-spacing: 0.03em;
         }
       }
+    }
+  }
+
+  .map {
+    position: relative;
+    height: 530px;
+    width: 100%;
+
+    &__image {
+      background-image: url(${map});
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100%;
     }
   }
 

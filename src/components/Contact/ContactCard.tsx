@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
+import styled from "../../styles/theme";
 import Icon from "../Icon";
 import Image from "../Image";
-import styled from "../../styles/theme";
 
-import LinkedInIcon from "../img/linkedin-icon.svg";
+import LinkedInIcon from "../../img/linkedin-icon.svg";
 
 interface ContactCardProps {
   ImgSource: string;
