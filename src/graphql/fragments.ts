@@ -84,4 +84,24 @@ export const query = graphql`
       }
     }
   }
+  fragment InstaNodeInfo on InstaNode {
+    id
+    caption
+    likes
+    mediaType
+    original
+    preview
+    timestamp
+    type
+    username
+    dimensions {
+      height
+      width
+    }
+    thumbnails {
+      config_height
+      config_width
+      src
+    }
+  }
 `

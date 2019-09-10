@@ -8,7 +8,8 @@ import ContactCard from "../components/ContactCard";
 import StyledContactForm from "../components/Form";
 import Icon from "../components/Icon";
 import Image from "../components/Image";
-import InstagramItem from "../components/InstagramItem";
+import InstagramItem from "../components/Instagram/InstagramItem";
+import InstagramRoll from "../components/Instagram/InstagramRoll";
 import Header from "../components/Layout/Header";
 import Logo from "../components/Logo";
 import { File, MarkdownRemarkFrontmatterClients, MarkdownRemarkFrontmatterReferences, MarkdownRemarkFrontmatterTechnologies, MarkdownRemarkFrontmatterWork, Maybe } from "../graphql/types";
@@ -292,7 +293,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Row>
         </Grid>
       </section>
-      <BlogRollQuery/>
+      <BlogRollQuery />
       {/* Contact Us */}
       <section id="contact">
         <Grid>
@@ -337,74 +338,12 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       </section>
       <section>
 
-      <a href="https://goo.gl/maps/1rP52P6eimCVF58y9" target="_blank">
-            <Image altText="Address map" source={map} />
-          </a>
+        <a href="https://goo.gl/maps/1rP52P6eimCVF58y9" target="_blank">
+          <Image altText="Address map" source={map} />
+        </a>
       </section>
       {/* Instagram */}
-      <section className="instagram">
-        <Grid className="container">
-          <h1>Instagram</h1>
-          <Row className="instagram-items-wrap">
-            <Col className="instagram-item">
-              <StyledCarousel dark={true}>
-                <InstagramItem
-                  src={InstaImg01}
-                  alt="Instagram item 1"
-                  instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-                />
-
-                <InstagramItem
-                  src={InstaImg01}
-                  alt="Instagram item 1"
-                  instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-                />
-                <InstagramItem
-                  src={InstaImg01}
-                  alt="Instagram item 1"
-                  instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-                />
-                <InstagramItem
-                  src={InstaImg01}
-                  alt="Instagram item 1"
-                  instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-                />
-                <InstagramItem
-                  src={InstaImg01}
-                  alt="Instagram item 1"
-                  instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-                />
-                <InstagramItem
-                  src={InstaImg01}
-                  alt="Instagram item 1"
-                  instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-                />
-
-                <InstagramItem
-                  src={InstaImg01}
-                  alt="Instagram item 1"
-                  instaText="Prow scuttle parrel provost Sail ho 
-            shrouds spirits boom mizzenmast yardarm. 😎 #starkysclub"
-                />
-              </StyledCarousel>
-            </Col>
-          </Row>
-          <Row />
-          <Row className="arrow-icons-wrap">
-            <ArrowLink
-              text="Follow us on Instagram"
-              link="#"
-              instaFollowLink={true}
-            />
-          </Row>
-        </Grid>
-      </section>
+      <InstagramRoll />
     </div>
   );
 
@@ -533,34 +472,4 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
-  .instagram {
-.instagram-items-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-
-  .instagram-item {
-    width: 100%;
-  }
-
-  @media ${props => props.theme.screen.laptop} {
-    .slider {
-      margin-right: 2px;
-    }
-    h2 {
-      margin-top: 70px;
-    }
-  }
-  .arrow-icons-wrap {
-    height: 8vh;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .followLink {
-    margin-right: auto;
-  }
-}
-  }
 `;
