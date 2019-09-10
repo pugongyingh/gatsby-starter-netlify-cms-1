@@ -127,6 +127,13 @@ collections:
             required: true
           - label: News
             name: news
+            field:
+              - label: Title
+                name: title
+                widget: string
+              - label: Perex
+                name: perex
+                widget: text
           - label: Clients
             name: clients
             widget: list

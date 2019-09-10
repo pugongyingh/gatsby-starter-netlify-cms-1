@@ -6,11 +6,13 @@ import StyledCarousel from "../components/Carousel/Carousel";
 import PreviewCompatibleImage from "../components/CMS/PreviewCompatibleImage";
 import ContactCard from "../components/ContactCard";
 import StyledContactForm from "../components/Form";
-import Icon from "../components/Icon";
 import Image from "../components/Image";
 import InstagramItem from "../components/InstagramItem";
 import Header from "../components/Layout/Header";
-import Logo from "../components/Logo";
+import NewsItem from "../components/NewsItem";
+import ReferenceItem from "../components/ReferenceItem";
+import TechnologyItem from "../components/TechnologyItem";
+
 import {
   File,
   MarkdownRemarkFrontmatterClients,
@@ -20,23 +22,10 @@ import {
   Maybe
 } from "../graphql/types";
 import map from "../img/address-map.png";
-import analysisIcon from "../img/analysis-icon.svg";
-import awsLogo from "../img/aws-logo.svg";
-import designIcon from "../img/design-icon.svg";
-import dockerLogo from "../img/docker-logo.svg";
 import InstaImg01 from "../img/instagram-1.png";
-import javaLogo from "../img/java-logo.svg";
 import ContactImg2 from "../img/martin-svach-photo.png";
 import ContactImg1 from "../img/michal-kourik-photo.png";
-import polymerLogo from "../img/polymer-logo.svg";
-import reactLogo from "../img/react-logo.svg";
-import swRef from "../img/ref-1.png";
-import designRef from "../img/ref-2.png";
-import ref3 from "../img/ref-3.png";
-import devIcon from "../img/sw-dev-icon.svg";
-import swiftLogo from "../img/swift-logo.svg";
 import ContactImg3 from "../img/vaclav.jpg";
-import workshopIcon from "../img/workshop-icon.svg";
 import styled from "../styles/theme";
 
 interface IndexPageProps {
@@ -45,6 +34,7 @@ interface IndexPageProps {
   subheading: Maybe<string>;
   className?: string;
   clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
+  news: Maybe<Scalars["String"]>;
   work: Maybe<MarkdownRemarkFrontmatterWork>;
   technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
@@ -56,12 +46,39 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   subheading,
   className,
   clients,
-  work, // TODO: Use
-  technologies, // TODO: Use
+  news,
+  work,
+  technologies,
   references // TODO: Use
 }) => (
   <div className={className}>
     <Header title={title} subheading={subheading} hero={hero} />
+    {/* Our clients */}
+    <section className="clients">
+      <Grid className="container">
+        <h1>Our Clients</h1>
+        <Row className="row">
+          {clients &&
+            clients.map(client => {
+              if (!client) {
+                return null;
+              }
+              return (
+                <Col key={client.title} lg={3} xs={12} className="col">
+                  {client.logo && (
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: client.logo,
+                        alt: `${client.title} logo`
+                      }}
+                    />
+                  )}
+                </Col>
+              );
+            })}
+        </Row>
+      </Grid>
+    </section>
     {/* News */}
     <section className="news">
       <Grid className="container">
@@ -108,7 +125,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <h1>What we do</h1>
         <h1>Driving brands forward online.</h1>
         <Row className="section-row what-we-do-content-wrap">
-          <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
+          {/* <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
             <Icon
               className=""
               source={devIcon}
@@ -171,31 +188,21 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               nest nipperkin grog yardarm hempen halter furl. Swab barque
               interloper
             </p>
-          </Col>
-        </Row>
-      </Grid>
-    </section>
-    {/* Our clients */}
-    <section className="clients">
-      <Grid className="container">
-        <h1>Our Clients</h1>
-        <Row className="row">
-          {clients &&
-            clients.map(client => {
-              if (!client) {
+          </Col> */}
+
+          {work &&
+            work.services.map(workitem => {
+              if (!workitem) {
                 return null;
               }
               return (
-                <Col key={client.title} lg={3} xs={12} className="col">
-                  {client.logo && (
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: client.logo,
-                        alt: `${client.title} logo`
-                      }}
-                    />
-                  )}
-                </Col>
+                <NewsItem
+                  key={workitem.title}
+                  wwdIcon={workitem.logo}
+                  heading={workitem.title}
+                  perex={workitem.description}
+                  alt={`${workitem.title} logo`}
+                />
               );
             })}
         </Row>
@@ -205,7 +212,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     <section id="references">
       <Grid className="container">
         <h1>References</h1>
-        <Row className="section-row">
+        {/* <Row className="section-row">
           <Col xs={12} sm={6} lg={5}>
             <Image source={swRef} altText="Software development reference" />
           </Col>
@@ -252,28 +259,37 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               interloper
             </p>
           </Col>
-        </Row>
+        </Row> */}
+
+        {references &&
+          references.map(referenceItem => {
+            if (!referenceItem) {
+              return null;
+            }
+            return (
+              <ReferenceItem
+                key={referenceItem.title}
+                src={referenceItem.image}
+                alt={`${referenceItem.title} image`}
+                heading={referenceItem.title}
+                subheading={referenceItem.subtitle}
+                perex={referenceItem.description}
+              />
+            );
+          })}
       </Grid>
     </section>
     {/* Technologies */}
     <section className="technologies">
       <Grid className="container">
-        <h1>Technologies</h1>
+        <h1>{technologies.title}</h1>
         <Row>
           <Col xs={12} sm={6}>
-            <p>
-              Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep
-              beanie babies david duchovny lisa frank. Nerf guns hoop earrings.
-            </p>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin.
-            </p>
+            {technologies.description}
           </Col>
           <Col xs={12} smOffset={1} sm={4}>
             <Row className="logoRow">
-              <Col xs={4}>
+              {/* <Col xs={4}>
                 <Logo source={javaLogo} altText="A Java Logo" />
               </Col>
               <Col xs={4}>
@@ -281,18 +297,21 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               </Col>
               <Col xs={4}>
                 <Logo source={awsLogo} altText="An Aws Logo" />
-              </Col>
-            </Row>
-            <Row className="logoRow">
-              <Col xs={4}>
-                <Logo source={polymerLogo} altText="A Polymer Logo" />
-              </Col>
-              <Col xs={4}>
-                <Logo source={swiftLogo} altText="A Swift Logo" />
-              </Col>
-              <Col xs={4}>
-                <Logo source={dockerLogo} altText="A Docker Logo" />
-              </Col>
+              </Col> */}
+
+              {technologies &&
+                technologies.logos.map(logo => {
+                  if (!logo) {
+                    return null;
+                  }
+                  return (
+                    <TechnologyItem
+                      key={technologies.title}
+                      src={technologies.logos}
+                      alt={`${technologies.title} logo`}
+                    />
+                  );
+                })}
             </Row>
           </Col>
         </Row>
@@ -436,8 +455,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
   /* Main Sections */
   .news {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.black};
+    background-color: ${props => props.theme.colors.white};
   }
 
   #what-we-do {
@@ -473,8 +492,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   .clients {
-    color: ${props => props.theme.colors.black};
-    background-color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.black};
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
     }
@@ -490,7 +509,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
         @media ${props => props.theme.screen.laptop} {
           :not(:last-child) {
-            border-right: 1px solid ${props => props.theme.colors.black};
+            border-right: 1px solid ${props => props.theme.colors.clientBorder};
           }
         }
       }
