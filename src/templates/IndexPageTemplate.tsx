@@ -10,6 +10,7 @@ import Image from "../components/Image";
 import InstagramItem from "../components/InstagramItem";
 import Header from "../components/Layout/Header";
 import NewsItem from "../components/NewsItem";
+import ReferenceItem from "../components/ReferenceItem";
 import TechnologyItem from "../components/TechnologyItem";
 
 import {
@@ -24,9 +25,6 @@ import map from "../img/address-map.png";
 import InstaImg01 from "../img/instagram-1.png";
 import ContactImg2 from "../img/martin-svach-photo.png";
 import ContactImg1 from "../img/michal-kourik-photo.png";
-import swRef from "../img/ref-1.png";
-import designRef from "../img/ref-2.png";
-import ref3 from "../img/ref-3.png";
 import ContactImg3 from "../img/vaclav.jpg";
 import styled from "../styles/theme";
 
@@ -36,6 +34,7 @@ interface IndexPageProps {
   subheading: Maybe<string>;
   className?: string;
   clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
+  news: Maybe<Scalars["String"]>;
   work: Maybe<MarkdownRemarkFrontmatterWork>;
   technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
@@ -47,8 +46,9 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   subheading,
   className,
   clients,
-  work, // TODO: Use
-  technologies, // TODO: Use
+  news,
+  work,
+  technologies,
   references // TODO: Use
 }) => (
   <div className={className}>
@@ -212,7 +212,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     <section id="references">
       <Grid className="container">
         <h1>References</h1>
-        <Row className="section-row">
+        {/* <Row className="section-row">
           <Col xs={12} sm={6} lg={5}>
             <Image source={swRef} altText="Software development reference" />
           </Col>
@@ -259,7 +259,24 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               interloper
             </p>
           </Col>
-        </Row>
+        </Row> */}
+
+        {references &&
+          references.map(referenceItem => {
+            if (!referenceItem) {
+              return null;
+            }
+            return (
+              <ReferenceItem
+                key={ReferenceItem.title}
+                src={referenceItem.image}
+                alt={`${referenceItem.title} image`}
+                heading={referenceItem.title}
+                subheading={referenceItem.subtitle}
+                perex={referenceItem.description}
+              />
+            );
+          })}
       </Grid>
     </section>
     {/* Technologies */}
