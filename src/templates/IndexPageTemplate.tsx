@@ -29,7 +29,6 @@ import ContactImg3 from "../img/vaclav.jpg";
 import workshopIcon from "../img/workshop-icon.svg";
 import styled from "../styles/theme";
 
-
 interface IndexPageProps {
   hero: string | File;
   title: string;
@@ -53,7 +52,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
 }) => (
     <div className={className}>
       <Header title={title} subheading={subheading} hero={hero} />
-      {/* Case studies */}
+      {/* News */}
       <section className="news">
         <Grid className="container">
           <h1>News</h1>
@@ -98,8 +97,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <Grid className="container">
           <h1>What we do</h1>
           <h1>Driving brands forward online.</h1>
-          <Row className="section-row">
-            <Col xs={12} sm={6} lg={3}>
+          <Row className="section-row what-we-do-content-wrap">
+            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
               <Icon
                 className=""
                 source={devIcon}
@@ -115,7 +114,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 interloper
             </p>
             </Col>
-            <Col xs={12} sm={6} lg={3}>
+            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
               <Icon
                 className=""
                 source={designIcon}
@@ -131,7 +130,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 interloper
             </p>
             </Col>
-            <Col xs={12} sm={6} lg={3}>
+            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
               <Icon
                 className=""
                 source={analysisIcon}
@@ -147,7 +146,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 interloper
             </p>
             </Col>
-            <Col xs={12} sm={6} lg={3}>
+            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
               <Icon
                 className=""
                 source={workshopIcon}
@@ -212,13 +211,13 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             </Col>
           </Row>
           <Row className="section-row flex-row-reverse">
-            <Col xs={12} sm={6} lg={5}>
+            <Col xs={12} sm={6} lg={5} lgOffset={1}>
               <Image
                 source={designRef}
                 altText="Software development reference"
               />
             </Col>
-            <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
+            <Col className="ref-content text-align-right" xs={12} sm={6} lg={6}>
               <h2>SOFTWARE DEVELOPMENT</h2>
               <h3>Name of the Project</h3>
               <p>
@@ -361,10 +360,9 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
-
   /* Main Sections */
   .news {
-    color:  ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.black};
   }
 
@@ -372,9 +370,13 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     color: ${props => props.theme.colors.white};
     background-color: ${props => props.theme.colors.darkGreen};
 
-    .row {
-      @media ${props => props.theme.screen.laptop} {
-        margin-top: 95px;
+    .what-we-do {
+      &-content-wrap {
+        justify-content: space-between;
+      }
+
+      &-card {
+        max-width: 330px;
       }
     }
 
@@ -399,7 +401,6 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   .clients {
     color: ${props => props.theme.colors.black};
     background-color: ${props => props.theme.colors.white};
-    /*height: 40vh;*/
     @media ${props => props.theme.screen.laptop} {
       padding: 7.5rem 0;
     }
@@ -443,6 +444,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     .ref-content {
       @media ${props => props.theme.screen.laptop} {
         padding: 2rem 0;
+        max-width: 480px;
 
         h2 {
           font-family: "Open Sans", sans-serif;
