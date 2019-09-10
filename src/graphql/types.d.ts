@@ -1374,6 +1374,214 @@ export type ImageSharpSortInput = {
   order: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type InstaNode = Node & {
+  __typename?: "InstaNode";
+  id: Scalars["ID"];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  type: Maybe<Scalars["String"]>;
+  username: Maybe<Scalars["String"]>;
+  likes: Maybe<Scalars["Int"]>;
+  caption: Maybe<Scalars["String"]>;
+  thumbnails: Maybe<Array<Maybe<InstaNodeThumbnails>>>;
+  mediaType: Maybe<Scalars["String"]>;
+  preview: Maybe<Scalars["String"]>;
+  original: Maybe<Scalars["String"]>;
+  timestamp: Maybe<Scalars["Int"]>;
+  dimensions: Maybe<InstaNodeDimensions>;
+};
+
+export type InstaNodeConnection = {
+  __typename?: "InstaNodeConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<InstaNodeEdge>;
+  nodes: Array<InstaNode>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars["String"]>;
+  group: Array<InstaNodeGroupConnection>;
+};
+
+export type InstaNodeConnectionDistinctArgs = {
+  field: InstaNodeFieldsEnum;
+};
+
+export type InstaNodeConnectionGroupArgs = {
+  skip: Maybe<Scalars["Int"]>;
+  limit: Maybe<Scalars["Int"]>;
+  field: InstaNodeFieldsEnum;
+};
+
+export type InstaNodeDimensions = {
+  __typename?: "InstaNodeDimensions";
+  height: Maybe<Scalars["Int"]>;
+  width: Maybe<Scalars["Int"]>;
+};
+
+export type InstaNodeDimensionsFilterInput = {
+  height: Maybe<IntQueryOperatorInput>;
+  width: Maybe<IntQueryOperatorInput>;
+};
+
+export type InstaNodeEdge = {
+  __typename?: "InstaNodeEdge";
+  next: Maybe<InstaNode>;
+  node: InstaNode;
+  previous: Maybe<InstaNode>;
+};
+
+export enum InstaNodeFieldsEnum {
+  Id = "id",
+  ParentId = "parent___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentParentId = "parent___parent___parent___id",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentChildren = "parent___children",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  Children = "children",
+  ChildrenId = "children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentParentId = "children___parent___parent___id",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  Type = "type",
+  Username = "username",
+  Likes = "likes",
+  Caption = "caption",
+  Thumbnails = "thumbnails",
+  ThumbnailsSrc = "thumbnails___src",
+  ThumbnailsConfigWidth = "thumbnails___config_width",
+  ThumbnailsConfigHeight = "thumbnails___config_height",
+  MediaType = "mediaType",
+  Preview = "preview",
+  Original = "original",
+  Timestamp = "timestamp",
+  DimensionsHeight = "dimensions___height",
+  DimensionsWidth = "dimensions___width"
+}
+
+export type InstaNodeFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  type: Maybe<StringQueryOperatorInput>;
+  username: Maybe<StringQueryOperatorInput>;
+  likes: Maybe<IntQueryOperatorInput>;
+  caption: Maybe<StringQueryOperatorInput>;
+  thumbnails: Maybe<InstaNodeThumbnailsFilterListInput>;
+  mediaType: Maybe<StringQueryOperatorInput>;
+  preview: Maybe<StringQueryOperatorInput>;
+  original: Maybe<StringQueryOperatorInput>;
+  timestamp: Maybe<IntQueryOperatorInput>;
+  dimensions: Maybe<InstaNodeDimensionsFilterInput>;
+};
+
+export type InstaNodeGroupConnection = {
+  __typename?: "InstaNodeGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<InstaNodeEdge>;
+  nodes: Array<InstaNode>;
+  pageInfo: PageInfo;
+  field: Scalars["String"];
+  fieldValue: Maybe<Scalars["String"]>;
+};
+
+export type InstaNodeSortInput = {
+  fields: Maybe<Array<Maybe<InstaNodeFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type InstaNodeThumbnails = {
+  __typename?: "InstaNodeThumbnails";
+  src: Maybe<Scalars["String"]>;
+  config_width: Maybe<Scalars["Int"]>;
+  config_height: Maybe<Scalars["Int"]>;
+};
+
+export type InstaNodeThumbnailsFilterInput = {
+  src: Maybe<StringQueryOperatorInput>;
+  config_width: Maybe<IntQueryOperatorInput>;
+  config_height: Maybe<IntQueryOperatorInput>;
+};
+
+export type InstaNodeThumbnailsFilterListInput = {
+  elemMatch: Maybe<InstaNodeThumbnailsFilterInput>;
+};
+
 export type Internal = {
   __typename?: "Internal";
   content: Maybe<Scalars["String"]>;
@@ -2126,6 +2334,8 @@ export type Query = {
   allSitePlugin: SitePluginConnection;
   site: Maybe<Site>;
   allSite: SiteConnection;
+  instaNode: Maybe<InstaNode>;
+  allInstaNode: InstaNodeConnection;
   directory: Maybe<Directory>;
   allDirectory: DirectoryConnection;
 };
@@ -2288,6 +2498,30 @@ export type QuerySiteArgs = {
 export type QueryAllSiteArgs = {
   filter: Maybe<SiteFilterInput>;
   sort: Maybe<SiteSortInput>;
+  skip: Maybe<Scalars["Int"]>;
+  limit: Maybe<Scalars["Int"]>;
+};
+
+export type QueryInstaNodeArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  type: Maybe<StringQueryOperatorInput>;
+  username: Maybe<StringQueryOperatorInput>;
+  likes: Maybe<IntQueryOperatorInput>;
+  caption: Maybe<StringQueryOperatorInput>;
+  thumbnails: Maybe<InstaNodeThumbnailsFilterListInput>;
+  mediaType: Maybe<StringQueryOperatorInput>;
+  preview: Maybe<StringQueryOperatorInput>;
+  original: Maybe<StringQueryOperatorInput>;
+  timestamp: Maybe<IntQueryOperatorInput>;
+  dimensions: Maybe<InstaNodeDimensionsFilterInput>;
+};
+
+export type QueryAllInstaNodeArgs = {
+  filter: Maybe<InstaNodeFilterInput>;
+  sort: Maybe<InstaNodeSortInput>;
   skip: Maybe<Scalars["Int"]>;
   limit: Maybe<Scalars["Int"]>;
 };
@@ -2705,6 +2939,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPluginsSsrApIs = "pluginCreator___pluginOptions___plugins___ssrAPIs",
   PluginCreatorPluginOptionsPluginsPluginFilepath = "pluginCreator___pluginOptions___plugins___pluginFilepath",
   PluginCreatorPluginOptionsGoogleFamilies = "pluginCreator___pluginOptions___google___families",
+  PluginCreatorPluginOptionsUsername = "pluginCreator___pluginOptions___username",
   PluginCreatorPluginOptionsPath = "pluginCreator___pluginOptions___path",
   PluginCreatorPluginOptionsName = "pluginCreator___pluginOptions___name",
   PluginCreatorPluginOptionsMaxWidth = "pluginCreator___pluginOptions___maxWidth",
@@ -2912,6 +3147,7 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPluginsSsrApIs = "pluginOptions___plugins___ssrAPIs",
   PluginOptionsPluginsPluginFilepath = "pluginOptions___plugins___pluginFilepath",
   PluginOptionsGoogleFamilies = "pluginOptions___google___families",
+  PluginOptionsUsername = "pluginOptions___username",
   PluginOptionsPath = "pluginOptions___path",
   PluginOptionsName = "pluginOptions___name",
   PluginOptionsMaxWidth = "pluginOptions___maxWidth",
@@ -3042,6 +3278,7 @@ export type SitePluginPluginOptions = {
   __typename?: "SitePluginPluginOptions";
   plugins: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>;
   google: Maybe<SitePluginPluginOptionsGoogle>;
+  username: Maybe<Scalars["String"]>;
   path: Maybe<Scalars["String"]>;
   name: Maybe<Scalars["String"]>;
   maxWidth: Maybe<Scalars["Int"]>;
@@ -3053,6 +3290,7 @@ export type SitePluginPluginOptions = {
 export type SitePluginPluginOptionsFilterInput = {
   plugins: Maybe<SitePluginPluginOptionsPluginsFilterListInput>;
   google: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
+  username: Maybe<StringQueryOperatorInput>;
   path: Maybe<StringQueryOperatorInput>;
   name: Maybe<StringQueryOperatorInput>;
   maxWidth: Maybe<IntQueryOperatorInput>;

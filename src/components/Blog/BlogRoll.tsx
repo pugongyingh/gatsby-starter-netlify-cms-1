@@ -1,23 +1,25 @@
+import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
+import { MarkdownRemark, Query } from "../../graphql/types";
 import blogImgOne from "../../img/blog-1.png";
-import styled from "../../styles/theme";
-import StyledBlogItem from "../BlogItem";
-import Carousel from "../Carousel";
+import styled, { SCP } from "../../styles/theme";
+import StyledCarousel from "../Carousel/Carousel";
+import StyledBlogItem from "./BlogItem";
 
-interface BlogProps {
-  className?: string;
+interface P extends SCP {
+    blogPosts: MarkdownRemark[];
 }
 
-class Blog extends React.Component<BlogProps> {
+class Blog extends React.Component<P> {
   public render() {
     return (
-      <section id="blog" className={this.props.className}>
+      <section className={this.props.className}>
         <Grid className="container">
           <h1>Blog</h1>
           <Row className="blog-wrap">
             <Col className="blog-item">
-              <Carousel>
+              <StyledCarousel>
                 <StyledBlogItem
                   src={blogImgOne}
                   alt="A Blog Placeholder"
@@ -73,14 +75,10 @@ class Blog extends React.Component<BlogProps> {
                     Coast yard. Barkadeer doubloon measured fer yer chains
                     splice."
                 />
-              </Carousel>
+              </StyledCarousel>
             </Col>
           </Row>
-          {/*<Row className="arrow-icons-wrap">
-
-          </Row>*/}
         </Grid>
-        {/* <BlogRoll /> */}
       </section>
     );
   }
@@ -118,16 +116,29 @@ const StyledBlog = styled(Blog)`
       }
     }
   }
-
-  .arrow-icons-wrap {
-    justify-content: flex-end;
-  }
-
-  .slick-slide {
-    :nth-of-type(3n + 3) {
-      margin-right: 0 !important;
-    }
-  }
 `;
 
-export default StyledBlog;
+
+const BlogRollQuery: React.SFC<Omit<P, "blogPosts">> = props => {
+    return (
+        <StaticQuery
+            query={graphql`
+        query BlogRollQuery {
+          allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { templateKey: { eq: "BlogPost" } } }
+          ) {
+            edges {
+              node {
+                  ...BlogInfo
+              }
+            }
+          }
+        }
+      `}
+            render={(blogPosts: Query) => <StyledBlog blogPosts={blogPosts.allMarkdownRemark.edges.map((edge) => edge.node)} {...props} />}
+        />
+    );
+};
+
+export default BlogRollQuery;

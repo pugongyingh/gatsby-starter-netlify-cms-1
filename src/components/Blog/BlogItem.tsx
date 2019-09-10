@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "../styles/theme";
-import ArrowLinkStyled from "./ArrowLink";
+import styled from "../../styles/theme";
+import ArrowLinkStyled from "../Carousel/ArrowLink";
 
 interface BlogItemProps {
   src: string;
@@ -20,16 +20,17 @@ const BlogItem: React.FC<BlogItemProps> = ({
       <h2>{sub}</h2>
       <p>{blogText}</p>
       <ArrowLinkStyled
-              text="See article"
-              link="#"
-              instaFollowLink={false}
-              white={true}
-            />
+        text="See article"
+        link="#"
+        instaFollowLink={false}
+        white={true}
+      />
     </div>
   );
 };
 
 const StyledBlogItem = styled(BlogItem)`
+  width: 100%;
   max-width: 400px;
   .img {
     height: 460px;

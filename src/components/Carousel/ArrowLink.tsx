@@ -1,6 +1,6 @@
 import React from "react";
-import arrow from "../img/right-arrow.svg";
-import { default as styled } from "../styles/theme";
+import arrow from "../../img/right-arrow.svg";
+import { default as styled } from "../../styles/theme";
 
 const StyledLink = styled.div`
   a {

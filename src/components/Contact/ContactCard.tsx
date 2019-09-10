@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import Icon from "../components/Icon";
-import Image from "../components/Image";
-import styled from "../styles/theme";
+import styled from "../../styles/theme";
+import Icon from "../Icon";
+import Image from "../Image";
 
-import LinkedInIcon from "../img/linkedin-icon.svg";
+import LinkedInIcon from "../../img/linkedin-icon.svg";
 
 interface ContactCardProps {
   ImgSource: string;
@@ -14,7 +14,7 @@ interface ContactCardProps {
   email: string;
 }
 
-const ContactCardWrap = styled(Grid)`
+const ContactCardWrap = styled.div`
   margin-bottom: 40px;
   @media ${props => props.theme.screen.laptop} {
     margin-bottom: 100px;

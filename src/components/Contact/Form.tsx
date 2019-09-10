@@ -6,11 +6,24 @@ import {
   TextArea,
   TextInput
 } from "react-form-elements";
-import styled from "../styles/theme";
+import styled, { SCP } from "../../styles/theme";
 
-interface FormProps {}
+interface FormProps extends SCP { }
 
-const StyledForm = styled(Form)`
+const ContactForm: React.FC<FormProps> = ({ className }) => {
+  return (
+    <Form action="/" className={className}>
+      <TextInput label="Name" name="name" />
+      <EmailInput label="Email" name="email" />
+      <TextArea label="Your message" name="text-area" />
+      <div className="form-btn-wrap">
+        <Button>Send</Button>
+      </div>
+    </Form>
+  );
+};
+
+const StyledContactForm = styled(ContactForm)`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -70,17 +83,4 @@ const StyledForm = styled(Form)`
   }
 `;
 
-const form: React.FC<FormProps> = () => {
-  return (
-    <StyledForm action="/">
-      <TextInput label="Name" name="name" />
-      <EmailInput label="Email" name="email" />
-      <TextArea label="Your message" name="text-area" />
-      <div className="form-btn-wrap">
-        <Button>Send</Button>
-      </div>
-    </StyledForm>
-  );
-};
-
-export default form;
+export default StyledContactForm;
