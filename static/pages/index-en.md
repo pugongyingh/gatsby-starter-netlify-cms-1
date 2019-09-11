@@ -1,28 +1,31 @@
 ---
-templateKey: IndexPage
-locale: en
-title: Great coffee with a conscience
-subheading: >-
-  Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
-  babies david duchovny lisa frank. Nerf guns hoop earrings whitney
+title: dfsg
+subheading: dsfg
 hero: /img/home-bg.png
-  - logo: /img/ubisoft_logo.svg
-    title: t
+news:
+  title: fds
+  news:
+    - description: dsfg
+      title: dfs
+clients:
+  - logo: /img/logitech_logo.svg
+    title: dfgsdsgfs
 work:
   services:
-    - description: t
+    - description: dsfgsdfg
       logo: /img/lenovo_logo.svg
-      title: t
-  subtitle: T
-  title: jhgiuT
+      title: fdgfssdfg
+  subtitle: sfsdfgsfgds
+  title: dfgsgsd
 references:
-  - description: t
-    image: /img/ap-550x550-12x16-1-transparent-t.u1.png
-    subtitle: t
-    title: t
+  - description: dffdsgdfsfd
+    image: /img/ubisoft_logo.svg
+    subtitle: dgfsasdf
+    title: dfssd
 technologies:
-  description: T
+  description: agsrefdsadf
   logos:
-    - logo: /img/ubisoft_logo.svg
-  title: T
+    - logo: /img/lenovo_logo.svg
+  title: gfdssgdfs
 ---
+
