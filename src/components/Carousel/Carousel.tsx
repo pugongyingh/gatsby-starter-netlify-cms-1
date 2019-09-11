@@ -37,7 +37,7 @@ class Carousel extends React.Component<CarouselProps> {
   public render() {
     return (
       <div className={this.props.className}>
-        <Slider ref={this.reference} {...this.props}>
+        <Slider ref={this.reference} {...this.props} className={this.props.className}>
           {this.props.children}
         </Slider>
         <div className="arrow-icons-wrap">
