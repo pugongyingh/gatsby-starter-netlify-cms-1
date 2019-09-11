@@ -8,7 +8,7 @@ import {
 } from "react-form-elements";
 import styled, { SCP } from "../../styles/theme";
 
-interface FormProps extends SCP { }
+interface FormProps extends SCP {}
 
 const ContactForm: React.FC<FormProps> = ({ className }) => {
   return (
@@ -27,7 +27,10 @@ const StyledContactForm = styled(ContactForm)`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-width: 570px;
+
+  @media ${props => props.theme.screen.laptop} {
+    max-width: 570px;
+  }
 
   .rfe-form__row {
     display: flex;
