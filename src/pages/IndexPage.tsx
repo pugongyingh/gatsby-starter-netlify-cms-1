@@ -38,7 +38,7 @@ export const IndexPagePreview = ({ entry }: any) => {
 
   if (data) {
     return (
-      <Preview>
+      <Preview locale={data.locale}>
         <StyledIndexPageTemplate
           hero={data.hero}
           title={data.title}

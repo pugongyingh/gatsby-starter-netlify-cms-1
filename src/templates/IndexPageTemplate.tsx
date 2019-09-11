@@ -2,20 +2,16 @@ import * as React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import BlogRollQuery from "../components/Blog/BlogRoll";
 import PreviewCompatibleImage from "../components/CMS/PreviewCompatibleImage";
-import ContactCard from "../components/Contact/ContactCard";
-import StyledContactForm from "../components/Contact/Form";
-import Image from "../components/Image";
+import Contact from "../components/Contact/Contact";
 import InstagramRoll from "../components/Instagram/InstagramRoll";
+import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
 import NewsItem from "../components/NewsItem";
 import ReferenceItem from "../components/ReferenceItem";
 import TechnologyItem from "../components/TechnologyItem";
 import { File, MarkdownRemarkFrontmatterClients, MarkdownRemarkFrontmatterNews, MarkdownRemarkFrontmatterReferences, MarkdownRemarkFrontmatterTechnologies, MarkdownRemarkFrontmatterWork, Maybe } from "../graphql/types";
 import map from "../img/address-map.png";
-import ContactImg2 from "../img/martin-svach-photo.png";
-import ContactImg1 from "../img/michal-kourik-photo.png";
-import ContactImg3 from "../img/vaclav.jpg";
-import WhatwedoBackground from "../img/what-we-do-bg.png"
+import WhatwedoBackground from "../img/what-we-do-bg.png";
 import styled from "../styles/theme";
 
 interface IndexPageProps {
@@ -158,53 +154,16 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <BlogRollQuery locale={locale} />
       {/* Contact Us */}
       <section id="contact">
-        <Grid>
-          <h1>Contact us</h1>
-          <Row className="contact-wrap">
-            <Col xs={12} sm={6}>
-              <StyledContactForm />
-            </Col>
-            <Col xs={12} sm={6}>
-              <Row>
-                <Col xs={12}>
-                  <ContactCard
-                    ImgSource={ContactImg1}
-                    altText="A contact photo"
-                    name="Michal Kouřík"
-                    position="Technological teamleader"
-                    email="michal.kourik@starkysclub.com"
-                  />
-                </Col>
-                <Col xs={12}>
-                  <ContactCard
-                    ImgSource={ContactImg2}
-                    altText="A contact photo"
-                    name="Martin Švach"
-                    position="Business development"
-                    email="martin.svach@starkysclub.com"
-                  />
-                </Col>
-                <Col xs={12}>
-                  <ContactCard
-                    ImgSource={ContactImg3}
-                    altText="A contact photo"
-                    name="Václav Brzezina"
-                    position="Frontend teamleader"
-                    email="vaclav.brzezina@starkysclub.com"
-                  />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Grid>
+        <Contact locale={locale} />
       </section>
       <section>
         <a href="https://goo.gl/maps/1rP52P6eimCVF58y9" target="_blank">
-          <Image altText="Address map" source={map} />
+          <PreviewCompatibleImage alt="Address map" image={map} />
         </a>
       </section>
       {/* Instagram */}
       <InstagramRoll />
+      <Footer locale={locale} />
     </div>
   );
 

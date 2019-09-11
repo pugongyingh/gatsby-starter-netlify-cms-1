@@ -36,6 +36,9 @@ collections:
         name: contact
         widget: object
         fields:
+          - label: Title
+            name: title
+            widget: string
           - label: Contact person
             name: contactPerson
             widget: list
