@@ -105,6 +105,7 @@ export const query = graphql`
     }
     frontmatter {
       title
+      locale
       description
       templateKey
       date(formatString: "MMMM DD, YYYY")
