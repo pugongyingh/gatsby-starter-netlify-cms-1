@@ -35,7 +35,7 @@ const HeaderTemplate: React.SFC<P> = ({
         <div className="circle" />
         <div className="overlay" />
         <div className="text-wrap">
-          <Grid className="grid" fluid={true}>
+          <Grid className="grid">
             <Row>
               <Col className="logo-section" xs={12} lg={6}>
                 <PreviewCompatibleImage
