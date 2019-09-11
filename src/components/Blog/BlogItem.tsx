@@ -1,4 +1,5 @@
 import React from "react";
+import { isString } from "util";
 import { File } from "../../graphql/types";
 import styled, { SCP } from "../../styles/theme";
 import ArrowLinkStyled from "../Carousel/ArrowLink";
@@ -31,10 +32,10 @@ const BlogItem: React.FC<BlogItemProps> = ({
 
 const StyledBlogItem = styled(BlogItem)`
   width: 100%;
-  max-width: 400px;
+  max-width: 440px;
   .img {
-    height: 460px;
-    background: url() no-repeat center center scroll;
+    height: 400px;
+    background: url(${props => isString(props.image) ? props.image : props.image.publicURL!}) no-repeat center center scroll;
     background-size: cover;
   }
 `;

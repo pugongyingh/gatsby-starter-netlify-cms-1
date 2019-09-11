@@ -27,6 +27,7 @@ interface IndexPageProps {
   technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   news: Maybe<MarkdownRemarkFrontmatterNews>;
   references: Maybe<MarkdownRemarkFrontmatterReferences>;
+  locale: Maybe<string>
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
@@ -39,6 +40,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   references,
   news,
   technologies,
+  locale
 }) => (
     <div className={className}>
       <Header title={title} subheading={subheading} hero={hero} />
@@ -87,8 +89,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       {work &&
         <section id="what-we-do">
           <Grid className="container">
-            <h1>What we do</h1>
-            <h1>Driving brands forward online.</h1>
+            <h1>{work.title}</h1>
+            <h1>{work.subtitle}</h1>
             <Row className="section-row what-we-do-content-wrap">
               {work.items && work.items.map(workItem => {
                 return (
@@ -152,7 +154,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Grid>
         </section>
       }
-      <BlogRollQuery />
+      <BlogRollQuery locale={locale} />
       {/* Contact Us */}
       <section id="contact">
         <Grid>
@@ -277,7 +279,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       }
       .col {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         margin: -1px;
 
         @media ${props => props.theme.screen.laptop} {
