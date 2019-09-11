@@ -2114,9 +2114,11 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterImageChildMarkdownRemarkTableOfContents = 'frontmatter___image___childMarkdownRemark___tableOfContents',
   FrontmatterImageChildMarkdownRemarkChildren = 'frontmatter___image___childMarkdownRemark___children',
   FrontmatterContactAddressCity = 'frontmatter___contact___address___city',
-  FrontmatterContactAddressGps = 'frontmatter___contact___address___gps',
+  FrontmatterContactAddressLat = 'frontmatter___contact___address___lat',
+  FrontmatterContactAddressLng = 'frontmatter___contact___address___lng',
   FrontmatterContactAddressStreet = 'frontmatter___contact___address___street',
   FrontmatterContactAddressZip = 'frontmatter___contact___address___zip',
+  FrontmatterContactAddressGps = 'frontmatter___contact___address___gps',
   FrontmatterContactContactPerson = 'frontmatter___contact___contactPerson',
   FrontmatterContactContactPersonEmail = 'frontmatter___contact___contactPerson___email',
   FrontmatterContactContactPersonLinkedIn = 'frontmatter___contact___contactPerson___linkedIn',
@@ -2315,16 +2317,20 @@ export type MarkdownRemarkFrontmatterContact = {
 export type MarkdownRemarkFrontmatterContactAddress = {
    __typename?: 'MarkdownRemarkFrontmatterContactAddress',
   city: Maybe<Scalars['String']>,
-  gps: Maybe<Scalars['String']>,
+  lat: Maybe<Scalars['String']>,
+  lng: Maybe<Scalars['String']>,
   street: Maybe<Scalars['String']>,
   zip: Maybe<Scalars['String']>,
+  gps: Maybe<Scalars['String']>,
 };
 
 export type MarkdownRemarkFrontmatterContactAddressFilterInput = {
   city: Maybe<StringQueryOperatorInput>,
-  gps: Maybe<StringQueryOperatorInput>,
+  lat: Maybe<StringQueryOperatorInput>,
+  lng: Maybe<StringQueryOperatorInput>,
   street: Maybe<StringQueryOperatorInput>,
   zip: Maybe<StringQueryOperatorInput>,
+  gps: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkFrontmatterContactContactPerson = {

@@ -65,8 +65,10 @@ collections:
             name: address
             widget: object
             fields:
-              - label: GPS
-                name: gps
+              - label: Latitude
+                name: lat
+              - label: Longitude
+                name: lng
                 widget: string
               - label: Street
                 name: street
