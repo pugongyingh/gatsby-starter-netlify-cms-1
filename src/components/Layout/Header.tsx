@@ -4,7 +4,7 @@ import { isString } from "util";
 import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/logo.svg";
 import { css, default as styled, SCP } from "../../styles/theme";
-import Icon from "../Icon";
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
 interface P extends SCP {
   title: Maybe<string>;
@@ -25,7 +25,7 @@ const HeaderTemplate: React.SFC<P> = ({
       <div>
         {file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) && (
           <video
-            src={isString(hero) ? hero : hero.publicURL}
+            src={isString(hero) ? hero : hero.publicURL!}
             playsInline={true}
             autoPlay={true}
             muted={true}
@@ -38,12 +38,12 @@ const HeaderTemplate: React.SFC<P> = ({
           <Grid className="grid" fluid={true}>
             <Row>
               <Col className="logo-section" xs={12} lg={6}>
-                <Icon
+                <PreviewCompatibleImage
                   className="starkyslogo"
-                  source={logo}
+                  image={logo}
                   height="85px"
                   width="78px"
-                  altText="Starkys Logo"
+                  alt="Starkys Logo"
                 />
                 <h1>{title}</h1>
                 <button>Work with us</button>

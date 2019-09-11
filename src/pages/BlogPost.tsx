@@ -39,8 +39,8 @@ const BlogPost = ({ data }: BlogPostTemplateProps) => {
     );
 };
 
-export const BlogPostPreview = ({ entry, widgetFor }: any) => (
-    <Preview>
+export const BlogPostPreview = ({ entry, widgetFor, locale }: any) => (
+    <Preview locale={locale}>
         <BlogPostTemplate
             content={widgetFor('body')}
             description={entry.getIn(['data', 'description'])}

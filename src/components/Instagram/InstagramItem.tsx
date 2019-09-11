@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "../../styles/theme";
-import Image from "../Image";
 
 interface InstagramItemProps {
   src: string;
@@ -10,7 +9,6 @@ interface InstagramItemProps {
 }
 
 const InstagramItem: React.FC<InstagramItemProps> = ({
-  src,
   instaText,
   className
 }) => {

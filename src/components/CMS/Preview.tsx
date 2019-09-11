@@ -1,8 +1,15 @@
 import * as React from "react";
+import { Maybe } from "../../graphql/types";
 import { main } from "../../styles/main";
 import { css, theme, ThemeProvider } from "../../styles/theme";
+import Footer from "../Layout/Footer";
+import Navbar from "../Layout/Navbar";
 
-export const Preview: React.SFC = ({ children }) => {
+interface P {
+  locale: Maybe<string>
+}
+
+export const Preview: React.SFC<P> = ({ children, locale }) => {
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
@@ -17,7 +24,9 @@ export const Preview: React.SFC = ({ children }) => {
         <style>{css`
           ${main}
         `}</style>
+        <Navbar />
         {children}
+        <Footer locale={locale} />
       </React.Fragment>
     </ThemeProvider>
   );
