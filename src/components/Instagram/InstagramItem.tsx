@@ -1,23 +1,34 @@
 import React from "react";
+import styled from "../../styles/theme";
 import Image from "../Image";
 
 interface InstagramItemProps {
   src: string;
   alt: string;
   instaText: string;
+  className: string;
 }
 
 const InstagramItem: React.FC<InstagramItemProps> = ({
   src,
-  alt,
-  instaText
+  instaText,
+  className
 }) => {
   return (
-    <div>
-      <Image source={src} altText={alt} />
+    <div className={className}>
+      <div className="img" />
       <p>{instaText}</p>
     </div>
   );
 };
 
-export default InstagramItem;
+const StyledInstagramItem = styled(InstagramItem)`
+  max-width: 440px;
+  .img {
+    height: 400px;
+    background: url(${props => props.src}) no-repeat center center scroll;
+    background-size: cover;
+  }
+`;
+
+export default StyledInstagramItem;

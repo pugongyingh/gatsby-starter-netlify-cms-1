@@ -15,6 +15,7 @@ import map from "../img/address-map.png";
 import ContactImg2 from "../img/martin-svach-photo.png";
 import ContactImg1 from "../img/michal-kourik-photo.png";
 import ContactImg3 from "../img/vaclav.jpg";
+import WhatwedoBackground from "../img/what-we-do-bg.png"
 import styled from "../styles/theme";
 
 interface IndexPageProps {
@@ -89,7 +90,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           <Grid className="container">
             <h1>What we do</h1>
             <h1>Driving brands forward online.</h1>
-            <Row className="section-row what-we-do-content-wrap">
+            <Row className="section-row what-we-do-content-wrap">              
               {work.items && work.items.map(workItem => {
                 return (
                   <NewsItem
@@ -234,7 +235,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
   #what-we-do {
     color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.darkGreen};
+    background: url(${WhatwedoBackground}) no-repeat center center scroll;
 
     .what-we-do {
       &-content-wrap {
@@ -245,6 +246,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
         max-width: 330px;
       }
     }
+
+    
 
     h1 {
       &:nth-child(2) {

@@ -33,8 +33,8 @@ const StyledBlogItem = styled(BlogItem)`
   width: 100%;
   max-width: 400px;
   .img {
-    height: 460px;
-    background: url() no-repeat center center scroll;
+    height: 400px;
+    background: url(${props => props.image.publicURL}) no-repeat center center scroll;
     background-size: cover;
   }
 `;
