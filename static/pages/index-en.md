@@ -6,10 +6,6 @@ subheading: >-
   Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
   babies david duchovny lisa frank. Nerf guns hoop earrings whitney
 hero: /img/home-bg.png
-news:
-  - description: t
-    title: t
-clients:
   - logo: /img/ubisoft_logo.svg
     title: t
 work:
@@ -30,4 +26,3 @@ technologies:
     - logo: /img/ubisoft_logo.svg
   title: T
 ---
-

@@ -227,14 +227,21 @@ collections:
             required: true
           - label: News
             name: news
-            widget: list
+            widget: object
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Description
-                name: description
-                widget: text
+              - label: news
+                name: news
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
           - label: Clients
             name: clients
             widget: list

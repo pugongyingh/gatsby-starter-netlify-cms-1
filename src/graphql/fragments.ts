@@ -84,6 +84,10 @@ export const query = graphql`
       }
     }
   }
+  fragment NewsInfo on MarkdownRemarkFrontmatterNews {
+    title
+    description
+  }
   fragment BlogInfo on MarkdownRemark {
     excerpt(pruneLength: 400)
     id
