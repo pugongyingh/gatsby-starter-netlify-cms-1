@@ -13,12 +13,12 @@ interface PreviewCompatibleImageProps {
 const PreviewCompatibleImage: React.SFC<PreviewCompatibleImageProps> = ({ alt, image, width, height, className }) => {
   const imageStyle = { borderRadius: "5px", width, height };
 
-  const isImageSharp = (): image is ImageSharp => {
-    return image.hasOwnProperty("fluid")
+  const isImageSharp = (img: File | ImageSharp): img is ImageSharp => {
+    return img.hasOwnProperty("fluid")
   }
 
   if (!isString(image)) {
-    if (!isImageSharp) {
+    if (!isImageSharp(image)) {
       return <img className={className} style={imageStyle} src={image.publicURL!} alt={alt} />;
     }
     else {
