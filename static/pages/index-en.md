@@ -35,6 +35,7 @@ technologies:
   description: fdsgfdgsfgdssdgf
   items:
     - logo: /img/ubisoft_logo.svg
+      title: dfsfdgfsdfgfds
   title: sgdffdgfgds
 ---
 
