@@ -9,5 +9,8 @@ contact:
     zip: '15000'
 footer:
   copy: Copyright StarkysClub 2019. All rights reserved
+  social:
+    - image: /img/facebook.svg
+      link: dfsgfddfgsfdgsgfd
 ---
 
