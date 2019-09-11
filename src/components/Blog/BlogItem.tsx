@@ -1,24 +1,25 @@
 import React from "react";
-import styled from "../../styles/theme";
+import { isString } from "util";
+import { File } from "../../graphql/types";
+import styled, { SCP } from "../../styles/theme";
 import ArrowLinkStyled from "../Carousel/ArrowLink";
 
-interface BlogItemProps {
-  src: string;
-  sub: string;
-  blogText: string;
-  className?: string;
+interface BlogItemProps extends SCP {
+  image: File;
+  title: string;
+  description: string;
 }
 
 const BlogItem: React.FC<BlogItemProps> = ({
-  blogText,
-  sub,
+  title,
+  description,
   className
 }) => {
   return (
     <div className={className}>
       <div className="img" />
-      <h2>{sub}</h2>
-      <p>{blogText}</p>
+      <h2>{title}</h2>
+      <p>{description}</p>
       <ArrowLinkStyled
         text="See article"
         link="#"
@@ -31,10 +32,10 @@ const BlogItem: React.FC<BlogItemProps> = ({
 
 const StyledBlogItem = styled(BlogItem)`
   width: 100%;
-  max-width: 400px;
+  max-width: 440px;
   .img {
-    height: 460px;
-    background: url(${props => props.src}) no-repeat center center scroll;
+    height: 400px;
+    background: url(${props => isString(props.image) ? props.image : props.image.publicURL!}) no-repeat center center scroll;
     background-size: cover;
   }
 `;

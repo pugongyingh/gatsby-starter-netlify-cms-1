@@ -1,27 +1,30 @@
-import Img, { FluidObject } from "gatsby-image";
 import React from "react";
 import { isString } from "util";
-import { File } from "../../graphql/types";
+import { File, ImageSharp } from "../../graphql/types";
 
 interface PreviewCompatibleImageProps {
   className?: string;
-  imageInfo: {
-    image: string | File,
-    alt?: string
-  }
+  image: string | File | ImageSharp,
+  height?: string;
+  width?: string;
+  alt?: string
 }
 
-const PreviewCompatibleImage: React.SFC<PreviewCompatibleImageProps> = ({ imageInfo, className }) => {
-  const imageStyle = { borderRadius: "5px" };
-  const { alt, image } = imageInfo;
+const PreviewCompatibleImage: React.SFC<PreviewCompatibleImageProps> = ({ alt, image, width, height, className }) => {
+  const imageStyle = { borderRadius: "5px", width, height };
+
+  const isImageSharp = (img: File | ImageSharp): img is ImageSharp => {
+    return img.hasOwnProperty("fluid")
+  }
 
   if (!isString(image)) {
-    if(image.childImageSharp) {
-      return (
-        <Img className={className} style={imageStyle} fluid={image.childImageSharp.fluid} alt={alt} />
-      );
+    if (!isImageSharp(image)) {
+      return <img className={className} style={imageStyle} src={image.publicURL!} alt={alt} />;
     }
-    return <img className={className} style={imageStyle} src={image.publicURL} alt={alt} />;
+    else {
+      return null;
+      // TODO: 
+    }
   }
 
   else {

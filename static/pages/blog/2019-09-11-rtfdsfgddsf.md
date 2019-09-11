@@ -1,9 +1,9 @@
 ---
 templateKey: BlogPost
 locale: cs
-title: Testdsfa
-date: 2019-09-09T10:11:04.529Z
-description: Test blog post
+title: RTfdsfgddsf
+date: 2019-09-11T09:58:23.762Z
+description: fgdfdg
 image: /img/ap-550x550-12x16-1-transparent-t.u1.png
 ---
-Test
+dsgfdsgfds

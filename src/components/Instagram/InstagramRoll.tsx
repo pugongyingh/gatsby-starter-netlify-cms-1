@@ -5,7 +5,7 @@ import { InstaNode, Query } from "../../graphql/types";
 import styled, { SCP } from "../../styles/theme";
 import ArrowLink from "../Carousel/ArrowLink";
 import StyledCarousel from "../Carousel/Carousel";
-import InstagramItem from "./InstagramItem";
+import StyledInstagramItem from "./InstagramItem";
 
 interface P extends SCP {
   instagramPosts: InstaNode[];
@@ -20,9 +20,9 @@ class Instagram extends React.Component<P> {
           <Row className="instagram-items-wrap">
             <Col className="instagram-item">
               <StyledCarousel dark={true}>
-                {this.props.instagramPosts && this.props.instagramPosts.map((post) => {
+                {this.props.instagramPosts && this.props.instagramPosts.map((post: InstaNode) => {
                   return (
-                    <InstagramItem
+                    <StyledInstagramItem
                       key={post.id}
                       src={post.original!}
                       alt={post.caption!}
@@ -48,18 +48,19 @@ class Instagram extends React.Component<P> {
 }
 
 const StyledInstagram = styled(Instagram)`
+
 .instagram-items-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
-  .slick-list {
-    margin-right: -4rem;
-  } 
-
+  .slick-slider {
+    margin-right: -6rem;
+  }
   .instagram-item {
     width: 100%;
+    overflow: hidden;
   }
 
   @media ${props => props.theme.screen.laptop} {
@@ -88,7 +89,7 @@ const InstagramRoll: React.SFC<Omit<P, "instagramPosts">> = props => {
     <StaticQuery
       query={graphql`
               query InstagramRollQuery {
-                allInstaNode {
+                allInstaNode(sort: {order: DESC, fields: timestamp}) {
                   edges {
                     node {
                       ...InstaNodeInfo
