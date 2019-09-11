@@ -51,15 +51,18 @@ export const query = graphql`
     }
   }
   fragment ClientsInfo on MarkdownRemarkFrontmatterClients {
-    logo {
-      ...FileInfo
-    }
     title
+    items {
+      title
+      logo {
+        ...FileInfo
+      }
+    }
   }
   fragment WorkInfo on MarkdownRemarkFrontmatterWork {
     title
     subtitle
-    services {
+    items {
       title
       logo {
         ...FileInfo
@@ -69,19 +72,29 @@ export const query = graphql`
   }
   fragment ReferencesInfo on MarkdownRemarkFrontmatterReferences {
     title
-    subtitle
-    description
-    image {
-        ...FileInfo
+    items {
+      title
+      subtitle
+      description
+      image {
+          ...FileInfo
+      }
     }
   }
   fragment TechnologiesInfo on MarkdownRemarkFrontmatterTechnologies {
     title
     description
-    logos {
+    items {
       logo {
         ...FileInfo
       }
+    }
+  }
+  fragment NewsInfo on MarkdownRemarkFrontmatterNews {
+    title
+    items {
+      description
+      title
     }
   }
   fragment BlogInfo on MarkdownRemark {
@@ -92,6 +105,7 @@ export const query = graphql`
     }
     frontmatter {
       title
+      description
       templateKey
       date(formatString: "MMMM DD, YYYY")
       image {

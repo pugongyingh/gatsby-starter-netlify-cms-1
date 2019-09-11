@@ -20,7 +20,7 @@ class Instagram extends React.Component<P> {
           <Row className="instagram-items-wrap">
             <Col className="instagram-item">
               <StyledCarousel dark={true}>
-                {this.props.instagramPosts && this.props.instagramPosts.map((post) => {
+                {this.props.instagramPosts && this.props.instagramPosts.map((post: InstaNode) => {
                   return (
                     <StyledInstagramItem
                       key={post.id}
@@ -54,7 +54,6 @@ const StyledInstagram = styled(Instagram)`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
 
   .slick-slider {
     margin-right: -6rem;

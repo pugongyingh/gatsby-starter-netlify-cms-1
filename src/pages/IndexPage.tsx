@@ -24,6 +24,7 @@ const IndexPage = ({ data }: IndexPageTemplateProps) => {
         subheading={page.frontmatter.subheading}
         clients={page.frontmatter.clients}
         work={page.frontmatter.work}
+        news={page.frontmatter.news}
         technologies={page.frontmatter.technologies}
         references={page.frontmatter.references}
       />
@@ -43,6 +44,7 @@ export const IndexPagePreview = ({ entry }: any) => {
           subheading={data.subheading}
           clients={data.clients}
           work={data.work}
+          news={data.news}
           technologies={data.technologies}
           references={data.references}
         />

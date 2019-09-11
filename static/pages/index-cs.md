@@ -6,27 +6,35 @@ subheading: >-
   Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
   babies david duchovny lisa frank. Nerf guns hoop earrings whitney
 hero: /img/home-bg.png
-news: TEST
+news:
+  items:
+    - description: dsfdfgsdgf
+      title: dsfgfsddgsf
+  title: dfsdfgsdf
 clients:
-  - logo: /img/xbox_logo.svg
-    title: Xbox1
-  - logo: /img/ubisoft_logo.svg
-    title: Ubisoft
-work:
-  services:
-    - description: TESET
-      logo: /img/lenovo_logo.svg
-      title: WWD New
-  subtitle: T
-  title: T
-references:
-  - description: T
-    image: /img/ubisoft_logo.svg
-    subtitle: t
-    title: T
-technologies:
-  description: T
-  logos:
+  items:
     - logo: /img/ubisoft_logo.svg
-  title: T
+      title: fdgfdsgfdgdfs
+  title: dsfggdsgds
+work:
+  items:
+    - description: dfsgdfsdfgdfgs
+      logo: /img/ubisoft_logo.svg
+      title: dfgdfgdfsg
+  subtitle: sdfgsdfgfds
+  title: sdfgds
+references:
+  items:
+    - description: sdfgsdgfsdfg
+      image: /img/lenovo_logo.svg
+      subtitle: fdsfgds
+      title: dsfgfsgdfd
+  subtitle: gsdfgfdsgfd
+  title: gsgfsfgsdf
+technologies:
+  description: fdsgfdgsfgdssdgf
+  items:
+    - logo: /img/ubisoft_logo.svg
+      title: dfsfdgfsdfgfds
+  title: sgdffdgfgds
 ---

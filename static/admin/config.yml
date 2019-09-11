@@ -29,14 +29,7 @@ collections:
     fields:
       - label: Locale
         name: locale
-        widget: relation
-        collection: locale
-        searchFields:
-          - title
-          - code
-        displayFields:
-          - title
-        valueField: code
+        widget: string
       - label: Title
         name: title
       - label: Contact
@@ -103,7 +96,7 @@ collections:
     files:
       - file: static/pages/index-cs.md
         label: Landing Page CS
-        name: index
+        name: index-cs
         fields:
           - label: Template Key
             name: templateKey
@@ -127,23 +120,38 @@ collections:
             required: true
           - label: News
             name: news
-            field:
+            widget: object
+            fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Perex
-                name: perex
-                widget: text
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
           - label: Clients
             name: clients
-            widget: list
+            widget: object
             fields:
-              - label: Alt title
+              - label: Title
                 name: title
                 widget: string
-              - label: Logo
-                name: logo
-                widget: image
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Logo
+                    name: logo
+                    widget: image
           - label: What we do
             name: work
             widget: object
@@ -155,7 +163,7 @@ collections:
                 name: subtitle
                 widget: string
               - label: Services
-                name: services
+                name: items
                 widget: list
                 fields:
                   - label: Title
@@ -169,20 +177,30 @@ collections:
                     widget: text
           - label: References
             name: references
-            widget: list
+            widget: object
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Subtitle (type)
+              - label: Subtitle
                 name: subtitle
                 widget: string
-              - label: Description
-                name: description
-                widget: text
-              - label: Image
-                name: image
-                widget: image
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Subtitle (type)
+                    name: subtitle
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Image
+                    name: image
+                    widget: image
           - label: Technologies
             name: technologies
             widget: object
@@ -193,10 +211,13 @@ collections:
               - label: Description
                 name: description
                 widget: text
-              - label: Logos
-                name: logos
+              - label: Items
+                name: items
                 widget: list
                 fields:
+                  - label: Title
+                    name: title
+                    widget: string
                   - label: Logo
                     name: logo
                     widget: image
@@ -211,7 +232,7 @@ collections:
           - label: Locale
             name: locale
             widget: hidden
-            default: en
+            default: cs
           - label: Title
             name: title
             widget: string
@@ -224,22 +245,40 @@ collections:
             name: hero
             widget: file
             required: true
-          - label: Testimonials
-            name: testimonials
-            widget: list
+          - label: News
+            name: news
+            widget: object
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Logo
-                name: logo
-                widget: image
-              - label: Description
-                name: description
-                widget: text
-              - label: Link
-                name: link
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+          - label: Clients
+            name: clients
+            widget: object
+            fields:
+              - label: Title
+                name: title
                 widget: string
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Logo
+                    name: logo
+                    widget: image
           - label: What we do
             name: work
             widget: object
@@ -251,7 +290,7 @@ collections:
                 name: subtitle
                 widget: string
               - label: Services
-                name: services
+                name: items
                 widget: list
                 fields:
                   - label: Title
@@ -263,6 +302,32 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+          - label: References
+            name: references
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Subtitle (type)
+                    name: subtitle
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Image
+                    name: image
+                    widget: image
           - label: Technologies
             name: technologies
             widget: object
@@ -273,16 +338,19 @@ collections:
               - label: Description
                 name: description
                 widget: text
-              - label: Logos
-                name: logos
+              - label: Items
+                name: items
                 widget: list
                 fields:
+                  - label: Title
+                    name: title
+                    widget: string
                   - label: Logo
                     name: logo
                     widget: image
   - name: blog
     label: Blog
-    folder: static/blog
+    folder: static/pages/blog
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -292,14 +360,7 @@ collections:
         default: BlogPost
       - label: Locale
         name: locale
-        widget: relation
-        collection: locale
-        searchFields:
-          - title
-          - code
-        displayFields:
-          - title
-        valueField: code
+        widget: string
       - label: Title
         name: title
         widget: string
@@ -312,7 +373,7 @@ collections:
         widget: text
       - label: Body
         name: body
-        widget: markdown
+        widget: text
       - label: Image
         name: image
         widget: image

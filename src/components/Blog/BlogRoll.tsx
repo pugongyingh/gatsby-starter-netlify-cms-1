@@ -2,13 +2,12 @@ import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import { MarkdownRemark, Query } from "../../graphql/types";
-import blogImgOne from "../../img/blog-1.png";
 import styled, { SCP } from "../../styles/theme";
 import StyledCarousel from "../Carousel/Carousel";
 import StyledBlogItem from "./BlogItem";
 
 interface P extends SCP {
-    blogPosts: MarkdownRemark[];
+  blogPosts: MarkdownRemark[];
 }
 
 class Blog extends React.Component<P> {
@@ -20,61 +19,17 @@ class Blog extends React.Component<P> {
           <Row className="blog-wrap">
             <Col className="blog-item">
               <StyledCarousel>
-                <StyledBlogItem
-                  src={blogImgOne}
-                  alt="A Blog Placeholder"
-                  sub="Skysail gun swing the lead pink Cat o'nine"
-                  blogText="                    Rigging Plate Fleet quarterdeck scallywag jolly boat
-                    Buccaneer Brethren of the Coast ahoy keelhaul six pounders.
-                    Walk the plank matey Letter of Marque brig aft bring a
-                    spring upon her cable grog blossom hang the jib Barbary
-                    Coast yard. Barkadeer doubloon measured fer yer chains
-                    splice."
-                />
-                <StyledBlogItem
-                  src={blogImgOne}
-                  alt="A Blog Placeholder"
-                  sub="Skysail gun swing the lead pink Cat o'nine"
-                  blogText="                    Rigging Plate Fleet quarterdeck scallywag jolly boat
-                    Buccaneer Brethren of the Coast ahoy keelhaul six pounders.
-                    Walk the plank matey Letter of Marque brig aft bring a
-                    spring upon her cable grog blossom hang the jib Barbary
-                    Coast yard. Barkadeer doubloon measured fer yer chains
-                    splice."
-                />
-                <StyledBlogItem
-                  src={blogImgOne}
-                  alt="A Blog Placeholder"
-                  sub="Skysail gun swing the lead pink Cat o'nine"
-                  blogText="Rigging Plate Fleet quarterdeck scallywag jolly boat
-                    Buccaneer Brethren of the Coast ahoy keelhaul six pounders.
-                    Walk the plank matey Letter of Marque brig aft bring a
-                    spring upon her cable grog blossom hang the jib Barbary
-                    Coast yard. Barkadeer doubloon measured fer yer chains
-                    splice."
-                />
-                <StyledBlogItem
-                  src={blogImgOne}
-                  alt="A Blog Placeholder"
-                  sub="Skysail gun swing the lead pink Cat o'nine"
-                  blogText="Rigging Plate Fleet quarterdeck scallywag jolly boat
-                    Buccaneer Brethren of the Coast ahoy keelhaul six pounders.
-                    Walk the plank matey Letter of Marque brig aft bring a
-                    spring upon her cable grog blossom hang the jib Barbary
-                    Coast yard. Barkadeer doubloon measured fer yer chains
-                    splice."
-                />
-                <StyledBlogItem
-                  src={blogImgOne}
-                  alt="A Blog Placeholder"
-                  sub="Skysail gun swing the lead pink Cat o'nine"
-                  blogText="Rigging Plate Fleet quarterdeck scallywag jolly boat
-                    Buccaneer Brethren of the Coast ahoy keelhaul six pounders.
-                    Walk the plank matey Letter of Marque brig aft bring a
-                    spring upon her cable grog blossom hang the jib Barbary
-                    Coast yard. Barkadeer doubloon measured fer yer chains
-                    splice."
-                />
+                {this.props.blogPosts && this.props.blogPosts.map((post: MarkdownRemark) => {
+                  return (
+                    <StyledBlogItem
+                      className="block-item"
+                      key={post.id}
+                      image={post.frontmatter!.image!}
+                      title={post.frontmatter!.title!}
+                      description={post.frontmatter!.description!}
+                    />
+                  )
+                })}
               </StyledCarousel>
             </Col>
           </Row>
@@ -124,9 +79,9 @@ const StyledBlog = styled(Blog)`
 
 
 const BlogRollQuery: React.SFC<Omit<P, "blogPosts">> = props => {
-    return (
-        <StaticQuery
-            query={graphql`
+  return (
+    <StaticQuery
+      query={graphql`
         query BlogRollQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
@@ -140,9 +95,9 @@ const BlogRollQuery: React.SFC<Omit<P, "blogPosts">> = props => {
           }
         }
       `}
-            render={(blogPosts: Query) => <StyledBlog blogPosts={blogPosts.allMarkdownRemark.edges.map((edge) => edge.node)} {...props} />}
-        />
-    );
+      render={(blogPosts: Query) => <StyledBlog blogPosts={blogPosts.allMarkdownRemark.edges.map((edge) => edge.node)} {...props} />}
+    />
+  );
 };
 
 export default BlogRollQuery;
