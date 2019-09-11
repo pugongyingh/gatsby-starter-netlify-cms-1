@@ -18,23 +18,36 @@ clients:
   title: dsfggdsgds
 work:
   items:
-    - description: dfsgdfsdfgdfgs
-      logo: /img/ubisoft_logo.svg
-      title: dfgdfgdfsg
-  subtitle: sdfgsdfgfds
-  title: sdfgds
+    - description: >-
+        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+        yardarm hempen halter furl. Swab barque interloper
+      logo: /img/sw-dev-icon.svg
+      title: Software Development
+  subtitle: Driving brands forward online.
+  title: What we do
 references:
   items:
-    - description: sdfgsdgfsdfg
-      image: /img/lenovo_logo.svg
-      subtitle: fdsfgds
-      title: dsfgfsgdfd
-  subtitle: gsdfgfdsgfd
-  title: gsgfsfgsdf
+    - description: >-
+        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+        yardarm hempen halter furl. Swab barque interloper
+      image: /img/mask-group.png
+      subtitle: SOFTWARE DEVELOPMENT
+      title: Name  of Project
+  subtitle: c
+  title: References
 technologies:
-  description: fdsgfdgsfgdssdgf
+  description: >-
+    Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
+    babies david duchovny lisa frank. Nerf guns hoop earrings. 
+
+
+    Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm.
+    Pinnace holystone mizzenmast quarter crow's nest nipperkin.
   items:
-    - logo: /img/ubisoft_logo.svg
-      title: dfsfdgfsdfgfds
-  title: sgdffdgfgds
+    - logo: /img/image.svg
+      title: Java
+  title: Technologies
 ---
+
