@@ -32,6 +32,7 @@ const HeaderTemplate: React.SFC<P> = ({
             loop={true}
           />
         )}
+        <div className="circle" />
         <div className="overlay" />
         <div className="text-wrap">
           <Grid className="grid" fluid={true}>
@@ -107,6 +108,16 @@ const Header = styled(HeaderTemplate)`
     }
   }}
 
+  .circle {
+    position: absolute;
+    left: 33%;
+    top: -30%;
+    border-radius: 50%;
+    border: 1px solid gray;
+    height: 50rem;
+    width: 50rem;
+    z-index: 2;
+  }
   .text-wrap {
     position: absolute;
     z-index: 2;

@@ -11,23 +11,21 @@ interface InstagramItemProps {
 
 const InstagramItem: React.FC<InstagramItemProps> = ({
   src,
-  alt,
   instaText,
   className
 }) => {
   return (
     <div className={className}>
       <div className="img" />
-      {/*<Image source={src} altText={alt} />*/}
       <p>{instaText}</p>
     </div>
   );
 };
 
 const StyledInstagramItem = styled(InstagramItem)`
-    max-width: 440px;
-    .img {
-    height: 440px;
+  max-width: 440px;
+  .img {
+    height: 400px;
     background: url(${props => props.src}) no-repeat center center scroll;
     background-size: cover;
   }

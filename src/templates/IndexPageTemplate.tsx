@@ -15,6 +15,7 @@ import map from "../img/address-map.png";
 import ContactImg2 from "../img/martin-svach-photo.png";
 import ContactImg1 from "../img/michal-kourik-photo.png";
 import ContactImg3 from "../img/vaclav.jpg";
+import WhatwedoBackground from "../img/what-we-do-bg.png"
 import styled from "../styles/theme";
 
 interface IndexPageProps {
@@ -242,7 +243,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
   #what-we-do {
     color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.darkGreen};
+    background: url(${WhatwedoBackground}) no-repeat center center scroll;
 
     .what-we-do {
       &-content-wrap {
