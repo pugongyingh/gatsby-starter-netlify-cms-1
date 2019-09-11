@@ -40,12 +40,6 @@ const ContactCardWrap = styled.div`
     color: ${props => props.theme.colors.paragraphGrey};
   }
 
-  .contact-img {
-    margin-left: 30px;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px
-  }
 
   .linkedin-icon {
     margin-left: 10px;
@@ -66,10 +60,10 @@ const ContactCard: React.FC<ContactCardProps> = ({
   return (
     <ContactCardWrap>
       <Row>
-        <Col xs={12} sm={3}>
-          <Image className="contact-img" source={ImgSource} altText={altText} />
+        <Col className="contact__image" xs={12} sm={3}>
+          <Image className="contact__image-wrap" source={ImgSource} altText={altText} />
         </Col>
-        <Col xs={12} sm={9}>
+        <Col className="contact__cards" xs={12} sm={9}>
           <h2>{name}</h2>
           <h2>{position}</h2>
           <a href={`mailto:${email}`} target="_top">

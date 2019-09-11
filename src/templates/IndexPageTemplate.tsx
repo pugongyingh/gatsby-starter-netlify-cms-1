@@ -214,6 +214,12 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+  h1 {
+    @media ${props => props.theme.screen.laptop} {
+      text-align: left;
+    }
+  }
+
   section {
     padding: 2rem 0;
 
@@ -248,11 +254,13 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       }
     }
 
-    h1 {
-      &:nth-child(2) {
-        font-size: 3.5rem;
-        font-weight: bold;
-        max-width: 50%;
+    @media ${props => props.theme.screen.laptop} {
+      h1 {
+        &:nth-child(2) {
+          font-size: 3.5rem;
+          font-weight: bold;
+          max-width: 50%;
+        }
       }
     }
 
@@ -335,6 +343,46 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+  .contact {
+    &__wrap {
+      flex-direction: column-reverse;
+
+      @media ${props => props.theme.screen.laptop} {
+        flex-direction: row;
+      }
+    }
+
+    &__image {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @media ${props => props.theme.screen.mobileL} {
+        display: inline-block;
+      }
+
+      &-wrap {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+      }
+    }
+
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+
+      @media ${props => props.theme.screen.mobileL} {
+        display: inline-block;
+        text-align: left;
+      }
+    }
+  }
+
   .map {
     position: relative;
     height: 530px;
@@ -348,5 +396,4 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       height: 100%;
     }
   }
-
 `;
