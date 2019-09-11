@@ -357,7 +357,7 @@ collections:
                     widget: image
   - name: blog
     label: Blog
-    folder: static/blog
+    folder: static/pages/blog
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
