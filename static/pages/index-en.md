@@ -26,6 +26,8 @@ references:
     title: t
 technologies:
   description: T
+  logos:
+    - logo: /img/ubisoft_logo.svg
   title: T
 ---
 
