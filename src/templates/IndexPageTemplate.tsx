@@ -2,30 +2,16 @@ import * as React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import BlogRollQuery from "../components/Blog/BlogRoll";
 import PreviewCompatibleImage from "../components/CMS/PreviewCompatibleImage";
-
 import ContactCard from "../components/Contact/ContactCard";
 import StyledContactForm from "../components/Contact/Form";
-
 import Image from "../components/Image";
 import InstagramRoll from "../components/Instagram/InstagramRoll";
 import Header from "../components/Layout/Header";
-
 import NewsItem from "../components/NewsItem";
 import ReferenceItem from "../components/ReferenceItem";
 import TechnologyItem from "../components/TechnologyItem";
-
-import {
-  File,
-  MarkdownRemarkFrontmatterClients,
-  MarkdownRemarkFrontmatterNews,
-  MarkdownRemarkFrontmatterNewsNews,
-  MarkdownRemarkFrontmatterReferences,
-  MarkdownRemarkFrontmatterTechnologies,
-  MarkdownRemarkFrontmatterWork,
-  Maybe
-} from "../graphql/types";
+import { File, MarkdownRemarkFrontmatterClients, MarkdownRemarkFrontmatterNews, MarkdownRemarkFrontmatterReferences, MarkdownRemarkFrontmatterTechnologies, MarkdownRemarkFrontmatterWork, Maybe } from "../graphql/types";
 import map from "../img/address-map.png";
-
 import ContactImg2 from "../img/martin-svach-photo.png";
 import ContactImg1 from "../img/michal-kourik-photo.png";
 import ContactImg3 from "../img/vaclav.jpg";
@@ -36,11 +22,11 @@ interface IndexPageProps {
   title: string;
   subheading: Maybe<string>;
   className?: string;
-  clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
+  clients: Maybe<MarkdownRemarkFrontmatterClients>;
   work: Maybe<MarkdownRemarkFrontmatterWork>;
   technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   news: Maybe<MarkdownRemarkFrontmatterNews>;
-  references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
+  references: Maybe<MarkdownRemarkFrontmatterReferences>;
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
@@ -57,38 +43,38 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     <div className={className}>
       <Header title={title} subheading={subheading} hero={hero} />
       {/* Our clients */}
-      <section className="clients">
-        <Grid className="container">
-          <h1>Our Clients</h1>
-          <Row className="row">
-            {clients &&
-              clients.map(client => {
-                if (!client) {
-                  return null;
-                }
-                return (
-                  <Col key={client.title} lg={3} xs={12} className="col">
-                    {client.logo && (
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: client.logo,
-                          alt: `${client.title} logo`
-                        }}
-                      />
-                    )}
-                  </Col>
-                );
-              })}
-          </Row>
-        </Grid>
-      </section>
+      {clients &&
+        <section className="clients">
+          <Grid className="container">
+            <h1>Our Clients</h1>
+            {clients.items &&
+              <Row className="row">
+                {clients.items.map((client) => {
+                  return (
+                    <Col key={client!.title} lg={3} xs={12} className="col">
+                      {client!.logo && (
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: client!.logo,
+                            alt: `${client!.title} logo`
+                          }}
+                        />
+                      )}
+                    </Col>
+                  );
+                })}
+              </Row>
+            }
+          </Grid>
+        </section>
+      }
       {news &&
         <section className="news">
           <Grid className="container">
             <h1>{news.title}</h1>
-            {news.news &&
+            {news.items &&
               <Row>
-                {news.news.map((newsItem) => {
+                {news.items.map((newsItem) => {
                   return (
                     <Col lg={4} xs={12} className="col" key={newsItem!.title}>
                       <h2>{newsItem!.title}</h2>
@@ -99,37 +85,34 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               </Row>}
           </Grid>
         </section>}
-      {/* What we do 
+      {/* What we do */}
       {work &&
         <section id="what-we-do">
           <Grid className="container">
             <h1>What we do</h1>
             <h1>Driving brands forward online.</h1>
             <Row className="section-row what-we-do-content-wrap">
-              {work.services && work.services.map(workitem => {
-                if (!workitem) {
-                  return null;
-                }
+              {work.items && work.items.map(workItem => {
                 return (
                   <NewsItem
-                    key={workitem.title}
-                    wwdIcon={workitem.logo}
-                    heading={workitem.title}
-                    perex={workitem.description}
-                    alt={`${workitem.title} logo`}
+                    key={workItem!.title!}
+                    wwdIcon=""
+                    heading={workItem!.title!}
+                    perex={workItem!.description!}
+                    alt={`${workItem!.title} logo`}
                   />
                 );
               })}
             </Row>
           </Grid>
         </section>
-      }*/}
+      }
       {/* References */}
       {references &&
         <section id="references">
           <Grid className="container">
             <h1>References</h1>
-            {references.map(referenceItem => {
+            {references.items && references.items.map(referenceItem => {
               return (
                 <ReferenceItem
                   key={referenceItem!.title!}
@@ -153,15 +136,15 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               <Col xs={12} sm={6}>
                 {technologies.description}
               </Col>
-              {technologies.logos &&
+              {technologies.items &&
                 <Col xs={12} smOffset={1} sm={4}>
                   <Row className="logoRow">
-                    {technologies.logos.map((logo, i) => {
+                    {technologies.items.map((technology, i) => {
                       return (
                         <TechnologyItem
                           key={i}
-                          logo={logo!.logo!}
-                          title=""
+                          logo={technology!.logo!}
+                          title={technology!.title!}
                         />
                       );
                     })}

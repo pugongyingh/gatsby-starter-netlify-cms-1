@@ -149,7 +149,7 @@ collections:
               - label: Title
                 name: title
                 widget: string
-              - label: List
+              - label: Items
                 name: items
                 widget: list
                 fields:
@@ -192,7 +192,7 @@ collections:
               - label: Subtitle
                 name: subtitle
                 widget: string
-              - label: List
+              - label: Items
                 name: items
                 widget: list
                 fields:
@@ -218,10 +218,13 @@ collections:
               - label: Description
                 name: description
                 widget: text
-              - label: List
+              - label: Items
                 name: items
                 widget: list
                 fields:
+                  - label: Title
+                    name: title
+                    widget: string
                   - label: Logo
                     name: logo
                     widget: image
@@ -273,7 +276,7 @@ collections:
               - label: Title
                 name: title
                 widget: string
-              - label: List
+              - label: Items
                 name: items
                 widget: list
                 fields:
@@ -316,7 +319,7 @@ collections:
               - label: Subtitle
                 name: subtitle
                 widget: string
-              - label: List
+              - label: Items
                 name: items
                 widget: list
                 fields:
@@ -342,10 +345,13 @@ collections:
               - label: Description
                 name: description
                 widget: text
-              - label: List
+              - label: Items
                 name: items
                 widget: list
                 fields:
+                  - label: Title
+                    name: title
+                    widget: string
                   - label: Logo
                     name: logo
                     widget: image
