@@ -28,6 +28,7 @@ interface IndexPageProps {
   technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
   news: Maybe<MarkdownRemarkFrontmatterNews>;
   references: Maybe<MarkdownRemarkFrontmatterReferences>;
+  locale: Maybe<string>
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
@@ -40,6 +41,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   references,
   news,
   technologies,
+  locale
 }) => (
     <div className={className}>
       <Header title={title} subheading={subheading} hero={hero} />
@@ -88,9 +90,9 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       {work &&
         <section id="what-we-do">
           <Grid className="container">
-            <h1>What we do</h1>
-            <h1>Driving brands forward online.</h1>
-            <Row className="section-row what-we-do-content-wrap">              
+            <h1>{work.title}</h1>
+            <h1>{work.subtitle}</h1>
+            <Row className="section-row what-we-do-content-wrap">
               {work.items && work.items.map(workItem => {
                 return (
                   <NewsItem
@@ -153,7 +155,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Grid>
         </section>
       }
-      <BlogRollQuery />
+      <BlogRollQuery locale={locale} />
       {/* Contact Us */}
       <section id="contact">
         <Grid>
@@ -213,6 +215,12 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+  h1 {
+    @media ${props => props.theme.screen.laptop} {
+      text-align: left;
+    }
+  }
+
   section {
     padding: 2rem 0;
 
@@ -247,13 +255,13 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       }
     }
 
-    
-
-    h1 {
-      &:nth-child(2) {
-        font-size: 3.5rem;
-        font-weight: bold;
-        max-width: 50%;
+    @media ${props => props.theme.screen.laptop} {
+      h1 {
+        &:nth-child(2) {
+          font-size: 3.5rem;
+          font-weight: bold;
+          max-width: 50%;
+        }
       }
     }
 
@@ -280,7 +288,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       }
       .col {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         margin: -1px;
 
         @media ${props => props.theme.screen.laptop} {
@@ -336,6 +344,46 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+  .contact {
+    &__wrap {
+      flex-direction: column-reverse;
+
+      @media ${props => props.theme.screen.laptop} {
+        flex-direction: row;
+      }
+    }
+
+    &__image {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @media ${props => props.theme.screen.mobileL} {
+        display: inline-block;
+      }
+
+      &-wrap {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+      }
+    }
+
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+
+      @media ${props => props.theme.screen.mobileL} {
+        display: inline-block;
+        text-align: left;
+      }
+    }
+  }
+
   .map {
     position: relative;
     height: 530px;
@@ -349,5 +397,4 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       height: 100%;
     }
   }
-
 `;

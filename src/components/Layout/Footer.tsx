@@ -14,10 +14,26 @@ import starkysIcon from "../../img/starkys-logo.svg";
 const StyledFooter = styled.section`
   background-color: ${props => props.theme.colors.black};
   color: ${props => props.theme.colors.white};
-  @media ${props => props.theme.screen.laptop} {
+
+  display: flex;
+
+  @media ${props => props.theme.screen.tablet} {
     padding: 2rem 0;
   }
-  display: flex;
+
+  .content-wrap {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+
+    @media ${props => props.theme.screen.tablet} {
+      align-items: initial;
+      text-align: left;
+      flex-direction: row;
+    }
+  }
+
   .copyright {
     display: flex;
     align-items: center;
@@ -45,13 +61,14 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <StyledFooter>
       <Grid className="container">
-        <Row>
+        <Row className="content-wrap">
           <Col lg={4}>
             <Icon
               source={starkysIcon}
               altText="Starky's Club"
               height=""
               width=""
+              className=""
             />
           </Col>
           <Col lg={4} className="copyright">

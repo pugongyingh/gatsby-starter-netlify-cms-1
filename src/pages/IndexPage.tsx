@@ -27,6 +27,7 @@ const IndexPage = ({ data }: IndexPageTemplateProps) => {
         news={page.frontmatter.news}
         technologies={page.frontmatter.technologies}
         references={page.frontmatter.references}
+        locale={page.frontmatter.locale}
       />
     </Page>
   );
@@ -47,6 +48,7 @@ export const IndexPagePreview = ({ entry }: any) => {
           news={data.news}
           technologies={data.technologies}
           references={data.references}
+          locale={data.locale}
         />
       </Preview>
     );
@@ -61,6 +63,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subheading
+        locale
         hero {
           ...FileInfo
         }
@@ -75,6 +78,9 @@ export const pageQuery = graphql`
         }
         technologies {
           ...TechnologiesInfo
+        }
+        news {
+          ...NewsInfo
         }
       }
     }

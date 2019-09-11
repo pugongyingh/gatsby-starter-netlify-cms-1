@@ -6,7 +6,7 @@ interface InstagramItemProps {
   src: string;
   alt: string;
   instaText: string;
-  className: string;
+  className?: string;
 }
 
 const InstagramItem: React.FC<InstagramItemProps> = ({

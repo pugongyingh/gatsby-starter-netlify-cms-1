@@ -4,7 +4,7 @@ import { isString } from "util";
 import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/logo.svg";
 import { css, default as styled, SCP } from "../../styles/theme";
-
+import Icon from "../Icon";
 
 interface P extends SCP {
   title: Maybe<string>;
@@ -12,8 +12,13 @@ interface P extends SCP {
   hero: string | File;
 }
 
-const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) => {
-  const file = isString(hero) ? hero : hero.base!
+const HeaderTemplate: React.SFC<P> = ({
+  hero,
+  title,
+  subheading,
+  className
+}) => {
+  const file = isString(hero) ? hero : hero.base!;
 
   return (
     <header className={className}>
@@ -32,12 +37,18 @@ const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) =>
         <div className="text-wrap">
           <Grid className="grid" fluid={true}>
             <Row>
-              <Col className="col-1" xs={12} md={6}>
-                <img src={logo} />
+              <Col className="logo-section" xs={12} lg={6}>
+                <Icon
+                  className="starkyslogo"
+                  source={logo}
+                  height="85px"
+                  width="78px"
+                  altText="Starkys Logo"
+                />
                 <h1>{title}</h1>
                 <button>Work with us</button>
               </Col>
-              <Col className="col-2" xs={12} md={6}>
+              <Col className="text-section" xs={12} lg={6}>
                 <p>{subheading}</p>
               </Col>
             </Row>
@@ -162,16 +173,38 @@ const Header = styled(HeaderTemplate)`
     }
   }
 
-  .col-1 {
+  .logo-section {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media ${props => props.theme.screen.tablet} {
+      .starkyslogo {
+        width: 178px !important;
+        height: 185px !important;
+      }
+    }
+
+    @media ${props => props.theme.screen.laptopL} {
+      justify-content: initial;
+      text-align: left;
+      flex-direction: row;
+    }
   }
 
-  .col-2 {
+  .text-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
+
+    @media ${props => props.theme.screen.laptopL} {
+      margin-top: 0;
+    }
   }
 `;
 
