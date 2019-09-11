@@ -127,24 +127,38 @@ collections:
             required: true
           - label: News
             name: news
-            widget: list
+            widget: object
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Description
-                name: description
-                widget: text
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
           - label: Clients
             name: clients
-            widget: list
+            widget: object
             fields:
-              - label: Alt title
+              - label: Title
                 name: title
                 widget: string
-              - label: Logo
-                name: logo
-                widget: image
+              - label: List
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Logo
+                    name: logo
+                    widget: image
           - label: What we do
             name: work
             widget: object
@@ -156,7 +170,7 @@ collections:
                 name: subtitle
                 widget: string
               - label: Services
-                name: services
+                name: items
                 widget: list
                 fields:
                   - label: Title
@@ -170,20 +184,30 @@ collections:
                     widget: text
           - label: References
             name: references
-            widget: list
+            widget: object
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Subtitle (type)
+              - label: Subtitle
                 name: subtitle
                 widget: string
-              - label: Description
-                name: description
-                widget: text
-              - label: Image
-                name: image
-                widget: image
+              - label: List
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Subtitle (type)
+                    name: subtitle
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Image
+                    name: image
+                    widget: image
           - label: Technologies
             name: technologies
             widget: object
@@ -194,8 +218,8 @@ collections:
               - label: Description
                 name: description
                 widget: text
-              - label: Logos
-                name: logos
+              - label: List
+                name: items
                 widget: list
                 fields:
                   - label: Logo
@@ -232,8 +256,8 @@ collections:
               - label: Title
                 name: title
                 widget: string
-              - label: news
-                name: news
+              - label: Items
+                name: items
                 widget: list
                 fields:
                   - label: Title
@@ -244,14 +268,21 @@ collections:
                     widget: text
           - label: Clients
             name: clients
-            widget: list
+            widget: object
             fields:
-              - label: Alt title
+              - label: Title
                 name: title
                 widget: string
-              - label: Logo
-                name: logo
-                widget: image
+              - label: List
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Logo
+                    name: logo
+                    widget: image
           - label: What we do
             name: work
             widget: object
@@ -263,7 +294,7 @@ collections:
                 name: subtitle
                 widget: string
               - label: Services
-                name: services
+                name: items
                 widget: list
                 fields:
                   - label: Title
@@ -277,20 +308,30 @@ collections:
                     widget: text
           - label: References
             name: references
-            widget: list
+            widget: object
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Subtitle (type)
+              - label: Subtitle
                 name: subtitle
                 widget: string
-              - label: Description
-                name: description
-                widget: text
-              - label: Image
-                name: image
-                widget: image
+              - label: List
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Subtitle (type)
+                    name: subtitle
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Image
+                    name: image
+                    widget: image
           - label: Technologies
             name: technologies
             widget: object
@@ -301,8 +342,8 @@ collections:
               - label: Description
                 name: description
                 widget: text
-              - label: Logos
-                name: logos
+              - label: List
+                name: items
                 widget: list
                 fields:
                   - label: Logo

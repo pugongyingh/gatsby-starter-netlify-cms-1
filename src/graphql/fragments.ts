@@ -86,7 +86,10 @@ export const query = graphql`
   }
   fragment NewsInfo on MarkdownRemarkFrontmatterNews {
     title
-    description
+    news {
+      description
+      title
+    }
   }
   fragment BlogInfo on MarkdownRemark {
     excerpt(pruneLength: 400)
@@ -96,6 +99,8 @@ export const query = graphql`
     }
     frontmatter {
       title
+      description
+      body
       templateKey
       date(formatString: "MMMM DD, YYYY")
       image {

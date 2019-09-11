@@ -19,16 +19,16 @@ class Blog extends React.Component<P> {
           <Row className="blog-wrap">
             <Col className="blog-item">
               <StyledCarousel>
-                {/*this.props.blogPosts && this.props.blogPosts.map((post) => {
+                {this.props.blogPosts && this.props.blogPosts.map((post: MarkdownRemark) => {
                   return (
                     <StyledBlogItem
                       key={post.id}
-                      src={post.frontmatter!.image!}
-                      alt={post.caption!}
-                      instaText={post.caption!}
+                      image={post.frontmatter!.image!}
+                      title={post.frontmatter!.title!}
+                      description={post.frontmatter!.description!}
                     />
                   )
-                })*/}
+                })}
               </StyledCarousel>
             </Col>
           </Row>

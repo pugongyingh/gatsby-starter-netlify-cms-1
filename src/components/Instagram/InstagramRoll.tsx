@@ -20,7 +20,7 @@ class Instagram extends React.Component<P> {
           <Row className="instagram-items-wrap">
             <Col className="instagram-item">
               <StyledCarousel dark={true}>
-                {this.props.instagramPosts && this.props.instagramPosts.map((post) => {
+                {this.props.instagramPosts && this.props.instagramPosts.map((post: InstaNode) => {
                   return (
                     <InstagramItem
                       key={post.id}

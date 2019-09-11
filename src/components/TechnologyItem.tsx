@@ -1,16 +1,17 @@
 import React from "react";
 import { Col } from "react-flexbox-grid";
 import Logo from "../components/Logo";
+import { File } from "../graphql/types";
 
 interface Props {
-  source: string;
-  alt: string;
+  logo: File;
+  title: string;
 }
 
-const TechnologyItem: React.FC<Props> = ({ source, alt }) => {
+const TechnologyItem: React.FC<Props> = ({/* logo, title */ }) => {
   return (
     <Col xs={4}>
-      <Logo source={source} altText={alt} />
+      {/*<Logo source={logo} altText={title} />*/}
     </Col>
   );
 };

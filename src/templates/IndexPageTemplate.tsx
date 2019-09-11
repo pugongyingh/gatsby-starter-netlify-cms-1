@@ -17,6 +17,8 @@ import TechnologyItem from "../components/TechnologyItem";
 import {
   File,
   MarkdownRemarkFrontmatterClients,
+  MarkdownRemarkFrontmatterNews,
+  MarkdownRemarkFrontmatterNewsNews,
   MarkdownRemarkFrontmatterReferences,
   MarkdownRemarkFrontmatterTechnologies,
   MarkdownRemarkFrontmatterWork,
@@ -37,6 +39,8 @@ interface IndexPageProps {
   clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
   work: Maybe<MarkdownRemarkFrontmatterWork>;
   technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
+  news: Maybe<MarkdownRemarkFrontmatterNews>;
+  references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
@@ -46,6 +50,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   className,
   clients,
   work,
+  references,
+  news,
   technologies,
 }) => (
     <div className={className}>
@@ -76,47 +82,23 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Row>
         </Grid>
       </section>
-      {/* News
-      <section className="news">
-        <Grid className="container">
-          <h1>News</h1>
-          <Row>
-            <Col lg={4} xs={12} className="col">
-              <h2>Skysail gun swing the lead pink Cat o'nine</h2>
-              <p>
-                Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
-                Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
-                matey Letter of Marque brig aft bring a spring upon her cable grog
-                blossom hang the jib Barbary Coast yard. Barkadeer doubloon
-                measured fer yer chains splice the main brace matey no prey, no
-                pay dead men tell no tales scuttle clap of thunder crimp.
-
-            </p>
-            </Col>
-            <Col lg={4} xs={12} className="col">
-              <h2>American Main interloper parrel snow quarterdeck</h2>
-              <p>
-                Shiver me timbers wherry long clothes cog. Interloper blow the man
-                down Pirate Round pillage furl grapple wherry long boat American
-                Main Davy Jones' Locker. Doubloon lugger brig transom jack tack
-                aft aye pirate topmast. Barkadeer doubloon measured fer yer chains
-                splice the main brace matey no prey.
-            </p>
-            </Col>
-            <Col lg={4} xs={12} className="col">
-              <h2>Square-rigged lateen sail flogging </h2>
-              <p>
-                Deadlights salmagundi Barbary Coast hornswaggle gaff log line yawl
-                American Main aft. Weigh anchor cutlass Sea Legs ahoy haul wind
-                dance the hempen jig execution dock loaded to the gunwalls stern
-                grog. Poop deck pinnace Buccaneer gangplank Sail ho boom come
-                about handsomely bounty fluke. Blimey strike colors spanker parrel
-                league lad coxswain scallywag topmast draught.
-            </p>
-            </Col>
-          </Row>
-        </Grid>
-      </section> */}
+      {news &&
+        <section className="news">
+          <Grid className="container">
+            <h1>{news.title}</h1>
+            {news.news &&
+              <Row>
+                {news.news.map((newsItem) => {
+                  return (
+                    <Col lg={4} xs={12} className="col" key={newsItem!.title}>
+                      <h2>{newsItem!.title}</h2>
+                      <p>{newsItem!.description}</p>
+                    </Col>
+                  )
+                })}
+              </Row>}
+          </Grid>
+        </section>}
       {/* What we do 
       {work &&
         <section id="what-we-do">
@@ -143,7 +125,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         </section>
       }*/}
       {/* References */}
-      {/*references &&
+      {references &&
         <section id="references">
           <Grid className="container">
             <h1>References</h1>
@@ -151,17 +133,17 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               return (
                 <ReferenceItem
                   key={referenceItem!.title!}
-                  src={referenceItem!.image!}
-                  alt={`${referenceItem!.title} image`}
-                  heading={referenceItem!.title!}
-                  subheading={referenceItem!.subtitle!}
-                  perex={referenceItem!.description!}
+                  image={referenceItem!.image!}
+                  title={referenceItem!.title!}
+                  subtitle={referenceItem!.subtitle!}
+                  description={referenceItem!.description!}
+                  link=""
                 />
               );
             })}
           </Grid>
         </section>
-          */}
+      }
       {/* Technologies */}
       {technologies &&
         <section className="technologies">
@@ -171,19 +153,20 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               <Col xs={12} sm={6}>
                 {technologies.description}
               </Col>
-              <Col xs={12} smOffset={1} sm={4}>
-                <Row className="logoRow">
-                  {technologies.logos && technologies.logos.map((logo, i) => {
-                    return (
-                      {/*<TechnologyItem
-                        key={i}
-                        source={logo!.logo!}
-                      // FIXME: alt={`${technologies.title} logo`}
-                      />*/}
-                    );
-                  })}
-                </Row>
-              </Col>
+              {technologies.logos &&
+                <Col xs={12} smOffset={1} sm={4}>
+                  <Row className="logoRow">
+                    {technologies.logos.map((logo, i) => {
+                      return (
+                        <TechnologyItem
+                          key={i}
+                          logo={logo!.logo!}
+                          title=""
+                        />
+                      );
+                    })}
+                  </Row>
+                </Col>}
             </Row>
           </Grid>
         </section>
