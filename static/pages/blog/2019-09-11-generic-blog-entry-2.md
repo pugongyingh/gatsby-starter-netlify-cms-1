@@ -1,6 +1,6 @@
 ---
 templateKey: BlogPost
-locale: se
+locale: cs
 title: Generic Blog Entry
 date: 2019-09-11T13:45:08.713Z
 description: lipsum blaBla
