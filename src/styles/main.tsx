@@ -16,6 +16,11 @@ export const main = css`
     letter-spacing: 0.03em;
   }
 
+  h2 {
+    font-size: 16px;
+    
+  }
+
   .flex-row-reverse {
     flex-direction: row-reverse;
   }

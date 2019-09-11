@@ -65,7 +65,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 return null;
               }
               return (
-                <Col key={client.title} lg={3} xs={12} className="col">
+                <Col key={client.title} md={3} xs={12} className="col">
                   {client.logo && (
                     <PreviewCompatibleImage
                       imageInfo={{
@@ -85,7 +85,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <Grid className="container">
         <h1>News</h1>
         <Row>
-          <Col lg={4} xs={12} className="col">
+          <Col md={4} xs={12} className="col">
             <h2>Skysail gun swing the lead pink Cat o'nine</h2>
             <p>
               Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
@@ -94,28 +94,27 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
               blossom hang the jib Barbary Coast yard. Barkadeer doubloon
               measured fer yer chains splice the main brace matey no prey, no
               pay dead men tell no tales scuttle clap of thunder crimp.
-
             </p>
-            </Col>
-            <Col lg={4} xs={12} className="col">
-              <h2>American Main interloper parrel snow quarterdeck</h2>
-              <p>
-                Shiver me timbers wherry long clothes cog. Interloper blow the man
-                down Pirate Round pillage furl grapple wherry long boat American
-                Main Davy Jones' Locker. Doubloon lugger brig transom jack tack
-                aft aye pirate topmast. Barkadeer doubloon measured fer yer chains
-                splice the main brace matey no prey.
+          </Col>
+          <Col md={4} xs={12} className="col">
+            <h2>American Main interloper parrel snow quarterdeck</h2>
+            <p>
+              Shiver me timbers wherry long clothes cog. Interloper blow the man
+              down Pirate Round pillage furl grapple wherry long boat American
+              Main Davy Jones' Locker. Doubloon lugger brig transom jack tack
+              aft aye pirate topmast. Barkadeer doubloon measured fer yer chains
+              splice the main brace matey no prey.
             </p>
-            </Col>
-            <Col lg={4} xs={12} className="col">
-              <h2>Square-rigged lateen sail flogging </h2>
-              <p>
-                Deadlights salmagundi Barbary Coast hornswaggle gaff log line yawl
-                American Main aft. Weigh anchor cutlass Sea Legs ahoy haul wind
-                dance the hempen jig execution dock loaded to the gunwalls stern
-                grog. Poop deck pinnace Buccaneer gangplank Sail ho boom come
-                about handsomely bounty fluke. Blimey strike colors spanker parrel
-                league lad coxswain scallywag topmast draught.
+          </Col>
+          <Col md={4} xs={12} className="col">
+            <h2>Square-rigged lateen sail flogging </h2>
+            <p>
+              Deadlights salmagundi Barbary Coast hornswaggle gaff log line yawl
+              American Main aft. Weigh anchor cutlass Sea Legs ahoy haul wind
+              dance the hempen jig execution dock loaded to the gunwalls stern
+              grog. Poop deck pinnace Buccaneer gangplank Sail ho boom come
+              about handsomely bounty fluke. Blimey strike colors spanker parrel
+              league lad coxswain scallywag topmast draught.
             </p>
           </Col>
         </Row>
@@ -326,10 +325,10 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <Grid>
         <h1>Contact us</h1>
         <Row className="contact-wrap">
-          <Col xs={12} sm={6}>
+          <Col xs={12} md={5}>
             <StyledContactForm />
           </Col>
-          <Col xs={12} sm={6}>
+          <Col className="contact-cards" xs={12} md={7}>
             <Row>
               <Col xs={12}>
                 <ContactCard
@@ -368,8 +367,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <Image altText="Address map" source={map} />
       </a>
     </section>
-     {/* Instagram */}
-     <InstagramRoll />
+    {/* Instagram */}
+    <InstagramRoll />
   </div>
 );
 
@@ -414,11 +413,13 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       }
     }
 
-    h1 {
-      &:nth-child(2) {
-        font-size: 3.5rem;
-        font-weight: bold;
-        max-width: 50%;
+    @media ${props => props.theme.screen.laptop} {
+      h1 {
+        &:nth-child(2) {
+          font-size: 3.5rem;
+          font-weight: bold;
+          max-width: 50%;
+        }
       }
     }
 
@@ -501,6 +502,12 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+  #contact {
+    .contact-wrap {
+      flex-direction: column-reverse;
+    }
+  }
+
   .map {
     position: relative;
     height: 530px;
@@ -514,5 +521,4 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       height: 100%;
     }
   }
-
 `;
