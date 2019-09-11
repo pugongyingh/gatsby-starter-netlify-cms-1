@@ -14,6 +14,7 @@ export const main = css`
     font-size: 28px;
     line-height: 128%;
     letter-spacing: 0.03em;
+    text-align: center;
   }
 
   h2 {

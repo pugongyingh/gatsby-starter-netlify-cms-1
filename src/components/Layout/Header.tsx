@@ -167,6 +167,8 @@ const Header = styled(HeaderTemplate)`
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    align-items: center;
+    flex-direction: column;
 
     @media ${props => props.theme.screen.tablet} {
       .starkyslogo {
@@ -178,11 +180,7 @@ const Header = styled(HeaderTemplate)`
     @media ${props => props.theme.screen.laptopL} {
       justify-content: initial;
       text-align: left;
-
-      .starkyslogo {
-        width:78px !important;
-        height: 85px !important;
-      }
+      flex-direction: row;
     }
   }
 

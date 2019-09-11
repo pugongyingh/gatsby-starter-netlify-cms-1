@@ -379,6 +379,12 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+  h1 {
+    @media ${props => props.theme.screen.laptop} {
+      text-align: left;
+    }
+  }
+
   section {
     padding: 2rem 0;
 
