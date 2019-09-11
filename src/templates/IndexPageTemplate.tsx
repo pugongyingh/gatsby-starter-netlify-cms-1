@@ -203,6 +203,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   #what-we-do {
     color: ${props => props.theme.colors.white};
     background: url(${WhatwedoBackground}) no-repeat center center scroll;
+    background-size: cover;
 
     .what-we-do {
       &-content-wrap {

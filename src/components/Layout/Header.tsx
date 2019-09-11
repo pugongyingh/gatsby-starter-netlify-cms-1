@@ -122,6 +122,7 @@ const Header = styled(HeaderTemplate)`
     position: absolute;
     z-index: 2;
     height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
