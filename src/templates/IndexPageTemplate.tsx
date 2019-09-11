@@ -54,10 +54,8 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                     <Col key={client!.title} lg={3} xs={12} className="col">
                       {client!.logo && (
                         <PreviewCompatibleImage
-                          imageInfo={{
-                            image: client!.logo,
-                            alt: `${client!.title} logo`
-                          }}
+                          image={client!.logo}
+                          alt={`${client!.title} logo`}
                         />
                       )}
                     </Col>
@@ -96,7 +94,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 return (
                   <NewsItem
                     key={workItem!.title!}
-                    wwdIcon=""
+                    logo={workItem!.logo}
                     heading={workItem!.title!}
                     perex={workItem!.description!}
                     alt={`${workItem!.title} logo`}

@@ -1,11 +1,11 @@
 import React from "react";
 import { Col, Row } from "react-flexbox-grid";
 import ArrowLink from "../components/Carousel/ArrowLink";
-import Image from "../components/Image";
 import { File } from "../graphql/types";
+import PreviewCompatibleImage from "./CMS/PreviewCompatibleImage";
 
 interface Props {
-  image: File;
+  image: File | string;
   title: string;
   subtitle: string;
   description: string;
@@ -22,7 +22,7 @@ const ReferenceItem: React.FC<Props> = ({
   return (
     <Row className="section-row">
       <Col xs={12} sm={6} lg={5}>
-        {/*<Image source={image} altText={title} />*/}
+        {<PreviewCompatibleImage image={image} alt={title} />}
       </Col>
       <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
         <h2>{title}</h2>
