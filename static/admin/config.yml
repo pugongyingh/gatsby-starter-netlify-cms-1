@@ -96,7 +96,7 @@ collections:
     files:
       - file: static/pages/index-cs.md
         label: Landing Page CS
-        name: index
+        name: index-cs
         fields:
           - label: Template Key
             name: templateKey

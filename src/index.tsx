@@ -18,7 +18,7 @@ const CSSInjector = (props: any) => {
     return null;
 }
 
-CMS.registerPreviewTemplate('index', (props: any) => (
+CMS.registerPreviewTemplate('index-cs', (props: any) => (
     <CSSInjector>
         <IndexPagePreview {...props} />
     </CSSInjector>
