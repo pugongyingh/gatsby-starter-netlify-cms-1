@@ -106,7 +106,6 @@ export const query = graphql`
     frontmatter {
       title
       description
-      body
       templateKey
       date(formatString: "MMMM DD, YYYY")
       image {

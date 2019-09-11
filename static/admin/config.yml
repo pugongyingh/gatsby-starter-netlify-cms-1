@@ -29,14 +29,7 @@ collections:
     fields:
       - label: Locale
         name: locale
-        widget: relation
-        collection: locale
-        searchFields:
-          - title
-          - code
-        displayFields:
-          - title
-        valueField: code
+        widget: string
       - label: Title
         name: title
       - label: Contact
@@ -367,14 +360,7 @@ collections:
         default: BlogPost
       - label: Locale
         name: locale
-        widget: relation
-        collection: locale
-        searchFields:
-          - title
-          - code
-        displayFields:
-          - title
-        valueField: code
+        widget: string
       - label: Title
         name: title
         widget: string
@@ -387,7 +373,7 @@ collections:
         widget: text
       - label: Body
         name: body
-        widget: markdown
+        widget: text
       - label: Image
         name: image
         widget: image
