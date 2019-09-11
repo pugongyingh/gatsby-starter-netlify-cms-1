@@ -127,12 +127,13 @@ collections:
             required: true
           - label: News
             name: news
-            field:
+            widget: list
+            fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Perex
-                name: perex
+              - label: Description
+                name: description
                 widget: text
           - label: Clients
             name: clients
@@ -211,7 +212,7 @@ collections:
           - label: Locale
             name: locale
             widget: hidden
-            default: en
+            default: cs
           - label: Title
             name: title
             widget: string
@@ -224,22 +225,26 @@ collections:
             name: hero
             widget: file
             required: true
-          - label: Testimonials
-            name: testimonials
+          - label: News
+            name: news
             widget: list
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Logo
-                name: logo
-                widget: image
               - label: Description
                 name: description
                 widget: text
-              - label: Link
-                name: link
+          - label: Clients
+            name: clients
+            widget: list
+            fields:
+              - label: Alt title
+                name: title
                 widget: string
+              - label: Logo
+                name: logo
+                widget: image
           - label: What we do
             name: work
             widget: object
@@ -263,6 +268,22 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+          - label: References
+            name: references
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle (type)
+                name: subtitle
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Image
+                name: image
+                widget: image
           - label: Technologies
             name: technologies
             widget: object

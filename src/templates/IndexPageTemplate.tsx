@@ -35,10 +35,8 @@ interface IndexPageProps {
   subheading: Maybe<string>;
   className?: string;
   clients: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClients>>>;
-  news: Maybe<Scalars["String"]>;
   work: Maybe<MarkdownRemarkFrontmatterWork>;
   technologies: Maybe<MarkdownRemarkFrontmatterTechnologies>;
-  references: Maybe<Array<Maybe<MarkdownRemarkFrontmatterReferences>>>;
 }
 
 export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
@@ -47,53 +45,51 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   subheading,
   className,
   clients,
-  news,
   work,
   technologies,
-  references // TODO: Use
 }) => (
-  <div className={className}>
-    <Header title={title} subheading={subheading} hero={hero} />
-    {/* Our clients */}
-    <section className="clients">
-      <Grid className="container">
-        <h1>Our Clients</h1>
-        <Row className="row">
-          {clients &&
-            clients.map(client => {
-              if (!client) {
-                return null;
-              }
-              return (
-                <Col key={client.title} lg={3} xs={12} className="col">
-                  {client.logo && (
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: client.logo,
-                        alt: `${client.title} logo`
-                      }}
-                    />
-                  )}
-                </Col>
-              );
-            })}
-        </Row>
-      </Grid>
-    </section>
-    {/* News */}
-    <section className="news">
-      <Grid className="container">
-        <h1>News</h1>
-        <Row>
-          <Col lg={4} xs={12} className="col">
-            <h2>Skysail gun swing the lead pink Cat o'nine</h2>
-            <p>
-              Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
-              Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
-              matey Letter of Marque brig aft bring a spring upon her cable grog
-              blossom hang the jib Barbary Coast yard. Barkadeer doubloon
-              measured fer yer chains splice the main brace matey no prey, no
-              pay dead men tell no tales scuttle clap of thunder crimp.
+    <div className={className}>
+      <Header title={title} subheading={subheading} hero={hero} />
+      {/* Our clients */}
+      <section className="clients">
+        <Grid className="container">
+          <h1>Our Clients</h1>
+          <Row className="row">
+            {clients &&
+              clients.map(client => {
+                if (!client) {
+                  return null;
+                }
+                return (
+                  <Col key={client.title} lg={3} xs={12} className="col">
+                    {client.logo && (
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: client.logo,
+                          alt: `${client.title} logo`
+                        }}
+                      />
+                    )}
+                  </Col>
+                );
+              })}
+          </Row>
+        </Grid>
+      </section>
+      {/* News
+      <section className="news">
+        <Grid className="container">
+          <h1>News</h1>
+          <Row>
+            <Col lg={4} xs={12} className="col">
+              <h2>Skysail gun swing the lead pink Cat o'nine</h2>
+              <p>
+                Rigging Plate Fleet quarterdeck scallywag jolly boat Buccaneer
+                Brethren of the Coast ahoy keelhaul six pounders. Walk the plank
+                matey Letter of Marque brig aft bring a spring upon her cable grog
+                blossom hang the jib Barbary Coast yard. Barkadeer doubloon
+                measured fer yer chains splice the main brace matey no prey, no
+                pay dead men tell no tales scuttle clap of thunder crimp.
 
             </p>
             </Col>
@@ -117,261 +113,133 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 about handsomely bounty fluke. Blimey strike colors spanker parrel
                 league lad coxswain scallywag topmast draught.
             </p>
-          </Col>
-        </Row>
-      </Grid>
-    </section>
-    {/* What we do */}
-    <section id="what-we-do">
-      <Grid className="container">
-        <h1>What we do</h1>
-        <h1>Driving brands forward online.</h1>
-        <Row className="section-row what-we-do-content-wrap">
-          {/* <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
-            <Icon
-              className=""
-              source={devIcon}
-              altText="WWD Icons"
-              height="90px"
-              width="90px"
-            />
-            <h2>Heading</h2>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
-
-            </p>
             </Col>
-            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
-              <Icon
-                className=""
-                source={designIcon}
-                altText="WWD Icons"
-                height="90px"
-                width="90px"
-              />
-              <h2>Heading</h2>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
-              <Icon
-                className=""
-                source={analysisIcon}
-                altText="WWD Icons"
-                height="90px"
-                width="90px"
-              />
-              <h2>Heading</h2>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-            <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
-              <Icon
-                className=""
-                source={workshopIcon}
-                altText="WWD Icons"
-                height="90px"
-                width="90px"
-              />
-              <h2>Heading</h2>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-          </Col> */}
-
-          {work &&
-            work.services.map(workitem => {
-              if (!workitem) {
-                return null;
-              }
+          </Row>
+        </Grid>
+      </section> */}
+      {/* What we do 
+      {work &&
+        <section id="what-we-do">
+          <Grid className="container">
+            <h1>What we do</h1>
+            <h1>Driving brands forward online.</h1>
+            <Row className="section-row what-we-do-content-wrap">
+              {work.services && work.services.map(workitem => {
+                if (!workitem) {
+                  return null;
+                }
+                return (
+                  <NewsItem
+                    key={workitem.title}
+                    wwdIcon={workitem.logo}
+                    heading={workitem.title}
+                    perex={workitem.description}
+                    alt={`${workitem.title} logo`}
+                  />
+                );
+              })}
+            </Row>
+          </Grid>
+        </section>
+      }*/}
+      {/* References */}
+      {/*references &&
+        <section id="references">
+          <Grid className="container">
+            <h1>References</h1>
+            {references.map(referenceItem => {
               return (
-                <NewsItem
-                  key={workitem.title}
-                  wwdIcon={workitem.logo}
-                  heading={workitem.title}
-                  perex={workitem.description}
-                  alt={`${workitem.title} logo`}
+                <ReferenceItem
+                  key={referenceItem!.title!}
+                  src={referenceItem!.image!}
+                  alt={`${referenceItem!.title} image`}
+                  heading={referenceItem!.title!}
+                  subheading={referenceItem!.subtitle!}
+                  perex={referenceItem!.description!}
                 />
               );
             })}
-        </Row>
-      </Grid>
-    </section>
-    {/* References */}
-    <section id="references">
-      <Grid className="container">
-        <h1>References</h1>
-        {/* <Row className="section-row">
-          <Col xs={12} sm={6} lg={5}>
-            <Image source={swRef} altText="Software development reference" />
-          </Col>
-          <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
-            <h2>SOFTWARE DEVELOPMENT</h2>
-            <h3>Name of the Project</h3>
-            <p>
-              Prow scuttle parrel provost Sail ho shrouds spirits boom
-              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-              nest nipperkin grog yardarm hempen halter furl. Swab barque
-              interloper
-            </p>
-            </Col>
-          </Row>
-          <Row className="section-row flex-row-reverse">
-            <Col xs={12} sm={6} lg={5} lgOffset={1}>
-              <Image
-                source={designRef}
-                altText="Software development reference"
-              />
-            </Col>
-            <Col className="ref-content text-align-right" xs={12} sm={6} lg={6}>
-              <h2>SOFTWARE DEVELOPMENT</h2>
-              <h3>Name of the Project</h3>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-            </Col>
-          </Row>
-          <Row className="section-row">
-            <Col xs={12} sm={6} lg={5}>
-              <Image source={ref3} altText="Software development reference" />
-            </Col>
-            <Col className="ref-content" xs={12} sm={6} lgOffset={1} lg={6}>
-              <h2>SOFTWARE DEVELOPMENT</h2>
-              <h3>Name of the Project</h3>
-              <p>
-                Prow scuttle parrel provost Sail ho shrouds spirits boom
-                mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
-                nest nipperkin grog yardarm hempen halter furl. Swab barque
-                interloper
-            </p>
-          </Col>
-        </Row> */}
-
-        {references &&
-          references.map(referenceItem => {
-            if (!referenceItem) {
-              return null;
-            }
-            return (
-              <ReferenceItem
-                key={referenceItem.title}
-                src={referenceItem.image}
-                alt={`${referenceItem.title} image`}
-                heading={referenceItem.title}
-                subheading={referenceItem.subtitle}
-                perex={referenceItem.description}
-              />
-            );
-          })}
-      </Grid>
-    </section>
-    {/* Technologies */}
-    <section className="technologies">
-      <Grid className="container">
-        <h1>{technologies.title}</h1>
-        <Row>
-          <Col xs={12} sm={6}>
-            {technologies.description}
-          </Col>
-          <Col xs={12} smOffset={1} sm={4}>
-            <Row className="logoRow">
-              {/* <Col xs={4}>
-                <Logo source={javaLogo} altText="A Java Logo" />
-              </Col>
-              <Col xs={4}>
-                <Logo source={reactLogo} altText="A React Logo" />
-              </Col>
-              <Col xs={4}>
-                <Logo source={awsLogo} altText="An Aws Logo" />
-              </Col> */}
-
-              {technologies &&
-                technologies.logos.map(logo => {
-                  if (!logo) {
-                    return null;
-                  }
-                  return (
-                    <TechnologyItem
-                      key={technologies.title}
-                      src={technologies.logos}
-                      alt={`${technologies.title} logo`}
-                    />
-                  );
-                })}
-            </Row>
-          </Col>
-        </Row>
-      </Grid>
-    </section>
-    <BlogRollQuery />
-    {/* Contact Us */}
-    <section id="contact">
-      <Grid>
-        <h1>Contact us</h1>
-        <Row className="contact-wrap">
-          <Col xs={12} sm={6}>
-            <StyledContactForm />
-          </Col>
-          <Col xs={12} sm={6}>
+          </Grid>
+        </section>
+          */}
+      {/* Technologies */}
+      {technologies &&
+        <section className="technologies">
+          <Grid className="container">
+            <h1>{technologies.title}</h1>
             <Row>
-              <Col xs={12}>
-                <ContactCard
-                  ImgSource={ContactImg1}
-                  altText="A contact photo"
-                  name="Michal Kouřík"
-                  position="Technological teamleader"
-                  email="michal.kourik@starkysclub.com"
-                />
+              <Col xs={12} sm={6}>
+                {technologies.description}
               </Col>
-              <Col xs={12}>
-                <ContactCard
-                  ImgSource={ContactImg2}
-                  altText="A contact photo"
-                  name="Martin Švach"
-                  position="Business development"
-                  email="martin.svach@starkysclub.com"
-                />
-              </Col>
-              <Col xs={12}>
-                <ContactCard
-                  ImgSource={ContactImg3}
-                  altText="A contact photo"
-                  name="Václav Brzezina"
-                  position="Frontend teamleader"
-                  email="vaclav.brzezina@starkysclub.com"
-                />
+              <Col xs={12} smOffset={1} sm={4}>
+                <Row className="logoRow">
+                  {technologies.logos && technologies.logos.map((logo, i) => {
+                    return (
+                      {/*<TechnologyItem
+                        key={i}
+                        source={logo!.logo!}
+                      // FIXME: alt={`${technologies.title} logo`}
+                      />*/}
+                    );
+                  })}
+                </Row>
               </Col>
             </Row>
-          </Col>
-        </Row>
-      </Grid>
-    </section>
-    <section>
-      <a href="https://goo.gl/maps/1rP52P6eimCVF58y9" target="_blank">
-        <Image altText="Address map" source={map} />
-      </a>
-    </section>
-     {/* Instagram */}
-     <InstagramRoll />
-  </div>
-);
+          </Grid>
+        </section>
+      }
+      <BlogRollQuery />
+      {/* Contact Us */}
+      <section id="contact">
+        <Grid>
+          <h1>Contact us</h1>
+          <Row className="contact-wrap">
+            <Col xs={12} sm={6}>
+              <StyledContactForm />
+            </Col>
+            <Col xs={12} sm={6}>
+              <Row>
+                <Col xs={12}>
+                  <ContactCard
+                    ImgSource={ContactImg1}
+                    altText="A contact photo"
+                    name="Michal Kouřík"
+                    position="Technological teamleader"
+                    email="michal.kourik@starkysclub.com"
+                  />
+                </Col>
+                <Col xs={12}>
+                  <ContactCard
+                    ImgSource={ContactImg2}
+                    altText="A contact photo"
+                    name="Martin Švach"
+                    position="Business development"
+                    email="martin.svach@starkysclub.com"
+                  />
+                </Col>
+                <Col xs={12}>
+                  <ContactCard
+                    ImgSource={ContactImg3}
+                    altText="A contact photo"
+                    name="Václav Brzezina"
+                    position="Frontend teamleader"
+                    email="vaclav.brzezina@starkysclub.com"
+                  />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Grid>
+      </section>
+      <section>
+        <a href="https://goo.gl/maps/1rP52P6eimCVF58y9" target="_blank">
+          <Image altText="Address map" source={map} />
+        </a>
+      </section>
+      {/* Instagram */}
+      <InstagramRoll />
+    </div>
+  );
 
 export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   .container {
