@@ -1,17 +1,22 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
-import { MarkdownRemark, Query } from "../../graphql/types";
+import { MarkdownRemark, Maybe, Query } from "../../graphql/types";
 import styled, { SCP } from "../../styles/theme";
 import StyledCarousel from "../Carousel/Carousel";
 import StyledBlogItem from "./BlogItem";
 
 interface P extends SCP {
   blogPosts: MarkdownRemark[];
+  locale: Maybe<string>;
 }
 
 class Blog extends React.Component<P> {
   public render() {
+    const blogPosts = this.props.blogPosts && this.props.blogPosts.filter(post => post.frontmatter!.locale === this.props.locale);
+    if (!blogPosts.length) {
+      return null;
+    }
     return (
       <section className={this.props.className}>
         <Grid className="container">
@@ -19,7 +24,7 @@ class Blog extends React.Component<P> {
           <Row className="blog-wrap">
             <Col className="blog-item">
               <StyledCarousel>
-                {this.props.blogPosts && this.props.blogPosts.map((post: MarkdownRemark) => {
+                {blogPosts.map((post: MarkdownRemark) => {
                   return (
                     <StyledBlogItem
                       className="block-item"
@@ -83,10 +88,7 @@ const BlogRollQuery: React.SFC<Omit<P, "blogPosts">> = props => {
     <StaticQuery
       query={graphql`
         query BlogRollQuery {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "BlogPost" } } }
-          ) {
+          allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "BlogPost"}}}, sort: {order: DESC, fields: frontmatter___date}) {
             edges {
               node {
                   ...BlogInfo

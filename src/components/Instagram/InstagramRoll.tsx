@@ -89,7 +89,7 @@ const InstagramRoll: React.SFC<Omit<P, "instagramPosts">> = props => {
     <StaticQuery
       query={graphql`
               query InstagramRollQuery {
-                allInstaNode {
+                allInstaNode(sort: {order: DESC, fields: timestamp}) {
                   edges {
                     node {
                       ...InstaNodeInfo
