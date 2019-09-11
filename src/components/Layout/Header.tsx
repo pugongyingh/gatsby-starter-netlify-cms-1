@@ -176,12 +176,12 @@ const Header = styled(HeaderTemplate)`
     }
 
     @media ${props => props.theme.screen.laptopL} {
-      justify-content: center;
+      justify-content: initial;
       text-align: left;
 
       .starkyslogo {
-        width:78px;
-        height: 85px;
+        width:78px !important;
+        height: 85px !important;
       }
     }
   }
