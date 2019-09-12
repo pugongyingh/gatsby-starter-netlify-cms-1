@@ -60,6 +60,13 @@ const Navbar = styled(NavbarTemplate)`
   right: 0;
   align-items: flex-end;
   flex-direction: column;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  color: ${props => props.theme.colors.white};
+
+  @media ${props => props.theme.screen.laptop} {
+      background: none;
+    }
 
   .grid-wrap {
     @media (max-width: 768px) {
@@ -87,17 +94,54 @@ const Navbar = styled(NavbarTemplate)`
     }
   }
 
+  /* .navbar-burger {
+    cursor: pointer;
+    display: block;
+    height: 3.25rem;
+    position: relative;
+    width: 3.25rem;
+    margin-left: auto;
+    background: url("${menuIcon}") no-repeat;
+    background-size: 45px;
+    background-position: center;
+  } */
+
   .navbar-burger {
-      cursor: pointer;
-      display: block;
-      height: 3.25rem;
-      position: relative;
-      width: 3.25rem;
-      margin-left: auto;
-      background: url("${menuIcon}") no-repeat;
-      background-size: 45px;
-      background-position: center;
-    }
+  margin: 1em;
+  width: 30px;
+}
+
+.navbar-burger:after, 
+.navbar-burger:before, 
+.navbar-burger div {
+  background-color: #fff;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    /* background: url("${menuIcon}") no-repeat;
+    background-size: 45px;
+    background-position: center; */
+}
+
+.navbar-burger:hover:before {
+  transform: translateY(5px) rotate(135deg);
+}
+
+.navbar-burger:hover:after {
+  transform: translateY(5px) rotate(-135deg);
+}
+
+.navbar-burger:hover div {
+  transform: scale(0);
+}
+
 
   .navbar-menu {
     /* display none by default --> onClick show MENU */
@@ -121,11 +165,14 @@ const Navbar = styled(NavbarTemplate)`
     font-size: 16px;
     line-height: 20px;
     text-decoration: none;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.white};
     cursor: pointer;
 
-    :not(:last-child) {
+    @media ${props => props.theme.screen.laptop} {
+      color: ${props => props.theme.colors.black};
+      :not(:last-child) {
       margin-right: 17px;
+    }
     }
   }
 
