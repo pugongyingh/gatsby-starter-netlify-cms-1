@@ -136,7 +136,7 @@ const StyledContact = styled(ContactTemplate)`
     }
 `;
 
-const Contact: React.SFC<Omit<P, "contacts">> = props => {
+const Contact: React.SFC<Omit<P, "configs">> = props => {
     return (
         <StaticQuery
             query={graphql`
