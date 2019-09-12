@@ -9,7 +9,15 @@ import Header from "../components/Layout/Header";
 import NewsItem from "../components/NewsItem";
 import ReferenceItem from "../components/ReferenceItem";
 import TechnologyItem from "../components/TechnologyItem";
-import { File, MarkdownRemarkFrontmatterClients, MarkdownRemarkFrontmatterNews, MarkdownRemarkFrontmatterReferences, MarkdownRemarkFrontmatterTechnologies, MarkdownRemarkFrontmatterWork, Maybe } from "../graphql/types";
+import {
+  File,
+  MarkdownRemarkFrontmatterClients,
+  MarkdownRemarkFrontmatterNews,
+  MarkdownRemarkFrontmatterReferences,
+  MarkdownRemarkFrontmatterTechnologies,
+  MarkdownRemarkFrontmatterWork,
+  Maybe
+} from "../graphql/types";
 import map from "../img/map.png";
 import WhatwedoBackground from "../img/what-we-do-bg.png";
 import styled from "../styles/theme";
@@ -50,7 +58,12 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             <Row className="row">
               {clients.items.map(client => {
                 return (
-                  <Col key={client!.title} lg={3} xs={12} className="col">
+                  <Col
+                    key={client!.title}
+                    lg={3}
+                    xs={12}
+                    className="clients__item"
+                  >
                     {client!.logo && (
                       <PreviewCompatibleImage
                         image={client!.logo}
@@ -125,52 +138,52 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 />
               );
             })}
-
         </Grid>
       </section>
     )}
-      {/* Technologies */}
-      {technologies &&
-        <section className="technologies">
-          <Grid className="container">
-            <h1>{technologies.title}</h1>
-            <Row>
-              <Col xs={12} sm={6}>
-                {technologies.description}
+    {/* Technologies */}
+    {technologies && (
+      <section className="technologies">
+        <Grid className="container">
+          <h1>{technologies.title}</h1>
+          <Row>
+            <Col xs={12} sm={6}>
+              {technologies.description}
+            </Col>
+            {technologies.items && (
+              <Col xs={12} smOffset={1} sm={4}>
+                <Row className="logoRow">
+                  {technologies.items.map((technology, i) => {
+                    return (
+                      <TechnologyItem
+                        key={i}
+                        logo={technology!.logo!}
+                        title={technology!.title!}
+                      />
+                    );
+                  })}
+                </Row>
               </Col>
-              {technologies.items &&
-                <Col xs={12} smOffset={1} sm={4}>
-                  <Row className="logoRow">
-                    {technologies.items.map((technology, i) => {
-                      return (
-                        <TechnologyItem
-                          key={i}
-                          logo={technology!.logo!}
-                          title={technology!.title!}
-                        />
-                      );
-                    })}
-                  </Row>
-                </Col>}
-            </Row>
-          </Grid>
-        </section>
-      }
-      {/* Blog */}
-      <section id="blog">
-        <BlogRollQuery locale={locale} />
+            )}
+          </Row>
+        </Grid>
       </section>
-      {/* Contact Us */}
-      <section id="contact">
-        <Contact locale={locale} />
-      </section>
-      {/* Instagram */}
-      <section id="instagram">
-        <InstagramRoll />
-      </section>
-      <Footer locale={locale} />
-    </div>
-  );
+    )}
+    {/* Blog */}
+    <section id="blog">
+      <BlogRollQuery locale={locale} />
+    </section>
+    {/* Contact Us */}
+    <section id="contact">
+      <Contact locale={locale} />
+    </section>
+    {/* Instagram */}
+    <section id="instagram">
+      <InstagramRoll />
+    </section>
+    <Footer locale={locale} />
+  </div>
+);
 
 export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   .container {
@@ -247,20 +260,30 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       padding: 7.5rem 0;
     }
 
-    .container {
-      .row {
-        padding-top: 4vh;
-      }
-      .col {
+      &__item {
         display: flex;
-        justify-content: left;
-        margin: -1px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        :not(:last-child) {
+            border-bottom: 1px solid ${props =>
+              props.theme.colors.clientBorder};
+          }
 
         @media ${props => props.theme.screen.laptop} {
           :not(:last-child) {
             border-right: 1px solid ${props => props.theme.colors.clientBorder};
+            border-bottom: none;
           }
         }
+
+        img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            min-height: 200px;
+          }
       }
     }
   }
