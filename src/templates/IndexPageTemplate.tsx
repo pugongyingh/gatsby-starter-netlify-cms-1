@@ -171,6 +171,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   .container {
     @media ${props => props.theme.screen.laptopL} {
       width: 1410px !important;
+      max-width: 1410px !important;
     }
   }
 
