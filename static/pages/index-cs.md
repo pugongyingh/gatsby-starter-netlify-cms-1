@@ -50,17 +50,17 @@ clients:
 work:
   items:
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Postavíme váš produkt na nejnovějších technologiích s využitím cloudu.
+        Dodáme design a UX, navrhneme architekturu a realizujeme vývoj a
+        testing. 
       logo: /img/sw-dev-icon.svg
-      title: Software Development
+      title: Vyvíjíme produkty
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Doplníme váš tým o zkušené seniorní programátory, spolehlivé middle
+        vývojáře a talentované juniory. Nejraději dodáváme sehrané týmy o více
+        programátorech.
       logo: /img/design-icon.svg
-      title: Design & Testing
+      title: Dodáváme kapacity
     - description: >-
         Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
         yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
@@ -73,7 +73,7 @@ work:
         yardarm hempen halter furl. Swab barque interloper
       logo: /img/workshop-icon.svg
       title: Workshops
-  subtitle: Driving brands forward online.
+  subtitle: 'Vyvíjíme software, který maximalizuje zisk'
   title: Co děláme
 references:
   items:
