@@ -65,7 +65,7 @@ work:
         jakékoliv technologie, které využíváme při vývoji (Java, React a
         Angular, AWS).
       logo: /img/workshop-icon.svg
-      title: Přednášíme
+      title: Přednášíme a školíme
   subtitle: '-'
   title: Co děláme
 references:
