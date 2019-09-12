@@ -62,11 +62,11 @@ work:
       logo: /img/design-icon.svg
       title: Dodáváme kapacity
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Rozebereme vaši službu či produkt na prvočinitele a vymyslíme způsob jak
+        zvýšit efektivitu vývojového týmu. Rychlejší dodávky do produkce za
+        správné velikosti týmu vám v konečném důsledku ušetří peníze.
       logo: /img/analysis-icon.svg
-      title: Consultations & Technological analysis
+      title: Konzultace a workshopy
     - description: >-
         Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
         yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
