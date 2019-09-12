@@ -11,48 +11,51 @@ import MapTooltip from "./MapTooltip";
 // TODO: TYPECHECK!!!!!!
 
 interface P extends SCP {
-    contacts: MarkdownRemarkEdge[];
+    configs: MarkdownRemarkEdge[];
     locale: Maybe<string>;
 }
 
+const createMapOptions = (maps: Maps): MapOptions => {
+    return {
+        panControl: false,
+        mapTypeControl: false,
+        scrollwheel: false,
+        styles: [{ stylers: [{ 'saturation': -100 }, { 'gamma': 0.8 }, { 'lightness': 4 }, { 'visibility': 'on' }] }, {
+            featureType: "poi",
+            stylers: [
+                { visibility: "off" }
+            ]
+        }],
+        disableDoubleClickZoom: true,
+        disableDefaultUI: true,
+        draggable: false
+    }
+}
 
-const ContactTemplate: React.FC<P> = ({ className, contacts, locale }) => {
-    const localizedContact = contacts.find(
-        (contact) => contact.node.frontmatter!.locale === locale
+const ContactTemplate: React.FC<P> = ({ className, configs, locale }) => {
+    const currentConfig = configs.find(
+        (config) => config.node.frontmatter!.locale === locale
     );
-    if (!localizedContact) {
+    if (!currentConfig) {
         return null;
     }
-    const createMapOptions = (maps: Maps): MapOptions => {
-        return {
-            panControl: false,
-            mapTypeControl: false,
-            scrollwheel: false,
-            styles: [{ stylers: [{ 'saturation': -100 }, { 'gamma': 0.8 }, { 'lightness': 4 }, { 'visibility': 'on' }] }, {
-                featureType: "poi",
-                stylers: [
-                    { visibility: "off" }
-                ]
-            }],
-            disableDoubleClickZoom: true,
-            disableDefaultUI: true,
-            draggable: false
-        }
-    }
-    const lat = parseFloat(localizedContact.node.frontmatter!.contact!.address!.lat!);
-    const lng = parseFloat(localizedContact.node.frontmatter!.contact!.address!.lng!)
+
+    const contact = currentConfig.node.frontmatter!.contact!;
+    const lat = parseFloat(contact.address!.lat!);
+    const lng = parseFloat(contact.address!.lng!)
+
     return (
         <div className={className}>
             <Grid className="container">
-                <h1>{localizedContact.node.frontmatter!.contact!.title}</h1>
+                <h1>{contact.title}</h1>
                 <Row className="contact-wrap">
                     <Col xs={12} sm={6}>
                         <StyledContactForm />
                     </Col>
-                    {localizedContact.node.frontmatter!.contact!.contactPerson &&
+                    {contact.contactPerson &&
                         <Col xs={12} sm={6}>
                             <Row>
-                                {localizedContact.node.frontmatter!.contact!.contactPerson.map((person) => (
+                                {contact.contactPerson.map((person) => (
                                     <Col xs={12} key={person!.name}>
                                         <ContactCard
                                             image={person!.image!}
@@ -78,7 +81,7 @@ const ContactTemplate: React.FC<P> = ({ className, contacts, locale }) => {
                     }}
                     options={createMapOptions}
                 >
-                    <MapTooltip lat={lat} lng={lng} address={localizedContact.node.frontmatter!.contact!.address!} />
+                    <MapTooltip lat={lat} lng={lng} address={contact.address!} />
                 </GoogleMap>
             </div>
         </div>
@@ -145,13 +148,7 @@ const Contact: React.SFC<Omit<P, "contacts">> = props => {
                             title
                             locale
                             contact {
-                                address {
-                                    city
-                                    lat
-                                    lng
-                                    street
-                                    zip
-                                }
+                                ...ContactInfo
                             }
                         }
                     }
@@ -159,7 +156,7 @@ const Contact: React.SFC<Omit<P, "contacts">> = props => {
                 }
                 }
             `}
-            render={(data: Query) => <StyledContact contacts={data.allMarkdownRemark.edges} {...props} />}
+            render={(data: Query) => <StyledContact configs={data.allMarkdownRemark.edges} {...props} />}
         />
     );
 };
