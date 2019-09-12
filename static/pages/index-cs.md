@@ -50,69 +50,68 @@ clients:
 work:
   items:
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Postavíme váš produkt na nejnovějších technologiích s využitím cloudu.
+        Dodáme funkční design, navrhneme architekturu a realizujeme vývoj a
+        testing. 
       logo: /img/sw-dev-icon.svg
-      title: Software Development
+      title: Vyvíjíme produkty
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Doplníme váš tým o zkušené seniorní programátory, spolehlivé middle
+        vývojáře a talentované juniory. Největší hodnotu pro zákazníka vždy měly
+        naše sehrané týmy o více programátorech.
       logo: /img/design-icon.svg
-      title: Design & Testing
+      title: Dodáváme kapacity
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Rozebereme vaši službu či produkt na prvočinitele a vymyslíme způsob jak
+        zvýšit efektivitu vývojového týmu. Rychlejší dodávky do produkce za
+        správné velikosti týmu vám v konečném důsledku ušetří peníze.
       logo: /img/analysis-icon.svg
-      title: Consultations & Technological analysis
+      title: Konzultujeme vaše řešení
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Připravíme pro vás workshop, který posune expertízu vašich programátorů
+        na další úroveň. Workshop vytvoříme na míru dle vašich potřeb na
+        jakékoliv technologie, které využíváme při vývoji (Java, React a
+        Angular, AWS).
       logo: /img/workshop-icon.svg
-      title: Workshops
-  subtitle: Driving brands forward online.
+      title: Přednášíme
+  subtitle: '-'
   title: Co děláme
 references:
   items:
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Nadnárodní korporaci Citrix pomáháme s vývojovými kapacitami na jejich
+        řešení pro zjednodušování komplexních firemních IT služeb.
       image: /img/mask-group.png
-      subtitle: Name of the Project
-      title: SOFTWARE DEVELOPMENT
+      subtitle: Citrix Systems
+      title: '#java'
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Pro největší českou cestovku jsme spravovali a technologicky rozvíjeli
+        business-critical řešení pro vyhledávání a prodej zájezdů, společně jsme
+        také připravili web na prodej letenek letenky.fischer.cz.
       image: /img/project-2.png
-      subtitle: Name of Project
-      title: REDESIGN OF SITE
+      subtitle: 'CK Fischer '
+      title: '#java #javascript '
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+
+        Vyvíjeli jsme nové typy stránek (kampaně, Black Friday) a přepisovali
+        jsme klíčové stránky e-shopu z PHP a Angularu. Ve Vue.js a node.js jsme
+        rovněž tvořili microservices. Šlo o samostatné nástroje na tvorbu a
+        administraci kampaní a administraci bannerových ploch napříč celým webem
+        Mallu.
       image: /img/project-3.png
-      subtitle: Name of Project
-      title: SOFTWARE DEVELOPMENT
-  subtitle: c
-  title: References
+      subtitle: Mall.cz
+      title: '#javascript'
+  subtitle: '-'
+  title: Reference
 technologies:
-  description: >-
-    Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
-    babies david duchovny lisa frank. Nerf guns hoop earrings. 
-
-
-    Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm.
-    Pinnace holystone mizzenmast quarter crow's nest nipperkin.
+  description: >
+    Na backendu je pro nás jedničkou Java se Spring a Hibernate frameworky. Z
+    JavaScriptových frameworků volíme React (React Native), Vue.js nebo Angular.
+    Z cloudových technologií upřednostňujeme Amazon Web Services. Na vývoj,
+    testování, i v produkci používáme Docker. 
   items:
     - logo: /img/image.svg
       title: Java
-    - logo: /img/polymer-logo.svg
-      title: Polymer
     - logo: /img/react-logo.svg
       title: React
     - logo: /img/aws-logo.svg
@@ -121,6 +120,6 @@ technologies:
       title: Swift
     - logo: /img/docker-logo.svg
       title: Docker
-  title: Technologies
+  title: Technologie
 ---
 
