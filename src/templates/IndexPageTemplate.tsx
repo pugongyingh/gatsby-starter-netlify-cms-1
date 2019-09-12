@@ -133,9 +133,10 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 />
               );
             })}
-          </Grid>
-        </section>
-      }
+
+        </Grid>
+      </section>
+    )}
       {/* Technologies */}
       {technologies &&
         <section className="technologies">
@@ -215,7 +216,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   #what-we-do {
     color: ${props => props.theme.colors.white};
     background: url(${WhatwedoBackground}) no-repeat center center scroll;
-4
+    background-size: cover;
+
     .what-we-do {
       &-content-wrap {
         justify-content: space-between;
