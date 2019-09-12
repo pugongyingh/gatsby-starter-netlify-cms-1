@@ -83,14 +83,14 @@ references:
         řešení pro zjednodušování komplexních firemních IT služeb.
       image: /img/mask-group.png
       subtitle: Citrix Systems
-      title: '#java'
+      title: java
     - description: >-
         Pro největší českou cestovku jsme spravovali a technologicky rozvíjeli
         business-critical řešení pro vyhledávání a prodej zájezdů, společně jsme
         také připravili web na prodej letenek letenky.fischer.cz.
       image: /img/project-2.png
       subtitle: 'CK Fischer '
-      title: '#java #javascript '
+      title: 'java javascript '
     - description: >-
 
         Vyvíjeli jsme nové typy stránek (kampaně, Black Friday) a přepisovali
@@ -100,7 +100,7 @@ references:
         Mallu.
       image: /img/project-3.png
       subtitle: Mall.cz
-      title: '#javascript'
+      title: javascript
   subtitle: '-'
   title: Reference
 technologies:
