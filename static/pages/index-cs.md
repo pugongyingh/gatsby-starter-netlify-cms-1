@@ -27,18 +27,18 @@ news:
         Instagram! A když jsme velebili kancelář, tak proč to nevzít při jednom
         i s webovou prezentací?
       title: Rekonstrukce kanceláře a nový web
-  title: News
+  title: Co nového ve Starky's Clubu
 clients:
   items:
-    - logo: /img/ubisoft_logo.svg
-      title: Ubisoft
+    - logo: /img/citrix.png
+      title: Citrix
     - logo: /img/lenovo_logo.svg
       title: Lenovo
     - logo: /img/xbox_logo.svg
       title: Xbox
     - logo: /img/logitech_logo.svg
       title: Logitech
-  title: Our Clients
+  title: S kým jsme měli tu čest
 work:
   items:
     - description: >-
