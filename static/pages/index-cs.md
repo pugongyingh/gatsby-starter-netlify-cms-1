@@ -51,14 +51,14 @@ work:
   items:
     - description: >-
         Postavíme váš produkt na nejnovějších technologiích s využitím cloudu.
-        Dodáme design a UX, navrhneme architekturu a realizujeme vývoj a
+        Dodáme funkční design, navrhneme architekturu a realizujeme vývoj a
         testing. 
       logo: /img/sw-dev-icon.svg
       title: Vyvíjíme produkty
     - description: >-
         Doplníme váš tým o zkušené seniorní programátory, spolehlivé middle
-        vývojáře a talentované juniory. Nejraději dodáváme sehrané týmy o více
-        programátorech.
+        vývojáře a talentované juniory. Největší hodnotu pro zákazníka vždy měly
+        naše sehrané týmy o více programátorech.
       logo: /img/design-icon.svg
       title: Dodáváme kapacity
     - description: >-
@@ -66,14 +66,15 @@ work:
         zvýšit efektivitu vývojového týmu. Rychlejší dodávky do produkce za
         správné velikosti týmu vám v konečném důsledku ušetří peníze.
       logo: /img/analysis-icon.svg
-      title: Konzultace a workshopy
+      title: Konzultujeme vaše řešení
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Připravíme pro vás workshop, který posune expertízu vašich programátorů
+        na další úroveň. Workshop vytvoříme na míru dle vašich potřeb na
+        jakékoliv technologie, které využíváme při vývoji (Java, React a
+        Angular, AWS).
       logo: /img/workshop-icon.svg
-      title: Workshops
-  subtitle: 'Vyvíjíme software, který maximalizuje zisk'
+      title: Přednášíme
+  subtitle: '-'
   title: Co děláme
 references:
   items:
@@ -99,7 +100,7 @@ references:
       subtitle: Name of Project
       title: SOFTWARE DEVELOPMENT
   subtitle: c
-  title: References
+  title: Reference
 technologies:
   description: >-
     Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
