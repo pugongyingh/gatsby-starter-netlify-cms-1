@@ -48,7 +48,7 @@ const ContactTemplate: React.FC<P> = ({ className, configs, locale }) => {
         <div className={className}>
             <Grid className="container contact">
                 <h1>{contact.title}</h1>
-                <Row className="contact__wrap">
+                <Row className="">
                     <Col xs={12} sm={6}>
                         <StyledContactForm />
                     </Col>
