@@ -35,9 +35,17 @@ clients:
     - logo: /img/lenovo_logo.svg
       title: CK Fischer
     - logo: /img/xbox_logo.svg
-      title: Xbox
+      title: Mall.cz
     - logo: /img/logitech_logo.svg
-      title: Logitech
+      title: IceWarp
+    - logo: /img/citrix.png
+      title: R Altra
+    - logo: /img/citrix.png
+      title: BSC
+    - logo: /img/citrix.png
+      title: eValue
+    - logo: /img/citrix.png
+      title: SignageOS
   title: S kým jsme měli tu čest
 work:
   items:
@@ -66,7 +74,7 @@ work:
       logo: /img/workshop-icon.svg
       title: Workshops
   subtitle: Driving brands forward online.
-  title: What we do
+  title: Co děláme
 references:
   items:
     - description: >-
