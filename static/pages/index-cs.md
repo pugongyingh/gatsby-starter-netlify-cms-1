@@ -112,8 +112,6 @@ technologies:
   items:
     - logo: /img/image.svg
       title: Java
-    - logo: /img/polymer-logo.svg
-      title: Polymer
     - logo: /img/react-logo.svg
       title: React
     - logo: /img/aws-logo.svg
