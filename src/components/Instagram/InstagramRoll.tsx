@@ -14,7 +14,7 @@ interface P extends SCP {
 class Instagram extends React.Component<P> {
   public render() {
     return (
-      <section className={this.props.className}>
+      <div className={this.props.className}>
         <Grid className="container">
           <h1>Instagram</h1>
           <Row className="instagram-items-wrap">
@@ -42,7 +42,7 @@ class Instagram extends React.Component<P> {
             />
           </Row>
         </Grid>
-      </section>
+      </div>
     );
   }
 }

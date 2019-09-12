@@ -9,16 +9,8 @@ import Header from "../components/Layout/Header";
 import NewsItem from "../components/NewsItem";
 import ReferenceItem from "../components/ReferenceItem";
 import TechnologyItem from "../components/TechnologyItem";
-import {
-  File,
-  MarkdownRemarkFrontmatterClients,
-  MarkdownRemarkFrontmatterNews,
-  MarkdownRemarkFrontmatterReferences,
-  MarkdownRemarkFrontmatterTechnologies,
-  MarkdownRemarkFrontmatterWork,
-  Maybe
-} from "../graphql/types";
-import map from "../img/address-map.png";
+import { File, MarkdownRemarkFrontmatterClients, MarkdownRemarkFrontmatterNews, MarkdownRemarkFrontmatterReferences, MarkdownRemarkFrontmatterTechnologies, MarkdownRemarkFrontmatterWork, Maybe } from "../graphql/types";
+import map from "../img/map.png";
 import WhatwedoBackground from "../img/what-we-do-bg.png";
 import styled from "../styles/theme";
 
@@ -164,18 +156,18 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           </Grid>
         </section>
       }
-      <BlogRollQuery locale={locale} />
+      {/* Blog */}
+      <section id="blog">
+        <BlogRollQuery locale={locale} />
+      </section>
       {/* Contact Us */}
       <section id="contact">
         <Contact locale={locale} />
       </section>
-      <section>
-        <a href="https://goo.gl/maps/1rP52P6eimCVF58y9" target="_blank">
-          <PreviewCompatibleImage alt="Address map" image={map} />
-        </a>
-      </section>
       {/* Instagram */}
-      <InstagramRoll />
+      <section id="instagram">
+        <InstagramRoll />
+      </section>
       <Footer locale={locale} />
     </div>
   );

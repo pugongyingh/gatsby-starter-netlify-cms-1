@@ -4,7 +4,8 @@ title: Starky's club CS
 contact:
   address:
     city: Praha
-    gps: '50.0660539N, 14.4955483E'
+    lat: '50.066193'
+    lng: '14.495921'
     street: Strančická 1084/29
     zip: '15000'
   contactPerson:

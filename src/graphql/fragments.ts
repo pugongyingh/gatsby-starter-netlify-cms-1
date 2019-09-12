@@ -134,4 +134,24 @@ export const query = graphql`
       src
     }
   }
+  fragment ContactInfo on MarkdownRemarkFrontmatterContact {
+    title
+                                contactPerson {
+                                    email
+                                    linkedIn
+                                    name
+                                    role
+                                    phone
+                                    image {
+                                        ...FileInfo
+                                    }
+                                }
+                                address {
+                                    city
+                                    lat
+                                    lng
+                                    street
+                                    zip
+                                }
+  }
 `

@@ -1,5 +1,8 @@
 import * as React from "react";
 import Content, { ContentFormatter } from "../components/CMS/Content";
+import Contact from "../components/Contact/Contact";
+import InstagramRoll from "../components/Instagram/InstagramRoll";
+import Footer from "../components/Layout/Footer";
 
 interface BlogPostProps {
     content: string;
@@ -7,6 +10,7 @@ interface BlogPostProps {
     description: string;
     title: string;
     helmet?: React.ReactElement
+    locale: string;
 }
 
 export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
@@ -14,24 +18,33 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
     contentComponent,
     description,
     title,
-    helmet,
+    locale
 }) => {
     const PostContent = contentComponent || Content;
-
     return (
-        <section className="section">
-            {helmet}
-            <div className="container content">
-                <div className="columns">
-                    <div className="column is-10 is-offset-1">
-                        <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                            {title}
-                        </h1>
-                        <p>{description}</p>
-                        <PostContent content={content} />
+        <div>
+            <section className="section">
+                <div className="container content">
+                    <div className="columns">
+                        <div className="column is-10 is-offset-1">
+                            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                                {title}
+                            </h1>
+                            <p>{description}</p>
+                            <PostContent content={content} />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            {/* Contact Us */}
+            <section id="contact">
+                <Contact locale={locale} />
+            </section>
+            {/* Instagram */}
+            <section id="instagram">
+                <InstagramRoll />
+            </section>
+            <Footer locale={locale} />
+        </div>
     );
 };

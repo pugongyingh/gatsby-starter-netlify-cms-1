@@ -34,6 +34,7 @@ const BlogPost = ({ data }: BlogPostTemplateProps) => {
                     </Helmet>
                 }
                 title={post.frontmatter.title!}
+                locale={post.frontmatter.locale!}
             />
         </Page>
     );
@@ -45,6 +46,7 @@ export const BlogPostPreview = ({ entry, widgetFor, locale }: any) => (
             content={widgetFor('body')}
             description={entry.getIn(['data', 'description'])}
             title={entry.getIn(['data', 'title'])}
+            locale={entry.getIn(['data', 'locale'])}
         />
     </Preview>
 )
@@ -58,6 +60,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        locale
       }
     }
   }
