@@ -8,14 +8,39 @@ subheading: >-
 hero: /img/home-bg.png
 news:
   items:
-    - description: dsfdfgsdgf
-      title: dsfgfsddgsf
-  title: dfsdfgsdf
+    - description: >-
+        Rozhodli jsme se, že si tu naši “klubovnu” trošku vyšperkujeme.
+        Revitalizovali jsme open space prostor a zasedačku, položili nové
+        koberce a vybrali nové hry na PS. Jak to dopadlo? Mrkněte na náš
+        Instagram! A když jsme velebili kancelář, tak proč to nevzít při jednom
+        i s webovou prezentací?
+      title: Rekonstrukce kanceláře a nový web
+    - description: >-
+        Rozhodli jsme se, že si tu naši “klubovnu” trošku vyšperkujeme.
+        Revitalizovali jsme open space prostor a zasedačku, položili nové
+        koberce a vybrali nové hry na PS. Jak to dopadlo? Mrkněte na náš
+        Instagram! A když jsme velebili kancelář, tak proč to nevzít při jednom
+        i s webovou prezentací?
+      title: Rekonstrukce kanceláře a nový web
+    - description: >-
+        Rozhodli jsme se, že si tu naši “klubovnu” trošku vyšperkujeme.
+        Revitalizovali jsme open space prostor a zasedačku, položili nové
+        koberce a vybrali nové hry na PS. Jak to dopadlo? Mrkněte na náš
+        Instagram! A když jsme velebili kancelář, tak proč to nevzít při jednom
+        i s webovou prezentací?
+      title: Rekonstrukce kanceláře a nový web
+  title: News
 clients:
   items:
     - logo: /img/ubisoft_logo.svg
-      title: fdgfdsgfdgdfs
-  title: News
+      title: Ubisoft
+    - logo: /img/lenovo_logo.svg
+      title: Lenovo
+    - logo: /img/xbox_logo.svg
+      title: Xbox
+    - logo: /img/logitech_logo.svg
+      title: Logitech
+  title: Our Clients
 work:
   items:
     - description: >-
