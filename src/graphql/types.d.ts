@@ -799,7 +799,10 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterTechnologiesDescription = 'childMarkdownRemark___frontmatter___technologies___description',
   ChildMarkdownRemarkFrontmatterTechnologiesItems = 'childMarkdownRemark___frontmatter___technologies___items',
   ChildMarkdownRemarkFrontmatterTechnologiesTitle = 'childMarkdownRemark___frontmatter___technologies___title',
+  ChildMarkdownRemarkFrontmatterContactContactPerson = 'childMarkdownRemark___frontmatter___contact___contactPerson',
+  ChildMarkdownRemarkFrontmatterContactTitle = 'childMarkdownRemark___frontmatter___contact___title',
   ChildMarkdownRemarkFrontmatterFooterCopy = 'childMarkdownRemark___frontmatter___footer___copy',
+  ChildMarkdownRemarkFrontmatterFooterSocial = 'childMarkdownRemark___frontmatter___footer___social',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -2111,10 +2114,20 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterTechnologiesItemsTitle = 'frontmatter___technologies___items___title',
   FrontmatterTechnologiesTitle = 'frontmatter___technologies___title',
   FrontmatterContactAddressCity = 'frontmatter___contact___address___city',
-  FrontmatterContactAddressGps = 'frontmatter___contact___address___gps',
+  FrontmatterContactAddressLat = 'frontmatter___contact___address___lat',
+  FrontmatterContactAddressLng = 'frontmatter___contact___address___lng',
   FrontmatterContactAddressStreet = 'frontmatter___contact___address___street',
   FrontmatterContactAddressZip = 'frontmatter___contact___address___zip',
+  FrontmatterContactContactPerson = 'frontmatter___contact___contactPerson',
+  FrontmatterContactContactPersonEmail = 'frontmatter___contact___contactPerson___email',
+  FrontmatterContactContactPersonLinkedIn = 'frontmatter___contact___contactPerson___linkedIn',
+  FrontmatterContactContactPersonName = 'frontmatter___contact___contactPerson___name',
+  FrontmatterContactContactPersonPhone = 'frontmatter___contact___contactPerson___phone',
+  FrontmatterContactContactPersonRole = 'frontmatter___contact___contactPerson___role',
+  FrontmatterContactTitle = 'frontmatter___contact___title',
   FrontmatterFooterCopy = 'frontmatter___footer___copy',
+  FrontmatterFooterSocial = 'frontmatter___footer___social',
+  FrontmatterFooterSocialLink = 'frontmatter___footer___social___link',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -2296,25 +2309,54 @@ export type MarkdownRemarkFrontmatterClientsItemsFilterListInput = {
 export type MarkdownRemarkFrontmatterContact = {
    __typename?: 'MarkdownRemarkFrontmatterContact',
   address: Maybe<MarkdownRemarkFrontmatterContactAddress>,
+  contactPerson: Maybe<Array<Maybe<MarkdownRemarkFrontmatterContactContactPerson>>>,
+  title: Maybe<Scalars['String']>,
 };
 
 export type MarkdownRemarkFrontmatterContactAddress = {
    __typename?: 'MarkdownRemarkFrontmatterContactAddress',
   city: Maybe<Scalars['String']>,
-  gps: Maybe<Scalars['String']>,
+  lat: Maybe<Scalars['String']>,
+  lng: Maybe<Scalars['String']>,
   street: Maybe<Scalars['String']>,
   zip: Maybe<Scalars['String']>,
 };
 
 export type MarkdownRemarkFrontmatterContactAddressFilterInput = {
   city: Maybe<StringQueryOperatorInput>,
-  gps: Maybe<StringQueryOperatorInput>,
+  lat: Maybe<StringQueryOperatorInput>,
+  lng: Maybe<StringQueryOperatorInput>,
   street: Maybe<StringQueryOperatorInput>,
   zip: Maybe<StringQueryOperatorInput>,
 };
 
+export type MarkdownRemarkFrontmatterContactContactPerson = {
+   __typename?: 'MarkdownRemarkFrontmatterContactContactPerson',
+  email: Maybe<Scalars['String']>,
+  image: Maybe<File>,
+  linkedIn: Maybe<Scalars['String']>,
+  name: Maybe<Scalars['String']>,
+  phone: Maybe<Scalars['String']>,
+  role: Maybe<Scalars['String']>,
+};
+
+export type MarkdownRemarkFrontmatterContactContactPersonFilterInput = {
+  email: Maybe<StringQueryOperatorInput>,
+  image: Maybe<FileFilterInput>,
+  linkedIn: Maybe<StringQueryOperatorInput>,
+  name: Maybe<StringQueryOperatorInput>,
+  phone: Maybe<StringQueryOperatorInput>,
+  role: Maybe<StringQueryOperatorInput>,
+};
+
+export type MarkdownRemarkFrontmatterContactContactPersonFilterListInput = {
+  elemMatch: Maybe<MarkdownRemarkFrontmatterContactContactPersonFilterInput>,
+};
+
 export type MarkdownRemarkFrontmatterContactFilterInput = {
   address: Maybe<MarkdownRemarkFrontmatterContactAddressFilterInput>,
+  contactPerson: Maybe<MarkdownRemarkFrontmatterContactContactPersonFilterListInput>,
+  title: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
@@ -2338,10 +2380,27 @@ export type MarkdownRemarkFrontmatterFilterInput = {
 export type MarkdownRemarkFrontmatterFooter = {
    __typename?: 'MarkdownRemarkFrontmatterFooter',
   copy: Maybe<Scalars['String']>,
+  social: Maybe<Array<Maybe<MarkdownRemarkFrontmatterFooterSocial>>>,
 };
 
 export type MarkdownRemarkFrontmatterFooterFilterInput = {
   copy: Maybe<StringQueryOperatorInput>,
+  social: Maybe<MarkdownRemarkFrontmatterFooterSocialFilterListInput>,
+};
+
+export type MarkdownRemarkFrontmatterFooterSocial = {
+   __typename?: 'MarkdownRemarkFrontmatterFooterSocial',
+  image: Maybe<File>,
+  link: Maybe<Scalars['String']>,
+};
+
+export type MarkdownRemarkFrontmatterFooterSocialFilterInput = {
+  image: Maybe<FileFilterInput>,
+  link: Maybe<StringQueryOperatorInput>,
+};
+
+export type MarkdownRemarkFrontmatterFooterSocialFilterListInput = {
+  elemMatch: Maybe<MarkdownRemarkFrontmatterFooterSocialFilterInput>,
 };
 
 export type MarkdownRemarkFrontmatterNews = {

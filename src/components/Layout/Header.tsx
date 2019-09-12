@@ -1,44 +1,63 @@
+import GatsbyLink from "gatsby-link";
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
 import { isString } from "util";
 import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/logo.svg";
 import { css, default as styled, SCP } from "../../styles/theme";
-
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
 interface P extends SCP {
   title: Maybe<string>;
-  subheading: Maybe<string>;
-  hero: string | File;
+  subheading?: Maybe<string>;
+  hero?: string | File;
+  compact?: boolean;
 }
 
-const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) => {
-  const file = isString(hero) ? hero : hero.base!
-
+const HeaderTemplate: React.SFC<P> = ({
+  hero,
+  title,
+  subheading,
+  className,
+  compact
+}) => {
+  const file = hero ? isString(hero) ? hero : hero.base! : "";
+  const Logo = (
+    <PreviewCompatibleImage
+      className="starkyslogo"
+      image={logo}
+      alt="Starkys Logo"
+    />);
   return (
     <header className={className}>
       <div>
-        {file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) && (
+        {!compact && file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) && (
           <video
-            src={isString(hero) ? hero : hero.publicURL}
+            src={hero ? isString(hero) ? hero : hero.publicURL! : ""}
             playsInline={true}
             autoPlay={true}
             muted={true}
             loop={true}
           />
         )}
-        <div className="overlay" />
+        {!compact && <>
+          <div className="circle" />
+          <div className="overlay" />
+        </>
+        }
         <div className="text-wrap">
-          <Grid className="grid" fluid={true}>
+          <Grid className="grid">
             <Row>
-              <Col className="col-1" xs={12} md={6}>
-                <img src={logo} />
+              <Col className="logo-section" xs={12} lg={6}>
+                {compact ? <GatsbyLink to="/" replace={false}>{Logo}</GatsbyLink> : Logo}
                 <h1>{title}</h1>
-                <button>Work with us</button>
+                {!compact && <button>Work with us</button>}
               </Col>
-              <Col className="col-2" xs={12} md={6}>
-                <p>{subheading}</p>
-              </Col>
+              {!compact &&
+                <Col className="text-section" xs={12} lg={6}>
+                  <p>{subheading}</p>
+                </Col>
+              }
             </Row>
           </Grid>
         </div>
@@ -48,20 +67,26 @@ const HeaderTemplate: React.SFC<P> = ({ hero, title, subheading, className }) =>
 };
 
 const Header = styled(HeaderTemplate)`
-  position: relative;
-  height: 100vh;
+  position: ${({ compact }) => compact ? 'fixed' : 'relative'};
+  height: ${({ compact }) => compact ? '120px' : '100vh'};
   width: 100%;
   overflow: hidden;
+  z-index: 2;
+  color: white;
 
-  ${({ hero }) => {
-    const file = isString(hero) ? hero : hero.publicURL!;
-    if (file.match(/.(jpg|jpeg|png|gif)$/i)) {
+  ${({ hero, compact }) => {
+    const file = hero ? isString(hero) ? hero : hero.publicURL! : "";
+    if (!compact && file.match(/.(jpg|jpeg|png|gif)$/i)) {
       return css`
         background: url(${file}) no-repeat center center scroll;
         background-size: cover;
       `;
     }
   }}
+
+  ${({ compact }) => compact && css`
+    background-color: #202d3b;
+  `}
 
   video {
     position: absolute;
@@ -78,9 +103,9 @@ const Header = styled(HeaderTemplate)`
     transform: translateX(-50%) translateY(-50%);
   }
 
-  ${({ hero }) => {
-    const file = isString(hero) ? hero : hero.publicURL!;
-    if (!file.match(/.(jpg|jpeg|png|gif)$/i)) {
+  ${({ hero, compact }) => {
+    const file = hero ? isString(hero) ? hero : hero.publicURL! : "";
+    if (!compact && !file.match(/.(jpg|jpeg|png|gif)$/i)) {
       return css`
         .overlay {
           position: absolute;
@@ -96,25 +121,34 @@ const Header = styled(HeaderTemplate)`
     }
   }}
 
-
+  .circle {
+    position: absolute;
+    left: 33%;
+    top: -30%;
+    border-radius: 50%;
+    border: 1px solid gray;
+    height: 50rem;
+    width: 50rem;
+    z-index: 2;
+  }
   .text-wrap {
     position: absolute;
     z-index: 2;
     height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
     font-family: "Muli";
   }
 
-  .grid {
+  /*.grid {
     flex-basis: 85%;
-    color: white;
-  }
+  }*/
 
   img {
-    width: 78px;
-    height: 85px;
+    width: ${({ compact }) => compact ? '70px' : '78px'};
+    height: ${({ compact }) => compact ? '70px' : '85px'};
   }
 
   h1 {
@@ -152,16 +186,52 @@ const Header = styled(HeaderTemplate)`
     }
   }
 
-  .col-1 {
+  .logo-section {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media ${props => props.theme.screen.tablet} {
+      ${({ compact }) => !compact && css`
+        .starkyslogo {
+          width: 178px !important;
+          height: 185px !important;
+        }
+      `}
+    }
+
+    @media ${props => props.theme.screen.laptopL} {
+      justify-content: initial;
+      text-align: left;
+      flex-direction: row;
+
+
+      ${({ compact }) => compact && css`
+        h1 {
+          font-size: 2.2rem;
+          margin-left: 2rem;
+          padding-left: 2rem;
+          border-left: 1px solid;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      `}
+    }
   }
 
-  .col-2 {
+  .text-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
+
+    @media ${props => props.theme.screen.laptopL} {
+      margin-top: 0;
+    }
   }
 `;
 

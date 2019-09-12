@@ -100,11 +100,11 @@ export const theme: IThemeInterface = {
     textSmall: rem("11px"),
     textMedium: rem("18px"),
     textBig: rem("22px"),
-    h1: rem("70px"),
-    h2: rem("48px"),
-    h3: rem("36px"),
-    h4: rem("24px"),
-    h5: rem("20px")
+    h1: rem("28px"),
+    h2: rem("16px"),
+    h3: rem("24px"),
+    h4: rem("20px"),
+    h5: rem("16px")
   },
   lineHeights: {
     textBase: 1.2,

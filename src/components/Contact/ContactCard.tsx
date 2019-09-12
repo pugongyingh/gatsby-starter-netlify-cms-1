@@ -1,14 +1,14 @@
 import React from "react";
-import { Col, Grid, Row } from "react-flexbox-grid";
-import styled from "../../styles/theme";
-import Icon from "../Icon";
-import Image from "../Image";
-
+import { Col, Row } from "react-flexbox-grid";
+import { File } from "../../graphql/types";
 import LinkedInIcon from "../../img/linkedin-icon.svg";
+import styled from "../../styles/theme";
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
+
 
 interface ContactCardProps {
-  ImgSource: string;
-  altText: string;
+  image: File | string;
+  alt: string;
   name: string;
   position: string;
   email: string;
@@ -40,12 +40,6 @@ const ContactCardWrap = styled.div`
     color: ${props => props.theme.colors.paragraphGrey};
   }
 
-  .contact-img {
-    margin-left: 30px;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px
-  }
 
   .linkedin-icon {
     margin-left: 10px;
@@ -57,8 +51,8 @@ const ContactCardWrap = styled.div`
 `;
 
 const ContactCard: React.FC<ContactCardProps> = ({
-  ImgSource,
-  altText,
+  image,
+  alt,
   name,
   position,
   email
@@ -66,19 +60,19 @@ const ContactCard: React.FC<ContactCardProps> = ({
   return (
     <ContactCardWrap>
       <Row>
-        <Col xs={12} sm={3}>
-          <Image className="contact-img" source={ImgSource} altText={altText} />
+        <Col className="contact__image" xs={12} sm={3}>
+          <PreviewCompatibleImage className="contact__image-wrap" image={image} alt={alt} />
         </Col>
-        <Col xs={12} sm={9}>
+        <Col className="contact__cards" xs={12} sm={9}>
           <h2>{name}</h2>
           <h2>{position}</h2>
           <a href={`mailto:${email}`} target="_top">
             {email}
           </a>
-          <Icon
+          <PreviewCompatibleImage
             className="linkedin-icon"
-            source={LinkedInIcon}
-            altText="LinkedIn icon"
+            image={LinkedInIcon}
+            alt="LinkedIn icon"
             height="35px"
             width="35px"
           />

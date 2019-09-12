@@ -1,79 +1,120 @@
+import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
-import styled from "../../styles/theme";
-import Icon from "../Icon";
-import SocialIcon from "../SocialIcon";
-
-// icons
-import facebook from "../../img/social/facebook.svg";
-import instagram from "../../img/social/instagram.svg";
-import linkedin from "../../img/social/linkedin.svg";
-import twitter from "../../img/social/twitter.svg";
+import { MarkdownRemarkEdge, Maybe, Query } from "../../graphql/types";
 import starkysIcon from "../../img/starkys-logo.svg";
+import styled, { SCP } from "../../styles/theme";
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
-const StyledFooter = styled.section`
-  background-color: ${props => props.theme.colors.black};
-  color: ${props => props.theme.colors.white};
-  @media ${props => props.theme.screen.laptop} {
-    padding: 2rem 0;
-  }
-  display: flex;
-  .copyright {
-    display: flex;
-    align-items: center;
-    width: 270px;
 
-    @media ${props => props.theme.screen.laptop} {
-      width: 100%;
-    }
-  }
-  .social {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .container {
-    @media ${props => props.theme.screen.laptop} {
-      width: 1410px !important;
-    }
-  }
-`;
+interface P extends SCP {
+  footer: MarkdownRemarkEdge[];
+  locale: Maybe<string>;
+}
 
-interface FooterProps {}
-
-const Footer: React.FC<FooterProps> = () => {
+const FooterTemplate: React.FC<P> = ({ className, footer, locale }) => {
+  const localizedFooter = footer.find((config) => config.node.frontmatter!.locale === locale)
+  if (!localizedFooter) {
+    return null;
+  }
   return (
-    <StyledFooter>
+    <footer className={className}>
       <Grid className="container">
-        <Row>
+        <Row className="content-wrap">
           <Col lg={4}>
-            <Icon
-              source={starkysIcon}
-              altText="Starky's Club"
-              height=""
-              width=""
+            <PreviewCompatibleImage
+              image={starkysIcon}
+              alt="Starky's Club"
             />
           </Col>
           <Col lg={4} className="copyright">
-            Copyright © StarkysClub 2019. All rights reserved.
+            {localizedFooter!.node.frontmatter!.footer ? localizedFooter!.node.frontmatter!.footer.copy : null}
           </Col>
-          <Col lg={4} className="social">
-            <a href="https://www.facebook.com" title="Facebook">
-              <SocialIcon source={facebook} altText="Facebook" />
-            </a>
-            <a href="https://www.twitter.com" title="Twitter">
-              <SocialIcon source={twitter} altText="Twitter" />
-            </a>
-            <a href="https://www.instagram.com" title="Instagram">
-              <SocialIcon source={instagram} altText="Instagram" />
-            </a>
-            <a href="https://www.linkedin.com" title="LinkedIn">
-              <SocialIcon source={linkedin} altText="LinkedIn" />
-            </a>
-          </Col>
+          {localizedFooter!.node.frontmatter!.footer && localizedFooter!.node.frontmatter!.footer.social &&
+            <Col lg={4} className="social">
+              {localizedFooter!.node.frontmatter!.footer.social.map((social) => (
+                <a href="https://www.facebook.com" key={social!.link!} title="Facebook">
+                  <PreviewCompatibleImage className="social__icon" image={social!.image!} alt="TODO:" />
+                </a>
+              ))}
+            </Col>}
         </Row>
       </Grid>
-    </StyledFooter>
+    </footer>
+  );
+};
+
+const StyledFooter = styled(FooterTemplate)`
+background-color: ${props => props.theme.colors.black};
+color: ${props => props.theme.colors.white};
+display: flex;
+@media ${props => props.theme.screen.tablet} {
+  padding: 2rem 0;
+}
+.content-wrap {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  @media ${props => props.theme.screen.tablet} {
+    align-items: initial;
+    text-align: left;
+    flex-direction: row;
+  }
+}
+.copyright {
+  display: flex;
+  align-items: center;
+  width: 270px;
+  @media ${props => props.theme.screen.laptop} {
+    width: 100%;
+  }
+}
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+  }
+}
+.container {
+  @media ${props => props.theme.screen.laptop} {
+    width: 1410px !important;
+  }
+}
+`;
+
+const Footer: React.SFC<Omit<P, "footer">> = props => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query FooterQuery {
+          allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/static/config//"}}) {
+            edges {
+              node {
+                frontmatter {
+                  locale
+                  footer {
+                    copy
+                    social {
+                      link
+                      image {
+                        ...FileInfo
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={(data: Query) => <StyledFooter footer={data.allMarkdownRemark.edges} {...props} />}
+    />
   );
 };
 

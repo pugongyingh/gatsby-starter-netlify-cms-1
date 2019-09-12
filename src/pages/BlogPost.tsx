@@ -5,7 +5,7 @@ import { HTMLContent } from "../components/CMS/Content";
 import { Preview } from "../components/CMS/Preview";
 import Page from "../components/Layout/Page";
 import { Query } from "../graphql/types";
-import { BlogPostTemplate } from "../templates/BlogPostTemplate";
+import { StyledBlogPostTemplate } from "../templates/BlogPostTemplate";
 
 interface BlogPostTemplateProps {
     data: Query,
@@ -20,7 +20,7 @@ const BlogPost = ({ data }: BlogPostTemplateProps) => {
 
     return (
         <Page>
-            <BlogPostTemplate
+            <StyledBlogPostTemplate
                 content={post.html || ""}
                 contentComponent={HTMLContent}
                 description={post.frontmatter.description || ""}
@@ -34,6 +34,7 @@ const BlogPost = ({ data }: BlogPostTemplateProps) => {
                     </Helmet>
                 }
                 title={post.frontmatter.title!}
+                locale={post.frontmatter.locale!}
             />
         </Page>
     );
@@ -41,10 +42,11 @@ const BlogPost = ({ data }: BlogPostTemplateProps) => {
 
 export const BlogPostPreview = ({ entry, widgetFor }: any) => (
     <Preview>
-        <BlogPostTemplate
+        <StyledBlogPostTemplate
             content={widgetFor('body')}
             description={entry.getIn(['data', 'description'])}
             title={entry.getIn(['data', 'title'])}
+            locale={entry.getIn(['data', 'locale'])}
         />
     </Preview>
 )
@@ -58,6 +60,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        locale
       }
     }
   }

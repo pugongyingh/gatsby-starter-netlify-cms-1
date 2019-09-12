@@ -2,7 +2,9 @@ import * as React from "react";
 import { main } from "../../styles/main";
 import { css, theme, ThemeProvider } from "../../styles/theme";
 
-export const Preview: React.SFC = ({ children }) => {
+interface P { }
+
+export const Preview: React.SFC<P> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>

@@ -1,3 +1,4 @@
+import GatsbyLink from "gatsby-link";
 import React from "react";
 import arrow from "../../img/right-arrow.svg";
 import { default as styled } from "../../styles/theme";
@@ -50,9 +51,9 @@ const ArrowLink: React.FC<ArrowLinkProps> = ({
   }
   return (
     <StyledLink className={classes.join(" ")}>
-      <a href={link}>
+      <GatsbyLink to={link} replace={false}>
         {text} <img src={arrow} />
-      </a>
+      </GatsbyLink>
     </StyledLink>
   );
 };

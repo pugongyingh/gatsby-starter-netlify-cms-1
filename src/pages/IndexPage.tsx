@@ -79,6 +79,9 @@ export const pageQuery = graphql`
         technologies {
           ...TechnologiesInfo
         }
+        news {
+          ...NewsInfo
+        }
       }
     }
   }
