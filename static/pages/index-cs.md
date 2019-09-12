@@ -38,14 +38,6 @@ clients:
       title: Mall.cz
     - logo: /img/logitech_logo.svg
       title: IceWarp
-    - logo: /img/citrix.png
-      title: R Altra
-    - logo: /img/citrix.png
-      title: BSC
-    - logo: /img/citrix.png
-      title: eValue
-    - logo: /img/citrix.png
-      title: SignageOS
   title: S kým jsme měli tu čest
 work:
   items:
