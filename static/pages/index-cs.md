@@ -15,7 +15,7 @@ clients:
   items:
     - logo: /img/ubisoft_logo.svg
       title: fdgfdsgfdgdfs
-  title: dsfggdsgds
+  title: News
 work:
   items:
     - description: >-
