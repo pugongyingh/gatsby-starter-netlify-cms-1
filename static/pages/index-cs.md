@@ -3,18 +3,16 @@ templateKey: IndexPage
 locale: cs
 title: Dodáváme kvalitní vývojové týmy
 subheading: >-
-  Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
-  babies david duchovny lisa frank. Nerf guns hoop earrings whitney
+  Jsme vaši partneři při vývoji softwaru. Zaštítíme kompletně celý vývoj nebo
+  doplníme vaše kapacity.
 hero: /img/home-bg.png
 news:
   items:
     - description: >-
-        Rozhodli jsme se, že si tu naši “klubovnu” trošku vyšperkujeme.
-        Revitalizovali jsme open space prostor a zasedačku, položili nové
-        koberce a vybrali nové hry na PS. Jak to dopadlo? Mrkněte na náš
-        Instagram! A když jsme velebili kancelář, tak proč to nevzít při jednom
-        i s webovou prezentací?
-      title: Rekonstrukce kanceláře a nový web
+        Citrix Systems akvizovali český startup Sapho a na jeho základech v
+        Praze otevřeli své vývojové centrum. Začlenili jsme se do týmu javistů,
+        kteří se podílejí na vývoji integračních platforem.
+      title: Figurujeme jako sub-tým v Citrix Systems!
     - description: >-
         Rozhodli jsme se, že si tu naši “klubovnu” trošku vyšperkujeme.
         Revitalizovali jsme open space prostor a zasedačku, položili nové
