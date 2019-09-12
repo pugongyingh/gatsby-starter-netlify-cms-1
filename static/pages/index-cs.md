@@ -1,7 +1,7 @@
 ---
 templateKey: IndexPage
 locale: cs
-title: Dodáváme kvalitní vývojové týmy
+title: Dodáváme sehrané vývojové týmy
 subheading: >-
   Jsme vaši partneři při vývoji softwaru. Zaštítíme kompletně celý vývoj nebo
   doplníme vaše kapacity.
