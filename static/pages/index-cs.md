@@ -79,27 +79,29 @@ work:
 references:
   items:
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Nadnárodní korporaci Citrix pomáháme s vývojovými kapacitami na jejich
+        řešení pro zjednodušování komplexních firemních IT služeb.
       image: /img/mask-group.png
-      subtitle: Name of the Project
-      title: SOFTWARE DEVELOPMENT
+      subtitle: Citrix Systems
+      title: '#java'
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+        Pro největší českou cestovku jsme spravovali a technologicky rozvíjeli
+        business-critical řešení pro vyhledávání a prodej zájezdů, společně jsme
+        také připravili web na prodej letenek letenky.fischer.cz.
       image: /img/project-2.png
-      subtitle: Name of Project
-      title: REDESIGN OF SITE
+      subtitle: 'CK Fischer '
+      title: '#java #javascript '
     - description: >-
-        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
-        yardarm hempen halter furl. Swab barque interloper
+
+        Vyvíjeli jsme nové typy stránek (kampaně, Black Friday) a přepisovali
+        jsme klíčové stránky e-shopu z PHP a Angularu. Ve Vue.js a node.js jsme
+        rovněž tvořili microservices. Šlo o samostatné nástroje na tvorbu a
+        administraci kampaní a administraci bannerových ploch napříč celým webem
+        Mallu.
       image: /img/project-3.png
-      subtitle: Name of Project
-      title: SOFTWARE DEVELOPMENT
-  subtitle: c
+      subtitle: Mall.cz
+      title: '#javascript'
+  subtitle: '-'
   title: Reference
 technologies:
   description: >-
