@@ -104,13 +104,11 @@ references:
   subtitle: '-'
   title: Reference
 technologies:
-  description: >-
-    Skip it dawg pulp fiction chia pet. Napster khaki dolly the sheep beanie
-    babies david duchovny lisa frank. Nerf guns hoop earrings. 
-
-
-    Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm.
-    Pinnace holystone mizzenmast quarter crow's nest nipperkin.
+  description: >
+    Na backendu je pro nás jedničkou Java se Spring a Hibernate frameworky. Z
+    JavaScriptových frameworků volíme React (React Native), Vue.js nebo Angular.
+    Z cloudových technologií upřednostňujeme Amazon Web Services. Na vývoj,
+    testování, i v produkci používáme Docker. 
   items:
     - logo: /img/image.svg
       title: Java
@@ -124,6 +122,6 @@ technologies:
       title: Swift
     - logo: /img/docker-logo.svg
       title: Docker
-  title: Technologies
+  title: Technologie
 ---
 
