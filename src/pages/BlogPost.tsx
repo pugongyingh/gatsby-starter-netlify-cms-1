@@ -5,7 +5,7 @@ import { HTMLContent } from "../components/CMS/Content";
 import { Preview } from "../components/CMS/Preview";
 import Page from "../components/Layout/Page";
 import { Query } from "../graphql/types";
-import { BlogPostTemplate } from "../templates/BlogPostTemplate";
+import { StyledBlogPostTemplate } from "../templates/BlogPostTemplate";
 
 interface BlogPostTemplateProps {
     data: Query,
@@ -20,7 +20,7 @@ const BlogPost = ({ data }: BlogPostTemplateProps) => {
 
     return (
         <Page>
-            <BlogPostTemplate
+            <StyledBlogPostTemplate
                 content={post.html || ""}
                 contentComponent={HTMLContent}
                 description={post.frontmatter.description || ""}
@@ -42,7 +42,7 @@ const BlogPost = ({ data }: BlogPostTemplateProps) => {
 
 export const BlogPostPreview = ({ entry, widgetFor, locale }: any) => (
     <Preview locale={locale}>
-        <BlogPostTemplate
+        <StyledBlogPostTemplate
             content={widgetFor('body')}
             description={entry.getIn(['data', 'description'])}
             title={entry.getIn(['data', 'title'])}

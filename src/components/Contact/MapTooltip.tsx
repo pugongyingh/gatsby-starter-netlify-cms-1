@@ -13,7 +13,7 @@ const MapTooltipTemplate: React.SFC<P> = ({ className, address }) => {
     return (
         <div className={className}>
             <div className="tooltip">
-                <h2>Starky's club</h2>
+                <h4 className="tooltip__title">Starky's club</h4>
                 <p>{address.street}</p>
                 <p>{address.zip} {address.city}</p>
             </div>
@@ -36,6 +36,11 @@ const MapTooltip = styled(MapTooltipTemplate)`
         padding: 2rem 3rem;
         right: -300px;
         top: 0;
+
+        &__title {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
     }
 `;
 
