@@ -5,7 +5,9 @@ import styled from "styled-components";
 import menuIcon from "../../img/hamburger-menu-icon.svg";
 import { SCP } from "../../styles/theme";
 
-interface P extends SCP {}
+interface P extends SCP {
+  fixed?: boolean;
+}
 
 const NavbarTemplate: React.SFC<P> = ({ className }) => {
   const [active, setActive] = useState();
@@ -146,15 +148,16 @@ const Navbar = styled(NavbarTemplate)`
   }
 
   @media ${props => props.theme.screen.laptop} {
-    position: absolute;
+    position: ${({ fixed }) => fixed ? "fixed" : "absolute"};
+
     .navbar,
     .navbar-menu,
     .navbar-start {
-      align-items: stretch;
-      display: flex;
+      display: inline-block;
     }
     .navbar {
       min-height: 3.25rem;
+
       &.a.navbar-item {
         &:focus,
         &:hover,
@@ -168,10 +171,11 @@ const Navbar = styled(NavbarTemplate)`
     }
     .navbar-item {
       align-items: center;
-      display: flex;
+      display: inline-flex;
       color: ${props => props.theme.colors.white};
     }
     .navbar-menu {
+      float: right;
       flex-grow: 1;
       flex-shrink: 0;
     }

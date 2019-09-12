@@ -8,11 +8,13 @@ interface BlogItemProps extends SCP {
   image: File;
   title: string;
   description: string;
+  slug: string;
 }
 
 const BlogItem: React.FC<BlogItemProps> = ({
   title,
   description,
+  slug,
   className
 }) => {
   return (
@@ -22,7 +24,7 @@ const BlogItem: React.FC<BlogItemProps> = ({
       <p>{description}</p>
       <ArrowLinkStyled
         text="See article"
-        link="#"
+        link={slug}
         instaFollowLink={false}
         white={true}
       />

@@ -3,8 +3,11 @@ import Content, { ContentFormatter } from "../components/CMS/Content";
 import Contact from "../components/Contact/Contact";
 import InstagramRoll from "../components/Instagram/InstagramRoll";
 import Footer from "../components/Layout/Footer";
+import Header from "../components/Layout/Header";
+import Navbar from "../components/Layout/Navbar";
+import styled, { SCP } from "../styles/theme";
 
-interface BlogPostProps {
+interface BlogPostProps extends SCP {
     content: string;
     contentComponent?: (props: ContentFormatter) => React.ReactElement;
     description: string;
@@ -18,11 +21,14 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
     contentComponent,
     description,
     title,
-    locale
+    locale,
+    className
 }) => {
     const PostContent = contentComponent || Content;
     return (
-        <div>
+        <div className={className}>
+            <Navbar fixed={true} />
+            <Header title="Blog" compact={true} />
             <section className="section">
                 <div className="container content">
                     <div className="columns">
@@ -48,3 +54,13 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
         </div>
     );
 };
+
+export const StyledBlogPostTemplate = styled(BlogPostTemplate)`
+    section:first-of-type {
+        padding: 3rem 0 0;
+
+        @media ${({ theme }) => theme.screen.laptop} {
+            padding: 12rem 0 0;
+        }
+    }
+`;

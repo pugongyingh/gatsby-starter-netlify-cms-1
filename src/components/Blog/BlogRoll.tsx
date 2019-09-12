@@ -32,6 +32,7 @@ class Blog extends React.Component<P> {
                       image={post.frontmatter!.image!}
                       title={post.frontmatter!.title!}
                       description={post.frontmatter!.description!}
+                      slug={post.fields!.slug!}
                     />
                   )
                 })}

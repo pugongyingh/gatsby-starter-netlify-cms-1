@@ -14,7 +14,6 @@ const Page: React.SFC = ({ children }) => {
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <SiteMeta />
-        <Navbar />
         {children}
       </React.Fragment>
     </ThemeProvider>

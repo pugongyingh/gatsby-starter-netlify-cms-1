@@ -6,11 +6,11 @@ import Contact from "../components/Contact/Contact";
 import InstagramRoll from "../components/Instagram/InstagramRoll";
 import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
+import Navbar from "../components/Layout/Navbar";
 import NewsItem from "../components/NewsItem";
 import ReferenceItem from "../components/ReferenceItem";
 import TechnologyItem from "../components/TechnologyItem";
 import { File, MarkdownRemarkFrontmatterClients, MarkdownRemarkFrontmatterNews, MarkdownRemarkFrontmatterReferences, MarkdownRemarkFrontmatterTechnologies, MarkdownRemarkFrontmatterWork, Maybe } from "../graphql/types";
-import map from "../img/map.png";
 import WhatwedoBackground from "../img/what-we-do-bg.png";
 import styled from "../styles/theme";
 
@@ -40,6 +40,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   locale
 }) => (
     <div className={className}>
+      <Navbar />
       <Header title={title} subheading={subheading} hero={hero} />
       {/* Our clients */}
       {clients &&
