@@ -26,10 +26,15 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
           <div className="navbar-brand" />
           {/* Hamburger menu */}
           <div
-            className={`navbar-burger burger ${active && "is-active"}`}
+            className={`ham-menu ${active && "is-active"}`}
             data-target="navMenu"
             onClick={toggleActive}
-          />
+          >
+            <span/>
+            <span/>
+            <span/>
+            <span/>
+          </div>
         </div>
         <div id="navMenu" className={`navbar-menu ${active && "is-active"}`}>
           <Link to="/#what-we-do" className="navbar-item">
@@ -65,8 +70,8 @@ const Navbar = styled(NavbarTemplate)`
   color: ${props => props.theme.colors.white};
 
   @media ${props => props.theme.screen.laptop} {
-      background: none;
-    }
+    background: none;
+  }
 
   .grid-wrap {
     @media (max-width: 768px) {
@@ -79,6 +84,10 @@ const Navbar = styled(NavbarTemplate)`
 
     .mobile-nav-wrap {
       display: flex;
+
+      @media ${props => props.theme.screen.laptop} {
+        display: none;
+      }
     }
   }
 
@@ -94,54 +103,52 @@ const Navbar = styled(NavbarTemplate)`
     }
   }
 
-  /* .navbar-burger {
-    cursor: pointer;
-    display: block;
-    height: 3.25rem;
-    position: relative;
-    width: 3.25rem;
-    margin-left: auto;
-    background: url("${menuIcon}") no-repeat;
-    background-size: 45px;
-    background-position: center;
-  } */
+  .ham-menu {
+    width: 50px;
+    height: 50px;
 
-  .navbar-burger {
-  margin: 1em;
-  width: 30px;
-}
+    span {
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 35px;
+      background: ${props => props.theme.colors.white};
+      border-radius: 5px;
+      opacity: 1;
+      left: 16px;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
 
-.navbar-burger:after, 
-.navbar-burger:before, 
-.navbar-burger div {
-  background-color: #fff;
-  border-radius: 3px;
-  content: '';
-  display: block;
-  height: 5px;
-  margin: 7px 0;
-  transition: all .2s ease-in-out;
-  cursor: pointer;
-    display: block;
-    position: relative;
-    margin-left: auto;
-    /* background: url("${menuIcon}") no-repeat;
-    background-size: 45px;
-    background-position: center; */
-}
-
-.navbar-burger:hover:before {
-  transform: translateY(5px) rotate(135deg);
-}
-
-.navbar-burger:hover:after {
-  transform: translateY(5px) rotate(-135deg);
-}
-
-.navbar-burger:hover div {
-  transform: scale(0);
-}
-
+      &:nth-child(1) {
+        top: 11px;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 22px;
+      }
+      &:nth-child(4) {
+        top: 34px;
+      }
+    }
+    &.is-active span {
+      &:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 0%;
+      }
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      &:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 0%;
+      }
+    }
+  }
 
   .navbar-menu {
     /* display none by default --> onClick show MENU */
@@ -171,8 +178,8 @@ const Navbar = styled(NavbarTemplate)`
     @media ${props => props.theme.screen.laptop} {
       color: ${props => props.theme.colors.black};
       :not(:last-child) {
-      margin-right: 17px;
-    }
+        margin-right: 17px;
+      }
     }
   }
 
@@ -195,7 +202,7 @@ const Navbar = styled(NavbarTemplate)`
   }
 
   @media ${props => props.theme.screen.laptop} {
-    position: ${({ fixed }) => fixed ? "fixed" : "absolute"};
+    position: ${({ fixed }) => (fixed ? "fixed" : "absolute")};
 
     .navbar,
     .navbar-menu,
