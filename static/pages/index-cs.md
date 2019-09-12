@@ -33,7 +33,7 @@ clients:
     - logo: /img/citrix.png
       title: Citrix
     - logo: /img/lenovo_logo.svg
-      title: Lenovo
+      title: CK Fischer
     - logo: /img/xbox_logo.svg
       title: Xbox
     - logo: /img/logitech_logo.svg
