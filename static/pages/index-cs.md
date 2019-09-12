@@ -49,6 +49,24 @@ work:
         yardarm hempen halter furl. Swab barque interloper
       logo: /img/sw-dev-icon.svg
       title: Software Development
+    - description: >-
+        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+        yardarm hempen halter furl. Swab barque interloper
+      logo: /img/design-icon.svg
+      title: Design & Testing
+    - description: >-
+        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+        yardarm hempen halter furl. Swab barque interloper
+      logo: /img/analysis-icon.svg
+      title: Consultations & Technological analysis
+    - description: >-
+        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+        yardarm hempen halter furl. Swab barque interloper
+      logo: /img/workshop-icon.svg
+      title: Workshops
   subtitle: Driving brands forward online.
   title: What we do
 references:
