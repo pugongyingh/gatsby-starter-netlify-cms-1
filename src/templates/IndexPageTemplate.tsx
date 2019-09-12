@@ -168,32 +168,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   );
 
 export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
-  .container {
-    @media ${props => props.theme.screen.laptopL} {
-      width: 1410px !important;
-      max-width: 1410px !important;
-    }
-  }
-
-  h1 {
-    @media ${props => props.theme.screen.laptop} {
-      text-align: left;
-    }
-  }
-
-  section {
-    padding: 2rem 0;
-
-    @media ${props => props.theme.screen.laptop} {
-      padding: 7.5rem 0;
-    }
-
-    .section-row {
-      @media ${props => props.theme.screen.laptop} {
-        margin-top: 95px;
-      }
-    }
-  }
 
   /* Main Sections */
   .news {
@@ -305,57 +279,5 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
-  .contact {
-    &__wrap {
-      flex-direction: column-reverse;
 
-      @media ${props => props.theme.screen.laptop} {
-        flex-direction: row;
-      }
-    }
-
-    &__image {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      @media ${props => props.theme.screen.mobileL} {
-        display: inline-block;
-      }
-
-      &-wrap {
-        width: 100px;
-        height: 100px;
-        border-radius: 100px;
-      }
-    }
-
-    &__cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-
-      @media ${props => props.theme.screen.mobileL} {
-        display: inline-block;
-        text-align: left;
-      }
-    }
-  }
-
-  .map {
-    position: relative;
-    height: 530px;
-    width: 100%;
-
-    &__image {
-      background-image: url(${map});
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100%;
-    }
-  }
 `;

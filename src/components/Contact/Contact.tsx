@@ -46,9 +46,9 @@ const ContactTemplate: React.FC<P> = ({ className, configs, locale }) => {
 
     return (
         <div className={className}>
-            <Grid className="container">
+            <Grid className="container contact">
                 <h1>{contact.title}</h1>
-                <Row className="contact-wrap">
+                <Row className="contact__wrap">
                     <Col xs={12} sm={6}>
                         <StyledContactForm />
                     </Col>
@@ -97,7 +97,9 @@ const StyledContact = styled(ContactTemplate)`
       margin-top: 15rem;
     }
 }
-&__wrap {
+
+.contact {
+    &__wrap {
       flex-direction: column-reverse;
 
       @media ${props => props.theme.screen.laptop} {
@@ -134,6 +136,7 @@ const StyledContact = styled(ContactTemplate)`
         text-align: left;
       }
     }
+  }
 `;
 
 const Contact: React.SFC<Omit<P, "configs">> = props => {
