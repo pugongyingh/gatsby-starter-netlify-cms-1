@@ -166,12 +166,11 @@ const Navbar = styled(NavbarTemplate)`
     color: ${props => props.theme.colors.white};
     cursor: pointer;
 
-    :not(:last-child) {
-      margin-right: 17px;
-    }
-
     @media ${props => props.theme.screen.laptop} {
       color: ${props => props.theme.colors.black};
+      :not(:last-child) {
+      margin-right: 17px;
+    }
     }
   }
 
