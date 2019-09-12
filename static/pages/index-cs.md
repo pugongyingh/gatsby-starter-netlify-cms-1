@@ -76,8 +76,22 @@ references:
         yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
         yardarm hempen halter furl. Swab barque interloper
       image: /img/mask-group.png
-      subtitle: SOFTWARE DEVELOPMENT
-      title: Name  of Project
+      subtitle: Name of the Project
+      title: SOFTWARE DEVELOPMENT
+    - description: >-
+        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+        yardarm hempen halter furl. Swab barque interloper
+      image: /img/project-2.png
+      subtitle: Name of Project
+      title: REDESIGN OF SITE
+    - description: >-
+        Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+        yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog
+        yardarm hempen halter furl. Swab barque interloper
+      image: /img/project-3.png
+      subtitle: Name of Project
+      title: SOFTWARE DEVELOPMENT
   subtitle: c
   title: References
 technologies:
