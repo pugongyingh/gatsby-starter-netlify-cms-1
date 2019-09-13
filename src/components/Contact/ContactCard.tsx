@@ -18,7 +18,7 @@ const ContactCardWrap = styled.div`
   margin: 40px 0;
 
   @media ${props => props.theme.screen.laptop} {
-    margin: 100px 0;
+    margin-bottom: 50px;
   }
 
   h2 {
