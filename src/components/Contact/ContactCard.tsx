@@ -15,9 +15,10 @@ interface ContactCardProps {
 }
 
 const ContactCardWrap = styled.div`
-  margin-bottom: 40px;
+  margin: 40px 0;
+
   @media ${props => props.theme.screen.laptop} {
-    margin-bottom: 100px;
+    margin: 100px 0;
   }
 
   h2 {
