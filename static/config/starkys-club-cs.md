@@ -32,6 +32,10 @@ footer:
   copy: Copyright StarkysClub 2019. All rights reserved
   social:
     - image: /img/facebook.svg
-      link: dfsgfddfgsfdgsgfd
+      link: 'https://www.facebook.com/Starkys-Club-1815824738726352/'
+    - image: /img/instagram.svg
+      link: 'https://www.instagram.com/starkysclub/'
+    - image: /img/linkdenin.svg
+      link: 'https://www.linkedin.com/company/starkys-club/about/'
 ---
 
