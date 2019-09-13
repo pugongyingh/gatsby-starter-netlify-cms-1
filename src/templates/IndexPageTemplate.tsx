@@ -142,7 +142,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             })} */}
 
           {references.items!.map((referenceItem, i) => {
-            return i % 2 !== 0 ? (
+            return (
               <ReferenceItem
                 key={i}
                 image={referenceItem!.image!}
@@ -150,21 +150,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 subtitle={referenceItem!.subtitle!}
                 description={referenceItem!.description!}
                 link=""
-                lgOffset={1}
-                lg={6}
-                odd={true}
-              />
-            ) : (
-              <ReferenceItem
-                key={i}
-                image={referenceItem!.image!}
-                title={referenceItem!.title!}
-                subtitle={referenceItem!.subtitle!}
-                description={referenceItem!.description!}
-                link=""
-                lgOffset={1}
-                lg={6}
-                odd={false}
+                odd={i % 2 !== 0}
               />
             );
           })}

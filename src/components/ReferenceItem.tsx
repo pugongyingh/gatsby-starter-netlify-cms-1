@@ -17,8 +17,6 @@ interface Props {
   description: string;
   link: string;
   odd: boolean;
-  lgOffset: number;
-  lg: number
 }
 
 const ReferenceItem: React.FC<Props> = ({
