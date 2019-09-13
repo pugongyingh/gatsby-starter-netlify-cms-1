@@ -130,7 +130,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           {references.items!.map((referenceItem, i) => {
             return (
               <ReferenceItem
-                key={i}
+                key={referenceItem!.title!}
                 image={referenceItem!.image!}
                 title={referenceItem!.title!}
                 subtitle={referenceItem!.subtitle!}
