@@ -127,11 +127,11 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <section id="references">
         <Grid className="container">
           <h1>References</h1>
-          {references.items &&
-            references.items.map(referenceItem => {
+          {/* {references.items &&
+            references.items.map((referenceItem, i) => {
               return (
                 <ReferenceItem
-                  key={referenceItem!.title!}
+                  key={i}
                   image={referenceItem!.image!}
                   title={referenceItem!.title!}
                   subtitle={referenceItem!.subtitle!}
@@ -139,7 +139,35 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                   link=""
                 />
               );
-            })}
+            })} */}
+
+          {references.items!.map((referenceItem, i) => {
+            return i % 2 !== 0 ? (
+              <ReferenceItem
+                key={i}
+                image={referenceItem!.image!}
+                title={referenceItem!.title!}
+                subtitle={referenceItem!.subtitle!}
+                description={referenceItem!.description!}
+                link=""
+                lgOffset={1}
+                lg={6}
+                odd={true}
+              />
+            ) : (
+              <ReferenceItem
+                key={i}
+                image={referenceItem!.image!}
+                title={referenceItem!.title!}
+                subtitle={referenceItem!.subtitle!}
+                description={referenceItem!.description!}
+                link=""
+                lgOffset={1}
+                lg={6}
+                odd={false}
+              />
+            );
+          })}
         </Grid>
       </section>
     )}
@@ -277,6 +305,10 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       .container {
         max-width: 1050px;
       }
+    }
+
+    .odd {
+      flex-direction: row-reverse;
     }
 
     p {

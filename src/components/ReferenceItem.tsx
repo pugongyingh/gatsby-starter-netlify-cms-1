@@ -16,6 +16,9 @@ interface Props {
   subtitle: string;
   description: string;
   link: string;
+  odd: boolean;
+  lgOffset: number;
+  lg: number
 }
 
 const ReferenceItem: React.FC<Props> = ({
@@ -23,14 +26,15 @@ const ReferenceItem: React.FC<Props> = ({
   title,
   subtitle,
   description,
-  link
+  link,
+  odd,
 }) => {
   return (
-    <Row className="section-row">
-      <Col xs={12} md={6} lg={5}>
+    <Row className={`section-row ${odd ? "odd" : null}`}>
+      <Col xs={12} md={6} lg={odd? 6 : 5} lgOffset={odd? 1 : 0} >
         {<StyledPCI image={image} alt={title} />}
       </Col>
-      <Col className="ref-content" xs={12} md={6} lgOffset={1} lg={6}>
+      <Col className="ref-content" xs={12} md={6} lgOffset={odd? 0 : 1} lg={odd? 5 : 6}>
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
         <p>{description}</p>
