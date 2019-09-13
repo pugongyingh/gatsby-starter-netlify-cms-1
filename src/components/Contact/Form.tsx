@@ -12,12 +12,12 @@ interface FormProps extends SCP {}
 
 const ContactForm: React.FC<FormProps> = ({ className }) => {
   return (
-    <Form action="/" className={className}>
+    <Form action="/pages/success" method="post" className={className} data-netlify="true">
       <TextInput label="Name" name="name" />
       <EmailInput label="Email" name="email" />
       <TextArea label="Your message" name="text-area" />
       <div className="form-btn-wrap">
-        <Button>Send</Button>
+        <Button type="submit">Send</Button>
       </div>
     </Form>
   );
