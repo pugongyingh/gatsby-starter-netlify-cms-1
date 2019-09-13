@@ -62,6 +62,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                   <Col
                     key={client!.title}
                     lg={3}
+                    sm={6}
                     xs={12}
                     className="clients__item"
                   >
@@ -229,12 +230,12 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
-  .clients {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.black};
-    @media ${props => props.theme.screen.laptop} {
-      padding: 7.5rem 0;
-    }
+    .clients {
+      color: ${props => props.theme.colors.white};
+      background-color: ${props => props.theme.colors.black};
+      @media ${props => props.theme.screen.laptop} {
+        padding: 7.5rem 0;
+      }
 
       &__item {
         display: flex;
@@ -242,12 +243,15 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
         justify-content: center;
         align-items: center;
 
-        :not(:last-child) {
+        @media screen and (max-width: 540px) {
+          :not(:last-child) {
             border-bottom: 1px solid ${props =>
               props.theme.colors.clientBorder};
           }
+        }
+      
 
-        @media ${props => props.theme.screen.laptop} {
+        @media ${props => props.theme.screen.laptopL} {
           :not(:last-child) {
             border-right: 1px solid ${props => props.theme.colors.clientBorder};
             border-bottom: none;
@@ -255,11 +259,15 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
         }
 
         img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            min-height: 200px;
+          width: 100%;
+          max-width: 200px;
+          height: auto;
+          min-height: 200px;
+
+          @media ${props => props.theme.screen.laptop} {
+            min-height: initial;
           }
+        }
       }
     }
   }
@@ -308,5 +316,10 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+  .technologies {
+    .logoRow {
+      align-items: center;
+    }
+  }
 
 `;
