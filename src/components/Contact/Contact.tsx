@@ -119,7 +119,7 @@ const StyledContact = styled(ContactTemplate)`
       &-wrap {
         width: 100px;
         height: 100px;
-        border-radius: 100px;
+        border-radius: 100px !important;
       }
     }
 
