@@ -127,20 +127,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <section id="references">
         <Grid className="container">
           <h1>References</h1>
-          {/* {references.items &&
-            references.items.map((referenceItem, i) => {
-              return (
-                <ReferenceItem
-                  key={i}
-                  image={referenceItem!.image!}
-                  title={referenceItem!.title!}
-                  subtitle={referenceItem!.subtitle!}
-                  description={referenceItem!.description!}
-                  link=""
-                />
-              );
-            })} */}
-
           {references.items!.map((referenceItem, i) => {
             return (
               <ReferenceItem
