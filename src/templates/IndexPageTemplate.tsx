@@ -236,6 +236,10 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
           max-width: 50%;
         }
       }
+
+      h2 {
+        min-height: 70px;
+      }
     }
 
     p {
@@ -267,8 +271,6 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        /* justify-content: center; */
-
 
 
         @media screen and (max-width: 540px) {
