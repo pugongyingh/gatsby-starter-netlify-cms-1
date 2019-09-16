@@ -66,7 +66,7 @@ work:
         Angular, AWS).
       logo: /img/workshop-icon.svg
       title: Přednášíme a školíme
-  subtitle: '-'
+  subtitle: Poskytujeme online směr firmám
   title: Co děláme
 references:
   items:
