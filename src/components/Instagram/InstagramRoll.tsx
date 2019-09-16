@@ -34,7 +34,6 @@ class Instagram extends React.Component<P> {
 							</StyledCarousel>
 						</Col>
 					</Row>
-					<Row />
 					<Row className="arrow-icons-wrap">
 						<ArrowLink text="Follow us on Instagram" link="#" instaFollowLink={true} />
 					</Row>
@@ -78,12 +77,11 @@ const StyledInstagram = styled(Instagram)`
     display: flex;
     align-items: flex-end;
   }
-
-  .followLink {
+}
+.followLink {  	
+	margin-top: 3vh;  
     margin-right: auto;
   }
-}
-
 `;
 
 const InstagramRoll: React.SFC<Omit<P, 'instagramPosts'>> = (props) => {
