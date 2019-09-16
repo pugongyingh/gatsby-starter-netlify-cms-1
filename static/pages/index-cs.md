@@ -32,11 +32,11 @@ clients:
   items:
     - logo: /img/citrix.png
       title: Citrix
-    - logo: /img/lenovo_logo.svg
+    - logo: /img/logo-fischer.svg
       title: CK Fischer
-    - logo: /img/xbox_logo.svg
+    - logo: /img/mall_white_logo.svg
       title: Mall.cz
-    - logo: /img/logitech_logo.svg
+    - logo: /img/icewarp-white.svg
       title: IceWarp
   title: S kým jsme měli tu čest
 work:
