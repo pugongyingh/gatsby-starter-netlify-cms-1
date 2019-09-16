@@ -194,6 +194,15 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     color: ${props => props.theme.colors.black};
     background-color: ${props => props.theme.colors.white};
 
+    p {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 170%;
+      letter-spacing: 0.03em;
+    }
+
     @media ${props => props.theme.screen.laptopL} {
       h2 {
         margin-bottom: 20px;
@@ -216,10 +225,6 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     .what-we-do {
       &-content-wrap {
         justify-content: space-between;
-      }
-
-      &-card {
-        max-width: 330px;
       }
     }
 
