@@ -27,8 +27,8 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
     const PostContent = contentComponent || Content;
     return (
         <div className={className}>
-            <Navbar fixed={true} />
-            <Header title="Blog" compact={true} />
+            <Navbar fixed={true} locale={locale} />
+            <Header title="Blog" compact={true} locale={locale} />
             <section className="section">
                 <div className="container content">
                     <div className="columns">
