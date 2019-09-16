@@ -34,7 +34,7 @@ clients:
       title: Citrix
     - logo: /img/lenovo_logo.svg
       title: CK Fischer
-    - logo: /img/xbox_logo.svg
+    - logo: /img/mall_white_logo.svg
       title: Mall.cz
     - logo: /img/logitech_logo.svg
       title: IceWarp
