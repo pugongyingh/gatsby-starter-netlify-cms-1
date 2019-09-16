@@ -193,6 +193,19 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   .news {
     color: ${props => props.theme.colors.black};
     background-color: ${props => props.theme.colors.white};
+
+    @media ${props => props.theme.screen.laptopL} {
+      h2 {
+        margin-bottom: 20px;
+        min-height: 70px;
+        font-family: Muli;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+      }
+    }
   }
 
   #what-we-do {
