@@ -30,7 +30,7 @@ news:
   title: Co nového ve Starky's Clubu
 clients:
   items:
-    - logo: /img/citrix.png
+    - logo: /img/citrix-white-logo.svg
       title: Citrix
     - logo: /img/logo-fischer.svg
       title: CK Fischer
