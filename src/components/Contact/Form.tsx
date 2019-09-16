@@ -86,6 +86,10 @@ const StyledContactForm = styled(ContactForm)`
       outline: none;
       cursor: pointer;
       font-size: 18px;
+
+      &:hover {
+        background: #293d4c;
+      }
     }
   }
 `;

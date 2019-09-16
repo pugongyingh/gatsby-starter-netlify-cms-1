@@ -370,4 +370,11 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     }
   }
 
+  #instagram {
+
+    @media ${props => props.theme.screen.laptop} {
+      padding: 0;
+    }
+  }
+
 `;
