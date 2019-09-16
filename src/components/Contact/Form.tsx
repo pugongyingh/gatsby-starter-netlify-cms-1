@@ -6,18 +6,21 @@ import {
   TextArea,
   TextInput
 } from "react-form-elements";
+import { Maybe } from "../../graphql/types";
 import styled, { SCP } from "../../styles/theme";
 
-interface FormProps extends SCP {}
+interface FormProps extends SCP {
+  locale: Maybe<string>;
+}
 
-const ContactForm: React.FC<FormProps> = ({ className }) => {
+const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
   return (
     <Form action="/pages/success" method="post" className={className} data-netlify="true">
-      <TextInput label="Name" name="name" />
-      <EmailInput label="Email" name="email" />
-      <TextArea label="Your message" name="text-area" />
+      <TextInput label={locale === "cs" ? "Vaše jméno" : "Name"} name="name" />
+      <EmailInput label={locale === "cs" ? "Váš email" : "Email"} name="email" />
+      <TextArea label={locale === "cs" ? "Váše zpráva" : "Your message"} name="text-area" />
       <div className="form-btn-wrap">
-        <Button type="submit">Send</Button>
+        <Button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</Button>
       </div>
     </Form>
   );
@@ -82,6 +85,7 @@ const StyledContactForm = styled(ContactForm)`
       color: ${props => props.theme.colors.white};
       outline: none;
       cursor: pointer;
+      font-size: 18px;
     }
   }
 `;

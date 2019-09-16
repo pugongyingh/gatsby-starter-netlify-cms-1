@@ -47,13 +47,13 @@ const ContactTemplate: React.FC<P> = ({ className, configs, locale }) => {
     return (
         <div className={className}>
             <Grid className="container contact">
-                <h1>{contact.title}</h1>
+                <h1>{locale === 'cs' ? 'Kontakt' : 'Contact'}</h1>
                 <Row className="">
-                    <Col xs={12} sm={6}>
-                        <StyledContactForm />
+                    <Col xs={12} sm={4} md={4}>
+                        <StyledContactForm locale={locale} />
                     </Col>
                     {contact.contactPerson &&
-                        <Col xs={12} sm={6}>
+                        <Col xs={12} sm={8} md={6} mdOffset={1}>
                             <Row>
                                 {contact.contactPerson.map((person) => (
                                     <Col xs={12} key={person!.name}>
@@ -111,6 +111,7 @@ const StyledContact = styled(ContactTemplate)`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 10px;
 
       @media ${props => props.theme.screen.mobileL} {
         display: inline-block;

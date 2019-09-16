@@ -12,6 +12,7 @@ interface P extends SCP {
   subheading?: Maybe<string>;
   hero?: string | File;
   compact?: boolean;
+  locale: Maybe<string>;
 }
 
 const HeaderTemplate: React.SFC<P> = ({
@@ -19,45 +20,58 @@ const HeaderTemplate: React.SFC<P> = ({
   title,
   subheading,
   className,
-  compact
+  compact,
+  locale
 }) => {
-  const file = hero ? isString(hero) ? hero : hero.base! : "";
+  const file = hero ? (isString(hero) ? hero : hero.base!) : "";
   const Logo = (
     <PreviewCompatibleImage
       className="starkyslogo"
       image={logo}
       alt="Starkys Logo"
-    />);
+    />
+  );
   return (
     <header className={className}>
       <div>
         {!compact && file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) && (
           <video
-            src={hero ? isString(hero) ? hero : hero.publicURL! : ""}
+            src={hero ? (isString(hero) ? hero : hero.publicURL!) : ""}
             playsInline={true}
             autoPlay={true}
             muted={true}
             loop={true}
           />
         )}
-        {!compact && <>
-          <div className="circle" />
-          <div className="overlay" />
-        </>
-        }
+        {!compact && (
+          <>
+            <div className="circle" />
+            <div className="overlay" />
+          </>
+        )}
         <div className="text-wrap">
           <Grid className="grid">
             <Row>
-              <Col className="logo-section" xs={12} lg={6}>
-                {compact ? <GatsbyLink to="/" replace={false}>{Logo}</GatsbyLink> : Logo}
+              <Col className="logo-section" xs={12} xl={6}>
+                {compact ? (
+                  <GatsbyLink to="/" replace={false}>
+                    {Logo}
+                  </GatsbyLink>
+                ) : (
+                  Logo
+                )}
                 <h1>{title}</h1>
-                {!compact && <button>Work with us</button>}
+                {!compact && (
+                  <button>
+                    {locale === "cs" ? "Pracujte s námi" : "Work with us"}
+                  </button>
+                )}
               </Col>
-              {!compact &&
-                <Col className="text-section" xs={12} lg={6}>
+              {!compact && (
+                <Col className="text-section" xs={12} xl={6}>
                   <p>{subheading}</p>
                 </Col>
-              }
+              )}
             </Row>
           </Grid>
         </div>
@@ -67,15 +81,15 @@ const HeaderTemplate: React.SFC<P> = ({
 };
 
 const Header = styled(HeaderTemplate)`
-  position: ${({ compact }) => compact ? 'fixed' : 'relative'};
-  height: ${({ compact }) => compact ? '120px' : '100vh'};
+  position: ${({ compact }) => (compact ? "fixed" : "relative")};
+  height: ${({ compact }) => (compact ? "120px" : "100vh")};
   width: 100%;
   overflow: hidden;
   z-index: 2;
   color: white;
 
   ${({ hero, compact }) => {
-    const file = hero ? isString(hero) ? hero : hero.publicURL! : "";
+    const file = hero ? (isString(hero) ? hero : hero.publicURL!) : "";
     if (!compact && file.match(/.(jpg|jpeg|png|gif)$/i)) {
       return css`
         background: url(${file}) no-repeat center center scroll;
@@ -84,9 +98,11 @@ const Header = styled(HeaderTemplate)`
     }
   }}
 
-  ${({ compact }) => compact && css`
-    background-color: #202d3b;
-  `}
+  ${({ compact }) =>
+    compact &&
+    css`
+      background-color: #202d3b;
+    `}
 
   video {
     position: absolute;
@@ -104,7 +120,7 @@ const Header = styled(HeaderTemplate)`
   }
 
   ${({ hero, compact }) => {
-    const file = hero ? isString(hero) ? hero : hero.publicURL! : "";
+    const file = hero ? (isString(hero) ? hero : hero.publicURL!) : "";
     if (!compact && !file.match(/.(jpg|jpeg|png|gif)$/i)) {
       return css`
         .overlay {
@@ -147,8 +163,8 @@ const Header = styled(HeaderTemplate)`
   }*/
 
   img {
-    width: ${({ compact }) => compact ? '70px' : '78px'};
-    height: ${({ compact }) => compact ? '70px' : '85px'};
+    width: ${({ compact }) => (compact ? "70px" : "78px")};
+    height: ${({ compact }) => (compact ? "70px" : "85px")};
   }
 
   h1 {
@@ -195,12 +211,14 @@ const Header = styled(HeaderTemplate)`
     flex-direction: column;
 
     @media ${props => props.theme.screen.tablet} {
-      ${({ compact }) => !compact && css`
-        .starkyslogo {
-          width: 178px !important;
-          height: 185px !important;
-        }
-      `}
+      ${({ compact }) =>
+        !compact &&
+        css`
+          .starkyslogo {
+            width: 178px !important;
+            height: 185px !important;
+          }
+        `}
     }
 
     @media ${props => props.theme.screen.laptopL} {
@@ -208,17 +226,18 @@ const Header = styled(HeaderTemplate)`
       text-align: left;
       flex-direction: row;
 
-
-      ${({ compact }) => compact && css`
-        h1 {
-          font-size: 2.2rem;
-          margin-left: 2rem;
-          padding-left: 2rem;
-          border-left: 1px solid;
-          margin-top: 0;
-          margin-bottom: 0;
-        }
-      `}
+      ${({ compact }) =>
+        compact &&
+        css`
+          h1 {
+            font-size: 2.2rem;
+            margin-left: 2rem;
+            padding-left: 2rem;
+            border-left: 1px solid;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+        `}
     }
   }
 
