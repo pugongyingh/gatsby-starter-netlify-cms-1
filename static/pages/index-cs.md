@@ -102,7 +102,7 @@ technologies:
     Z cloudových technologií upřednostňujeme Amazon Web Services. Na vývoj,
     testování, i v produkci používáme Docker. 
   items:
-    - logo: /img/image.svg
+    - logo: /img/java-new-logo.svg
       title: Java
     - logo: /img/react-logo.svg
       title: React
@@ -112,6 +112,8 @@ technologies:
       title: Swift
     - logo: /img/docker-logo.svg
       title: Docker
+    - logo: /img/redux-logo.svg
+      title: Redux
   title: Technologie
 ---
 
