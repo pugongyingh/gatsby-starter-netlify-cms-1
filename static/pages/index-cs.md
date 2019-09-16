@@ -32,7 +32,7 @@ clients:
   items:
     - logo: /img/citrix.png
       title: Citrix
-    - logo: /img/lenovo_logo.svg
+    - logo: /img/logo-fischer.svg
       title: CK Fischer
     - logo: /img/mall_white_logo.svg
       title: Mall.cz
