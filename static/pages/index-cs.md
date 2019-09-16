@@ -106,7 +106,7 @@ technologies:
       title: Java
     - logo: /img/react-logo.svg
       title: React
-    - logo: /img/aws-logo.svg
+    - logo: /img/amazon-new-logo.svg
       title: AWS
     - logo: /img/swift-logo.svg
       title: Swift
