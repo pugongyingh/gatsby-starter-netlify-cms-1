@@ -48,13 +48,13 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   locale
 }) => (
   <div className={className}>
-    <Navbar />
-    <Header title={title} subheading={subheading} hero={hero} />
+    <Navbar locale={locale} />
+    <Header title={title} subheading={subheading} hero={hero} locale={locale}/>
     {/* Our clients */}
     {clients && (
       <section className="clients">
         <Grid className="container">
-          <h1>Our Clients</h1>
+          <h1>{locale === 'cs' ? 'Naši klienti' : 'Our clients'}</h1>
           {clients.items && (
             <Row className="row">
               {clients.items.map(client => {
@@ -126,7 +126,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {references && (
       <section id="references">
         <Grid className="container">
-          <h1>References</h1>
+          <h1>{locale === 'cs' ? 'Reference' : 'References'}</h1>
           {references.items!.map((referenceItem, i) => {
             return (
               <ReferenceItem
@@ -233,6 +233,8 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     .clients {
       color: ${props => props.theme.colors.white};
       background-color: ${props => props.theme.colors.black};
+      
+      
       @media ${props => props.theme.screen.laptop} {
         padding: 7.5rem 0;
       }

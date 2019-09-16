@@ -1,17 +1,31 @@
 import { Link } from "gatsby";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid } from "react-flexbox-grid";
 import styled from "styled-components";
+import { Maybe } from "../../graphql/types";
 import menuIcon from "../../img/hamburger-menu-icon.svg";
 import { SCP } from "../../styles/theme";
 
 interface P extends SCP {
   fixed?: boolean;
+  locale: Maybe<string>;
 }
 
-const NavbarTemplate: React.SFC<P> = ({ className }) => {
+const NavbarTemplate: React.SFC<P> = ({ className, locale }) => {
   const [active, setActive] = useState();
   const toggleActive = () => setActive(!active);
+
+  const [scroll, setScroll] = useState(0);
+
+  // useEffect(() => {
+  //   document.addEventListener("scroll", () => {
+  //     const scrollCheck = window.scrollY > 500;
+  //     if (scrollCheck !== scroll) {
+  //       setScroll(scrollCheck);
+  //       console.log("after 100");
+  //     }
+  //   });
+  // });
 
   // Smooth Scroll
   if (typeof window !== "undefined") {
@@ -30,24 +44,24 @@ const NavbarTemplate: React.SFC<P> = ({ className }) => {
             data-target="navMenu"
             onClick={toggleActive}
           >
-            <span/>
-            <span/>
-            <span/>
-            <span/>
+            <span />
+            <span />
+            <span />
+            <span />
           </div>
         </div>
         <div id="navMenu" className={`navbar-menu ${active && "is-active"}`}>
           <Link to="/#what-we-do" className="navbar-item">
-            What We Do
+            {locale === "cs" ? "Co děláme" : "What We Do"}
           </Link>
           <Link to="/#references" className="navbar-item">
-            References
+            {locale === "cs" ? "Reference" : "References"}
           </Link>
           <Link to="/#blog" className="navbar-item">
             Blog
           </Link>
           <Link to="/#contact" className="navbar-item">
-            Contact
+            {locale === "cs" ? "Kontakt" : "Contact"}
           </Link>
         </div>
       </Grid>
@@ -66,7 +80,7 @@ const Navbar = styled(NavbarTemplate)`
   align-items: flex-end;
   flex-direction: column;
   position: fixed;
-  background: rgba(0, 0, 0, 0.4);
+  background: ${props => props.theme.colors.darkGreen};
   color: ${props => props.theme.colors.white};
 
   @media ${props => props.theme.screen.laptop} {

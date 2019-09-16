@@ -12,14 +12,29 @@ export const main = css`
   h1 {
     font-style: normal;
     font-weight: 800;
-    font-size: ${theme.fontSizes.h1};
+    font-size: 35px;
     line-height: 128%;
     letter-spacing: 0.03em;
     text-align: center;
+
+    @media ${theme.screen.laptop} {
+      text-align: left;
+      font-size: 46px;
+    }
+
+    @media ${theme.screen.laptopL} {
+      text-align: left;
+      font-size: ${theme.fontSizes.h1};
+    }
   }
 
   h2 {
     font-size: ${theme.fontSizes.h2};
+
+    @media ${theme.screen.laptopL} {
+      text-align: left;
+      font-size: ${theme.fontSizes.h1};
+    }
   }
 
   h3 {
@@ -41,16 +56,10 @@ export const main = css`
     }
   }
 
-  h1 {
-    @media ${theme.screen.laptop} {
-      text-align: left;
-    }
-  }
-
   section {
     padding: 2rem 0;
 
-    @media ${theme.screen.laptop} {
+    @media ${theme.screen.laptopL} {
       padding: 7.5rem 0;
     }
 

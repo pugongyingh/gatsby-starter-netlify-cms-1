@@ -42,14 +42,6 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
                     </div>
                 </div>
             </section>
-            {/* Contact Us */}
-            <section id="contact">
-                <Contact locale={locale} />
-            </section>
-            {/* Instagram */}
-            <section id="instagram">
-                <InstagramRoll />
-            </section>
             <Footer locale={locale} />
         </div>
     );
@@ -58,6 +50,7 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
 export const StyledBlogPostTemplate = styled(BlogPostTemplate)`
     section:first-of-type {
         padding: 3rem 0 0;
+        min-height: calc(100vh - 225px - 120px);
 
         @media ${({ theme }) => theme.screen.laptop} {
             padding: 12rem 0 0;
