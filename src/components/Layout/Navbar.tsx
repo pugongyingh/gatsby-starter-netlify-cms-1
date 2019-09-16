@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Grid } from "react-flexbox-grid";
 import styled from "styled-components";
 import { Maybe } from "../../graphql/types";
-import menuIcon from "../../img/hamburger-menu-icon.svg";
 import { SCP } from "../../styles/theme";
 
 interface P extends SCP {

@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import GatsbyLink from "gatsby-link";
 import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
@@ -62,9 +63,11 @@ const HeaderTemplate: React.SFC<P> = ({
                 )}
                 <h1>{title}</h1>
                 {!compact && (
-                  <button>
-                    {locale === "cs" ? "Pracujte s námi" : "Work with us"}
-                  </button>
+                  <Link to="/#what-we-do" className="navbar-item">
+                    <button>
+                      {locale === "cs" ? "Pracujte s námi" : "Work with us"}
+                    </button>
+                  </Link>
                 )}
               </Col>
               {!compact && (
@@ -187,6 +190,12 @@ const Header = styled(HeaderTemplate)`
     border: none;
     color: ${props => props.theme.colors.white};
     font-size: 18px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      background: ${props => props.theme.colors.mustard};
+    }
   }
 
   @media ${props => props.theme.screen.laptop} {
