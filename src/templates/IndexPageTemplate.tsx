@@ -49,14 +49,14 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
 }) => (
   <div className={className}>
     <Navbar locale={locale} />
-    <Header title={title} subheading={subheading} hero={hero} locale={locale}/>
+    <Header title={title} subheading={subheading} hero={hero} locale={locale} />
     {/* Our clients */}
     {clients && (
       <section className="clients">
         <Grid className="container">
-          <h1>{locale === 'cs' ? 'Naši klienti' : 'Our clients'}</h1>
+          <h1>{locale === "cs" ? "Naši klienti" : "Our clients"}</h1>
           {clients.items && (
-            <Row className="row">
+            <Row className="clients__wrap">
               {clients.items.map(client => {
                 return (
                   <Col
@@ -126,7 +126,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {references && (
       <section id="references">
         <Grid className="container">
-          <h1>{locale === 'cs' ? 'Reference' : 'References'}</h1>
+          <h1>{locale === "cs" ? "Reference" : "References"}</h1>
           {references.items!.map((referenceItem, i) => {
             return (
               <ReferenceItem
@@ -237,18 +237,36 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       
       @media ${props => props.theme.screen.laptop} {
         padding: 7.5rem 0;
+
+        &__wrap {
+         margin-top: 60px;
+        }
       }
+
+
 
       &__item {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         align-items: center;
+        /* justify-content: center; */
+
+
 
         @media screen and (max-width: 540px) {
           :not(:last-child) {
             border-bottom: 1px solid ${props =>
               props.theme.colors.clientBorder};
+          }
+        }
+
+        @media screen and (max-width: 1199px) {
+          justify-content: center;
+        }
+
+        @media ${props => props.theme.screen.laptop} {
+          :not(:first-child):not(:last-child) {
+            justify-content: center;
           }
         }
       
@@ -257,6 +275,10 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
           :not(:last-child) {
             border-right: 1px solid ${props => props.theme.colors.clientBorder};
             border-bottom: none;
+          }
+
+          :last-child {
+            justify-content: flex-end;
           }
         }
 
