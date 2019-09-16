@@ -112,6 +112,8 @@ technologies:
       title: Swift
     - logo: /img/docker-logo.svg
       title: Docker
+    - logo: /img/redux-logo.svg
+      title: Redux
   title: Technologie
 ---
 
