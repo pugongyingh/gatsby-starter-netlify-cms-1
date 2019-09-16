@@ -73,14 +73,14 @@ references:
     - description: >-
         Nadnárodní korporaci Citrix pomáháme s vývojovými kapacitami na jejich
         řešení pro zjednodušování komplexních firemních IT služeb.
-      image: /img/mask-group.png
+      image: /img/citrix_ref.jpg
       subtitle: Citrix Systems
       title: '#java'
     - description: >-
         Pro největší českou cestovku jsme spravovali a technologicky rozvíjeli
         business-critical řešení pro vyhledávání a prodej zájezdů, společně jsme
         také připravili web na prodej letenek letenky.fischer.cz.
-      image: /img/project-2.png
+      image: /img/fischer-ref.jpg
       subtitle: 'CK Fischer '
       title: '#java #javascript '
     - description: >-
@@ -90,7 +90,7 @@ references:
         rovněž tvořili microservices. Šlo o samostatné nástroje na tvorbu a
         administraci kampaní a administraci bannerových ploch napříč celým webem
         Mallu.
-      image: /img/project-3.png
+      image: /img/mall_ref.jpg
       subtitle: Mall.cz
       title: '#javascript'
   subtitle: '-'
