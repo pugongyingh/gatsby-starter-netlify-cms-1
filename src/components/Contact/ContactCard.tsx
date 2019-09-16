@@ -45,7 +45,11 @@ const ContactCardWrap = styled.div`
   .linkedin-icon {
     margin-left: 10px;
 
-    @media ${props => props.theme.screen.laptop} {
+    @media ${props => props.theme.screen.tablet} {
+      margin-left: 30px;
+    }
+
+    @media ${props => props.theme.screen.laptopL} {
       margin-left: 40px;
     }
   }
