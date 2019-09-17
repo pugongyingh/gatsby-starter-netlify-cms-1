@@ -149,11 +149,11 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <Grid className="container">
           <h1>{technologies.title}</h1>
           <Row>
-            <Col xs={12} sm={6}>
+            <Col className="technologies__description" xs={12} sm={5}>
               {technologies.description}
             </Col>
             {technologies.items && (
-              <Col xs={12} smOffset={1} sm={4}>
+              <Col xs={12} smOffset={1} sm={6}>
                 <Row className="logoRow">
                   {technologies.items.map((technology, i) => {
                     return (
@@ -365,6 +365,16 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   .technologies {
+
+    &__description {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 176.18%;
+      color: ${props => props.theme.colors.paragraphGrey}
+    }
+
     .logoRow {
       align-items: center;
     }
