@@ -49,21 +49,22 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
         <label htmlFor="name">
           Your Name:
         </label>
-        <input type="text" name="name" />
+        <input type="text" name="name" required={true}/>
       </label>
       <div className="rfe-form__row">
         <label>
-          Your Email: <input type="email" name="email" />
+          Your Email:
         </label>
+        <input type="email" name="email" />
       </div>
       <div className="rfe-form__row">
         <label>
-          {locale === "cs" ? "Váše zpráva" : "Your message"}:{" "}
-          <textarea name="message" />
+          {locale === "cs" ? "Váše zpráva" : "Your message"}
         </label>
+        <textarea name="message" />
       </div>
       <div data-netlify-recaptcha="true" />
-      <div className="rfe-form__row">
+      <div className="form-btn-wrap">
         <button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</button>
       </div>
     </form>
