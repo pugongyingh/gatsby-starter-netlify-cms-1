@@ -45,11 +45,12 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
       data-netlify="true"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <div className="rfe-form__row">
-        <label>
-          Your Name: <input type="text" name="name" />
+      <label className="rfe-form__row">
+        <label htmlFor="name">
+          Your Name:
         </label>
-      </div>
+        <input type="text" name="name" />
+      </label>
       <div className="rfe-form__row">
         <label>
           Your Email: <input type="email" name="email" />
