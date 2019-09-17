@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-flexbox-grid";
-import ArrowLink from "../components/Carousel/ArrowLink";
+// import ArrowLink from "../components/Carousel/ArrowLink";
 import { File } from "../graphql/types";
 import styled from "../styles/theme";
 import PreviewCompatibleImage from "./CMS/PreviewCompatibleImage";
@@ -15,7 +15,6 @@ interface Props {
   title: string;
   subtitle: string;
   description: string;
-  link: string;
   odd: boolean;
 }
 
@@ -24,7 +23,6 @@ const ReferenceItem: React.FC<Props> = ({
   title,
   subtitle,
   description,
-  link,
   odd,
 }) => {
   return (
@@ -36,7 +34,7 @@ const ReferenceItem: React.FC<Props> = ({
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
         <p>{description}</p>
-        <ArrowLink link={link} text="See live site" instaFollowLink={true} />
+        {/* <ArrowLink link={link} text="See live site" instaFollowLink={true} /> */}
       </Col>
     </Row>
   );

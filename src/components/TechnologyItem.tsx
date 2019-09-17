@@ -11,10 +11,10 @@ interface Props {
 
 const StyledCol = styled(Col)`
   img {
-    max-width: 100px;
     width: 100%;
-    height: auto;
-    min-height: 85px;
+    min-height: 80px;
+    max-height: 80px;
+    padding: 15px 0;
 
     @media ${props => props.theme.screen.laptop} {
       min-height: initial;

@@ -49,14 +49,14 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
 }) => (
   <div className={className}>
     <Navbar locale={locale} />
-    <Header title={title} subheading={subheading} hero={hero} locale={locale}/>
+    <Header title={title} subheading={subheading} hero={hero} locale={locale} />
     {/* Our clients */}
     {clients && (
       <section className="clients">
         <Grid className="container">
-          <h1>{locale === 'cs' ? 'Naši klienti' : 'Our clients'}</h1>
+          <h1>{locale === "cs" ? "Naši klienti" : "Our clients"}</h1>
           {clients.items && (
-            <Row className="row">
+            <Row className="clients__wrap">
               {clients.items.map(client => {
                 return (
                   <Col
@@ -126,7 +126,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {references && (
       <section id="references">
         <Grid className="container">
-          <h1>{locale === 'cs' ? 'Reference' : 'References'}</h1>
+          <h1>{locale === "cs" ? "Reference" : "References"}</h1>
           {references.items!.map((referenceItem, i) => {
             return (
               <ReferenceItem
@@ -149,11 +149,11 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <Grid className="container">
           <h1>{technologies.title}</h1>
           <Row>
-            <Col xs={12} sm={6}>
+            <Col className="technologies__description" xs={12} md={5}>
               {technologies.description}
             </Col>
             {technologies.items && (
-              <Col xs={12} smOffset={1} sm={4}>
+              <Col xs={12} mdOffset={1} md={6}>
                 <Row className="logoRow">
                   {technologies.items.map((technology, i) => {
                     return (
@@ -193,6 +193,28 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   .news {
     color: ${props => props.theme.colors.black};
     background-color: ${props => props.theme.colors.white};
+
+    p {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 170%;
+      letter-spacing: 0.03em;
+    }
+
+    @media ${props => props.theme.screen.laptopL} {
+      h2 {
+        margin-bottom: 20px;
+        min-height: 70px;
+        font-family: Muli;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 150%;
+        letter-spacing: 0.03em;
+      }
+    }
   }
 
   #what-we-do {
@@ -204,10 +226,6 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       &-content-wrap {
         justify-content: space-between;
       }
-
-      &-card {
-        max-width: 330px;
-      }
     }
 
     @media ${props => props.theme.screen.laptop} {
@@ -217,6 +235,10 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
           font-weight: bold;
           max-width: 50%;
         }
+      }
+
+      h2 {
+        min-height: 70px;
       }
     }
 
@@ -237,18 +259,34 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       
       @media ${props => props.theme.screen.laptop} {
         padding: 7.5rem 0;
+
+        &__wrap {
+         margin-top: 60px;
+        }
       }
+
+
 
       &__item {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         align-items: center;
+
 
         @media screen and (max-width: 540px) {
           :not(:last-child) {
             border-bottom: 1px solid ${props =>
               props.theme.colors.clientBorder};
+          }
+        }
+
+        @media screen and (max-width: 1199px) {
+          justify-content: center;
+        }
+
+        @media ${props => props.theme.screen.laptop} {
+          :not(:first-child):not(:last-child) {
+            justify-content: center;
           }
         }
       
@@ -257,6 +295,10 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
           :not(:last-child) {
             border-right: 1px solid ${props => props.theme.colors.clientBorder};
             border-bottom: none;
+          }
+
+          :last-child {
+            justify-content: flex-end;
           }
         }
 
@@ -323,8 +365,25 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
   }
 
   .technologies {
+
+    &__description {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 176.18%;
+      color: ${props => props.theme.colors.paragraphGrey}
+    }
+
     .logoRow {
       align-items: center;
+    }
+  }
+
+  #instagram {
+
+    @media ${props => props.theme.screen.laptop} {
+      padding: 0;
     }
   }
 
