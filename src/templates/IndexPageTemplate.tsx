@@ -370,9 +370,12 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       font-family: Open Sans;
       font-style: normal;
       font-weight: normal;
-      font-size: 22px;
       line-height: 176.18%;
-      color: ${props => props.theme.colors.paragraphGrey}
+      color: ${props => props.theme.colors.paragraphGrey};
+
+      @media ${props => props.theme.screen.laptop} {
+        font-size: 22px;
+      }
     }
 
     .logoRow {
