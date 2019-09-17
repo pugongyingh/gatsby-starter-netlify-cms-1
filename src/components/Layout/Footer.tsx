@@ -33,7 +33,7 @@ const FooterTemplate: React.FC<P> = ({ className, footer, locale }) => {
           {localizedFooter!.node.frontmatter!.footer && localizedFooter!.node.frontmatter!.footer.social &&
             <Col lg={4} className="social">
               {localizedFooter!.node.frontmatter!.footer.social.map((social) => (
-                <a href="https://www.facebook.com" key={social!.link!} title="Facebook">
+                <a href={social!.link!} key={social!.link!} title="Facebook">
                   <PreviewCompatibleImage className="social__icon" image={social!.image!} alt="TODO:" />
                 </a>
               ))}

@@ -23,6 +23,7 @@ const StyledLink = styled.div`
     color: white;
     }
   }
+
 `;
 
 interface ArrowLinkProps {
