@@ -48,6 +48,8 @@ const StyledFooter = styled(FooterTemplate)`
 background-color: ${props => props.theme.colors.black};
 color: ${props => props.theme.colors.white};
 display: flex;
+padding: 2rem 0;
+
 @media ${props => props.theme.screen.tablet} {
   padding: 2rem 0;
 }

@@ -1,7 +1,5 @@
 import * as React from "react";
 import Content, { ContentFormatter } from "../components/CMS/Content";
-import Contact from "../components/Contact/Contact";
-import InstagramRoll from "../components/Instagram/InstagramRoll";
 import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
 import Navbar from "../components/Layout/Navbar";

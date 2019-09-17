@@ -50,6 +50,8 @@ export const main = css`
   }
 
   .container {
+    padding: 0 2rem !important;
+
     @media ${theme.screen.laptopL} {
       width: 1410px !important;
       max-width: 1410px !important;

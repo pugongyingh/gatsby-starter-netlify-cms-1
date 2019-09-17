@@ -19,7 +19,7 @@ import {
   MarkdownRemarkFrontmatterWork,
   Maybe
 } from "../graphql/types";
-import WhatwedoBackground from "../img/what-we-do-bg.png";
+import WhatwedoBackground from "../img/what-we-do-bg.jpg";
 import styled from "../styles/theme";
 
 interface IndexPageProps {

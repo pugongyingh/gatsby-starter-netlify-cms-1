@@ -161,10 +161,6 @@ const Header = styled(HeaderTemplate)`
     font-family: "Muli";
   }
 
-  /*.grid {
-    flex-basis: 85%;
-  }*/
-
   img {
     width: ${({ compact }) => (compact ? "70px" : "78px")};
     height: ${({ compact }) => (compact ? "70px" : "85px")};

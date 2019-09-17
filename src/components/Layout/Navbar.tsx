@@ -33,7 +33,11 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale }) => {
   }
 
   return (
-    <nav className={className} role="navigation" aria-label="main-navigation">
+    <nav
+      className={active ? `${className} is-active` : `${className}`}
+      role="navigation"
+      aria-label="main-navigation"
+    >
       <Grid className="grid-wrap">
         <div className="mobile-nav-wrap">
           <div className="navbar-brand" />
@@ -79,8 +83,13 @@ const Navbar = styled(NavbarTemplate)`
   align-items: flex-end;
   flex-direction: column;
   position: fixed;
-  background: ${props => props.theme.colors.darkGreen};
+  background: RGBA(40,53,69,0.71);
   color: ${props => props.theme.colors.white};
+
+  &.is-active {
+    background: ${props => props.theme.colors.darkGreen};
+    transition: 0.25s;
+  }
 
   @media ${props => props.theme.screen.laptop} {
     background: none;
