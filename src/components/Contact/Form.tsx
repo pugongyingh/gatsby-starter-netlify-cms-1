@@ -43,7 +43,6 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
       name="contact"
       method="POST"
       data-netlify="true"
-      data-netlify-recaptcha="true"
     >
       <input type="hidden" name="form-name" value="contact" />
       <label className="rfe-form__row">
@@ -64,7 +63,7 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
         </label>
         <textarea name="message" required={true}/>
       </div>
-      <div data-netlify-recaptcha="true" />
+      {/* <div data-netlify-recaptcha="true" /> */}
       <div className="form-btn-wrap">
         <button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</button>
       </div>
