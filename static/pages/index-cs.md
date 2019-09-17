@@ -5,7 +5,7 @@ title: Dodáváme sehrané vývojové týmy
 subheading: >-
   Jsme vaši partneři při vývoji softwaru. Zaštítíme kompletně celý vývoj nebo
   doplníme vaše kapacity.
-hero: /img/home-bg.png
+hero: /img/hero-main-bg-opt.jpg
 news:
   items:
     - description: >-
