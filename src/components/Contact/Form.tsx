@@ -15,7 +15,7 @@ interface FormProps extends SCP {
 
 const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
   return (
-    <Form action="post" className={className} data-netlify="true">
+    <Form method="post" className={className} data-netlify="true" data-netlify-recaptcha="true">
       <TextInput label={locale === "cs" ? "Vaše jméno" : "Name"} name="name" />
       <EmailInput label={locale === "cs" ? "Váš email" : "Email"} name="email" />
       <TextArea label={locale === "cs" ? "Váše zpráva" : "Your message"} name="text-area" />
