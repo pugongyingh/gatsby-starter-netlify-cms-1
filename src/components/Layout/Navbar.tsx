@@ -83,7 +83,7 @@ const Navbar = styled(NavbarTemplate)`
   align-items: flex-end;
   flex-direction: column;
   position: fixed;
-  background: transparent;
+  background: RGBA(40,53,69,0.71);
   color: ${props => props.theme.colors.white};
 
   &.is-active {
