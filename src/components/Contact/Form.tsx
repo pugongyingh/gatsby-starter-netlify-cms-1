@@ -26,6 +26,7 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
     // </form>
 
     <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
       <p>
         <label>
           Your Name: <input type="text" name="name" />
@@ -47,7 +48,7 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
       </p>
       <p>
         <label>
-          Message: <textarea name="message"/>
+          Message: <textarea name="message" />
         </label>
       </p>
       <p>
