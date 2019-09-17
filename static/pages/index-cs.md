@@ -98,7 +98,10 @@ references:
 technologies:
   description: >
     Na backendu je pro nás jedničkou Java se Spring a Hibernate frameworky. Z
-    JavaScriptových frameworků volíme React (React Native), Vue.js nebo Angular.
+    JavaScriptových frameworků volíme React (React Native), Vue.js nebo
+    Angular. 
+
+
     Z cloudových technologií upřednostňujeme Amazon Web Services. Na vývoj,
     testování, i v produkci používáme Docker. 
   items:
@@ -106,7 +109,7 @@ technologies:
       title: Java
     - logo: /img/react-logo.svg
       title: React
-    - logo: /img/aws-logo.svg
+    - logo: /img/amazon-new-logo.svg
       title: AWS
     - logo: /img/swift-logo.svg
       title: Swift
