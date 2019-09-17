@@ -13,18 +13,17 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
       name="contact"
       method="POST"
       data-netlify="true"
-      data-netlify-recaptcha="true"
     >
       <input type="hidden" name="form-name" value="contact" />
       <label className="rfe-form__row">
         <label htmlFor="name">
-          Your Name:
+        {locale === "cs" ? "Váše jméno" : "Your name"}
         </label>
         <input type="text" name="name" required={true}/>
       </label>
       <div className="rfe-form__row">
         <label>
-          Your Email:
+        {locale === "cs" ? "Váš email" : "Your email"}
         </label>
         <input type="email" name="email" required={true}/>
       </div>
@@ -34,7 +33,7 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
         </label>
         <textarea name="message" required={true}/>
       </div>
-      <div data-netlify-recaptcha="true" />
+      {/* <div data-netlify-recaptcha="true" /> */}
       <div className="form-btn-wrap">
         <button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</button>
       </div>
