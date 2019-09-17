@@ -15,59 +15,51 @@ interface FormProps extends SCP {
 
 const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
   return (
-    <form
-      name="contact"
-      method="POST"
-      className={className}
-      data-netlify="true"
-      data-netlify-recaptcha="true"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <TextInput label={locale === "cs" ? "Vaše jméno" : "Name"} name="name" />
-      <EmailInput
-        label={locale === "cs" ? "Váš email" : "Email"}
-        name="email"
-      />
-      <TextArea
-        label={locale === "cs" ? "Váše zpráva" : "Your message"}
-        name="text-area"
-      />
-      <div data-netlify-recaptcha="true" />
-      <div className="form-btn-wrap">
-        <Button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</Button>
-      </div>
-    </form>
-
-    // <form name="contact" method="POST" data-netlify="true">
+    // <form
+    //   name="contact"
+    //   method="POST"
+    //   className={className}
+    //   data-netlify="true"
+    //   data-netlify-recaptcha="true"
+    // >
     //   <input type="hidden" name="form-name" value="contact" />
-    //   <p>
-    //     <label>
-    //       Your Name: <input type="text" name="name" />
-    //     </label>
-    //   </p>
-    //   <p>
-    //     <label>
-    //       Your Email: <input type="email" name="email" />
-    //     </label>
-    //   </p>
-    //   <p>
-    //     <label>
-    //       Your Role:{" "}
-    //       <select name="role[]" multiple={true}>
-    //         <option value="leader">Leader</option>
-    //         <option value="follower">Follower</option>
-    //       </select>
-    //     </label>
-    //   </p>
-    //   <p>
-    //     <label>
-    //       Message: <textarea name="message" />
-    //     </label>
-    //   </p>
-    //   <p>
-    //     <button type="submit">Send</button>
-    //   </p>
+    //   <TextInput label={locale === "cs" ? "Vaše jméno" : "Name"} name="name" />
+    //   <EmailInput
+    //     label={locale === "cs" ? "Váš email" : "Email"}
+    //     name="email"
+    //   />
+    //   <TextArea
+    //     label={locale === "cs" ? "Váše zpráva" : "Your message"}
+    //     name="text-area"
+    //   />
+    //   <div data-netlify-recaptcha="true" />
+    //   <div className="form-btn-wrap">
+    //     <Button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</Button>
+    //   </div>
     // </form>
+
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <p>
+        <label>
+          Your Name: <input type="text" name="name" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Your Email: <input type="email" name="email" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message: <textarea name="message" />
+        </label>
+      </p>
+      <div data-netlify-recaptcha="true" />
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
   );
 };
 
