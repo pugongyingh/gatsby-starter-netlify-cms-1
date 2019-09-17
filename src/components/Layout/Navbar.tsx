@@ -88,7 +88,7 @@ const Navbar = styled(NavbarTemplate)`
 
   &.is-active {
     background: ${props => props.theme.colors.darkGreen};
-    transition: 0.5s;
+    transition: 0.25s;
   }
 
   @media ${props => props.theme.screen.laptop} {
