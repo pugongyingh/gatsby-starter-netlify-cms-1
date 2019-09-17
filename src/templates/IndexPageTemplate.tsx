@@ -149,11 +149,11 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <Grid className="container">
           <h1>{technologies.title}</h1>
           <Row>
-            <Col className="technologies__description" xs={12} sm={5}>
+            <Col className="technologies__description" xs={12} md={5}>
               {technologies.description}
             </Col>
             {technologies.items && (
-              <Col xs={12} smOffset={1} sm={6}>
+              <Col xs={12} mdOffset={1} md={6}>
                 <Row className="logoRow">
                   {technologies.items.map((technology, i) => {
                     return (

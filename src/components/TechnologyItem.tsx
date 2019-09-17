@@ -14,6 +14,7 @@ const StyledCol = styled(Col)`
     width: 100%;
     min-height: 80px;
     max-height: 80px;
+    padding: 15px 0;
 
     @media ${props => props.theme.screen.laptop} {
       min-height: initial;
