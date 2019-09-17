@@ -49,7 +49,7 @@ const ContactTemplate: React.FC<P> = ({ className, configs, locale }) => {
             <Grid className="container contact">
                 <h1>{locale === 'cs' ? 'Kontakt' : 'Contact'}</h1>
                 <Row className="">
-                    <Col xs={12} sm={4} md={4}>
+                    <Col xs={12} sm={4} md={5}>
                         <StyledContactForm locale={locale} />
                     </Col>
                     {contact.contactPerson &&

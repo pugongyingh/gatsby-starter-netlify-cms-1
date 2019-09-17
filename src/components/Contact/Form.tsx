@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  Button,
-  EmailInput,
-  Form,
-  TextArea,
-  TextInput
-} from "react-form-elements";
 import { Maybe } from "../../graphql/types";
 import styled, { SCP } from "../../styles/theme";
 
@@ -15,50 +8,30 @@ interface FormProps extends SCP {
 
 const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
   return (
-    // <form
-    //   name="contact"
-    //   method="POST"
-    //   className={className}
-    //   data-netlify="true"
-    //   data-netlify-recaptcha="true"
-    // >
-    //   <input type="hidden" name="form-name" value="contact" />
-    //   <TextInput label={locale === "cs" ? "Vaše jméno" : "Name"} name="name" />
-    //   <EmailInput
-    //     label={locale === "cs" ? "Váš email" : "Email"}
-    //     name="email"
-    //   />
-    //   <TextArea
-    //     label={locale === "cs" ? "Váše zpráva" : "Your message"}
-    //     name="text-area"
-    //   />
-    //   <div data-netlify-recaptcha="true" />
-    //   <div className="form-btn-wrap">
-    //     <Button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</Button>
-    //   </div>
-    // </form>
-
-    <form name="contact" method="POST" data-netlify="true">
+    <form
+      className={className}
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+    >
       <input type="hidden" name="form-name" value="contact" />
-      <p>
-        <label>
-          Your Name: <input type="text" name="name" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Your Email: <input type="email" name="email" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Message: <textarea name="message" />
-        </label>
-      </p>
+      <div className="rfe-form__row">
+        <label>{locale === "cs" ? "Vaše jméno" : "Name"}: </label>
+        <input type="text" name="name" required={true}/>
+      </div>
+      <div className="rfe-form__row">
+        <label>{locale === "cs" ? "Váš email" : "Email"}: </label>
+        <input type="email" name="email" required={true}/>
+      </div>
+      <div className="rfe-form__row">
+        <label>{locale === "cs" ? "Váše zpráva" : "Your message"}: </label>
+        <textarea name="message" required={true}/>
+      </div>
       <div data-netlify-recaptcha="true" />
-      <p>
-        <button type="submit">Send</button>
-      </p>
+      <div className="form-btn-wrap">
+        <button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</button>
+      </div>
     </form>
   );
 };
@@ -85,6 +58,7 @@ const StyledContactForm = styled(ContactForm)`
       border: 1px solid ${props => props.theme.colors.inputBorder};
       box-sizing: border-box;
       border-radius: 1px;
+      font-size: 18px;
     }
   }
 
