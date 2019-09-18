@@ -54,10 +54,10 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {clients && (
       <section className="clients">
         <Grid className="container">
-          <h1>{locale === "cs" ? "Naši klienti" : "Our clients"}</h1>
+          <h1>{locale === "cs" ? clients.title : "Our clients"}</h1>
           {clients.items && (
             <Row className="clients__wrap">
-              {clients.items.map((client, i) => {
+              {clients.items.map((client) => {
                 return (
                   <Col
                     key={client!.title}
@@ -214,7 +214,6 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     @media ${props => props.theme.screen.laptopL} {
       h2 {
         margin-bottom: 20px;
-        min-height: 70px;
         font-family: Muli;
         font-style: normal;
         font-weight: 800;

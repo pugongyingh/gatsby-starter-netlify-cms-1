@@ -22,6 +22,8 @@ const InstagramItem: React.FC<InstagramItemProps> = ({
 
 const StyledInstagramItem = styled(InstagramItem)`
   max-width: 440px;
+	margin-right: 50px;
+
   .img {
     height: 400px;
     background: url(${props => props.src}) no-repeat center center scroll;
