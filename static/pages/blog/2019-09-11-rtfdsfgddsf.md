@@ -4,7 +4,7 @@ locale: cs
 title: 'Flux, Redux, MobX?'
 date: 2019-05-31T09:58:23.762Z
 description: React state management
-image: /img/ap-550x550-12x16-1-transparent-t.u1.png
+image: /img/1_2mdhmpkqrkia9ua3a_4hag.png
 ---
 Today, most of the applications are developed as SPA’s (single page applications), in a nutshell, we’re talking about one single HTML page with JavaScript code, which renders everything else. To do so, the application connects to API’s to get the data it renders and calls backend services.
 
