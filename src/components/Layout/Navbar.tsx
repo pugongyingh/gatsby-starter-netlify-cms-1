@@ -41,7 +41,7 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
     require("smooth-scroll")('a[href*="#"]');
   }
 
-  const isFixed = fixed || scroll > window.innerHeight;
+  const isFixed = fixed || typeof window !== 'undefined' && (scroll > window.innerHeight);
 
   return (
     <nav
