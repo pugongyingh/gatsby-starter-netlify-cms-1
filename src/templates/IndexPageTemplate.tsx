@@ -57,14 +57,18 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
           <h1>{locale === "cs" ? "Naši klienti" : "Our clients"}</h1>
           {clients.items && (
             <Row className="clients__wrap">
-              {clients.items.map(client => {
+              {clients.items.map((client, i) => {
                 return (
                   <Col
                     key={client!.title}
                     lg={3}
                     sm={6}
                     xs={12}
-                    className="clients__item"
+                    className={
+                      client!.title === "CK Fischer"
+                        ? "clients__item clients__item-fischer"
+                        : "clients__item"
+                    }
                   >
                     {client!.logo && (
                       <PreviewCompatibleImage
@@ -330,9 +334,16 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
             min-height: initial;
           }
         }
+
+        &-fischer {
+
+          img {
+            max-width: 240px;
+            padding-bottom: 8px;
+          }
+        }
       }
     }
-  }
 
   #references {
     @media ${props => props.theme.screen.laptopL} {
