@@ -23,7 +23,7 @@ class Blog extends React.Component<P> {
     }
     return (
       <div className={this.props.className}>
-        <Grid>
+        <Grid className="container">
           <h1>Blog</h1>
           <Row className="blog-wrap">
             <Col className="blog-item">
@@ -63,9 +63,11 @@ const StyledBlog = styled(Blog)`
       margin-top: 95px;
     }
   }
-  .slick-slider {
+  /* .slick-slider {
     margin-right: -4rem;
-  }
+  } */
+
+
   .blog-item {
     width: 100%;
     overflow: hidden;

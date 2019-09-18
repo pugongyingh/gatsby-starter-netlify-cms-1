@@ -34,8 +34,8 @@ const BlogItem: React.FC<BlogItemProps> = ({
 
 const StyledBlogItem = styled(BlogItem)`
   width: 100%;
-  max-width: 400px;
-  border: 1px solid;
+  max-width: 420px;
+  /* border: 1px solid; */
 
   .img {
     height: 400px;
