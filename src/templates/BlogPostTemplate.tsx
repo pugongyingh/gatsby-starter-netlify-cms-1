@@ -25,7 +25,7 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
     const PostContent = contentComponent || Content;
     return (
         <div className={className}>
-            <Navbar title="Blog" compactTitle="Blog" fixed={true} locale={locale} compact={true}/>
+            <Navbar title="Blog" fixed={true} locale={locale} />
             <section className="section">
                 <div className="container content">
                     <div className="columns">
@@ -46,11 +46,11 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
 
 export const StyledBlogPostTemplate = styled(BlogPostTemplate)`
     section:first-of-type {
-        padding: 3rem 0 0;
+        padding: 3rem;
         min-height: calc(100vh - 225px - 120px);
 
         @media ${({ theme }) => theme.screen.laptop} {
-            padding: 12rem 0 0;
+            padding: 12rem 25rem;
         }
     }
 `;
