@@ -21,7 +21,7 @@ const InstagramItem: React.FC<InstagramItemProps> = ({
 };
 
 const StyledInstagramItem = styled(InstagramItem)`
-  max-width: 440px;
+  max-width: 420px !important;
 	margin-right: 50px;
 
   .img {
