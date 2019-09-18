@@ -210,7 +210,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
         font-family: Muli;
         font-style: normal;
         font-weight: 800;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 150%;
         letter-spacing: 0.03em;
       }
@@ -226,20 +226,38 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       &-content-wrap {
         justify-content: space-between;
       }
+
+      &__card {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+       
+        @media ${props => props.theme.screen.laptop} {
+          align-items: flex-start;
+        }
+      }
+    }
+
+    h1 {
+      &:nth-child(2) {
+        font-size: 28px;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
     }
 
     @media ${props => props.theme.screen.laptop} {
       h1 {
-        &:nth-child(2) {
-          font-size: 3.5rem;
-          font-weight: bold;
-          max-width: 50%;
-        }
+        font-size: 3.5rem;
       }
 
       h2 {
         min-height: 70px;
       }
+    }
+
+  
     }
 
     p {
@@ -336,6 +354,12 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       letter-spacing: 0.03em;
       color: ${props => props.theme.colors.paragraphGrey};
       max-width: 480px;
+    }
+
+    .ref-img {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .ref-content {
