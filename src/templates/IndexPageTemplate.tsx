@@ -108,7 +108,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <section id="what-we-do">
         <Grid className="container">
           <h1>{work.title}</h1>
-          <h1>{work.subtitle}</h1>
+          {/* <h1>{work.subtitle}</h1> */}
           <Row className="section-row what-we-do-content-wrap">
             {work.items &&
               work.items.map(workItem => {
@@ -139,7 +139,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 title={referenceItem!.title!}
                 subtitle={referenceItem!.subtitle!}
                 description={referenceItem!.description!}
-                link=""
                 odd={i % 2 !== 0}
               />
             );
@@ -164,7 +163,12 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                       <TechnologyItem
                         key={i}
                         logo={technology!.logo!}
-                        title={technology!.title!}
+                        alt={technology!.title!}
+                        className={
+                          technology!.logo!.name! === "redux-logo"
+                            ? "redux-logo"
+                            : ""
+                        }
                       />
                     );
                   })}
@@ -180,7 +184,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <BlogRollQuery locale={locale} />
     </section>
     {/* Contact Us */}
-    <section id="contact">
+    <section id="contact" className="contact">
       <Contact locale={locale} />
     </section>
     {/* Instagram */}

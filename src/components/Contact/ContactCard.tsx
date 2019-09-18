@@ -5,7 +5,6 @@ import LinkedInIcon from "../../img/linkedin-icon.svg";
 import styled from "../../styles/theme";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
-
 interface ContactCardProps {
   image: File | string;
   alt: string;
@@ -41,7 +40,6 @@ const ContactCardWrap = styled.div`
     color: ${props => props.theme.colors.paragraphGrey};
   }
 
-
   .linkedin-icon {
     margin-left: 10px;
 
@@ -66,21 +64,29 @@ const ContactCard: React.FC<ContactCardProps> = ({
     <ContactCardWrap>
       <Row>
         <Col className="contact__image" xs={12} sm={3}>
-          <PreviewCompatibleImage className="contact__image-wrap" image={image} alt={alt} />
-        </Col>
-        <Col className="contact__cards" xs={12} sm={9}>
-          <h2>{name}</h2>
-          <h2>{position}</h2>
-          <a href={`mailto:${email}`} target="_top">
-            {email}
-          </a>
           <PreviewCompatibleImage
-            className="linkedin-icon"
-            image={LinkedInIcon}
-            alt="LinkedIn icon"
-            height="35px"
-            width="35px"
+            className="contact__image-wrap"
+            image={image}
+            alt={alt}
           />
+        </Col>
+        <Col className="contact__content" xs={12} sm={9}>
+          <div className="contact__description">
+            <h2>{name}</h2>
+            <h2>{position}</h2>
+            <a href={`mailto:${email}`} target="_top">
+              {email}
+            </a>
+          </div>
+          <div className="contact__icon">
+            <PreviewCompatibleImage
+              className="linkedin-icon"
+              image={LinkedInIcon}
+              alt="LinkedIn icon"
+              height="35px"
+              width="35px"
+            />
+          </div>
         </Col>
       </Row>
     </ContactCardWrap>
