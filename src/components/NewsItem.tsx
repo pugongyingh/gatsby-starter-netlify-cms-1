@@ -12,7 +12,7 @@ interface Props {
 
 const NewsItem: React.FC<Props> = ({ logo, heading, perex, alt }) => {
   return (
-    <Col className="what-we-do-card" xs={12} sm={6} lg={3}>
+    <Col className="what-we-do__card" xs={12} sm={6} lg={3}>
       {logo &&
         <PreviewCompatibleImage
           image={logo}

@@ -54,17 +54,21 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {clients && (
       <section className="clients">
         <Grid className="container">
-          <h1>{locale === "cs" ? "Naši klienti" : "Our clients"}</h1>
+          <h1>{locale === "cs" ? clients.title : "Our clients"}</h1>
           {clients.items && (
             <Row className="clients__wrap">
-              {clients.items.map(client => {
+              {clients.items.map((client) => {
                 return (
                   <Col
                     key={client!.title}
                     lg={3}
                     sm={6}
                     xs={12}
-                    className="clients__item"
+                    className={
+                      client!.title === "CK Fischer"
+                        ? "clients__item clients__item-fischer"
+                        : "clients__item"
+                    }
                   >
                     {client!.logo && (
                       <PreviewCompatibleImage
@@ -104,7 +108,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <section id="what-we-do">
         <Grid className="container">
           <h1>{work.title}</h1>
-          <h1>{work.subtitle}</h1>
+          {/* <h1>{work.subtitle}</h1> */}
           <Row className="section-row what-we-do-content-wrap">
             {work.items &&
               work.items.map(workItem => {
@@ -135,7 +139,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 title={referenceItem!.title!}
                 subtitle={referenceItem!.subtitle!}
                 description={referenceItem!.description!}
-                link=""
                 odd={i % 2 !== 0}
               />
             );
@@ -160,7 +163,12 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                       <TechnologyItem
                         key={i}
                         logo={technology!.logo!}
-                        title={technology!.title!}
+                        alt={technology!.title!}
+                        className={
+                          technology!.logo!.name! === "redux-logo"
+                            ? "redux-logo"
+                            : ""
+                        }
                       />
                     );
                   })}
@@ -176,7 +184,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       <BlogRollQuery locale={locale} />
     </section>
     {/* Contact Us */}
-    <section id="contact">
+    <section id="contact" className="contact">
       <Contact locale={locale} />
     </section>
     {/* Instagram */}
@@ -206,11 +214,10 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
     @media ${props => props.theme.screen.laptopL} {
       h2 {
         margin-bottom: 20px;
-        min-height: 70px;
         font-family: Muli;
         font-style: normal;
         font-weight: 800;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 150%;
         letter-spacing: 0.03em;
       }
@@ -226,20 +233,38 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       &-content-wrap {
         justify-content: space-between;
       }
+
+      &__card {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+       
+        @media ${props => props.theme.screen.laptop} {
+          align-items: flex-start;
+        }
+      }
+    }
+
+    h1 {
+      &:nth-child(2) {
+        font-size: 28px;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
     }
 
     @media ${props => props.theme.screen.laptop} {
       h1 {
-        &:nth-child(2) {
-          font-size: 3.5rem;
-          font-weight: bold;
-          max-width: 50%;
-        }
+        font-size: 3.5rem;
       }
 
       h2 {
         min-height: 70px;
       }
+    }
+
+  
     }
 
     p {
@@ -312,9 +337,16 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
             min-height: initial;
           }
         }
+
+        &-fischer {
+
+          img {
+            max-width: 240px;
+            padding-bottom: 8px;
+          }
+        }
       }
     }
-  }
 
   #references {
     @media ${props => props.theme.screen.laptopL} {
@@ -336,6 +368,12 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       letter-spacing: 0.03em;
       color: ${props => props.theme.colors.paragraphGrey};
       max-width: 480px;
+    }
+
+    .ref-img {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .ref-content {

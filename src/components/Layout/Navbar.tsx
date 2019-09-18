@@ -1,30 +1,39 @@
+import classNames from "classnames";
 import { Link } from "gatsby";
+import GatsbyLink from "gatsby-link";
 import React, { useEffect, useState } from "react";
 import { Grid } from "react-flexbox-grid";
 import styled from "styled-components";
 import { Maybe } from "../../graphql/types";
+import logo from "../../img/logo.svg";
 import { SCP } from "../../styles/theme";
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
 interface P extends SCP {
   fixed?: boolean;
   locale: Maybe<string>;
+  title?: string;
 }
 
-const NavbarTemplate: React.SFC<P> = ({ className, locale }) => {
+const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
   const [active, setActive] = useState();
   const toggleActive = () => setActive(!active);
 
   const [scroll, setScroll] = useState(0);
 
-  // useEffect(() => {
-  //   document.addEventListener("scroll", () => {
-  //     const scrollCheck = window.scrollY > 500;
-  //     if (scrollCheck !== scroll) {
-  //       setScroll(scrollCheck);
-  //       console.log("after 100");
-  //     }
-  //   });
-  // });
+  const Logo = (
+    <PreviewCompatibleImage
+      className="starkyslogo"
+      image={logo}
+      alt="Starkys Logo"
+    />
+  );
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      setScroll(window.scrollY);
+    });
+  });
 
   // Smooth Scroll
   if (typeof window !== "undefined") {
@@ -32,13 +41,25 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale }) => {
     require("smooth-scroll")('a[href*="#"]');
   }
 
+  const isFixed = fixed || scroll > window.innerHeight;
+
   return (
     <nav
-      className={active ? `${className} is-active` : `${className}`}
+      className={classNames(className, {
+        "is-active": active,
+        "is-fixed": isFixed
+      })}
       role="navigation"
       aria-label="main-navigation"
     >
       <Grid className="grid-wrap">
+        {isFixed ? (
+          <GatsbyLink to="/" replace={false}>
+            {Logo}
+          </GatsbyLink>
+        ) : null}
+
+        {title ? <h1>{title}</h1> : null}
         <div className="mobile-nav-wrap">
           <div className="navbar-brand" />
           {/* Hamburger menu */}
@@ -53,7 +74,16 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale }) => {
             <span />
           </div>
         </div>
-        <div id="navMenu" className={`navbar-menu ${active && "is-active"}`}>
+        <div
+          id="navMenu"
+          // className={`navbar-menu ${active + isFixed ?
+          //   "is-active navbar-menu--fixed" : "is-active"}`}
+
+          className={`navbar-menu ${classNames(className, {
+            "is-active": active,
+            "navbar-menu--fixed": isFixed
+          })}`}
+        >
           <Link to="/#what-we-do" className="navbar-item">
             {locale === "cs" ? "Co děláme" : "What We Do"}
           </Link>
@@ -82,13 +112,30 @@ const Navbar = styled(NavbarTemplate)`
   right: 0;
   align-items: flex-end;
   flex-direction: column;
-  position: fixed;
-  background: RGBA(40,53,69,0.71);
+  background: RGB(40, 53, 69, 0);
+  position: absolute;
   color: ${props => props.theme.colors.white};
+  /* flex-basis: 100%; */
 
   &.is-active {
     background: ${props => props.theme.colors.darkGreen};
     transition: 0.25s;
+  }
+
+  &.is-fixed {
+    position: fixed;
+    background: ${props => props.theme.colors.darkGreen};
+    transition: 0.25s all;
+
+    @media ${props => props.theme.screen.laptop} {
+      height: 120px;
+    }
+
+    @media ${props => props.theme.screen.laptop} {
+    .navbar-menu {
+      display: flex;
+    }
+    }
   }
 
   @media ${props => props.theme.screen.laptop} {
@@ -100,8 +147,34 @@ const Navbar = styled(NavbarTemplate)`
       width: 100%;
     }
 
+    img {
+      display: none;
+    }
+
+    h1 {
+      display: none;
+    }
+
     @media ${props => props.theme.screen.laptopL} {
       width: 1410px;
+      align-items: center;
+      display: flex;
+      /* border: 1px solid; */
+
+      img {
+        display: inline-block;
+        margin-top: 16px;
+      }
+
+      h1 {
+        display: inline-block;
+        font-size: 2.2rem;
+        margin-left: 2rem;
+        padding-left: 2rem;
+        border-left: 1px solid;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
 
     .mobile-nav-wrap {
@@ -128,6 +201,7 @@ const Navbar = styled(NavbarTemplate)`
   .ham-menu {
     width: 50px;
     height: 50px;
+    z-index: 40;
 
     span {
       display: block;
@@ -182,6 +256,18 @@ const Navbar = styled(NavbarTemplate)`
       justify-content: flex-end;
       position: relative;
       top: 40px;
+      align-items: center;
+
+      /* border: 1px solid red; */
+      flex-basis: 40%;
+      text-align: right;
+
+      &--fixed {
+        position: initial;
+        align-items: flex-end;
+        /* display: flex; */
+        flex-direction: row;
+      }
     }
   }
 
@@ -215,7 +301,7 @@ const Navbar = styled(NavbarTemplate)`
     }
     .navbar-menu {
       box-shadow: 0 8px 16px rgba(43, 37, 35, 0.1);
-      padding: 0.5rem 0;
+      padding: 50px 0px 30px;
       justify-content: flex-end;
       &.is-active {
         display: block;
@@ -224,8 +310,6 @@ const Navbar = styled(NavbarTemplate)`
   }
 
   @media ${props => props.theme.screen.laptop} {
-    position: ${({ fixed }) => (fixed ? "fixed" : "absolute")};
-
     .navbar,
     .navbar-menu,
     .navbar-start {

@@ -27,7 +27,7 @@ const ReferenceItem: React.FC<Props> = ({
 }) => {
   return (
     <Row className={`section-row ${odd ? "odd" : null}`}>
-      <Col xs={12} md={6} lg={odd? 6 : 5} lgOffset={odd? 1 : 0} >
+      <Col className="ref-img" xs={12} md={6} lg={odd? 6 : 5} lgOffset={odd? 1 : 0} >
         {<StyledPCI image={image} alt={title} />}
       </Col>
       <Col className="ref-content" xs={12} md={6} lgOffset={odd? 0 : 1} lg={odd? 5 : 6}>
