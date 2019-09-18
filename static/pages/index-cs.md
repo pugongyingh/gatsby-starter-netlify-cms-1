@@ -46,7 +46,7 @@ work:
         Dodáme funkční design, navrhneme architekturu a realizujeme vývoj a
         testing. 
       logo: /img/sw-dev-icon.svg
-      title: Vyvíjíme produkty
+      title: Vyvíjíme produkty na míru
     - description: >-
         Doplníme váš tým o zkušené seniorní programátory, spolehlivé middle
         vývojáře a talentované juniory. Největší hodnotu pro zákazníka vždy měly
@@ -65,7 +65,7 @@ work:
         jakékoliv technologie, které využíváme při vývoji (Java, React a
         Angular, AWS).
       logo: /img/workshop-icon.svg
-      title: Přednášíme a školíme
+      title: Přednášky a školení
   subtitle: Poskytujeme online směr firmám
   title: Co děláme
 references:
