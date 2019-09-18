@@ -16,7 +16,7 @@ interface CarouselProps {
 	slidesToScroll?: number;
 	className?: string;
 	dark?: boolean;
-	responsive: any[];
+	responsive?: any[];
 }
 
 class Carousel extends React.Component<CarouselProps> {
