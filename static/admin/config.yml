@@ -378,7 +378,7 @@ collections:
         widget: text
       - label: Body
         name: body
-        widget: text
+        widget: markdown
       - label: Image
         name: image
         widget: image
