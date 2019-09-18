@@ -9,10 +9,12 @@ hero: /img/hero-main-bg-opt.jpg
 news:
   items:
     - description: >-
-        Citrix Systems akvizovali český startup Sapho a na jeho základech v
-        Praze otevřeli své vývojové centrum. Začlenili jsme se do týmu javistů,
-        kteří se podílejí na vývoji integračních platforem.
-      title: Figurujeme jako sub-tým v Citrix Systems
+        Rozhodli jsme se, že si tu naši “klubovnu” trošku vyšperkujeme.
+        Revitalizovali jsme open space prostor a zasedačku, položili nové
+        koberce a vybrali nové hry na PS. Jak to dopadlo? Mrkněte na náš
+        Instagram! A když jsme velebili kancelář, tak proč to nevzít při jednom
+        i s webovou prezentací?
+      title: Rekonstrukce kanceláře a nový web
     - description: >-
         V srpnu jsme přivítali nové členy Honzu “Mori” Moravce a Hai Ha “Haiko”
         Nguyena. Kluci se orientují na frontend a už nyní na projektech diktují
@@ -21,12 +23,10 @@ news:
         němu pípu. Jen tak dál, chlapi! 
       title: 'Haiko a Mori, vítejte v klubu!'
     - description: >-
-        Rozhodli jsme se, že si tu naši “klubovnu” trošku vyšperkujeme.
-        Revitalizovali jsme open space prostor a zasedačku, položili nové
-        koberce a vybrali nové hry na PS. Jak to dopadlo? Mrkněte na náš
-        Instagram! A když jsme velebili kancelář, tak proč to nevzít při jednom
-        i s webovou prezentací?
-      title: Rekonstrukce kanceláře a nový web
+        Citrix Systems akvizovali český startup Sapho a na jeho základech v
+        Praze otevřeli své vývojové centrum. Začlenili jsme se do týmu javistů,
+        kteří se podílejí na vývoji integračních platforem.
+      title: Figurujeme jako sub-tým v Citrix Systems
   title: Co nového ve Starky's Clubu
 clients:
   items:
