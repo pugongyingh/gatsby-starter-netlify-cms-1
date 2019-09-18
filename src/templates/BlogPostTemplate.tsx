@@ -46,11 +46,16 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
 
 export const StyledBlogPostTemplate = styled(BlogPostTemplate)`
     section:first-of-type {
-        padding: 3rem;
+        padding: 3rem 0;
         min-height: calc(100vh - 225px - 120px);
 
         @media ${({ theme }) => theme.screen.laptop} {
-            padding: 12rem 25rem;
+            padding: 12rem 0 6rem;
+        }
+    }
+    .content {
+        @media ${({ theme }) => theme.screen.laptop} {
+            padding: 0 11.25rem !important
         }
     }
 `;
