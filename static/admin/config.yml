@@ -6,7 +6,6 @@ backend:
   accept_roles: #optional - accepts all users if left out
     - admin
     - editor
-publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: "/img"
 collections:
@@ -470,7 +469,7 @@ collections:
         widget: datetime
       - label: Description
         name: description
-        widget: text
+        widget: string
       - label: Body
         name: body
         widget: markdown

@@ -32,7 +32,7 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
                             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                                 {title}
                             </h1>
-                            <p>{description}</p>
+                            <h3>{description}</h3>
                             <PostContent content={content} />
                         </div>
                     </div>
@@ -44,6 +44,37 @@ export const BlogPostTemplate: React.SFC<BlogPostProps> = ({
 };
 
 export const StyledBlogPostTemplate = styled(BlogPostTemplate)`
+    h1 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 35px;
+        line-height: 128%;
+        letter-spacing: 0.03em;
+        text-align: center;
+
+        @media ${({ theme }) => theme.screen.laptop} {
+            text-align: left;
+            font-size: 46px;
+        }
+
+        &:not(.title) {
+            @media ${({ theme }) => theme.screen.laptopL} {
+                text-align: left;
+                font-size: ${({ theme }) => theme.fontSizes.h1};
+            }
+        }
+
+    }
+
+    h2 {
+        font-size: ${({ theme }) => theme.fontSizes.h2};
+
+        @media ${({ theme }) => theme.screen.laptopL} {
+            text-align: left;
+            font-size: ${({ theme }) => theme.fontSizes.h2};
+        }
+    }
+
     section:first-of-type {
         padding: 3rem 0;
         min-height: calc(100vh - 225px - 120px);
