@@ -19,7 +19,7 @@ const BlogPost = ({ data }: BlogPostTemplateProps) => {
     }
 
     return (
-        <Page>
+        <Page locale={post.frontmatter.locale}>
             <StyledBlogPostTemplate
                 content={post.html || ""}
                 contentComponent={HTMLContent}

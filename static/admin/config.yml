@@ -23,79 +23,167 @@ collections:
         label: Code
   - name: config
     label: General
-    folder: static/config
     editor:
       preview: false
-    fields:
-      - label: Locale
-        name: locale
-        widget: string
-      - label: Title
-        name: title
-      - label: Contact
-        name: contact
-        widget: object
+    files:
+      - file: static/config/starkys-club-cs.md
+        label: Starky's club CS
+        name: config-cs
         fields:
+          - label: Locale
+            name: locale
+            widget: hidden
+            default: cs
           - label: Title
             name: title
             widget: string
-          - label: Contact person
-            name: contactPerson
-            widget: list
-            fields:
-              - label: Name
-                name: name
-                widget: string
-              - label: Role
-                name: role
-                widget: string
-              - label: Email
-                name: email
-                widget: string
-              - label: Phone
-                name: phone
-                widget: string
-              - label: LinkedIn
-                name: linkedIn
-                widget: string
-              - label: Image
-                name: image
-                widget: image
-          - label: Address
-            name: address
+            required: true
+          - label: Description
+            name: description
+            widget: string
+          - label: Contact
+            name: contact
             widget: object
             fields:
-              - label: Latitude
-                name: lat
-              - label: Longitude
-                name: lng
+              - label: Title
+                name: title
                 widget: string
-              - label: Street
-                name: street
-                widget: string
-              - label: City
-                name: city
-                widget: string
-              - label: ZIP
-                name: zip
-                widget: string
-      - label: Footer
-        name: footer
-        widget: object
-        fields:
-          - label: Copy
-            name: copy
-            widget: string
-          - label: Social
-            name: social
-            widget: list
+              - label: Contact person
+                name: contactPerson
+                widget: list
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                  - label: Role
+                    name: role
+                    widget: string
+                  - label: Email
+                    name: email
+                    widget: string
+                  - label: Phone
+                    name: phone
+                    widget: string
+                  - label: LinkedIn
+                    name: linkedIn
+                    widget: string
+                  - label: Image
+                    name: image
+                    widget: image
+              - label: Address
+                name: address
+                widget: object
+                fields:
+                  - label: Latitude
+                    name: lat
+                  - label: Longitude
+                    name: lng
+                    widget: string
+                  - label: Street
+                    name: street
+                    widget: string
+                  - label: City
+                    name: city
+                    widget: string
+                  - label: ZIP
+                    name: zip
+                    widget: string
+          - label: Footer
+            name: footer
+            widget: object
             fields:
-              - label: Link
-                name: link
+              - label: Copy
+                name: copy
                 widget: string
-              - label: Image
-                name: image
-                widget: image
+              - label: Social
+                name: social
+                widget: list
+                fields:
+                  - label: Link
+                    name: link
+                    widget: string
+                  - label: Image
+                    name: image
+                    widget: image
+      - file: static/config/starkys-club-en.md
+        label: Starky's club EN
+        name: config-en
+        fields:
+          - label: Locale
+            name: locale
+            widget: hidden
+            default: en
+          - label: Title
+            name: title
+            widget: string
+            required: true
+          - label: Description
+            name: description
+            widget: string
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Contact person
+                name: contactPerson
+                widget: list
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                  - label: Role
+                    name: role
+                    widget: string
+                  - label: Email
+                    name: email
+                    widget: string
+                  - label: Phone
+                    name: phone
+                    widget: string
+                  - label: LinkedIn
+                    name: linkedIn
+                    widget: string
+                  - label: Image
+                    name: image
+                    widget: image
+              - label: Address
+                name: address
+                widget: object
+                fields:
+                  - label: Latitude
+                    name: lat
+                  - label: Longitude
+                    name: lng
+                    widget: string
+                  - label: Street
+                    name: street
+                    widget: string
+                  - label: City
+                    name: city
+                    widget: string
+                  - label: ZIP
+                    name: zip
+                    widget: string
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Copy
+                name: copy
+                widget: string
+              - label: Social
+                name: social
+                widget: list
+                fields:
+                  - label: Link
+                    name: link
+                    widget: string
+                  - label: Image
+                    name: image
+                    widget: image
   - name: pages
     label: Pages
     files:
@@ -365,7 +453,14 @@ collections:
         default: BlogPost
       - label: Locale
         name: locale
-        widget: string
+        widget: relation
+        collection: locale
+        searchFields:
+          - title
+          - code
+        displayFields:
+          - title
+        valueField: code
       - label: Title
         name: title
         widget: string

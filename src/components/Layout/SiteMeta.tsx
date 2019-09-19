@@ -1,17 +1,16 @@
-import { graphql, StaticQuery, withPrefix } from "gatsby";
+import { withPrefix } from "gatsby";
 import * as React from "react";
 import Helmet from "react-helmet";
-import { Query } from "../../graphql/types";
 
-const SiteMetaTemplate = (data: Query) => {
-  const { title, description } = data.site!.siteMetadata!;
+interface SiteMetaProps {
+  title: string
+}
 
+const SiteMeta: React.SFC<SiteMetaProps> = ({ title }) => {
   return (
     <Helmet>
       <html lang="en" />
       <title>{title}</title>
-      <meta name="description" content={description} />
-
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -59,22 +58,5 @@ const SiteMetaTemplate = (data: Query) => {
   );
 };
 
-const SiteMeta = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query SITE_METADATA_QUERY {
-          site {
-            siteMetadata {
-              title
-              description
-            }
-          }
-        }
-      `}
-      render={SiteMetaTemplate}
-    />
-  );
-};
 
 export default SiteMeta;

@@ -48,7 +48,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
   locale
 }) => (
     <div className={className}>
-      <Navbar locale={locale} />
       <Header title={title} subheading={subheading} hero={hero} locale={locale} />
       {/* Our clients */}
       {clients && (

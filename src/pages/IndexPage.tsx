@@ -17,7 +17,7 @@ const IndexPage = ({ data }: IndexPageTemplateProps) => {
   }
 
   return (
-    <Page>
+    <Page locale={page.frontmatter.locale}>
       <StyledIndexPageTemplate
         hero={page.frontmatter.hero!}
         title={page.frontmatter.title!}
