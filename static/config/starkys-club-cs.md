@@ -1,6 +1,6 @@
 ---
 locale: cs
-title: Starky's club CS
+title: Starky's club
 contact:
   address:
     city: Praha
