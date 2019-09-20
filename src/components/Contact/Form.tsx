@@ -59,6 +59,7 @@ const StyledContactForm = styled(ContactForm)`
       border: 1px solid ${props => props.theme.colors.inputBorder};
       box-sizing: border-box;
       border-radius: 1px;
+      font-size: 20px;
     }
   }
 
