@@ -34,7 +34,16 @@ const BlogItem: React.FC<BlogItemProps> = ({
 
 const StyledBlogItem = styled(BlogItem)`
   width: 100%;
-  max-width: 420px !important;
+
+  @media ${props => props.theme.screen.tablet} {
+    max-width: 400px !important;
+  }
+
+  @media ${props => props.theme.screen.laptop} {
+    max-width: 420px !important;
+  }
+
+
   /* border: 1px solid; */
 
   .img {
