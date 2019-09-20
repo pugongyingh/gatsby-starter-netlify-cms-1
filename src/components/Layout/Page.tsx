@@ -12,7 +12,7 @@ injectGlobal`
 
 interface PageProps {
   locale: Maybe<string>;
-  configs: MarkdownRemarkEdge[];
+  configs?: MarkdownRemarkEdge[];
 }
 
 const PageTemplate: React.SFC<PageProps> = ({ children, locale, configs }) => {

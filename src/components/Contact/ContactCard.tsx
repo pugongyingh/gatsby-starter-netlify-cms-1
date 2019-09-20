@@ -41,10 +41,11 @@ const ContactCardWrap = styled.div`
   }
 
   .linkedin-icon {
-    margin-left: 10px;
+    margin-top: 10px;
 
     @media ${props => props.theme.screen.laptop} {
       margin-left: 18px;
+      margin-top: 0;
     }
 
     @media ${props => props.theme.screen.laptopL} {

@@ -109,11 +109,11 @@ technologies:
       title: Java
     - logo: /img/react-logo.svg
       title: React
-    - logo: /img/amazon-new-logo.svg
+    - logo: /img/aws-proper-logo.svg
       title: AWS
-    - logo: /img/swift-logo.svg
+    - logo: /img/logo-swift-proper.svg
       title: Swift
-    - logo: /img/docker-logo.svg
+    - logo: /img/logo-docker-proper.svg
       title: Docker
     - logo: /img/redux-logo.svg
       title: Redux

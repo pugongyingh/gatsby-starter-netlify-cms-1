@@ -4,7 +4,7 @@ import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
 import { isString } from "util";
 import { File, Maybe } from "../../graphql/types";
-import logo from "../../img/logo.svg";
+import logo from "../../img/starkys-logo-proper.svg";
 import { css, default as styled, SCP } from "../../styles/theme";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
