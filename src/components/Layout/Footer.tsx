@@ -97,6 +97,10 @@ const StyledFooter = styled(FooterTemplate)`
       width: 20px;
       height: 20px;
       padding: 10px;
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
   .container {

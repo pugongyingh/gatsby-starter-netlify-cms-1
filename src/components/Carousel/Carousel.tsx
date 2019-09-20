@@ -82,6 +82,10 @@ const StyledCarousel = styled(Carousel)`
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+
+	@media ${props => props.theme.screen.laptopL} {
+		margin-right: 40px;
+	}
   }
 `;
 export default StyledCarousel;
