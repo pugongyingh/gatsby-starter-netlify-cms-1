@@ -126,6 +126,7 @@ const Navbar = styled(NavbarTemplate)`
     position: fixed;
     background: ${props => props.theme.colors.darkGreen};
     transition: 0.25s all;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 
     @media ${props => props.theme.screen.laptop} {
       height: 120px;
