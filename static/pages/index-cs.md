@@ -107,7 +107,7 @@ technologies:
   items:
     - logo: /img/java-new-logo.svg
       title: Java
-    - logo: /img/react-logo.svg
+    - logo: /img/logo-react-proper.svg
       title: React
     - logo: /img/aws-proper-logo.svg
       title: AWS
