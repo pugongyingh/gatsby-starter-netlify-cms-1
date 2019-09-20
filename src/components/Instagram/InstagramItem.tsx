@@ -22,7 +22,15 @@ const InstagramItem: React.FC<InstagramItemProps> = ({
 
 const StyledInstagramItem = styled(InstagramItem)`
   max-width: 420px !important;
-	margin-right: 50px;
+
+  @media ${props => props.theme.screen.tablet} {
+  	margin-right: 20px;
+  }
+
+  @media ${props => props.theme.screen.laptopL} {
+  	margin-right: 50px;
+  }
+
 
   .img {
     height: 400px;
