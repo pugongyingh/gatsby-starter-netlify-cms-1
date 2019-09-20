@@ -27,7 +27,7 @@ const StyledInstagramItem = styled(InstagramItem)`
   	margin-right: 20px;
   }
 
-  @media ${props => props.theme.screen.laptop} {
+  @media ${props => props.theme.screen.laptopL} {
   	margin-right: 50px;
   }
 

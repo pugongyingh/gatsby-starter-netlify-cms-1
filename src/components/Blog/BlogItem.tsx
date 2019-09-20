@@ -35,21 +35,18 @@ const BlogItem: React.FC<BlogItemProps> = ({
 const StyledBlogItem = styled(BlogItem)`
   width: 100%;
 
-  @media ${props => props.theme.screen.tablet} {
-    max-width: 400px !important;
-  }
-
-  @media ${props => props.theme.screen.laptop} {
-    max-width: 420px !important;
-  }
-
-
-  /* border: 1px solid; */
-
   .img {
     height: 400px;
     background: url(${props => isString(props.image) ? props.image : props.image.publicURL!}) no-repeat center center scroll;
     background-size: cover;
+
+    @media ${props => props.theme.screen.tablet} {
+      margin-right: 20px;
+    }
+
+    @media ${props => props.theme.screen.laptopL} {
+      margin-right: 40px;
+    } 
   }
 `;
 

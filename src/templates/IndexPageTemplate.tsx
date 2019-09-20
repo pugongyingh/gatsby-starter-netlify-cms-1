@@ -91,12 +91,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
             <Row className="news__row">
               {news.items.map(newsItem => {
                 return (
-                  <Col
-                    lg={4}
-                    xs={12}
-                    className="col"
-                    key={newsItem!.title}
-                  >
+                  <Col lg={4} xs={12} className="col" key={newsItem!.title}>
                     <h2>{newsItem!.title}</h2>
                     <p>{newsItem!.description}</p>
                   </Col>
@@ -210,8 +205,10 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
       display: flex;
       justify-content: space-between;
 
-      .col {
-        max-width: 420px;
+      @media ${props => props.theme.screen.laptopL} {
+        .col {
+          max-width: 420px;
+        }
       }
     }
 
