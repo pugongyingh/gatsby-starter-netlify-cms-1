@@ -99,12 +99,16 @@ references:
   title: Reference
 technologies:
   description: >
+    Technologie před každým započatým projektem pečlivě analyzujeme, abychom
+    zvolili co možná nejvhodnější technologický stack.
+
+
     Na backendu je pro nás jedničkou Java se Spring a Hibernate frameworky. Z
-    JavaScriptových frameworků volíme React (React Native), Vue.js nebo
-    Angular. 
+    JavaScriptových technologii volíme React nebo React Native v mobilním
+    vývoji, Vue.js nebo Angular. 
 
 
-    Z cloudových technologií upřednostňujeme Amazon Web Services. Na vývoj,
+    Pro běh našich řešení upřednostňujeme Amazon Web Services. Na vývoj,
     testování, i v produkci používáme Docker. 
   items:
     - logo: /img/java-new-logo.svg
