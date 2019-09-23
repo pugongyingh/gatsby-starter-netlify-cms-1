@@ -1,6 +1,7 @@
 ---
 locale: cs
-title: Starky's club
+title: Starky's Club
+description: Softwarová řešení
 contact:
   address:
     city: Praha
@@ -29,10 +30,10 @@ contact:
       role: Frontend teamleader
   title: Contact
 footer:
-  copy: Copyright StarkysClub 2019. All rights reserved
+  copy: Copyright Starky's Club 2019. All rights reserved.
   social:
     - image: /img/facebook.svg
-      link: 'https://www.facebook.com/Starkys-Club-1815824738726352/'
+      link: 'https://www.facebook.com/starkysclub/'
     - image: /img/instagram.svg
       link: 'https://www.instagram.com/starkysclub/'
     - image: /img/linkdenin.svg
