@@ -123,8 +123,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                   );
                 })}
             </Row>
-            )}
-        </Grid>
+          </Grid>
         </section>
       )}
       {/* References */}
