@@ -113,8 +113,8 @@ technologies:
       title: React
     - logo: /img/aws-proper-logo.svg
       title: AWS
-    - logo: /img/logo-swift-proper.svg
-      title: Swift
+    - logo: /img/spring.png
+      title: Spring
     - logo: /img/logo-docker-proper.svg
       title: Docker
     - logo: /img/redux-logo.svg
