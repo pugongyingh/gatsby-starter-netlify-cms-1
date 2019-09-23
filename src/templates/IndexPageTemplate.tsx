@@ -123,120 +123,78 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                   );
                 })}
             </Row>
-          )}
-        </Grid>
-      </section>
-    )}
-    {news && (
-      <section className="news">
-        <Grid className="container">
-          <h1>{news.title}</h1>
-          {news.items && (
-            <Row className="news__row">
-              {news.items.map(newsItem => {
-                return (
-                  <Col lg={4} xs={12} className="col" key={newsItem!.title}>
-                    <h2>{newsItem!.title}</h2>
-                    <p>{newsItem!.description}</p>
-                  </Col>
-                );
-              })}
-            </Row>
-          )}
-        </Grid>
-      </section>
-    )}
-    {/* What we do */}
-    {work && (
-      <section id="what-we-do">
-        <Grid className="container">
-          <h1>{work.title}</h1>
-          {/* <h1>{work.subtitle}</h1> */}
-          <Row className="section-row what-we-do-content-wrap">
-            {work.items &&
-              work.items.map(workItem => {
-                return (
-                  <NewsItem
-                    key={workItem!.title!}
-                    logo={workItem!.logo}
-                    heading={workItem!.title!}
-                    perex={workItem!.description!}
-                    alt={`${workItem!.title} logo`}
-                  />
-                );
-              })}
-          </Row>
-        </Grid>
-      </section>
-    )}
-    {/* References */}
-    {references && (
-      <section id="references">
-        <Grid className="container">
-          <h1>{locale === "cs" ? "Reference" : "References"}</h1>
-          {references.items!.map((referenceItem, i) => {
-            return (
-              <ReferenceItem
-                key={referenceItem!.title!}
-                image={referenceItem!.image!}
-                title={referenceItem!.title!}
-                subtitle={referenceItem!.subtitle!}
-                description={referenceItem!.description!}
-                odd={i % 2 !== 0}
-              />
-            );
-          })}
-        </Grid>
-      </section>
-    )}
-    {/* Technologies */}
-    {technologies && (
-      <section className="technologies">
-        <Grid className="container">
-          <h1>{technologies.title}</h1>
-          <Row>
-            <Col className="technologies__description" xs={12} md={5}>
-              {technologies.description}
-            </Col>
-            {technologies.items && (
-              <Col xs={12} mdOffset={1} md={6}>
-                <Row className="logoRow">
-                  {technologies.items.map((technology, i) => {
-                    return (
-                      <TechnologyItem
-                        key={i}
-                        logo={technology!.logo!}
-                        alt={technology!.title!}
-                        className={
-                          technology!.logo!.name! === "redux-logo"
-                            ? "redux-logo"
-                            : ""
-                        }
-                      />
-                    );
-                  })}
-                </Row>
-              </Col>
             )}
-          </Row>
         </Grid>
+        </section>
+      )}
+      {/* References */}
+      {references && (
+        <section id="references">
+          <Grid className="container">
+            <h1>{locale === "cs" ? "Reference" : "References"}</h1>
+            {references.items!.map((referenceItem, i) => {
+              return (
+                <ReferenceItem
+                  key={referenceItem!.title!}
+                  image={referenceItem!.image!}
+                  title={referenceItem!.title!}
+                  subtitle={referenceItem!.subtitle!}
+                  description={referenceItem!.description!}
+                  odd={i % 2 !== 0}
+                />
+              );
+            })}
+          </Grid>
+        </section>
+      )}
+      {/* Technologies */}
+      {technologies && (
+        <section className="technologies">
+          <Grid className="container">
+            <h1>{technologies.title}</h1>
+            <Row>
+              <Col className="technologies__description" xs={12} md={5}>
+                {technologies.description}
+              </Col>
+              {technologies.items && (
+                <Col xs={12} mdOffset={1} md={6}>
+                  <Row className="logoRow">
+                    {technologies.items.map((technology, i) => {
+                      return (
+                        <TechnologyItem
+                          key={i}
+                          logo={technology!.logo!}
+                          alt={technology!.title!}
+                          className={
+                            technology!.logo!.name! === "redux-logo"
+                              ? "redux-logo"
+                              : ""
+                          }
+                        />
+                      );
+                    })}
+                  </Row>
+                </Col>
+              )}
+            </Row>
+          </Grid>
+        </section>
+      )}
+      {/* Blog */}
+      <section id="blog">
+        <BlogRollQuery locale={locale} />
       </section>
-    )}
-    {/* Blog */}
-    <section id="blog">
-      <BlogRollQuery locale={locale} />
-    </section>
-    {/* Contact Us */}
-    <section id="contact" className="contact">
-      <Contact locale={locale} />
-    </section>
-    {/* Instagram */}
-    <section id="instagram">
-      <InstagramRoll />
-    </section>
-    <Footer locale={locale} />
-  </div>
-);
+      {/* Contact Us */}
+      <section id="contact" className="contact">
+        <Contact locale={locale} />
+      </section>
+      {/* Instagram */}
+      <section id="instagram">
+        <InstagramRoll />
+      </section>
+      <Footer locale={locale} />
+    </div>
+  );
 
 export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
@@ -358,7 +316,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
         @media screen and (max-width: 540px) {
           :not(:last-child) {
             border-bottom: 1px solid ${props =>
-              props.theme.colors.clientBorder};
+    props.theme.colors.clientBorder};
           }
         }
 
