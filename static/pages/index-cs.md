@@ -73,14 +73,14 @@ references:
     - description: >-
         Nadnárodní korporaci Citrix pomáháme s vývojovými kapacitami na jejich
         řešení pro zjednodušování komplexních firemních IT služeb.
-      image: /img/citrix_ref.jpg
+      image: /img/ref_citrix-opt.png
       subtitle: Citrix
       title: '#java #reactor #reactive #springboot #cloud #jersey #microservices'
     - description: >-
         Pro největší českou cestovku jsme spravovali a technologicky rozvíjeli
         business-critical řešení pro vyhledávání a prodej zájezdů, společně jsme
         také připravili web pro prodej letenek letenky.fischer.cz.
-      image: /img/fischer-ref.jpg
+      image: /img/ref_fischer-opt.png
       subtitle: 'CK Fischer '
       title: >-
         #java #hibernate #springboot #docker #mssql #microservices
@@ -92,7 +92,7 @@ references:
         rovněž tvořili microservices. Šlo o samostatné nástroje na tvorbu a
         administraci kampaní a administraci bannerových ploch napříč celým webem
         Mallu.
-      image: /img/mall_ref.jpg
+      image: /img/ref_mall-opt.png
       subtitle: Mall.cz
       title: '#javascript #vuejs #php #angular #nodejs'
   subtitle: '-'
