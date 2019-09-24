@@ -1,13 +1,21 @@
 import React from "react";
+import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
+import { Maybe } from "../graphql/types";
 
-const NotFoundPage = () => (
-  <Page>
-    <div>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness. </p>
-    </div>
-  </Page>
+interface NotFoundPageProps {
+  hero: string | File;
+}
+
+const NotFoundPage: React.SFC<NotFoundPageProps> = ({hero}) => (
+
+  // <div>
+  //   <div>
+  //     <h1>NOT FOUND</h1>
+  //     <p>You just hit a route that doesn&#39;t exist... the sadness. </p>
+  //   </div>
+  // </div>
+  <Header title="404" subheading="You just hit a route that doesn't exist... the sadness." hero={hero} locale={locale} />
 );
 
 export default NotFoundPage;
