@@ -27,6 +27,7 @@ const BlogItem: React.FC<BlogItemProps> = ({
         link={slug}
         instaFollowLink={false}
         white={true}
+        className="link"
       />
     </div>
   );
@@ -47,6 +48,10 @@ const StyledBlogItem = styled(BlogItem)`
     @media ${props => props.theme.screen.laptopL} {
       margin-right: 40px;
     } 
+  }
+
+  .link {
+    margin: 30px 0;
   }
 `;
 

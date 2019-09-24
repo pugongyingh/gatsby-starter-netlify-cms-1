@@ -4,7 +4,7 @@ import React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
 import { isString } from "util";
 import { File, Maybe } from "../../graphql/types";
-import logo from "../../img/logo.svg";
+import logo from "../../img/starkys-logo-proper.svg";
 import { css, default as styled, SCP } from "../../styles/theme";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
@@ -194,19 +194,6 @@ const Header = styled(HeaderTemplate)`
     }
   }
 
-  @media ${props => props.theme.screen.laptop} {
-    p {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: normal;
-      font-size: 28px;
-      line-height: 38px;
-      position: relative;
-      top: 50px;
-      left: 50px;
-    }
-  }
-
   .logo-section {
     display: flex;
     flex-wrap: wrap;
@@ -253,8 +240,16 @@ const Header = styled(HeaderTemplate)`
     align-items: center;
     margin-top: 40px;
 
-    @media ${props => props.theme.screen.laptopL} {
-      margin-top: 0;
+    @media ${props => props.theme.screen.laptop} {
+
+      p {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 38px;
+        margin-top: 7rem;
+      }
     }
   }
 `;

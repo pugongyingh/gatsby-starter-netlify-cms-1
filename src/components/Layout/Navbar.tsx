@@ -41,7 +41,8 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
     require("smooth-scroll")('a[href*="#"]');
   }
 
-  const isFixed = fixed || typeof window !== 'undefined' && (scroll > window.innerHeight);
+  const isFixed =
+    fixed || (typeof window !== "undefined" && scroll > window.innerHeight);
 
   return (
     <nav
@@ -126,16 +127,16 @@ const Navbar = styled(NavbarTemplate)`
     position: fixed;
     background: ${props => props.theme.colors.darkGreen};
     transition: 0.25s all;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 
     @media ${props => props.theme.screen.laptop} {
       height: 120px;
     }
 
     @media ${props => props.theme.screen.laptop} {
-    .navbar-menu {
-      display: flex;
-    }
+      .navbar-menu {
+        display: flex;
+      }
     }
   }
 
@@ -283,8 +284,26 @@ const Navbar = styled(NavbarTemplate)`
     text-decoration: none;
     color: ${props => props.theme.colors.white};
     cursor: pointer;
+    position: relative;
 
     @media ${props => props.theme.screen.laptop} {
+      &:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #fff;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      &:hover:after {
+        width: 100%;
+        left: 0;
+      }
+
       color: ${props => props.theme.colors.black};
       :not(:last-child) {
         margin-right: 17px;

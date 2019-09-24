@@ -11,20 +11,26 @@ interface Props {
 }
 
 const StyledCol = styled(Col)`
-  img {
+  display: flex;
+  justify-content: center;
+  
+  .logo {
+    max-height: 80px;
+    max-width: 80px;
     width: 100%;
     min-height: 80px;
     max-height: 80px;
+    max-height: 80px;
     padding: 15px 0;
-
-    &.redux-logo {
-      min-height: 60px;
-      max-height: 60px;
-    }
 
     @media ${props => props.theme.screen.laptop} {
       min-height: initial;
     }
+  }
+
+  .redux-logo {
+    min-height: 60px;
+    max-height: 60px;
   }
 `;
 
