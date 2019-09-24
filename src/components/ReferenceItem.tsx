@@ -30,9 +30,9 @@ const ReferenceItem: React.FC<Props> = ({
       <Col className="ref-img" xs={12} md={6} lg={odd? 6 : 5} lgOffset={odd? 1 : 0} >
         {<StyledPCI image={image} alt={title} />}
       </Col>
-      <Col className="ref-content" xs={12} md={6} lgOffset={odd? 0 : 1} lg={odd? 5 : 6}>
-        <h2>{title}</h2>
-        <h3>{subtitle}</h3>
+      <Col className="ref-content" xs={12} md={6} lgOffset={odd? 0 : 1} lg={odd? 5 : 6}>  
+        <h2>{subtitle}</h2>
+        <h3>{title}</h3>
         <p>{description}</p>
         {/* <ArrowLink link={link} text="See live site" instaFollowLink={true} /> */}
       </Col>
