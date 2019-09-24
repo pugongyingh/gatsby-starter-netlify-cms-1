@@ -248,7 +248,7 @@ const Header = styled(HeaderTemplate)`
         font-weight: normal;
         font-size: 28px;
         line-height: 38px;
-        margin-top: 12rem;
+        margin-top: 7rem;
       }
     }
   }

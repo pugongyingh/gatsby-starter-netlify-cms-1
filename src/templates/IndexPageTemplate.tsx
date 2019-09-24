@@ -89,7 +89,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
         <Grid className="container">
           <h1>{news.title}</h1>
           {news.items && (
-            <Row>
+            <Row className="news__row">
               {news.items.map(newsItem => {
                 return (
                   <Col lg={4} xs={12} className="col" key={newsItem!.title}>
@@ -123,7 +123,6 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                 );
               })}
           </Row>
-          )}
         </Grid>
       </section>
     )}
