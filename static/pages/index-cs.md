@@ -117,7 +117,7 @@ technologies:
       title: React
     - logo: /img/aws-proper-logo.svg
       title: AWS
-    - logo: /img/spring.png
+    - logo: /img/springio-icon-opt.svg
       title: Spring
     - logo: /img/logo-docker-proper.svg
       title: Docker
