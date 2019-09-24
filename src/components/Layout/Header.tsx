@@ -33,7 +33,7 @@ const HeaderTemplate: React.SFC<P> = ({
     />
   );
   return (
-    <header className={className}>
+    <header id="header" className={className}>
       <div>
         {!compact && file.match(/.(mp4|ogg|wmv|ftv|mov)$/i) && (
           <video

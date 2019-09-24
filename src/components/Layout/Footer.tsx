@@ -1,4 +1,4 @@
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 import { MarkdownRemarkEdge, Maybe, Query } from "../../graphql/types";
@@ -23,11 +23,13 @@ const FooterTemplate: React.FC<P> = ({ className, footer, locale }) => {
       <Grid className="container">
         <Row className="content-wrap">
           <Col lg={4}>
-            <PreviewCompatibleImage
-              image={starkysIcon}
-              alt="Starky's Club"
-              className="logo"
-            />
+            <Link to="/#header">
+              <PreviewCompatibleImage
+                image={starkysIcon}
+                alt="Starky's Club"
+                className="logo"
+              />
+            </Link>
           </Col>
           <Col lg={4} className="copyright">
             {localizedFooter!.node.frontmatter!.footer
