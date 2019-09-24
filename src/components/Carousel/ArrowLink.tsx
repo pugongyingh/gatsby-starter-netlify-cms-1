@@ -20,10 +20,9 @@ const StyledLink = styled.div`
   }
   &.white {
     a {
-    color: white;
+      color: white;
     }
   }
-
 `;
 
 interface ArrowLinkProps {
@@ -32,6 +31,7 @@ interface ArrowLinkProps {
   instaFollowLink: boolean;
   white?: boolean;
   className?: string;
+  externalLink: boolean;
 }
 
 const ArrowLink: React.FC<ArrowLinkProps> = ({
@@ -39,12 +39,13 @@ const ArrowLink: React.FC<ArrowLinkProps> = ({
   text,
   instaFollowLink,
   white,
-  className
+  className,
+  externalLink
 }) => {
   const classes = [className];
 
   if (instaFollowLink) {
-    classes.push("followLink")
+    classes.push("followLink");
   }
 
   if (white) {
@@ -52,9 +53,15 @@ const ArrowLink: React.FC<ArrowLinkProps> = ({
   }
   return (
     <StyledLink className={classes.join(" ")}>
-      <GatsbyLink to={link} replace={false}>
-        {text} <img src={arrow} />
-      </GatsbyLink>
+      {externalLink ? (
+        <a href={link} target="_blank">
+          {text} <img src={arrow} />
+        </a>
+      ) : (
+        <GatsbyLink to={link} replace={false}>
+          {text} <img src={arrow} />
+        </GatsbyLink>
+      )}
     </StyledLink>
   );
 };
