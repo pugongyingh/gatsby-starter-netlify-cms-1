@@ -7,6 +7,7 @@ import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/starkys-logo-proper.svg";
 import { css, default as styled, SCP } from "../../styles/theme";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
+import Button from "../Button";
 
 interface P extends SCP {
   title: Maybe<string>;
@@ -64,9 +65,14 @@ const HeaderTemplate: React.SFC<P> = ({
                 <h1>{title}</h1>
                 {!compact && (
                   <Link to="/#what-we-do" className="navbar-item">
-                    <button>
+                    <Button
+                      className="header__cta"
+                      background="#ffc700"
+                      height="57px"
+                      type
+                    >
                       {locale === "cs" ? "Pracujte s námi" : "Work with us"}
-                    </button>
+                    </Button>
                   </Link>
                 )}
               </Col>
@@ -161,10 +167,10 @@ const Header = styled(HeaderTemplate)`
     font-family: "Muli";
   }
 
-  img {
+  /* img {
     width: ${({ compact }) => (compact ? "70px" : "78px")};
     height: ${({ compact }) => (compact ? "70px" : "85px")};
-  }
+  } */
 
   h1 {
     font-style: normal;
@@ -201,6 +207,11 @@ const Header = styled(HeaderTemplate)`
     text-align: center;
     align-items: center;
     flex-direction: column;
+
+    .starkyslogo {
+      width: 130px;
+      height: 130px;
+    }
 
     @media ${props => props.theme.screen.tablet} {
       ${({ compact }) =>

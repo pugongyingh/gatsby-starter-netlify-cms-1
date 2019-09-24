@@ -1,6 +1,7 @@
 import React from "react";
 import { Maybe } from "../../graphql/types";
 import styled, { SCP } from "../../styles/theme";
+import Button from "../../components/Button";
 
 interface FormProps extends SCP {
   locale: Maybe<string>;
@@ -31,7 +32,15 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
       </div>
       {/* <div data-netlify-recaptcha="true" /> */}
       <div className="form-btn-wrap">
-        <button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</button>
+        {/* <button type="submit">{locale === "cs" ? "Odeslat" : "Send"}</button> */}
+        <Button
+          type="submit"
+          height="44px"
+          className="form-btn-wrap__cta"
+          background="#1B2631"
+        >
+          {locale === "cs" ? "Odeslat" : "Send"}
+        </Button>
       </div>
     </form>
   );
@@ -82,26 +91,20 @@ const StyledContactForm = styled(ContactForm)`
     border-radius: 1px;
     outline: none;
     margin-bottom: 20px;
+    font-size: 20px;
   }
 
   .form-btn-wrap {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
 
-    button {
-      width: 197px;
-      height: 44px;
-      background: linear-gradient(252.14deg, #1b2631 -2.02%, #212f3f 103.08%);
-      border-radius: 1px;
-      color: ${props => props.theme.colors.white};
-      outline: none;
-      cursor: pointer;
-      font-size: 18px;
+    @media ${props => props.theme.screen.laptop} {
+      justify-content: flex-end;
+    }
 
-      &:hover {
-        background: #293d4c;
-      }
+    &__cta:hover {
+      background: ${props => props.theme.colors.contactBtnGrey} !important;
     }
   }
 `;
