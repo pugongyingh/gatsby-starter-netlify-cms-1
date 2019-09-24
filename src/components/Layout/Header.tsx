@@ -6,8 +6,8 @@ import { isString } from "util";
 import { File, Maybe } from "../../graphql/types";
 import logo from "../../img/starkys-logo-proper.svg";
 import { css, default as styled, SCP } from "../../styles/theme";
-import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 import Button from "../Button";
+import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
 interface P extends SCP {
   title: Maybe<string>;
@@ -69,7 +69,7 @@ const HeaderTemplate: React.SFC<P> = ({
                       className="header__cta"
                       background="#ffc700"
                       height="57px"
-                      type
+                      type={true}
                     >
                       {locale === "cs" ? "Pracujte s námi" : "Work with us"}
                     </Button>

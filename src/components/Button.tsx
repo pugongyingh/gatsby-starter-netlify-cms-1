@@ -33,8 +33,8 @@ const Button: React.FC<Props> = ({
     <StyledBtn
       className={className}
       style={{
-        background: background,
-        height: height
+        background,
+        height
       }}
       type={type}
     >

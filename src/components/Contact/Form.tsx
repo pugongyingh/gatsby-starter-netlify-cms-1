@@ -1,7 +1,7 @@
 import React from "react";
+import Button from "../../components/Button";
 import { Maybe } from "../../graphql/types";
 import styled, { SCP } from "../../styles/theme";
-import Button from "../../components/Button";
 
 interface FormProps extends SCP {
   locale: Maybe<string>;
