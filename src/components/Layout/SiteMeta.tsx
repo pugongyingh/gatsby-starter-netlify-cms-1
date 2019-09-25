@@ -44,31 +44,13 @@ const SiteMeta: React.SFC<SiteMetaProps> = ({ title }) => {
         href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
         rel="stylesheet"
       />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="favicons/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="favicons/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="favicons/favicon-16x16.png"
-      />
-      <link rel="manifest" href="favicons/site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="favicons/safari-pinned-tab.svg"
-        color="#5bbad5"
-      />
 
-      <meta name="theme-color" content="#fff" />
+      {/* FAVICONS STARTS HERE */}
+      <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png"/>
+      <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon-32x32.png" sizes="32x32"/>
+      <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon-16x16.png" sizes="16x16"/>
+      <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5"/>
+      <meta name="theme-color" content="#ffffff"/>
 
       <meta property="og:type" content="business.business" />
       <meta property="og:title" content={title} />
@@ -77,9 +59,6 @@ const SiteMeta: React.SFC<SiteMetaProps> = ({ title }) => {
         property="og:image"
         content={`${withPrefix("/")}img/og-image.jpg`}
       />
-
-      <meta name="msapplication-TileColor" content="#da532c" />
-      <meta name="theme-color" content="#ffffff"/>
     </Helmet>
   );
 };
