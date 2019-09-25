@@ -85,16 +85,16 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
             "navbar-menu--fixed": isFixed
           })}`}
         >
-          <Link to="/#what-we-do" className="navbar-item">
+          <Link onClick={toggleActive} to="/#what-we-do" className="navbar-item">
             {locale === "cs" ? "Co děláme" : "What We Do"}
           </Link>
-          <Link to="/#references" className="navbar-item">
+          <Link onClick={toggleActive} to="/#references" className="navbar-item">
             {locale === "cs" ? "Reference" : "References"}
           </Link>
-          <Link to="/#blog" className="navbar-item">
+          <Link onClick={toggleActive} to="/#blog" className="navbar-item">
             Blog
           </Link>
-          <Link to="/#contact" className="navbar-item">
+          <Link onClick={toggleActive} to="/#contact" className="navbar-item">
             {locale === "cs" ? "Kontakt" : "Contact"}
           </Link>
         </div>

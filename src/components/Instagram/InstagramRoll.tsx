@@ -35,7 +35,7 @@ class Instagram extends React.Component<P> {
 						</Col>
 					</Row>
 					<Row className="arrow-icons-wrap">
-						<ArrowLink text="Follow us on Instagram" link="#" instaFollowLink={true} />
+						<ArrowLink text="Follow us on Instagram" link="https://www.instagram.com/starkysclub/" instaFollowLink={true} externalLink={true} />
 					</Row>
 				</Grid>
 			</section>

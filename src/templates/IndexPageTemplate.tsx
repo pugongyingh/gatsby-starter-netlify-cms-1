@@ -70,12 +70,14 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                         : "clients__item"
                     }
                   >
-                    {client!.logo && (
-                      <PreviewCompatibleImage
-                        image={client!.logo}
-                        alt={`${client!.title} logo`}
-                      />
-                    )}
+                    <a href="#" target="_blank">
+                      {client!.logo && (
+                        <PreviewCompatibleImage
+                          image={client!.logo}
+                          alt={`${client!.title} logo`}
+                        />
+                      )}
+                    </a>
                   </Col>
                 );
               })}
@@ -396,7 +398,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
         padding: 2rem 0;
         max-width: 480px;
 
-        h2 {
+        h3 {
           font-family: "Open Sans", sans-serif;
           font-style: normal;
           font-weight: normal;
@@ -405,7 +407,7 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
           letter-spacing: 0.03em;
         }
 
-        h3 {
+        h2 {
           font-family: Muli;
           font-style: normal;
           font-weight: 800;

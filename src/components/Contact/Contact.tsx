@@ -131,7 +131,6 @@ const StyledContact = styled(ContactTemplate)`
     &__content {
       flex-direction: column;
       display: flex;
-      /* border: 1px solid; */
 
       @media ${props => props.theme.screen.mobileL} {
         flex-direction: row;
@@ -143,7 +142,6 @@ const StyledContact = styled(ContactTemplate)`
       flex-wrap: wrap;
       justify-content: center;
       flex-direction: column;
-      /* border: 1px solid red; */
       align-items: center;
 
       @media ${props => props.theme.screen.mobileL} {
@@ -158,7 +156,6 @@ const StyledContact = styled(ContactTemplate)`
       display: flex;
       align-items: center;
       flex-basis: 20%;
-      /* border: 1px solid blue; */
     }
 
     &__cards {

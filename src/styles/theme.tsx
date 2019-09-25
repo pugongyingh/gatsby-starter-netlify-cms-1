@@ -42,6 +42,7 @@ export interface IThemeInterface {
     inputBorder: string;
     clientBorder: string;
     mustard: string;
+    contactBtnGrey: string;
   };
   fonts: {
     default: string;
@@ -87,7 +88,8 @@ export const theme: IThemeInterface = {
     blogSectionBg: "#161617",
     inputBorder: "#E8E8E8",
     clientBorder: "#6C6C6C",
-    mustard: "#d3a500"
+    mustard: "#d3a500",
+    contactBtnGrey: "#293d4c"
   },
   fonts: {
     default: "Open Sans"
