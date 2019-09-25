@@ -29,6 +29,14 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
     />
   );
 
+  const LogoMobile = (
+    <PreviewCompatibleImage
+      className="starkyslogo--mobile"
+      image={logo}
+      alt="Starkys Logo"
+    />
+  );
+
   useEffect(() => {
     document.addEventListener("scroll", () => {
       setScroll(window.scrollY);
@@ -85,10 +93,18 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
             "navbar-menu--fixed": isFixed
           })}`}
         >
-          <Link onClick={toggleActive} to="/#what-we-do" className="navbar-item">
+          <Link
+            onClick={toggleActive}
+            to="/#what-we-do"
+            className="navbar-item"
+          >
             {locale === "cs" ? "Co děláme" : "What We Do"}
           </Link>
-          <Link onClick={toggleActive} to="/#references" className="navbar-item">
+          <Link
+            onClick={toggleActive}
+            to="/#references"
+            className="navbar-item"
+          >
             {locale === "cs" ? "Reference" : "References"}
           </Link>
           <Link onClick={toggleActive} to="/#blog" className="navbar-item">
@@ -99,6 +115,7 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
           </Link>
         </div>
       </Grid>
+      {isFixed ? LogoMobile : null}
     </nav>
   );
 };
@@ -146,6 +163,18 @@ const Navbar = styled(NavbarTemplate)`
 
   @media ${props => props.theme.screen.laptop} {
     background: none;
+  }
+
+  .starkyslogo--mobile {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    height: 45px;
+    z-index: 50;
+
+    @media ${props => props.theme.screen.tablet} {
+      display: none;
+    }
   }
 
   .grid-wrap {
