@@ -130,6 +130,10 @@ const Navbar = styled(NavbarTemplate)`
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 
     @media ${props => props.theme.screen.laptop} {
+      height: 70px;
+    }
+
+    @media ${props => props.theme.screen.laptopL} {
       height: 120px;
     }
 
