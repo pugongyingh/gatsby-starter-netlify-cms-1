@@ -126,7 +126,7 @@ const StyledContact = styled(ContactTemplate)`
         height: 150px;
         border-radius: 100px !important;
 
-        @media ${props => props.theme.screen.laptop} {
+        @media ${props => props.theme.screen.tablet} {
           width: 100px;
           height: 100px;
         }
