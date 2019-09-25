@@ -11,13 +11,13 @@ contact:
     zip: '15000'
   contactPerson:
     - email: michal.kourik@starkysclub.com
-      image: /img/michal-kourik-photo.png
+      image: /img/michal_kourik_profile.jpg
       linkedIn: 'https://www.linkedin.com/in/michalkourik/'
       name: Michal Kouřík
       phone: ‭+420 737 977 013‬
       role: Technological teamleader
     - email: martin.svach@starkysclub.com
-      image: /img/martin-svach-photo.png
+      image: /img/svachi_profile.jpg
       linkedIn: 'https://www.linkedin.com/in/martinsvach/'
       name: Martin Švach
       phone: +420 ‭606 180 315‬
