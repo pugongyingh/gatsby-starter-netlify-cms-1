@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { Link } from "gatsby";
 import GatsbyLink from "gatsby-link";
 import React from "react";
@@ -15,6 +16,7 @@ interface P extends SCP {
   hero?: string | File;
   compact?: boolean;
   locale: Maybe<string>;
+  four0four: boolean;
 }
 
 const HeaderTemplate: React.SFC<P> = ({
@@ -23,7 +25,8 @@ const HeaderTemplate: React.SFC<P> = ({
   subheading,
   className,
   compact,
-  locale
+  locale,
+  four0four
 }) => {
   const file = hero ? (isString(hero) ? hero : hero.base!) : "";
   const Logo = (
@@ -62,7 +65,9 @@ const HeaderTemplate: React.SFC<P> = ({
                 ) : (
                   Logo
                 )}
-                <h1>{title}</h1>
+                <h1 className={four0four? "header__h1--404": ""}>
+                  {title}
+                </h1>
                 {!compact && (
                   <Link to="/#what-we-do" className="navbar-item">
                     <Button
@@ -71,7 +76,11 @@ const HeaderTemplate: React.SFC<P> = ({
                       height="57px"
                       type={true}
                     >
-                      {locale === "cs" ? "Pracujte s námi" : "Work with us"}
+                      {four0four
+                        ? "Go back"
+                        : locale === "cs"
+                        ? "Pracujte s námi"
+                        : "Work with us"}
                     </Button>
                   </Link>
                 )}
@@ -182,6 +191,12 @@ const Header = styled(HeaderTemplate)`
 
     @media ${props => props.theme.screen.tablet} {
       font-size: 60px;
+      flex-basis:100%;
+      /* flex:1; */
+
+      &.header__h1--404 {
+        font-size: 100px;
+      }
     }
   }
 
