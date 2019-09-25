@@ -122,9 +122,14 @@ const StyledContact = styled(ContactTemplate)`
       margin-bottom: 10px;
 
       &-wrap {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border-radius: 100px !important;
+
+        @media ${props => props.theme.screen.tablet} {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
 
