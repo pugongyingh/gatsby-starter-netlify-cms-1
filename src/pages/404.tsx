@@ -3,7 +3,7 @@ import Header from "../components/Layout/Header";
 import Page from "../components/Layout/Page";
 import heroImg from "../img/hero-main-bg-opt.jpg";
 
-const FourOFourPage: React.FC = () => {
+export const FourOFourPage: React.FC = () => {
 
   return (
     <Page locale="en">
@@ -17,4 +17,4 @@ const FourOFourPage: React.FC = () => {
   );
 };
 
-export default FourOFourPage;
+export default FourOFourPage;
