@@ -8,6 +8,7 @@ import PreviewCompatibleImage from "./CMS/PreviewCompatibleImage";
 const StyledPCI = styled(PreviewCompatibleImage)`
   width: 100%;
   height: auto;
+  max-width: 550px;
 `
 
 interface Props {
