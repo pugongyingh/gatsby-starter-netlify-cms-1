@@ -28,7 +28,7 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
       </div>
       <div className="rfe-form__row">
         <label>{locale === "cs" ? "Vaše zpráva" : "Your message"}</label>
-        <textarea name="message" required={true} />
+        <textarea name="message" required={true}/>
       </div>
       {/* <div data-netlify-recaptcha="true" /> */}
       <div className="form-btn-wrap">
@@ -92,6 +92,14 @@ const StyledContactForm = styled(ContactForm)`
     outline: none;
     margin-bottom: 20px;
     font-size: 20px;
+
+    &:invalid {
+      box-shadow: none;
+    }
+
+    /* &:required {
+      box-shadow: none;
+    } */
   }
 
   .form-btn-wrap {

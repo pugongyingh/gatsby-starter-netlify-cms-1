@@ -1,19 +1,20 @@
-import React from "react";
-import Header from "../components/Layout/Header";
-import Page from "../components/Layout/Page";
-import { Maybe } from "../graphql/types";
+import * as React from "react";
+import Header from "../components/Layout/Header";
+import Page from "../components/Layout/Page";
+import heroImg from "../img/hero-main-bg-opt.jpg";
 
-interface NotFoundPageProps {
-  hero: string | File;
-}
+export const FourOFourPage: React.FC = () => {
 
-const NotFoundPage: React.SFC<NotFoundPageProps> = ({hero}) => (
-  <div>
-    <div>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness. </p>
-    </div>
-  </div>
-);
+  return (
+    <Page locale="en">
+      <Header
+        title="404"
+        hero={heroImg}
+        locale="en"
+        four0four={true}
+      />
+    </Page>
+  );
+};
 
-export default NotFoundPage;
+export default FourOFourPage;
