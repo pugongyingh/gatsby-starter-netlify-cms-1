@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Grid } from "react-flexbox-grid";
 import styled from "styled-components";
 import { Maybe } from "../../graphql/types";
-import logo from "../../img/logo.svg";
+import logo from "../../img/starkys-logo-proper.svg";
 import { SCP } from "../../styles/theme";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 

@@ -223,12 +223,12 @@ const Header = styled(HeaderTemplate)`
     align-items: center;
     flex-direction: column;
 
-    /* .starkyslogo {
+    .starkyslogo {
       width: 130px;
       height: 130px;
-    } */
+    }
 
-    /* @media ${props => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.tablet} {
       ${({ compact }) =>
         !compact &&
         css`
@@ -237,7 +237,7 @@ const Header = styled(HeaderTemplate)`
             height: 185px !important;
           }
         `}
-    } */
+    }
 
     @media ${props => props.theme.screen.laptopL} {
       justify-content: initial;
