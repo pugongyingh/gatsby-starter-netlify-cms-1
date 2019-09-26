@@ -165,15 +165,19 @@ const Navbar = styled(NavbarTemplate)`
     background: none;
   }
 
-  .starkyslogo--mobile {
-    position: absolute;
-    top: 2px;
-    right: 20px;
-    height: 45px;
-    z-index: 50;
+  .starkyslogo {
+    max-height: 90px;
 
-    @media ${props => props.theme.screen.tablet} {
-      display: none;
+    &--mobile {
+      position: absolute;
+      top: 2px;
+      right: 20px;
+      height: 45px;
+      z-index: 50;
+
+      @media ${props => props.theme.screen.tablet} {
+        display: none;
+      }
     }
   }
 
