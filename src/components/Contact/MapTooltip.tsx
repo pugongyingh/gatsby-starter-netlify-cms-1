@@ -35,7 +35,7 @@ const MapTooltip = styled(MapTooltipTemplate)`
   .tooltip {
     background: white;
     position: absolute;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     right: -190px;
     top: 90px;
     width: 200px;
@@ -44,8 +44,17 @@ const MapTooltip = styled(MapTooltipTemplate)`
     flex-direction: column;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
+    font-family: Muli;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 128%;
+    /* identical to box height, or 23px */
+
+    color: #000000;
+
     @media ${props => props.theme.screen.laptop} {
-      right: -300px;
+      right: -325px;
       top: -39px;
     }
 
@@ -56,6 +65,7 @@ const MapTooltip = styled(MapTooltipTemplate)`
 
     p {
       margin: 0;
+      font-size: 16px;
     }
   }
 `;

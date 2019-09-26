@@ -35,8 +35,7 @@ const createMapOptions = (maps: Maps): MapOptions => {
       }
     ],
     disableDoubleClickZoom: true,
-    disableDefaultUI: true,
-    draggable: false
+    draggable: true
   };
 };
 
