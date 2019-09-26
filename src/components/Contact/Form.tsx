@@ -14,6 +14,7 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
       name="contact"
       method="POST"
       data-netlify="true"
+      action="/pages/Success"
     >
       <input type="hidden" name="form-name" value="contact" />
       <label className="rfe-form__row">
