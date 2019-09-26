@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Grid } from "react-flexbox-grid";
 import styled from "styled-components";
 import { Maybe } from "../../graphql/types";
-import logo from "../../img/logo.svg";
+import logo from "../../img/starkys-logo-proper.svg";
 import { SCP } from "../../styles/theme";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
@@ -165,15 +165,19 @@ const Navbar = styled(NavbarTemplate)`
     background: none;
   }
 
-  .starkyslogo--mobile {
-    position: absolute;
-    top: 2px;
-    right: 20px;
-    height: 45px;
-    z-index: 50;
+  .starkyslogo {
+    max-height: 90px;
 
-    @media ${props => props.theme.screen.tablet} {
-      display: none;
+    &--mobile {
+      position: absolute;
+      top: 2px;
+      right: 20px;
+      height: 45px;
+      z-index: 50;
+
+      @media ${props => props.theme.screen.tablet} {
+        display: none;
+      }
     }
   }
 

@@ -17,8 +17,8 @@ interface P extends SCP {
 
 const createMapOptions = (maps: Maps): MapOptions => {
   return {
-    panControl: false,
-    mapTypeControl: false,
+    panControl: true,
+    mapTypeControl: true,
     scrollwheel: false,
     styles: [
       {
@@ -35,8 +35,7 @@ const createMapOptions = (maps: Maps): MapOptions => {
       }
     ],
     disableDoubleClickZoom: true,
-    disableDefaultUI: true,
-    draggable: false
+    draggable: true
   };
 };
 
