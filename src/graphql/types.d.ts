@@ -2129,6 +2129,7 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterFooterCopy = 'frontmatter___footer___copy',
   FrontmatterFooterSocial = 'frontmatter___footer___social',
   FrontmatterFooterSocialLink = 'frontmatter___footer___social___link',
+  FrontmatterFooterSocialTitle = 'frontmatter___footer___social___title',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -2395,11 +2396,13 @@ export type MarkdownRemarkFrontmatterFooterSocial = {
   __typename?: 'MarkdownRemarkFrontmatterFooterSocial',
   image: Maybe<File>,
   link: Maybe<Scalars['String']>,
+  title: Maybe<Scalars['String']>,
 };
 
 export type MarkdownRemarkFrontmatterFooterSocialFilterInput = {
   image: Maybe<FileFilterInput>,
   link: Maybe<StringQueryOperatorInput>,
+  title: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkFrontmatterFooterSocialFilterListInput = {
