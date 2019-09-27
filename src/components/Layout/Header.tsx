@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { Link } from "gatsby";
 import GatsbyLink from "gatsby-link";
 import React from "react";
