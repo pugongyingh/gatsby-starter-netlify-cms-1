@@ -188,7 +188,7 @@ const Header = styled(HeaderTemplate)`
     letter-spacing: 0.03em;
     margin: 40px 0;
 
-    @media ${props => props.theme.screen.tablet} {
+    @media ${props => props.theme.screen.laptopL} {
       font-size: 60px;
       flex-basis:100%;
       /* flex:1; */
