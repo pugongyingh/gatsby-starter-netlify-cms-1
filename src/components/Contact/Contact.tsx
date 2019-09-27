@@ -70,6 +70,7 @@ const ContactTemplate: React.FC<P> = ({ className, configs, locale }) => {
                       name={person!.name!}
                       position={person!.role!}
                       email={person!.email!}
+                      linkedIn={person!.linkedIn!}
                     />
                   </Col>
                 ))}
