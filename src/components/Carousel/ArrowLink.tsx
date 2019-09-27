@@ -14,10 +14,17 @@ const StyledLink = styled.div`
     font-size: 18px;
     line-height: 128%;
     letter-spacing: 0.03em;
+    position: relative;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
+
   img {
     padding-left: 0.25em;
   }
+  
   &.white {
     a {
       color: white;

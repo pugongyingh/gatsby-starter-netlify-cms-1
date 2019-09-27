@@ -310,6 +310,16 @@ export const StyledIndexPageTemplate = styled(IndexPageTemplate)`
 
         &__wrap {
          margin-top: 60px;
+
+        
+        }
+
+        &__item {
+          a:hover {
+           img {
+             opacity: 0.8;
+           }
+         }
         }
       }
 
