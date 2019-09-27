@@ -57,7 +57,7 @@ export const query = graphql`
       logo {
         ...FileInfo
       }
-      link
+      # link
     }
   }
   fragment WorkInfo on MarkdownRemarkFrontmatterWork {
@@ -137,22 +137,22 @@ export const query = graphql`
   }
   fragment ContactInfo on MarkdownRemarkFrontmatterContact {
     title
-                                contactPerson {
-                                    email
-                                    linkedIn
-                                    name
-                                    role
-                                    phone
-                                    image {
-                                        ...FileInfo
-                                    }
-                                }
-                                address {
-                                    city
-                                    lat
-                                    lng
-                                    street
-                                    zip
-                                }
+    contactPerson {
+        email
+        linkedIn
+        name
+        role
+        phone
+        image {
+            ...FileInfo
+        }
+    }
+    address {
+        city
+        lat
+        lng
+        street
+        zip
+    }
   }
 `
