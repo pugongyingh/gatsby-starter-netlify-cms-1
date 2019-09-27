@@ -30,11 +30,13 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
   );
 
   const LogoMobile = (
-    <PreviewCompatibleImage
-      className="starkyslogo--mobile"
-      image={logo}
-      alt="Starkys Logo"
-    />
+    <a href="#">
+      <PreviewCompatibleImage
+        className="starkyslogo--mobile"
+        image={logo}
+        alt="Starkys Logo"
+      />
+    </a>
   );
 
   useEffect(() => {
