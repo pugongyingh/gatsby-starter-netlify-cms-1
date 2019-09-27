@@ -34,9 +34,12 @@ footer:
   social:
     - image: /img/facebook.svg
       link: 'https://www.facebook.com/starkysclub/'
+      title: Facebook
     - image: /img/instagram.svg
       link: 'https://www.instagram.com/starkysclub/'
+      title: Instagram
     - image: /img/linkdenin.svg
       link: 'https://www.linkedin.com/company/starkys-club/about/'
+      title: LinkedIn
 ---
 
