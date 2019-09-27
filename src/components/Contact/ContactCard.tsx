@@ -11,6 +11,7 @@ interface ContactCardProps {
   name: string;
   position: string;
   email: string;
+  linkedIn: string;
 }
 
 const ContactCardWrap = styled.div`
@@ -30,7 +31,7 @@ const ContactCardWrap = styled.div`
     margin: 0;
   }
 
-  a {
+  .contact__description__email {
     text-decoration: none;
     font-family: Open Sans;
     font-style: normal;
@@ -40,17 +41,11 @@ const ContactCardWrap = styled.div`
     color: ${props => props.theme.colors.paragraphGrey};
   }
 
-  .linkedin-icon {
-    margin-top: 10px;
-
-    @media ${props => props.theme.screen.laptop} {
-      margin-left: 18px;
-      margin-top: 0;
-    }
-
-    @media ${props => props.theme.screen.laptopL} {
-      margin-left: 40px;
-    }
+  .contact__icon__link {
+    padding: 0;
+    margin: 0;
+    width: 35px;
+    height: 35px;
   }
 `;
 
@@ -59,7 +54,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
   alt,
   name,
   position,
-  email
+  email,
+  linkedIn
 }) => {
   return (
     <ContactCardWrap>
@@ -75,18 +71,24 @@ const ContactCard: React.FC<ContactCardProps> = ({
           <div className="contact__description">
             <h2>{name}</h2>
             <h2>{position}</h2>
-            <a href={`mailto:${email}`} target="_top">
+            <a
+              className="contact__description__email"
+              href={`mailto:${email}`}
+              target="_top"
+            >
               {email}
             </a>
           </div>
           <div className="contact__icon">
-            <PreviewCompatibleImage
-              className="linkedin-icon"
-              image={LinkedInIcon}
-              alt="LinkedIn icon"
-              height="35px"
-              width="35px"
-            />
+            <a className="contact__icon__link" href={linkedIn} target="_blank">
+              <PreviewCompatibleImage
+                className="linkedin-icon"
+                image={LinkedInIcon}
+                alt="LinkedIn icon"
+                height="35px"
+                width="35px"
+              />
+            </a>
           </div>
         </Col>
       </Row>
