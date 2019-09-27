@@ -245,6 +245,9 @@ collections:
                   - label: Logo
                     name: logo
                     widget: image
+                  - label: Link
+                    name: link
+                    widget: string
           - label: What we do
             name: work
             widget: object
