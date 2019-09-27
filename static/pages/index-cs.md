@@ -30,13 +30,17 @@ news:
   title: Co nového ve Starky's Clubu
 clients:
   items:
-    - logo: /img/citrix-white-logo.svg
+    - link: 'https://www.citrix.cz/'
+      logo: /img/citrix-white-logo.svg
       title: Citrix
-    - logo: /img/logo-fischer.svg
+    - link: 'https://www.fischer.cz/'
+      logo: /img/logo-fischer.svg
       title: CK Fischer
-    - logo: /img/mall_white_logo.svg
+    - link: 'https://www.mall.cz/'
+      logo: /img/mall_white_logo.svg
       title: Mall.cz
-    - logo: /img/icewarp-white.svg
+    - link: 'https://www.icewarp.cz/'
+      logo: /img/icewarp-white.svg
       title: IceWarp
   title: S kým jsme měli tu čest
 work:
