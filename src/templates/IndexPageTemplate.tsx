@@ -70,7 +70,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
                         : "clients__item"
                     }
                   >
-                    <a href="#" target="_blank">
+                    <a href={client!.link!} target="_blank">
                       {client!.logo && (
                         <PreviewCompatibleImage
                           image={client!.logo}

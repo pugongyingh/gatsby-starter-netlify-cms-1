@@ -57,7 +57,7 @@ export const query = graphql`
       logo {
         ...FileInfo
       }
-      # link
+      link
     }
   }
   fragment WorkInfo on MarkdownRemarkFrontmatterWork {
