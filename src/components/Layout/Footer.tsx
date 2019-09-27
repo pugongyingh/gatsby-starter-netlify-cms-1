@@ -44,13 +44,13 @@ const FooterTemplate: React.FC<P> = ({ className, footer, locale }) => {
                     <a
                       href={social!.link!}
                       key={social!.link!}
-                      title="Facebook"
+                      title={social!.title!}
                       target="_blank"
                     >
                       <PreviewCompatibleImage
                         className="social__icon"
                         image={social!.image!}
-                        alt="TODO:"
+                        alt={`${social!.title!} icon`}
                       />
                     </a>
                   )
