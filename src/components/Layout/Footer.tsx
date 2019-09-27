@@ -133,6 +133,7 @@ const Footer: React.SFC<Omit<P, "footer">> = props => {
                   footer {
                     copy
                     social {
+                      # title
                       link
                       image {
                         ...FileInfo
