@@ -46,6 +46,10 @@ const ContactCardWrap = styled.div`
     margin: 0;
     width: 35px;
     height: 35px;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `;
 

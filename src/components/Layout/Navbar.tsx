@@ -85,9 +85,6 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
         </div>
         <div
           id="navMenu"
-          // className={`navbar-menu ${active + isFixed ?
-          //   "is-active navbar-menu--fixed" : "is-active"}`}
-
           className={`navbar-menu ${classNames(className, {
             "is-active": active,
             "navbar-menu--fixed": isFixed
@@ -174,9 +171,9 @@ const Navbar = styled(NavbarTemplate)`
 
     &--mobile {
       position: absolute;
-      top: 2px;
+      top: 8px;
       right: 20px;
-      height: 45px;
+      height: 35px;
       z-index: 50;
 
       @media ${props => props.theme.screen.tablet} {
