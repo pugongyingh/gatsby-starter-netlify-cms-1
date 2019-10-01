@@ -198,6 +198,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
     {/* Instagram */}
     <section id="instagram">
       <InstagramRoll />
+      {/* <NewInstagramRoll/> */}
     </section>
     <Footer locale={locale} />
   </div>
