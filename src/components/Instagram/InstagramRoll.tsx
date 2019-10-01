@@ -26,14 +26,14 @@ class Instagram extends React.Component<P, S> {
     }
   };
   public options = {
-    accessToken: "32473278.1677ed0.b9e1fba1e5b049d1ac87314a8ba4edc9",
-    clientId: "4e3d60058a8742d395233a7dfb404e87",
+    accessToken: "7763124834.1677ed0.c8d4afaaf6c647aead26789aea7810f8",
+    clientId: "0c9c5ef1006742bdbde5c499ad636d22",
     get: "user", // popular, user
     locationId: null,
     resolution: "standard_resolution", // thumbnail, low_resolution, standard_resolution
     sortBy: "none", // none, least-commented, least-liked, least-recent, most-commented, most-liked, most-recent, random
     tagName: null,
-    userId: 32473278,
+    userId: 7763124834,
     limit: 12
   };
 

@@ -16,7 +16,7 @@ const InstagramItem: React.FC<InstagramItemProps> = ({
   return (
     <div className={className}>
       <div className="img" />
-      <Dotdotdot clamp={9}><p>{instaText}</p></Dotdotdot>
+      <Dotdotdot clamp={6}><p>{instaText}</p></Dotdotdot>
     </div>
   );
 };
