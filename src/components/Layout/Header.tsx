@@ -73,7 +73,7 @@ const HeaderTemplate: React.SFC<P> = ({
                       className="header__cta"
                       background="#ffc700"
                       height="57px"
-                      type={true}
+                      type=""
                     >
                       {four0four
                         ? "Go back"
