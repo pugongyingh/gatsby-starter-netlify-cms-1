@@ -1,4 +1,5 @@
 import React from "react";
+import Dotdotdot from 'react-dotdotdot';
 import styled from "../../styles/theme";
 
 interface InstagramItemProps {
@@ -15,7 +16,7 @@ const InstagramItem: React.FC<InstagramItemProps> = ({
   return (
     <div className={className}>
       <div className="img" />
-      <p>{instaText}</p>
+      <Dotdotdot clamp={9}><p>{instaText}</p></Dotdotdot>
     </div>
   );
 };
