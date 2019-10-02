@@ -16,6 +16,7 @@ interface P extends SCP {
   compact?: boolean;
   locale: Maybe<string>;
   four0four: boolean;
+  btnText: string;
 }
 
 const HeaderTemplate: React.SFC<P> = ({
@@ -25,7 +26,8 @@ const HeaderTemplate: React.SFC<P> = ({
   className,
   compact,
   locale,
-  four0four
+  four0four,
+  btnText
 }) => {
   const file = hero ? (isString(hero) ? hero : hero.base!) : "";
   const Logo = (
@@ -35,6 +37,41 @@ const HeaderTemplate: React.SFC<P> = ({
       alt="Starkys Logo"
     />
   );
+
+  const four0fourBtn = () => {
+    if (locale === "cs") {
+      return "Zpět";
+    } else {
+      return "Go back";
+    }
+  };
+
+  const successMessageBtn = () => {
+    if (locale === "cs") {
+      return "Zpět";
+    } else {
+      return "Go back";
+    }
+  };
+
+  const mainHeroBtn = () => {
+    if (locale === "cs") {
+      return "Pracujte s námi";
+    } else {
+      return "Work with us";
+    }
+  };
+
+  const ENUM_STATES = {
+    four0four: four0fourBtn(),
+    successMessage: successMessageBtn(),
+    main: mainHeroBtn()
+  };
+
+  const EnumState = ({ state }) => {
+    return <>{ENUM_STATES[state]}</>;
+  };
+
   return (
     <header id="header" className={className}>
       <div>
@@ -64,9 +101,7 @@ const HeaderTemplate: React.SFC<P> = ({
                 ) : (
                   Logo
                 )}
-                <h1 className={four0four? "header__h1--404": ""}>
-                  {title}
-                </h1>
+                <h1 className={four0four ? "header__h1--404" : ""}>{title}</h1>
                 {!compact && (
                   <Link to="/#what-we-do" className="navbar-item">
                     <Button
@@ -75,11 +110,7 @@ const HeaderTemplate: React.SFC<P> = ({
                       height="57px"
                       type=""
                     >
-                      {four0four
-                        ? "Go back"
-                        : locale === "cs"
-                        ? "Pracujte s námi"
-                        : "Work with us"}
+                      <EnumState state={btnText} />
                     </Button>
                   </Link>
                 )}
@@ -175,11 +206,6 @@ const Header = styled(HeaderTemplate)`
     font-family: "Muli";
   }
 
-  /* img {
-    width: ${({ compact }) => (compact ? "70px" : "78px")};
-    height: ${({ compact }) => (compact ? "70px" : "85px")};
-  } */
-
   h1 {
     font-style: normal;
     font-weight: 900;
@@ -190,7 +216,7 @@ const Header = styled(HeaderTemplate)`
 
     @media ${props => props.theme.screen.laptopL} {
       font-size: 60px;
-      flex-basis:100%;
+      flex-basis: 100%;
       /* flex:1; */
 
       &.header__h1--404 {
@@ -266,7 +292,6 @@ const Header = styled(HeaderTemplate)`
     margin-top: 40px;
 
     @media ${props => props.theme.screen.laptop} {
-
       p {
         font-family: "Open Sans";
         font-style: normal;
