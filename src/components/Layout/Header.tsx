@@ -9,6 +9,8 @@ import { css, default as styled, SCP } from "../../styles/theme";
 import Button from "../Button";
 import PreviewCompatibleImage from "../CMS/PreviewCompatibleImage";
 
+type BtnText = 'four0four' | 'successMessage' | 'main';
+
 interface P extends SCP {
   title: Maybe<string>;
   subheading?: Maybe<string>;
@@ -16,7 +18,7 @@ interface P extends SCP {
   compact?: boolean;
   locale: Maybe<string>;
   four0four: boolean;
-  btnText: string;
+  btnText: BtnText;
 }
 
 const HeaderTemplate: React.SFC<P> = ({
@@ -68,10 +70,6 @@ const HeaderTemplate: React.SFC<P> = ({
     main: mainHeroBtn()
   };
 
-  const EnumState = ({ state }) => {
-    return <>{ENUM_STATES[state]}</>;
-  };
-
   return (
     <header id="header" className={className}>
       <div>
@@ -99,8 +97,8 @@ const HeaderTemplate: React.SFC<P> = ({
                     {Logo}
                   </GatsbyLink>
                 ) : (
-                  Logo
-                )}
+                    Logo
+                  )}
                 <h1 className={four0four ? "header__h1--404" : ""}>{title}</h1>
                 {!compact && (
                   <Link to="/#what-we-do" className="navbar-item">
@@ -110,7 +108,7 @@ const HeaderTemplate: React.SFC<P> = ({
                       height="57px"
                       type=""
                     >
-                      <EnumState state={btnText} />
+                      {ENUM_STATES[btnText]} />
                     </Button>
                   </Link>
                 )}
@@ -255,8 +253,8 @@ const Header = styled(HeaderTemplate)`
 
     @media ${props => props.theme.screen.tablet} {
       ${({ compact }) =>
-        !compact &&
-        css`
+    !compact &&
+    css`
           .starkyslogo {
             width: 178px !important;
             height: 185px !important;
@@ -270,8 +268,8 @@ const Header = styled(HeaderTemplate)`
       flex-direction: row;
 
       ${({ compact }) =>
-        compact &&
-        css`
+    compact &&
+    css`
           h1 {
             font-size: 2.2rem;
             margin-left: 2rem;
