@@ -54,6 +54,7 @@ export const IndexPageTemplate: React.SFC<IndexPageProps> = ({
       subheading={subheading}
       hero={hero}
       locale={locale}
+      btnText="main"
       four0four={false}
     />
     {/* Our clients */}

@@ -14,7 +14,7 @@ const ContactForm: React.FC<FormProps> = ({ className, locale }) => {
       name="contact"
       method="POST"
       data-netlify="true"
-      action="/pages/Success"
+      action="Success"
     >
       <input type="hidden" name="form-name" value="contact" />
       <label className="rfe-form__row">
@@ -107,10 +107,6 @@ const StyledContactForm = styled(ContactForm)`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    @media ${props => props.theme.screen.laptop} {
-      justify-content: flex-end;
-    }
 
     &__cta:hover {
       background: ${props => props.theme.colors.contactBtnGrey} !important;

@@ -20,8 +20,9 @@ class FourOFourPage extends Component<FourOFourPageProps> {
           title="404"
           hero={heroImg}
           locale="en"
-          four0four={true}
           subheading=""
+          btnText="four0four"
+          four0four={true}
         />
       </Page>
     );
