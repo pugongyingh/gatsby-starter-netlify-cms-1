@@ -108,7 +108,7 @@ const HeaderTemplate: React.SFC<P> = ({
                       height="57px"
                       type=""
                     >
-                      {ENUM_STATES[btnText]} />
+                      {ENUM_STATES[btnText]}
                     </Button>
                   </Link>
                 )}
