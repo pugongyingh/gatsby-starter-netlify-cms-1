@@ -65,7 +65,7 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
     >
       <Grid className="grid-wrap">
         {isFixed ? (
-          <GatsbyLink to="/" replace={false}>
+          <GatsbyLink to="/#" replace={false}>
             {Logo}
           </GatsbyLink>
         ) : null}
