@@ -106,7 +106,12 @@ const StyledContactForm = styled(ContactForm)`
   .form-btn-wrap {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    @media ${props => props.theme.screen.mobileS} {
+      justify-content: center;
+    }
+    @media ${props => props.theme.screen.laptop} {
+      justify-content: flex-end;
+    }
 
     &__cta:hover {
       background: ${props => props.theme.colors.contactBtnGrey} !important;

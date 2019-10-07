@@ -253,7 +253,7 @@ const Navbar = styled(NavbarTemplate)`
       background: ${props => props.theme.colors.white};
       border-radius: 5px;
       opacity: 1;
-      left: 16px;
+      left: 13px;
       transform: rotate(0deg);
       transition: 0.25s ease-in-out;
 

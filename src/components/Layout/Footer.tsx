@@ -90,6 +90,10 @@ const StyledFooter = styled(FooterTemplate)`
     @media ${props => props.theme.screen.laptop} {
       width: 100%;
     }
+    @media ${props => props.theme.screen.mobileS} {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
   }
   .social {
     display: flex;

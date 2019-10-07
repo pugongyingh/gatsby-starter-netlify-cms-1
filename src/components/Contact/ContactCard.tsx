@@ -40,7 +40,14 @@ const ContactCardWrap = styled.div`
     line-height: 35px;
     color: ${props => props.theme.colors.paragraphGrey};
   }
-
+  .contact__icon {
+    @media ${props => props.theme.screen.mobileS} {
+      margin-top: 10px;
+    }
+    @media ${props => props.theme.screen.laptop} {
+      margin-top: 0;
+    }
+  }
   .contact__icon__link {
     padding: 0;
     margin: 0;

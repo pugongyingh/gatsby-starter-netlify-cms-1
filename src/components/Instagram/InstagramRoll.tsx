@@ -119,6 +119,9 @@ const StyledInstagram = styled(Instagram)`
       height: 8vh;
       display: flex;
       align-items: flex-end;
+      @media ${props => props.theme.screen.mobileS} {
+        margin-top: 10px;
+      }
     }
   }
   .followLink {
