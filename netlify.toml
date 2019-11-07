@@ -9,4 +9,4 @@
   to = "/en/:splat"
   status = 301
   force = false
-  conditions = {Language = ["en-US"]}
+  conditions = {Language = ["en", "en-us", "en-gb"]}
