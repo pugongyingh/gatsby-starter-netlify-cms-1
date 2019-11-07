@@ -9,4 +9,3 @@
   to = "/en"
   status = 301
   force = false
-  conditions = {Language = ["en"]}
