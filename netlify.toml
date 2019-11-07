@@ -5,7 +5,8 @@
   YARN_VERSION = "1.9.4"
   YARN_FLAGS = "--no-ignore-optional"
 [[redirects]]
-  from = "/old-path"
-  to = "/new-path"
-  status = 301
+  from = "/"
+  to = "/en"
+  status = 302
   force = false
+  conditions = {Language = "en"}
