@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { Link } from "gatsby";
 import GatsbyLink from "gatsby-link";
 import React from "react";
@@ -103,7 +104,7 @@ const HeaderTemplate: React.SFC<P> = ({
                 {!compact && (
                   <Link to="/#what-we-do" className="navbar-item">
                     <Button
-                      className="header__cta"
+                      className={classNames("header__cta", { capital: locale === 'en' })}
                       background="#ffc700"
                       height="57px"
                       type=""

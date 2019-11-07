@@ -13,7 +13,7 @@ const MapTooltipTemplate: React.SFC<P> = ({ className, address }) => {
   return (
     <div className={className}>
       <div className="tooltip">
-        <h4 className="tooltip__title">Starky's club</h4>
+        <h4 className="tooltip__title">Starky's Club</h4>
         <p>{address.street}</p>
         <p>
           {address.zip} {address.city}

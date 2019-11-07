@@ -17,6 +17,10 @@ const StyledBtn = styled.button`
   outline: none;
   border-radius: 3px;
 
+  &.header__cta.capital {
+    text-transform: capitalize;
+  }
+
   &.header__cta:hover {
     background: ${props => props.theme.colors.mustard} !important;
   }

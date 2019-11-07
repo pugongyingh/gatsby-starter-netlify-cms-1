@@ -16,7 +16,7 @@ interface PageProps {
 }
 
 const PageTemplate: React.SFC<PageProps> = ({ children, locale, configs }) => {
-  const localizedMeta = configs.find((config) => config.node.frontmatter!.locale === locale)
+  const localizedMeta = configs!.find((config) => config.node.frontmatter!.locale === locale)
   if (!localizedMeta) {
     return null;
   }
