@@ -9,4 +9,3 @@
   to = "/new-path"
   status = 301
   force = false
-  conditions = {Language = ["en"]}
