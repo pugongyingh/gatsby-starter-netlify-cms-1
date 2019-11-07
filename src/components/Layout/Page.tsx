@@ -34,9 +34,9 @@ const PageTemplate: React.SFC<PageProps> = ({ children, locale, configs }) => {
 
 const Page: React.SFC<PageProps> = props => {
   const locale = detectBrowserLanguage();
-  if (document !== undefined && locale !== props.locale && process.env.GATSBY_ENV !== 'development') {
+  if (navigator !== undefined && locale !== props.locale && process.env.GATSBY_ENV !== 'development') {
     document.cookie = `nf_lang=${locale}`;
-    location.reload();
+    location.replace(location.host + `/${locale}`)
   }
   return (
     <StaticQuery
