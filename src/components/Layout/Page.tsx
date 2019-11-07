@@ -32,12 +32,12 @@ const PageTemplate: React.SFC<PageProps> = ({ children, locale, configs }) => {
 
 
 const Page: React.SFC<PageProps> = props => {
-  if (window !== undefined && navigator !== undefined) {
+  if (typeof window !== 'undefined' && typeof window.navigator !== 'undefined') {
     const detectBrowserLanguage = require('detect-browser-language')
     const locale = detectBrowserLanguage();
-    if (locale !== props.locale && process.env.GATSBY_ENV !== 'development') {
-      document.cookie = `nf_lang=${locale}`;
-      location.replace(location.host + `/${locale}`)
+    if (locale === 'en' && props.locale === 'cs' && process.env.GATSBY_ENV !== 'development') {
+      document.cookie = `nf_lang=en`;
+      location.replace(location.host + '/en' + location.href.substring(location.href.indexOf('/')))
     }
   }
   return (
