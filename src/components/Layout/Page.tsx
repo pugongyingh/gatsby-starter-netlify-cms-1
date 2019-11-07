@@ -37,7 +37,7 @@ const Page: React.SFC<PageProps> = props => {
     const locale = detectBrowserLanguage();
     if (locale === 'en' && props.locale === 'cs' && process.env.GATSBY_ENV !== 'development') {
       document.cookie = `nf_lang=en`;
-      location.replace(location.host + '/en' + location.href.substring(location.href.indexOf('/')))
+      location.replace(location.host + '/en' + location.pathname)
     }
   }
   return (
