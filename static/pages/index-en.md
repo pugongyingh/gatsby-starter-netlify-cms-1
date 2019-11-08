@@ -38,7 +38,7 @@ clients:
       title: Mall.cz
     - logo: /img/icewarp-white.svg
       title: IceWarp
-  title: S kým jsme měli tu čest
+  title: Our Clients
 work:
   items:
     - description: >-
