@@ -61,9 +61,8 @@ work:
       title: Solution Consultations
     - description: >-
         We will prepare a workshop for you that will take your programmers'
-        expertise to the next level. We will create a workshop tailored to your
-        needs for any technology we use in development (Java, React and Angular,
-        AWS).
+        expertise to the next level. It will be tailored to your needs for any
+        technology we use in development (Java, React and Angular, AWS).
       logo: /img/workshop-icon.svg
       title: Training & Workshops
   subtitle: Poskytujeme online směr firmám
