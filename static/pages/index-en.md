@@ -1,10 +1,10 @@
 ---
 templateKey: IndexPage
 locale: en
-title: Dodáváme sehrané vývojové týmy
+title: We Deliver Dev Teams
 subheading: >-
-  Jsme vaši partneři při vývoji softwaru. Zaštítíme kompletně celý vývoj nebo
-  doplníme vaše kapacity.
+  We are your partners in software development. We will cover the entire
+  development or fulfill your capacities.
 hero: /img/hero-main-bg-opt.jpg
 news:
   items:
@@ -21,7 +21,7 @@ news:
         tempo. Haiko ve volném čase natáčí a fotí, takže z něj bude i Starky's
         content manager. A Mori umí do 15 minut sehnat jakýkoliv sud piva a k
         němu pípu. Jen tak dál, chlapi!
-      title: "Haiko a Mori, vítejte v klubu!"
+      title: 'Haiko a Mori, vítejte v klubu!'
     - description: >-
         Citrix Systems akvizovali český startup Sapho a na jeho základech v
         Praze otevřeli své vývojové centrum. Začlenili jsme se do týmu javistů,
@@ -30,90 +30,86 @@ news:
   title: Co nového ve Starky's Clubu
 clients:
   items:
-    - link: "https://www.citrix.cz/"
-      logo: /img/citrix-white-logo.svg
+    - logo: /img/citrix-white-logo.svg
       title: Citrix
-    - link: "https://www.fischer.cz/"
-      logo: /img/logo-fischer.svg
+    - logo: /img/logo-fischer.svg
       title: CK Fischer
-    - link: "https://www.mall.cz/"
-      logo: /img/mall_white_logo.svg
+    - logo: /img/mall_white_logo.svg
       title: Mall.cz
-    - link: "https://www.icewarp.cz/"
-      logo: /img/icewarp-white.svg
+    - logo: /img/icewarp-white.svg
       title: IceWarp
   title: S kým jsme měli tu čest
 work:
   items:
     - description: >-
-        Postavíme váš produkt na nejnovějších technologiích s využitím cloudu.
-        Dodáme funkční design, navrhneme architekturu a realizujeme vývoj a
-        testing.
+        We build your product on the latest technologies native to the cloud. We
+        provide you with the functional design, we come up with the architecture
+        and implement development and testing.
       logo: /img/sw-dev-icon.svg
-      title: Vyvíjíme produkty na míru
+      title: Tailor-Made Products
     - description: >-
-        Doplníme váš tým o zkušené seniorní programátory, spolehlivé middle
-        vývojáře a talentované juniory. Největší hodnotu pro zákazníka vždy měly
-        naše sehrané týmy o více programátorech.
+        We will complement your team with experienced senior programmers,
+        reliable middle developers and talented juniors. The greatest value for
+        the customer has always been our coordinated teams of more programmers.
       logo: /img/design-icon.svg
-      title: Dodáváme kapacity
+      title: Capacities Supply
     - description: >-
-        Rozebereme vaši službu či produkt na prvočinitele a vymyslíme způsob jak
-        zvýšit efektivitu vývojového týmu. Rychlejší dodávky do produkce za
-        správné velikosti týmu vám v konečném důsledku ušetří peníze.
+        We will deeply analyze your service or product and think of ways to
+        increase the efficiency of the development team. The right size of a
+        team can deliver faster and save you money at the end of the day.
       logo: /img/analysis-icon.svg
-      title: Konzultujeme vaše řešení
+      title: Solution Consultations
     - description: >-
-        Připravíme pro vás workshop, který posune expertízu vašich programátorů
-        na další úroveň. Workshop vytvoříme na míru dle vašich potřeb na
-        jakékoliv technologie, které využíváme při vývoji (Java, React a
-        Angular, AWS).
+        We will prepare a workshop for you that will take your programmers'
+        expertise to the next level. We will create a workshop tailored to your
+        needs for any technology we use in development (Java, React and Angular,
+        AWS).
       logo: /img/workshop-icon.svg
-      title: Přednášky a školení
+      title: Training & Workshops
   subtitle: Poskytujeme online směr firmám
-  title: Co děláme
+  title: What We Do
 references:
   items:
     - description: >-
-        Nadnárodní korporaci Citrix pomáháme s vývojovými kapacitami na jejich
-        řešení pro zjednodušování komplexních firemních IT služeb.
+        We help Citrix with development capabilities to simplify complex
+        corporate IT services.
       image: /img/ref_citrix-opt.png
       subtitle: Citrix
-      title: "#java #reactor #reactive #springboot #cloud #jersey #microservices"
+      title: '#java #reactor #reactive #springboot #cloud #jersey #microservices'
     - description: >-
-        Pro největší českou cestovku jsme spravovali a technologicky rozvíjeli
-        business-critical řešení pro vyhledávání a prodej zájezdů, společně jsme
-        také připravili web pro prodej letenek letenky.fischer.cz.
+        For the largest Czech travel agency, we managed and technologically
+        developed business-critical solutions for search and sale of tours.
+        Together we also prepared a website for flight ticket sales
+        "letenky.fischer.cz".
       image: /img/ref_fischer-opt.png
-      subtitle: "CK Fischer "
+      subtitle: 'CK Fischer '
       title: >-
         #java #hibernate #springboot #docker #mssql #microservices
         #elasticsearch
     - description: >-
-
-        Vyvíjeli jsme nové typy stránek (kampaně, Black Friday) a přepisovali
-        jsme klíčové stránky e-shopu z PHP a Angularu. Ve Vue.js a Node.js jsme
-        rovněž tvořili microservices. Šlo o samostatné nástroje na tvorbu a
-        administraci kampaní a administraci bannerových ploch napříč celým webem
-        Mallu.
+        We have developed new types of pages (campaigns, Black Friday) and have
+        rewritten key e-shop pages from PHP and Angular. We have also created
+        microservices in Vue.js and Node.js. These are separate tools for
+        creating and administering campaigns and administering banner areas
+        across the Mall site.
       image: /img/ref_mall-opt.png
       subtitle: Mall.cz
-      title: "#javascript #vuejs #php #angular #nodejs"
-  subtitle: "-"
+      title: '#javascript #vuejs #php #angular #nodejs'
+  subtitle: '-'
   title: Reference
 technologies:
-  description: >
-    Technologie před každým započatým projektem pečlivě analyzujeme, abychom
-    zvolili co možná nejvhodnější technologický stack.
+  description: >-
+    We carefully analyze the technologies before starting each project in order
+    to select the most appropriate technology stack.
 
 
-    Na backendu je pro nás jedničkou Java se Spring a Hibernate frameworky. Z
-    JavaScriptových technologii volíme React nebo React Native v mobilním
-    vývoji, Vue.js nebo Angular. 
+    Java is number one on the backend with Spring and Hibernate frameworks. From
+    JavaScript technologies we choose React or React Native in mobile
+    development, Vue.js or Angular.
 
 
-    Pro běh našich řešení upřednostňujeme Amazon Web Services. Na vývoj,
-    testování, i v produkci používáme Docker.
+    We prefer Amazon Web Services to run our solutions. We use Docker for
+    development, testing and production.
   items:
     - logo: /img/java-new-logo.svg
       title: Java
@@ -127,5 +123,6 @@ technologies:
       title: Docker
     - logo: /img/redux-logo.svg
       title: Redux
-  title: Technologie
+  title: Technologies
 ---
+
