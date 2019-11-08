@@ -42,32 +42,32 @@ clients:
 work:
   items:
     - description: >-
-        Postavíme váš produkt na nejnovějších technologiích s využitím cloudu.
-        Dodáme funkční design, navrhneme architekturu a realizujeme vývoj a
-        testing.
+        We build your product on the latest technologies native to the cloud. We
+        provide you with the functional design, we come up with the architecture
+        and implement development and testing.
       logo: /img/sw-dev-icon.svg
-      title: Vyvíjíme produkty na míru
+      title: Tailor-Made Products
     - description: >-
-        Doplníme váš tým o zkušené seniorní programátory, spolehlivé middle
-        vývojáře a talentované juniory. Největší hodnotu pro zákazníka vždy měly
-        naše sehrané týmy o více programátorech.
+        We will complement your team with experienced senior programmers,
+        reliable middle developers and talented juniors. The greatest value for
+        the customer has always been our coordinated teams of more programmers.
       logo: /img/design-icon.svg
-      title: Dodáváme kapacity
+      title: Capacities Supply
     - description: >-
-        Rozebereme vaši službu či produkt na prvočinitele a vymyslíme způsob jak
-        zvýšit efektivitu vývojového týmu. Rychlejší dodávky do produkce za
-        správné velikosti týmu vám v konečném důsledku ušetří peníze.
+        We will deeply analyze your service or product and think of ways to
+        increase the efficiency of the development team. The right size of a
+        team can deliver faster and save you money at the end of the day.
       logo: /img/analysis-icon.svg
-      title: Konzultujeme vaše řešení
+      title: Solution Consultations
     - description: >-
-        Připravíme pro vás workshop, který posune expertízu vašich programátorů
-        na další úroveň. Workshop vytvoříme na míru dle vašich potřeb na
-        jakékoliv technologie, které využíváme při vývoji (Java, React a
-        Angular, AWS).
+        We will prepare a workshop for you that will take your programmers'
+        expertise to the next level. We will create a workshop tailored to your
+        needs for any technology we use in development (Java, React and Angular,
+        AWS).
       logo: /img/workshop-icon.svg
-      title: Přednášky a školení
+      title: Training & Workshops
   subtitle: Poskytujeme online směr firmám
-  title: Co děláme
+  title: What We Do
 references:
   items:
     - description: >-
