@@ -1,10 +1,10 @@
 ---
 templateKey: IndexPage
 locale: en
-title: Dodáváme sehrané vývojové týmy
+title: We Deliver Dev Teams
 subheading: >-
-  Jsme vaši partneři při vývoji softwaru. Zaštítíme kompletně celý vývoj nebo
-  doplníme vaše kapacity.
+  We are your partners in software development. We will cover the entire
+  development or fulfill your capacities.
 hero: /img/hero-main-bg-opt.jpg
 news:
   items:
@@ -21,7 +21,7 @@ news:
         tempo. Haiko ve volném čase natáčí a fotí, takže z něj bude i Starky's
         content manager. A Mori umí do 15 minut sehnat jakýkoliv sud piva a k
         němu pípu. Jen tak dál, chlapi!
-      title: "Haiko a Mori, vítejte v klubu!"
+      title: 'Haiko a Mori, vítejte v klubu!'
     - description: >-
         Citrix Systems akvizovali český startup Sapho a na jeho základech v
         Praze otevřeli své vývojové centrum. Začlenili jsme se do týmu javistů,
@@ -30,17 +30,13 @@ news:
   title: Co nového ve Starky's Clubu
 clients:
   items:
-    - link: "https://www.citrix.cz/"
-      logo: /img/citrix-white-logo.svg
+    - logo: /img/citrix-white-logo.svg
       title: Citrix
-    - link: "https://www.fischer.cz/"
-      logo: /img/logo-fischer.svg
+    - logo: /img/logo-fischer.svg
       title: CK Fischer
-    - link: "https://www.mall.cz/"
-      logo: /img/mall_white_logo.svg
+    - logo: /img/mall_white_logo.svg
       title: Mall.cz
-    - link: "https://www.icewarp.cz/"
-      logo: /img/icewarp-white.svg
+    - logo: /img/icewarp-white.svg
       title: IceWarp
   title: S kým jsme měli tu čest
 work:
@@ -79,13 +75,13 @@ references:
         řešení pro zjednodušování komplexních firemních IT služeb.
       image: /img/ref_citrix-opt.png
       subtitle: Citrix
-      title: "#java #reactor #reactive #springboot #cloud #jersey #microservices"
+      title: '#java #reactor #reactive #springboot #cloud #jersey #microservices'
     - description: >-
         Pro největší českou cestovku jsme spravovali a technologicky rozvíjeli
         business-critical řešení pro vyhledávání a prodej zájezdů, společně jsme
         také připravili web pro prodej letenek letenky.fischer.cz.
       image: /img/ref_fischer-opt.png
-      subtitle: "CK Fischer "
+      subtitle: 'CK Fischer '
       title: >-
         #java #hibernate #springboot #docker #mssql #microservices
         #elasticsearch
@@ -98,8 +94,8 @@ references:
         Mallu.
       image: /img/ref_mall-opt.png
       subtitle: Mall.cz
-      title: "#javascript #vuejs #php #angular #nodejs"
-  subtitle: "-"
+      title: '#javascript #vuejs #php #angular #nodejs'
+  subtitle: '-'
   title: Reference
 technologies:
   description: >
@@ -129,3 +125,4 @@ technologies:
       title: Redux
   title: Technologie
 ---
+
