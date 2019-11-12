@@ -3,8 +3,8 @@ templateKey: IndexPage
 locale: en
 title: We Deliver Dev Teams
 subheading: >-
-  We are your partners in software development. We will cover the entire
-  development or fulfill your capacities.
+  Do you need us to develop your project? Or do you just need more manpower to
+  finish it? Welcome to the Starky's Club.
 hero: /img/hero-main-bg-opt.jpg
 news:
   items:
