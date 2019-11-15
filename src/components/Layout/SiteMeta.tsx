@@ -1,12 +1,14 @@
 import { withPrefix } from "gatsby";
 import * as React from "react";
 import Helmet from "react-helmet";
+import logo from "../../img/starkys-logo-proper.svg";
 
 interface SiteMetaProps {
   title: string;
+  description: string;
 }
 
-const SiteMeta: React.SFC<SiteMetaProps> = ({ title }) => {
+const SiteMeta: React.SFC<SiteMetaProps> = ({ title, description }) => {
   return (
     <Helmet>
       <html lang="en" />
@@ -52,12 +54,14 @@ const SiteMeta: React.SFC<SiteMetaProps> = ({ title }) => {
       <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5"/>
       <meta name="theme-color" content="#ffffff"/> */}
 
+      <meta property="description" content={description} />
       <meta property="og:type" content="business.business" />
       <meta property="og:title" content={title} />
-      <meta property="og:url" content="/" />
+      <meta property="og:url" content="https://starkysclub.com" />
+      <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content={`${withPrefix("/")}img/og-image.jpg`}
+        content={logo}
       />
     </Helmet>
   );

@@ -54,6 +54,8 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
   const isFixed =
     fixed || (typeof window !== "undefined" && scroll > window.innerHeight);
 
+  const prefix = locale !== 'cs' ? locale : '';
+
   return (
     <nav
       className={classNames(className, {
@@ -94,22 +96,22 @@ const NavbarTemplate: React.SFC<P> = ({ className, locale, fixed, title }) => {
         >
           <Link
             onClick={toggleActive}
-            to="/#what-we-do"
+            to={prefix + "/#what-we-do"}
             className="navbar-item"
           >
             {locale === "cs" ? "Co děláme" : "What We Do"}
           </Link>
           <Link
             onClick={toggleActive}
-            to="/#references"
+            to={prefix + "/#references"}
             className="navbar-item"
           >
             {locale === "cs" ? "Reference" : "References"}
           </Link>
-          <Link onClick={toggleActive} to="/#blog" className="navbar-item">
+          <Link onClick={toggleActive} to={prefix + "/#blog"} className="navbar-item">
             Blog
           </Link>
-          <Link onClick={toggleActive} to="/#contact" className="navbar-item">
+          <Link onClick={toggleActive} to={prefix + "/#contact"} className="navbar-item">
             {locale === "cs" ? "Kontakt" : "Contact"}
           </Link>
         </div>
