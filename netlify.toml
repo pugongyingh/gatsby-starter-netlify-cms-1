@@ -6,7 +6,7 @@
   YARN_FLAGS = "--no-ignore-optional"
 [[redirects]]
   from = "/"
-  to = "/en"
+  to = "/en/"
   status = 301
   force = false
   conditions = {Language = ["en", "en-us", "en-gb"]}

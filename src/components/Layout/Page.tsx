@@ -23,7 +23,7 @@ const PageTemplate: React.SFC<PageProps> = ({ children, locale, configs }) => {
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
-        <SiteMeta title={localizedMeta!.node.frontmatter!.title!} />
+        <SiteMeta title={localizedMeta!.node.frontmatter!.title!} description={localizedMeta!.node.frontmatter!.title!} />
         {children}
       </React.Fragment>
     </ThemeProvider>
