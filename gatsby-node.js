@@ -35,14 +35,21 @@ exports.createPages = ({ actions, graphql }) => {
       const id = edge.node.id
       const locale = edge.node.frontmatter.locale
       let slug = "";
-      if (locale && locale !== 'cs') {
-        slug = "/" + locale;
-      }
+
+
+      slug = locale !== 'cs' ? "/" + locale : '';
+
       if (!edge.node.fields.slug.match(/^\/index/)) {
         slug += edge.node.fields.slug;
       }
-      if (slug === "") {
-        slug = "/";
+
+      const match = slug.search(/-\d+\/$/);
+      if (match !== -1) {
+        slug = slug.replace(/-\d+\/$/, '')
+      }
+
+      if (slug[slug.length - 1] !== "/") {
+        slug += "/";
       }
 
       createPage({
