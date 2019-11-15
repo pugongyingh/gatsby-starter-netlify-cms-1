@@ -29,6 +29,14 @@ class Blog extends React.Component<P> {
             <Col className="blog-item">
               <StyledCarousel>
                 {blogPosts.map((post: MarkdownRemark) => {
+                  let slug = post.fields!.slug!;
+                  if (this.props.locale !== 'cs') {
+                    slug = "/" + this.props.locale + slug;
+                  }
+                  const match = slug.search(/-\d+\/$/);
+                  if (match !== -1) {
+                    slug = slug.replace(/-\d+\/$/, '')
+                  }
                   return (
                     <StyledBlogItem
                       className="block-item"
@@ -36,7 +44,7 @@ class Blog extends React.Component<P> {
                       image={post.frontmatter!.image!}
                       title={post.frontmatter!.title!}
                       description={post.frontmatter!.description!}
-                      slug={post.fields!.slug!}
+                      slug={slug}
                     />
                   );
                 })}
