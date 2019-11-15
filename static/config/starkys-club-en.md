@@ -14,19 +14,19 @@ contact:
       linkedIn: "https://www.linkedin.com/in/michalkourik/"
       name: Michal Kouřík
       phone: ‭+420 737 977 013‬
-      role: Technological teamleader
+      role: Technological Teamleader
     - email: martin.svach@starkysclub.com
       image: /img/svachi_profile.jpg
       linkedIn: "https://www.linkedin.com/in/martinsvach/"
       name: Martin Švach
       phone: +420 ‭606 180 315‬
-      role: Business development
+      role: Business Development
     - email: vaclav.brzezina@starkysclub.com
       image: /img/vaclav-brzezina.jpg
       linkedIn: "https://www.linkedin.com/in/v%C3%A1clav-brzezina-8b8b14107/"
       name: Václav Brzezina
       phone: ‭+420 604 716 317‬
-      role: Frontend teamleader
+      role: Frontend Teamleader
   title: Contact us
 footer:
   copy: Copyright StarkysClub 2019. All rights reserved
